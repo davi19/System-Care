@@ -27,10 +27,7 @@ namespace SystemCare
             DataTable TabelaRiscos = Cadastro.SelecionaRisco();
             DataGridRiscos.DataSource = TabelaRiscos;
 
-            DataTable TabelaEmpresas = Cadastro.SelecionaEmpresa();
-            ComboEmpresa.DataSource = TabelaEmpresas;
-            ComboEmpresa.DisplayMember = "nome";
-            ComboEmpresa.ValueMember = "id";
+
 
 
 
@@ -52,196 +49,19 @@ namespace SystemCare
         private void TabSair_Enter(object sender, EventArgs e)
         {
             Application.Exit();
-        }
+        }  
 
-        private void TextQuantidadeFuncionario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
-            {
-                e.Handled = true;
-            }
-        }
+      
 
-        private void BtnBuscaCnae_Click(object sender, EventArgs e)
-        {
-            if (TextBuscaCnae.Text.Length == 0)
-            {
-                MetroMessageBox.Show(this,"Favor preencher o campo de busca !", "Atenção !", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-            }
-            else
-            {
-                DataTable TabelaResultadoBuscaCnae = Cadastro.BuscaCnae(TextBuscaCnae.Text);
-                if (TabelaResultadoBuscaCnae.Rows.Count == 0)
-                {
-                    MetroMessageBox.Show(this, "Sua busca não retornou nenhum dado!", "Atenção !", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                }
-                else
-                {
-                    DataViewCnae.Visible = true;
-                    DataViewCnae.DataSource = TabelaResultadoBuscaCnae;
-                }
-            }
-       
-        }
 
-        private void TextBuscaCnae_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar==13)
-            {
-                BtnBuscaCnae_Click(sender,e);
-            }
-        }
-
-        private void DataViewCnae_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            LabelCnae.Text = "CNAE | "+ DataViewCnae.Rows[e.RowIndex].Cells[0].Value + " | "+ DataViewCnae.Rows[e.RowIndex].Cells[1].Value;
-            LabelCnae.UseStyleColors = true;
-            LabelCnae.FontWeight = MetroLabelWeight.Bold;
-            LabelCnae.AutoSize = true;
-            TextBuscaCnae.Text = "";
-            DataViewCnae.DataSource = null;
-            DataViewCnae.Visible = false;
-        }
-
-        private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void BtnCadastrar_Click(object sender, EventArgs e)
-        {
-            if (TextNome.Text.Length == 0 || TextCnpj.Text.Length == 0 || TextQuantidadeFuncionario.Text.Length == 0 ||
-                TextEndereco.Text.Length == 0 || TextTelefone.Text.Length == 0 || TextRisco.Text.Length == 0)
-            {
-                MetroMessageBox.Show(this, "Favor preencher todos os campos em destaque!", "Atenção !", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-            }
-            else
-            {
-                string[] Cnae = LabelCnae.Text.Split('|');
-                Cadastro.CadastraEmpresa(TextNome.Text, TextEndereco.Text, TextCnpj.Text,
-                    Convert.ToInt32(TextQuantidadeFuncionario.Text), TextTelefone.Text, TextEmail.Text, Cnae[1]+" | "+Cnae[2],
-                    Convert.ToInt32(TextRisco.Text));
-                MetroMessageBox.Show(this, "Empresa cadastrada com sucesso!", "Sucesso !", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                TextNome.Text = "";
-                TextCnpj.Text="";
-                TextQuantidadeFuncionario.Text = "";
-                TextEndereco.Text = "";
-                TextTelefone.Text = "";
-                TextRisco.Text = "";
-                TextEmail.Text = "";
-                LabelCnae.Text = "CNAE:";
-            }
-        }
-
-        private void BtnBuscarEmpresa_Click(object sender, EventArgs e)
-        {
-            BuscarEmpresa Busca = new BuscarEmpresa();
-            Busca.ShowDialog();
-            string IdEmpresa = Cadastro.GetEmpresa();
-            if (IdEmpresa.Equals(""))
-            {
-
-            }
-            else
-            {
-                DataTable TabelaEditarEmpresa = Cadastro.RecuperaDadosEmpresa();
-                TextNome.Text = TabelaEditarEmpresa.Rows[0][0].ToString();
-                TextEndereco.Text = TabelaEditarEmpresa.Rows[0][1].ToString();
-                TextCnpj.Text = TabelaEditarEmpresa.Rows[0][2].ToString();
-                TextQuantidadeFuncionario.Text = TabelaEditarEmpresa.Rows[0][3].ToString();
-                TextTelefone.Text = TabelaEditarEmpresa.Rows[0][4].ToString();
-                TextEmail.Text = TabelaEditarEmpresa.Rows[0][5].ToString();
-                LabelCnae.Text = "CNAE |" + TabelaEditarEmpresa.Rows[0][6].ToString();
-                TextRisco.Text = TabelaEditarEmpresa.Rows[0][7].ToString();
-                BtnCadastrar.Visible = false;
-                BtnSalvar.Visible = true;
-                BtnCancelar.Visible = true;
-            }
-        }
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            Cadastro.SetEmpresa("");
-            BtnCadastrar.Visible = true;
-            BtnSalvar.Visible = false;
-            BtnCancelar.Visible = false;
-            TextNome.Text = "";
-            TextEndereco.Text = "";
-            TextCnpj.Text = "";
-            TextQuantidadeFuncionario.Text = "";
-            TextTelefone.Text = "";
-            TextEmail.Text = "";
-            LabelCnae.Text = "CNAE:";
-            TextRisco.Text = "";
-        }
-
-        private void BtnSalvar_Click(object sender, EventArgs e)
-        {
-            string[] Cnae = LabelCnae.Text.Split('|');
-            Cadastro.EditarEmpresa(TextNome.Text, TextEndereco.Text, TextCnpj.Text,
-                    Convert.ToInt32(TextQuantidadeFuncionario.Text), TextTelefone.Text, TextEmail.Text, Cnae[1] + " " +
-                                                                                                        "| " + Cnae[2],
-                    Convert.ToInt32(TextRisco.Text));
-            MetroMessageBox.Show(this, "Dados da empresa atualizados com sucesso!", "Sucesso !", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            Cadastro.SetEmpresa("");
-            BtnCadastrar.Visible = true;
-            BtnSalvar.Visible = false;
-            BtnCancelar.Visible = false;
-            TextNome.Text = "";
-            TextEndereco.Text = "";
-            TextCnpj.Text = "";
-            TextQuantidadeFuncionario.Text = "";
-            TextTelefone.Text = "";
-            TextEmail.Text = "";
-            LabelCnae.Text = "CNAE:";
-            TextRisco.Text = "";
-        }
-
-        private void CheckSetorExistente_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CheckSetorExistente.Checked)
-            {
-                TextNomeSetor.Enabled = true;
-                TextNomeSetor.Text = "";
-                BtnBuscarSetor.Visible = false;
-
-            }
-            else
-            {
-                BtnBuscarSetor.Visible = true;
-            }
-        }
-
-        private void BtnBuscarSetor_Click(object sender, EventArgs e)
-        {
-            BuscarSetor BuscaSetor = new BuscarSetor();
-            BuscaSetor.ShowDialog();
-            string NomeSetor = Cadastro.GetSetor();
-            if (NomeSetor.Equals("Nenhum"))
-            {
-                CheckSetorExistente.Checked = true;
-            }
-            else
-            {
-                TextNomeSetor.Text = NomeSetor;
-                TextNomeSetor.Enabled=false;
-            }
-        }
+   
 
         private void BtnCadastrarSetorFuncao_Click(object sender, EventArgs e)
         {
             if (CheckCadastroFuncao.Checked)
             {
                 string[] IdCbo = LabelCbo.Text.Split('|');
-                if (TextNomeSetor.Text.Length == 0 || TextNomeFuncao.Text.Length == 0 || IdCbo[0].Equals(""))
+                if ( TextNomeFuncao.Text.Length == 0 || IdCbo[0].Equals(""))
                 {
                     MetroMessageBox.Show(this, "Favor preencher todos os campos em destaque!", "Atenção !", MessageBoxButtons.OK,
                    MessageBoxIcon.Hand);
@@ -275,8 +95,7 @@ namespace SystemCare
                     else
                     {
 
-                        Cadastro.CadastrarSetorFuncao(ComboEmpresa.SelectedValue.ToString(), TextNomeSetor.Text,
-                            TextNomeFuncao.Text, IdCbo[1], IdRiscos);
+
                         MetroMessageBox.Show(this, "Setor e Função cadastrado com sucesso!", "Sucesso !",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
@@ -288,17 +107,12 @@ namespace SystemCare
             }
             else
             {
-                if (TextNomeSetor.Text.Length == 0)
-                {
-                    MetroMessageBox.Show(this, "Favor preencher o nome do setor!", "Atenção !", MessageBoxButtons.OK,
-                        MessageBoxIcon.Hand);
-                }
-                else
-                {
-                    Cadastro.CadastrarSetor(ComboEmpresa.SelectedValue.ToString(), TextNomeSetor.Text);
+
+                
+                    
                     MetroMessageBox.Show(this, "Setor cadastrado com sucesso!", "Sucesso !", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                }
+                
             }
         }
 
@@ -347,7 +161,7 @@ namespace SystemCare
             string NomeFuncao = Cadastro.GetFuncao();
             if (NomeFuncao.Equals("Nenhum"))
             {
-                CheckSetorExistente.Checked = true;
+                
             }
             else
             {
@@ -433,7 +247,7 @@ namespace SystemCare
 
             Relatorios AOS = new Relatorios(TextNomeFuncionario.Text, TextIdade.Text, Resultado, ModalidadeExame, RiscosOperacionais, TipoExame, Sexo,
                     TextDataNascimento.Text, TextTelefoneFuncionario.Text, TextCpf.Text, TextNaturalidade.Text,
-                    ComboEmpresa.Text,
+                    "",
                     ComboFuncaoFuncionario.Text, TextIdentidade.Text);
                 AOS.ShowDialog();
             
@@ -474,6 +288,18 @@ namespace SystemCare
         private void BtnQuestionarioFuncionario_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void empresasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Empresas CadastroEmpresa = new Empresas();
+            CadastroEmpresa.ShowDialog();
+        }
+
+        private void setoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Setores CadastroSetores = new Setores();
+            CadastroSetores.ShowDialog();
         }
     }
 }

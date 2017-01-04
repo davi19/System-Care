@@ -57,16 +57,6 @@ C:\Users\Davi\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\De
 C:\Users\Davi\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.application
 C:\Users\Davi\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.exe
 C:\Users\Davi\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.pdb
-C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.Ajuda.resources
-C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.BuscarEmpresa.resources
-C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.BuscarFuncao.resources
-C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.BuscarSetor.resources
-C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.Login.resources
-C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.Principal.resources
-C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.Properties.Resources.resources
-C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.Relatorios.resources
-C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.csproj.GenerateResource.Cache
-C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.csprojResolveAssemblyReference.cache
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\bin\Debug\ASO.rdlc
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\bin\Debug\SystemCare.exe.config
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\bin\Debug\SystemCare.exe.manifest
@@ -81,6 +71,15 @@ C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\bin\D
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\bin\Debug\MySql.Data.dll
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\bin\Debug\MySql.Data.xml
+C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.Ajuda.resources
+C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.BuscarFuncao.resources
+C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.BuscarSetor.resources
+C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.Login.resources
+C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.Principal.resources
+C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.Properties.Resources.resources
+C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.Empresas.resources
+C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.Relatorios.resources
+C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.csproj.GenerateResource.Cache
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.exe.manifest
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.application
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.exe
@@ -96,16 +95,15 @@ C:\Users\davi1\systemcare\SystemCare\bin\Debug\Microsoft.ReportViewer.Processing
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\MySql.Data.dll
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\MySql.Data.xml
-C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.csprojResolveAssemblyReference.cache
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Ajuda.resources
-C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.BuscarEmpresa.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.BuscarFuncao.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.BuscarSetor.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Login.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Principal.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Properties.Resources.resources
-C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.QuestionarioFuncionario.resources
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Empresas.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Relatorios.resources
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Setores.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.csproj.GenerateResource.Cache
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.exe.manifest
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.application

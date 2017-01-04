@@ -278,15 +278,18 @@ namespace SystemCare
             return TabelaEmpresas;
         }
 
-        public void CadastrarSetorFuncao(string IdEmpresa,string NomeSetor, string NomeFuncao, string IdCbo, string IdRiscos )
+        public void CadastrarFuncao(string NomeFuncao, string IdCbo, string IdRiscos, string IdSetor)
         {
-            Com.Open();
-            MySqlCommand CadastraSetor = new MySqlCommand("INSERT INTO setores (idempresa,nome) VALUES("+IdEmpresa+",'"+NomeSetor+"')",Com);
-            CadastraSetor.ExecuteNonQuery();
-            long IdSetor = CadastraSetor.LastInsertedId;
-
+            Com.Open();      
             MySqlCommand CadastrarFuncao = new MySqlCommand("INSERT INTO funcoes (idsetor,nome,idrisco,idcbo) VALUE("+IdSetor.ToString()+",'"+NomeFuncao+"','"+IdRiscos+"',"+IdCbo+")",Com);
             CadastrarFuncao.ExecuteNonQuery();
+            Com.Close();
+        }
+        public void CadastrarSetor(string IdEmpresa, string NomeSetor)
+        {
+            Com.Open();
+            MySqlCommand CadastraSetor = new MySqlCommand("INSERT INTO setores (idempresa,nome) VALUES(" + IdEmpresa + ",'" + NomeSetor + "')", Com);
+            CadastraSetor.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -299,16 +302,7 @@ namespace SystemCare
             LeitorCbo.Fill(TabelaCbo);
             Com.Close();
             return TabelaCbo;
-        }
-
-        public void CadastrarSetor(string IdEmpresa,string NomeSetor)
-        {
-            Com.Open();
-            MySqlCommand CadastraSetor = new MySqlCommand("INSERT INTO setores (idempresa,nome) VALUES(" + IdEmpresa + ",'" + NomeSetor + "')", Com);
-            CadastraSetor.ExecuteNonQuery();
-            Com.Close();
-          
-        }
+        }    
 
         public DataTable RetornaDadosSetor(string IdSetor)
         {
@@ -334,15 +328,15 @@ namespace SystemCare
 
         }
 
-        public string RetornaEmpresa(string IdSetor)
+        public string RetornaEmpresa(string IdEmpresa)
         {
             Com.Open();
-            MySqlCommand SelecionaSetor = new MySqlCommand("SELECT idempresa FROM setores WHERE id=" + IdSetor + "", Com);
-            MySqlDataAdapter LeitorSetor = new MySqlDataAdapter(SelecionaSetor);
-            DataTable TabelaSetor = new DataTable();
-            LeitorSetor.Fill(TabelaSetor);
+            MySqlCommand SelecionaEmpresa = new MySqlCommand("SELECT nome FROM empresas WHERE id=" + IdEmpresa + "", Com);
+            MySqlDataAdapter LeitorEmpresa = new MySqlDataAdapter(SelecionaEmpresa);
+            DataTable TabelaEmpresa = new DataTable();
+            LeitorEmpresa.Fill(TabelaEmpresa);
             Com.Close();
-            return TabelaSetor.Rows[0][0].ToString();
+            return TabelaEmpresa.Rows[0][0].ToString();
 
         }
 

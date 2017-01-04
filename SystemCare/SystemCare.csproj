@@ -55,7 +55,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>path3927.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>ACD425943CCA7FF51403422392854AFC1DF24DA2</ManifestCertificateThumbprint>
@@ -67,7 +68,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
@@ -119,23 +120,11 @@
     <Compile Include="Ajuda.Designer.cs">
       <DependentUpon>Ajuda.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarEmpresa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BuscarEmpresa.Designer.cs">
-      <DependentUpon>BuscarEmpresa.cs</DependentUpon>
-    </Compile>
     <Compile Include="BuscarFuncao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BuscarFuncao.Designer.cs">
       <DependentUpon>BuscarFuncao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BuscarSetor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BuscarSetor.Designer.cs">
-      <DependentUpon>BuscarSetor.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -152,17 +141,23 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuerryMysql.cs" />
-    <Compile Include="QuestionarioFuncionario.cs">
+    <Compile Include="Empresas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuestionarioFuncionario.Designer.cs">
-      <DependentUpon>QuestionarioFuncionario.cs</DependentUpon>
+    <Compile Include="Empresas.Designer.cs">
+      <DependentUpon>Empresas.cs</DependentUpon>
     </Compile>
     <Compile Include="Relatorios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios.Designer.cs">
       <DependentUpon>Relatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setores.Designer.cs">
+      <DependentUpon>Setores.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Ajuda.resx">
       <DependentUpon>Ajuda.cs</DependentUpon>
@@ -171,14 +166,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <EmbeddedResource Include="BuscarEmpresa.resx">
-      <DependentUpon>BuscarEmpresa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BuscarFuncao.resx">
       <DependentUpon>BuscarFuncao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BuscarSetor.resx">
-      <DependentUpon>BuscarSetor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -199,11 +188,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuestionarioFuncionario.resx">
-      <DependentUpon>QuestionarioFuncionario.cs</DependentUpon>
+    <EmbeddedResource Include="Empresas.resx">
+      <DependentUpon>Empresas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios.resx">
       <DependentUpon>Relatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setores.resx">
+      <DependentUpon>Setores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -224,10 +216,6 @@
     <None Include="Resources\magnifier.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="g938.ico" />
-    <Content Include="g978.ico" />
-    <Content Include="Logo.ico" />
-    <Content Include="path3927.ico" />
     <None Include="Resources\pRINCIPAL.png" />
     <None Include="Resources\Logo.png" />
   </ItemGroup>

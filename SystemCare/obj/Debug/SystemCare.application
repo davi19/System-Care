@@ -14,14 +14,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="SystemCare.exe.manifest" size="11454">
+    <dependentAssembly dependencyType="install" codebase="SystemCare.exe.manifest" size="9810">
       <assemblyIdentity name="SystemCare.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="pt-BR" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7HL/WAtFepW09aBRiK2RwtX/S8p2/uebM/g+YHJN+pk=</dsig:DigestValue>
+        <dsig:DigestValue>lRWYZgK3TJybqqKIc4cd6IMkSx4Z+0MCTxbtMdpmN0U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
