@@ -71,7 +71,7 @@ namespace SystemCare
         public DataTable BuscaSetor(string ValorDigitado)
         {
             Com.Open();
-            MySqlCommand SelecionaSetor = new MySqlCommand("SELECT a.id as ID, a.nome as 'NOME SETOR', b.nome FROM setores a, empresas b  WHERE b.id = a.idempresa AND a.excluido='N' AND a.nome LIKE'%" + ValorDigitado + "%' ;", Com);
+            MySqlCommand SelecionaSetor = new MySqlCommand("SELECT a.id as ID, a.nome as 'NOME SETOR', b.nome as 'NOME EMPRESA' FROM setores a, empresas b  WHERE b.id = a.idempresa AND a.excluido='N' AND a.nome LIKE'%" + ValorDigitado + "%' ;", Com);
             MySqlDataAdapter LeitorSetor = new MySqlDataAdapter(SelecionaSetor);
             DataTable TabelaSetor = new DataTable();
              LeitorSetor.Fill(TabelaSetor);
@@ -340,6 +340,29 @@ namespace SystemCare
 
         }
 
+        public string RetornaSetor(string IdSetor)
+        {
+            Com.Open();
+            MySqlCommand SelecionaSetor = new MySqlCommand("SELECT nome FROM setores WHERE id=" + IdSetor + "", Com);
+            MySqlDataAdapter LeitorSetor = new MySqlDataAdapter(SelecionaSetor);
+            DataTable TabelaSetor = new DataTable();
+            LeitorSetor.Fill(TabelaSetor);
+            Com.Close();
+            return TabelaSetor.Rows[0][0].ToString();
+
+        }
+        public string RetornaCbo(string IdCbo)
+        {
+            Com.Open();
+            MySqlCommand SelecionaCbo = new MySqlCommand("SELECT id,codigo FROM cbo WHERE id=" + IdCbo + "", Com);
+            MySqlDataAdapter LeitorCbo = new MySqlDataAdapter(SelecionaCbo);
+            DataTable TabelaCbo = new DataTable();
+            LeitorCbo.Fill(TabelaCbo);
+            Com.Close();
+            return TabelaCbo.Rows[0][0].ToString()+" | "+ TabelaCbo.Rows[0][1].ToString();
+
+        }
+
 
         public void ExcluirSetor(string IdSetor)
         {
@@ -361,12 +384,12 @@ namespace SystemCare
             Com.Close();
         }
 
-        public void EditarFuncao(string Nome, string IdSetor,string IdFuncao,string IdRiscos)
+        public void EditarFuncao(string Nome, string IdSetor,string IdFuncao,string IdRiscos,string IdCbo)
         {
             Com.Open();
             MySqlCommand EditarEmpresa =
                 new MySqlCommand(
-                    "UPDATE funcoes SET nome ='" + Nome + "' ,idsetor=" + IdSetor + ", idrisco='"+IdRiscos+"' WHERE id=" + IdFuncao + ";", Com);
+                    "UPDATE funcoes SET nome ='" + Nome + "' ,idsetor=" + IdSetor + ", idrisco='"+IdRiscos+"', idcbo="+IdCbo+" WHERE id=" + IdFuncao + ";", Com);
             EditarEmpresa.ExecuteNonQuery();
             SetEmpresa("");
             Com.Close();

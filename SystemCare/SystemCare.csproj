@@ -120,11 +120,11 @@
     <Compile Include="Ajuda.Designer.cs">
       <DependentUpon>Ajuda.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarFuncao.cs">
+    <Compile Include="Funcoes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarFuncao.Designer.cs">
-      <DependentUpon>BuscarFuncao.cs</DependentUpon>
+    <Compile Include="Funcoes.Designer.cs">
+      <DependentUpon>Funcoes.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -166,8 +166,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <EmbeddedResource Include="BuscarFuncao.resx">
-      <DependentUpon>BuscarFuncao.cs</DependentUpon>
+    <EmbeddedResource Include="Funcoes.resx">
+      <DependentUpon>Funcoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

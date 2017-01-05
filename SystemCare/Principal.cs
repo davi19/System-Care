@@ -22,15 +22,6 @@ namespace SystemCare
             InitializeComponent();
           
             Text = "System Care V."+Application.ProductVersion;
-            
-
-            DataTable TabelaRiscos = Cadastro.SelecionaRisco();
-            DataGridRiscos.DataSource = TabelaRiscos;
-
-
-
-
-
 
             DataTable TabelaEmpresa = Cadastro.SelecionaEmpresa();
             ComboEmpresaFuncionario.DataSource = TabelaEmpresa;
@@ -49,127 +40,9 @@ namespace SystemCare
         private void TabSair_Enter(object sender, EventArgs e)
         {
             Application.Exit();
-        }  
+        }    
+     
 
-      
-
-
-   
-
-        private void BtnCadastrarSetorFuncao_Click(object sender, EventArgs e)
-        {
-            if (CheckCadastroFuncao.Checked)
-            {
-                string[] IdCbo = LabelCbo.Text.Split('|');
-                if ( TextNomeFuncao.Text.Length == 0 || IdCbo[0].Equals(""))
-                {
-                    MetroMessageBox.Show(this, "Favor preencher todos os campos em destaque!", "Atenção !", MessageBoxButtons.OK,
-                   MessageBoxIcon.Hand);
-                }
-                else
-                { 
-               
-                string IdRiscos = "";
-
-                    for (int i = 0; i < DataGridRiscos.Rows.Count; i++)
-                    {
-                        try
-                        {
-                            if (Convert.ToBoolean(DataGridRiscos.Rows[i].Cells[0].Value.ToString()))
-                            {
-
-                                IdRiscos = IdRiscos + ";" + DataGridRiscos.Rows[i].Cells[1].Value.ToString();
-
-                            }
-                        }
-                        catch
-                        {
-
-                        }
-                    }
-                    if (IdRiscos.Equals(""))
-                    {
-                        MetroMessageBox.Show(this, "Favor selecionar um risco!", "Atenção !", MessageBoxButtons.OK,
-                            MessageBoxIcon.Hand);
-                    }
-                    else
-                    {
-
-
-                        MetroMessageBox.Show(this, "Setor e Função cadastrado com sucesso!", "Sucesso !",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                    }
-                }
-
-
-                
-            }
-            else
-            {
-
-                
-                    
-                    MetroMessageBox.Show(this, "Setor cadastrado com sucesso!", "Sucesso !", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                
-            }
-        }
-
-        private void BtnBuscarCbo_Click(object sender, EventArgs e)
-        {
-            DataTable TabelaCbo = Cadastro.BuscarCbo(TextCbo.Text);
-            GridCbo.DataSource=TabelaCbo;
-            GridCbo.Visible = true;
-        }
-
-        private void GridCbo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            LabelCbo.Text = " CBO | " + GridCbo.Rows[e.RowIndex].Cells[0].Value + " | " +GridCbo.Rows[e.RowIndex].Cells[1].Value;
-            LabelCbo.UseStyleColors = true;
-            LabelCbo.FontWeight = MetroLabelWeight.Bold;
-            LabelCbo.AutoSize = true;
-            TextCbo.Text = "";
-            GridCbo.DataSource = null;
-            GridCbo.Visible = false;
-        }
-
-        private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CheckCadastroFuncao.Checked)
-            {
-                TextCbo.Enabled = true;
-                TextNomeFuncao.Enabled = true;
-                DataGridRiscos.Visible = true;
-                BtnBuscarCbo.Enabled = true;
-                TextNomeFuncao.Text = "";
-
-            }
-            else
-            {
-                TextCbo.Enabled = false;
-                TextNomeFuncao.Enabled = false;
-                DataGridRiscos.Visible = false;
-                BtnBuscarCbo.Enabled = false;
-            }
-        }
-
-        private void BtnEditarFuncao_Click(object sender, EventArgs e)
-        {
-            BuscarFuncao buscafuncao = new BuscarFuncao();
-            buscafuncao.ShowDialog();
-            string NomeFuncao = Cadastro.GetFuncao();
-            if (NomeFuncao.Equals("Nenhum"))
-            {
-                
-            }
-            else
-            {
-                TextNomeFuncao.Text = NomeFuncao;
-                CheckCadastroFuncao.Checked = false;
-                TextNomeFuncao.Enabled = false;
-            }
-        }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
@@ -300,6 +173,12 @@ namespace SystemCare
         {
             Setores CadastroSetores = new Setores();
             CadastroSetores.ShowDialog();
+        }
+
+        private void funçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Funcoes CadastraFuncao = new Funcoes();
+            CadastraFuncao.ShowDialog();
         }
     }
 }
