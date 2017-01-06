@@ -130,7 +130,16 @@ namespace SystemCare
             Com.Close();
             return TabelaEmpresa;
         }
-
+        public DataTable RecuperaDadosFuncionario(string IdFuncionario)
+        {
+            Com.Open();
+            MySqlCommand SelecionaFuncionario = new MySqlCommand("SELECT * FROM funcionarios WHERE id=" + IdFuncionario + ";", Com);
+            MySqlDataAdapter LeitorFuncionario = new MySqlDataAdapter(SelecionaFuncionario);
+            DataTable TabelaFuncionario = new DataTable();
+            LeitorFuncionario.Fill(TabelaFuncionario);
+            Com.Close();
+            return TabelaFuncionario;
+        }
         public void EditarEmpresa(string Nome, string Endereco, string Cnpj, int QuantidadeFuncionario, string Telefone, string Email, string IdCnae, int Risco)
         {
             Com.Open();
@@ -339,6 +348,17 @@ namespace SystemCare
             return TabelaEmpresa.Rows[0][0].ToString();
 
         }
+        public string RetornaFuncao(string IdFuncao)
+        {
+            Com.Open();
+            MySqlCommand SelecionaFuncao = new MySqlCommand("SELECT nome FROM funcoes WHERE id=" + IdFuncao + "", Com);
+            MySqlDataAdapter LeitorFuncao = new MySqlDataAdapter(SelecionaFuncao);
+            DataTable TabelaFuncao = new DataTable();
+            LeitorFuncao.Fill(TabelaFuncao);
+            Com.Close();
+            return TabelaFuncao.Rows[0][0].ToString();
+
+        }
 
         public string RetornaSetor(string IdSetor)
         {
@@ -402,6 +422,51 @@ namespace SystemCare
                 new MySqlCommand("UPDATE funcoes set excluido='S' WHERE id=" + IdFuncao + ";", Com);
             ExcluiFuncao.ExecuteNonQuery();
             Com.Close();
+        }
+
+        public void ExcluirFuncionario(string IdFuncionario)
+        {
+            Com.Open();
+            MySqlCommand ExcluiFuncionario =
+                new MySqlCommand("UPDATE funcionarios set excluido='S' WHERE id=" + IdFuncionario + ";", Com);
+            ExcluiFuncionario.ExecuteNonQuery();
+            Com.Close();
+        }
+        public void CadastraFuncionario(string Nome,string Idade, string Sexo, decimal Altura,decimal Peso,string Imc,string Cpf,string Identidade, string Telefone, DateTime DataNascimento, string Naturalidade, string IdFuncao)
+        {
+            Com.Open();
+            MySqlCommand InserirFuncionario =
+                new MySqlCommand(
+                    "insert into funcionarios (nome,idade,sexo,altura,peso,imc,cpf,identidade,telefone,datanascimento,naturalidade,idfuncao) VALUES ('" +
+                    Nome + "'," + Idade + ",'" + Sexo + "','" + Altura + "','" + Peso + "'," + Imc + ",'" + Cpf.Replace(',','.') + "','" +
+                    Identidade + "','" + Telefone + "','" + DataNascimento.Date.ToString("yyyy-MM-dd") + "','" +
+                    Naturalidade + "'," + IdFuncao + ")", Com);
+            InserirFuncionario.ExecuteNonQuery();
+            Com.Close();
+        }
+        public void AtualizaFuncionario(string IdFuncionario,string Nome, string Idade, string Sexo, decimal Altura, decimal Peso, string Imc, string Cpf, string Identidade, string Telefone, DateTime DataNascimento, string Naturalidade, string IdFuncao)
+        {
+            Com.Open();
+            MySqlCommand InserirFuncionario =
+                new MySqlCommand(
+                    "UPDATE funcionarios SET nome='" +
+                    Nome + "',idade=" + Idade + ",sexo='" + Sexo + "',altura='" + Altura.ToString().Replace(',','.') + "',peso='" + Peso.ToString().Replace(',', '.') + "',imc=" +
+                    Imc + ",cpf='" + Cpf.Replace(',', '.') + "',identidade='" +
+                    Identidade + "',telefone='" + Telefone + "',datanascimento='" +
+                    DataNascimento.Date.ToString("yyyy-MM-dd") + "',naturalidade='" +
+                    Naturalidade + "',idfuncao=" + IdFuncao + " WHERE id="+IdFuncionario+";", Com);
+            InserirFuncionario.ExecuteNonQuery();
+            Com.Close();
+        }
+        public DataTable BuscaFuncionario(string ValorDigitado)
+        {
+            Com.Open();
+            MySqlCommand SelecionaFuncionario = new MySqlCommand("select a.id as ID,a.nome as 'NOME FUNCIONÁRIO',a.cpf as CPF,b.nome as 'NOME FUNÇÃO',d.nome as 'NOME EMPRESA' from funcionarios a , funcoes b, setores c , empresas d where c.idempresa=d.id AND a.idfuncao=b.id AND b.idsetor=c.id AND (a.nome like'%"+ValorDigitado+"%'  or a.cpf like'%"+ValorDigitado+"%')", Com);
+            MySqlDataAdapter LeitorFuncionario = new MySqlDataAdapter(SelecionaFuncionario);
+            DataTable TabelaFuncionario = new DataTable();
+            LeitorFuncionario.Fill(TabelaFuncionario);
+            Com.Close();
+            return TabelaFuncionario;
         }
 
     }
