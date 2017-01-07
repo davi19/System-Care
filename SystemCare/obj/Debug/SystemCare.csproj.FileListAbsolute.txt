@@ -110,3 +110,5 @@ C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.exe
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.pdb
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.csprojResolveAssemblyReference.cache
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Funcionarios.resources
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.ExamesAvaliacoes.resources
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.PesquisaFuncionario.resources

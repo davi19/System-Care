@@ -55,5 +55,11 @@ namespace SystemCare
             Ajuda ajuda = new Ajuda();
             ajuda.ShowDialog();
         }
+
+        private void examesEAvaliaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExamesAvaliacoes CadastroAvaliação = new ExamesAvaliacoes();
+            CadastroAvaliação.ShowDialog();
+        }
     }
 }

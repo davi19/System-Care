@@ -13,7 +13,7 @@ namespace SystemCare
         MySqlConnection Com = new MySqlConnection("Server = localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
         static  string IdEmpresaEditar = "";
         private static string NomeSetor = "";
-        private static string NomeFuncao = "";
+        private static string IdFuncionario= "";
 
         public bool Login(string Usuario, string Senha)
         {
@@ -110,14 +110,14 @@ namespace SystemCare
             return NomeSetor;
         }
 
-        public void SetFuncao(string NomeFuncaoUsar)
+        public void SetFuncionario(string IdFuncionarioUsar)
         {
-            NomeFuncao = NomeFuncaoUsar;
+            IdFuncionario= IdFuncionarioUsar;
         }
 
-        public string GetFuncao()
+        public string GetFuncionario()
         {
-            return NomeFuncao;
+            return IdFuncionario;
         }
 
         public DataTable RecuperaDadosEmpresa()
@@ -240,7 +240,7 @@ namespace SystemCare
             {
                 Com.Open();
                 MySqlCommand SelecionaFuncao =
-                    new MySqlCommand("select a.descricao, b.descricao from gruposriscos a , riscos b where b.idgrupo=a.id AND b.id=" + IdFuncao + ";",
+                    new MySqlCommand("select a.descricao as 'GRUPO DO RISCO', b.descricao AS 'RISCO' from gruposriscos a , riscos b where b.idgrupo=a.id AND b.id=" + IdFuncao + ";",
                         Com);
                 MySqlDataAdapter LeitorFuncao = new MySqlDataAdapter(SelecionaFuncao);
                 DataTable TabelaFuncao = new DataTable();
@@ -458,6 +458,7 @@ namespace SystemCare
             InserirFuncionario.ExecuteNonQuery();
             Com.Close();
         }
+
         public DataTable BuscaFuncionario(string ValorDigitado)
         {
             Com.Open();
@@ -467,6 +468,14 @@ namespace SystemCare
             LeitorFuncionario.Fill(TabelaFuncionario);
             Com.Close();
             return TabelaFuncionario;
+        }
+
+        public void CadastraHistorico(string Idfuncionario,string Apto, string ModalidadeExame, string TipoExame, string IdFuncao)
+        {
+            Com.Open();
+            MySqlCommand InserirHistorico = new MySqlCommand("INSERT INTO historicos (idfuncionario,apto,modalidadeexame,tipoexame,idfuncao,datadoexame) VALUES("+Idfuncionario+",'"+Apto+"','"+ModalidadeExame+"','"+TipoExame+"',"+IdFuncao+",NOW())",Com);
+            InserirHistorico.ExecuteNonQuery();
+            Com.Close();
         }
 
     }

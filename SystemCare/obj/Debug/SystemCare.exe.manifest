@@ -143,14 +143,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SystemCare.exe" size="12104152">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SystemCare.exe" size="12341208">
       <assemblyIdentity name="SystemCare" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7KR2a58zT/+n+q3JsVw1TAdlbo9LJjtfUHEgdS8TZVQ=</dsig:DigestValue>
+        <dsig:DigestValue>nLsR2z+xsWrnm2/q0uvfnk2pLnP5S9C+qCVXFw8vdHg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

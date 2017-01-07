@@ -107,6 +107,7 @@
             this.examesEAvaliaçãoToolStripMenuItem.Name = "examesEAvaliaçãoToolStripMenuItem";
             this.examesEAvaliaçãoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.examesEAvaliaçãoToolStripMenuItem.Text = "Exames e Avaliação";
+            this.examesEAvaliaçãoToolStripMenuItem.Click += new System.EventHandler(this.examesEAvaliaçãoToolStripMenuItem_Click);
             // 
             // parametrosDoSistemaToolStripMenuItem
             // 
