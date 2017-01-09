@@ -14,6 +14,7 @@ namespace SystemCare
         static  string IdEmpresaEditar = "";
         private static string NomeSetor = "";
         private static string IdFuncionario= "";
+        private static string IdFuncionarioNova = "";
 
         public bool Login(string Usuario, string Senha)
         {
@@ -120,6 +121,15 @@ namespace SystemCare
             return IdFuncionario;
         }
 
+        public void SetFuncionarioNova(string IdFuncionarioUsar)
+        {
+            IdFuncionarioNova = IdFuncionarioUsar;
+        }
+
+        public string GetFuncionarioNova()
+        {
+            return IdFuncionarioNova;
+        }
         public DataTable RecuperaDadosEmpresa()
         {
             Com.Open();

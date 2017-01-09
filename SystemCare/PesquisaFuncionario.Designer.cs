@@ -149,6 +149,7 @@
             this.TextFuncionarioBusca.UseStyleColors = true;
             this.TextFuncionarioBusca.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextFuncionarioBusca.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.TextFuncionarioBusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextFuncionarioBusca_KeyPress);
             // 
             // PesquisaFuncionario
             // 
