@@ -12,7 +12,7 @@ namespace SystemCare
         private static string IdFuncionarioNova = "";
 
         private readonly MySqlConnection Com =
-            new MySqlConnection("Server = localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+            new MySqlConnection("Server = 192.168.0.101; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
         public bool Login(string Usuario, string Senha)
         {
