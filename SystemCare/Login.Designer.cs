@@ -35,6 +35,9 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.BtnSair = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TextUsuario
@@ -52,7 +55,7 @@
             this.TextUsuario.CustomButton.UseSelectable = true;
             this.TextUsuario.CustomButton.Visible = false;
             this.TextUsuario.Lines = new string[0];
-            this.TextUsuario.Location = new System.Drawing.Point(23, 103);
+            this.TextUsuario.Location = new System.Drawing.Point(23, 192);
             this.TextUsuario.MaxLength = 32767;
             this.TextUsuario.Name = "TextUsuario";
             this.TextUsuario.PasswordChar = '\0';
@@ -85,7 +88,7 @@
             this.TextSenha.CustomButton.UseSelectable = true;
             this.TextSenha.CustomButton.Visible = false;
             this.TextSenha.Lines = new string[0];
-            this.TextSenha.Location = new System.Drawing.Point(23, 158);
+            this.TextSenha.Location = new System.Drawing.Point(23, 240);
             this.TextSenha.MaxLength = 32767;
             this.TextSenha.Name = "TextSenha";
             this.TextSenha.PasswordChar = '*';
@@ -107,7 +110,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 81);
+            this.metroLabel1.Location = new System.Drawing.Point(23, 170);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(53, 19);
             this.metroLabel1.TabIndex = 2;
@@ -117,7 +120,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(23, 136);
+            this.metroLabel2.Location = new System.Drawing.Point(23, 218);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(44, 19);
             this.metroLabel2.TabIndex = 3;
@@ -126,7 +129,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(202, 234);
+            this.metroButton1.Location = new System.Drawing.Point(151, 315);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(75, 23);
             this.metroButton1.Style = MetroFramework.MetroColorStyle.Green;
@@ -139,7 +142,7 @@
             // 
             // BtnSair
             // 
-            this.BtnSair.Location = new System.Drawing.Point(23, 234);
+            this.BtnSair.Location = new System.Drawing.Point(55, 315);
             this.BtnSair.Name = "BtnSair";
             this.BtnSair.Size = new System.Drawing.Size(75, 23);
             this.BtnSair.Style = MetroFramework.MetroColorStyle.Green;
@@ -150,11 +153,33 @@
             this.BtnSair.UseStyleColors = true;
             this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SystemCare.Properties.Resources.Icon;
+            this.pictureBox1.Location = new System.Drawing.Point(62, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(171, 142);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.Location = new System.Drawing.Point(68, 269);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(165, 23);
+            this.metroLink1.TabIndex = 7;
+            this.metroLink1.Text = "www.cactusdevs.com.br";
+            this.metroLink1.UseSelectable = true;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 300);
+            this.ClientSize = new System.Drawing.Size(300, 361);
+            this.Controls.Add(this.metroLink1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnSair);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroLabel2);
@@ -166,7 +191,7 @@
             this.Name = "Login";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "System Care";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +205,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton BtnSair;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroLink metroLink1;
     }
 }

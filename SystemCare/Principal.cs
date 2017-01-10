@@ -1,64 +1,54 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework;
 using MetroFramework.Forms;
-using Microsoft.Reporting.WebForms;
-using ReportParameter = Microsoft.Reporting.WebForms.Internal.Soap.ReportingServices2005.Execution.ReportParameter;
 
 namespace SystemCare
 {
     public partial class Principal : MetroForm
     {
-        QuerryMysql Cadastro = new QuerryMysql();
+        private QuerryMysql Cadastro = new QuerryMysql();
+
         public Principal()
         {
             InitializeComponent();
-          
-            Text = "System Care V. "+Application.ProductVersion;
 
-        }  
-      
+            Text = "System Care V. " + Application.ProductVersion;
+        }
+
 
         private void empresasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Empresas CadastroEmpresa = new Empresas();
+            var CadastroEmpresa = new Empresas();
             CadastroEmpresa.ShowDialog();
         }
 
         private void setoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Setores CadastroSetores = new Setores();
+            var CadastroSetores = new Setores();
             CadastroSetores.ShowDialog();
         }
 
         private void funçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Funcoes CadastraFuncao = new Funcoes();
+            var CadastraFuncao = new Funcoes();
             CadastraFuncao.ShowDialog();
         }
 
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Funcionarios CadastroFuncionario = new Funcionarios();
+            var CadastroFuncionario = new Funcionarios();
             CadastroFuncionario.ShowDialog();
         }
 
         private void ajudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ajuda ajuda = new Ajuda();
+            var ajuda = new Ajuda();
             ajuda.ShowDialog();
         }
 
         private void examesEAvaliaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExamesAvaliacoes CadastroAvaliação = new ExamesAvaliacoes();
+            var CadastroAvaliação = new ExamesAvaliacoes();
             CadastroAvaliação.ShowDialog();
         }
     }

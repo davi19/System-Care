@@ -112,3 +112,4 @@ C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.csprojResolveAssemblyR
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Funcionarios.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.ExamesAvaliacoes.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.PesquisaFuncionario.resources
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Histórico.resources

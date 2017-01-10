@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 
@@ -13,8 +6,9 @@ namespace SystemCare
 {
     public partial class PesquisaFuncionario : MetroForm
     {
-        QuerryMysql Cadastro = new QuerryMysql();
-        private string TipoFuncionario = "";
+        private readonly QuerryMysql Cadastro = new QuerryMysql();
+        private readonly string TipoFuncionario = "";
+
         public PesquisaFuncionario(string Tipo)
         {
             TipoFuncionario = Tipo;
@@ -24,7 +18,7 @@ namespace SystemCare
         private void BtnBuscarFuncionario_Click(object sender, EventArgs e)
         {
             GridFuncionarioEditar.DataSource = null;
-            DataTable TabelFuncionarios = Cadastro.BuscaFuncionario(TextFuncionarioBusca.Text);
+            var TabelFuncionarios = Cadastro.BuscaFuncionario(TextFuncionarioBusca.Text);
             GridFuncionarioEditar.DataSource = TabelFuncionarios;
         }
 
@@ -33,22 +27,19 @@ namespace SystemCare
             if (TipoFuncionario.Equals("0"))
             {
                 Cadastro.SetFuncionario(GridFuncionarioEditar.Rows[e.RowIndex].Cells[0].Value.ToString());
-                this.Hide();
+                Hide();
             }
             else
             {
                 Cadastro.SetFuncionarioNova(GridFuncionarioEditar.Rows[e.RowIndex].Cells[0].Value.ToString());
-                this.Hide();
+                Hide();
             }
-
         }
 
         private void TextFuncionarioBusca_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
-            {
-                BtnBuscarFuncionario_Click(sender,e);
-            }
+                BtnBuscarFuncionario_Click(sender, e);
         }
     }
 }

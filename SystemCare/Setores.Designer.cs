@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabSetores = new MetroFramework.Controls.MetroTabControl();
             this.CadastrarSetor = new MetroFramework.Controls.MetroTabPage();
             this.BtnBuscarEmpresa = new MetroFramework.Controls.MetroButton();
@@ -49,6 +49,13 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.TextNomeSetor = new MetroFramework.Controls.MetroTextBox();
             this.EditarSetor = new MetroFramework.Controls.MetroTabPage();
+            this.BtnBuscaSetorEditar = new MetroFramework.Controls.MetroButton();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.TextPesquisaSetorEditar = new MetroFramework.Controls.MetroTextBox();
+            this.DataGridSetorEditar = new MetroFramework.Controls.MetroGrid();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.BtnExcluir = new MetroFramework.Controls.MetroButton();
+            this.BtnEditar = new MetroFramework.Controls.MetroButton();
             this.BtnBuscaEmpresaEditar = new MetroFramework.Controls.MetroButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.TextPesquisaEmpresaEditar = new MetroFramework.Controls.MetroTextBox();
@@ -56,19 +63,12 @@
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.TextNomeSetorEditar = new MetroFramework.Controls.MetroTextBox();
-            this.BtnEditar = new MetroFramework.Controls.MetroButton();
-            this.BtnExcluir = new MetroFramework.Controls.MetroButton();
-            this.BtnBuscaSetorEditar = new MetroFramework.Controls.MetroButton();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.TextPesquisaSetorEditar = new MetroFramework.Controls.MetroTextBox();
-            this.DataGridSetorEditar = new MetroFramework.Controls.MetroGrid();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TabSetores.SuspendLayout();
             this.CadastrarSetor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridEmpresas)).BeginInit();
             this.EditarSetor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridEmpresaEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridSetorEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridEmpresaEditar)).BeginInit();
             this.SuspendLayout();
             // 
             // TabSetores
@@ -307,6 +307,148 @@
             this.EditarSetor.VerticalScrollbarHighlightOnWheel = false;
             this.EditarSetor.VerticalScrollbarSize = 10;
             // 
+            // BtnBuscaSetorEditar
+            // 
+            this.BtnBuscaSetorEditar.Location = new System.Drawing.Point(759, 36);
+            this.BtnBuscaSetorEditar.Name = "BtnBuscaSetorEditar";
+            this.BtnBuscaSetorEditar.Size = new System.Drawing.Size(75, 20);
+            this.BtnBuscaSetorEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.BtnBuscaSetorEditar.TabIndex = 28;
+            this.BtnBuscaSetorEditar.Text = "Buscar";
+            this.BtnBuscaSetorEditar.UseSelectable = true;
+            this.BtnBuscaSetorEditar.UseStyleColors = true;
+            this.BtnBuscaSetorEditar.Click += new System.EventHandler(this.BtnBuscaSetorEditar_Click);
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(15, 14);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(85, 19);
+            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel4.TabIndex = 27;
+            this.metroLabel4.Text = "Nome Setor:";
+            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel4.UseStyleColors = true;
+            // 
+            // TextPesquisaSetorEditar
+            // 
+            this.TextPesquisaSetorEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextPesquisaSetorEditar.CustomButton.Image = null;
+            this.TextPesquisaSetorEditar.CustomButton.Location = new System.Drawing.Point(720, 2);
+            this.TextPesquisaSetorEditar.CustomButton.Name = "";
+            this.TextPesquisaSetorEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextPesquisaSetorEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextPesquisaSetorEditar.CustomButton.TabIndex = 1;
+            this.TextPesquisaSetorEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextPesquisaSetorEditar.CustomButton.UseSelectable = true;
+            this.TextPesquisaSetorEditar.CustomButton.Visible = false;
+            this.TextPesquisaSetorEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextPesquisaSetorEditar.Icon")));
+            this.TextPesquisaSetorEditar.Lines = new string[0];
+            this.TextPesquisaSetorEditar.Location = new System.Drawing.Point(15, 36);
+            this.TextPesquisaSetorEditar.MaxLength = 32767;
+            this.TextPesquisaSetorEditar.Name = "TextPesquisaSetorEditar";
+            this.TextPesquisaSetorEditar.PasswordChar = '\0';
+            this.TextPesquisaSetorEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextPesquisaSetorEditar.SelectedText = "";
+            this.TextPesquisaSetorEditar.SelectionLength = 0;
+            this.TextPesquisaSetorEditar.SelectionStart = 0;
+            this.TextPesquisaSetorEditar.ShortcutsEnabled = true;
+            this.TextPesquisaSetorEditar.Size = new System.Drawing.Size(738, 20);
+            this.TextPesquisaSetorEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextPesquisaSetorEditar.TabIndex = 26;
+            this.TextPesquisaSetorEditar.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextPesquisaSetorEditar.UseSelectable = true;
+            this.TextPesquisaSetorEditar.UseStyleColors = true;
+            this.TextPesquisaSetorEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextPesquisaSetorEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.TextPesquisaSetorEditar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextPesquisaSetorEditar_KeyPress);
+            // 
+            // DataGridSetorEditar
+            // 
+            this.DataGridSetorEditar.AllowUserToAddRows = false;
+            this.DataGridSetorEditar.AllowUserToDeleteRows = false;
+            this.DataGridSetorEditar.AllowUserToResizeRows = false;
+            this.DataGridSetorEditar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DataGridSetorEditar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridSetorEditar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.DataGridSetorEditar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataGridSetorEditar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DataGridSetorEditar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridSetorEditar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DataGridSetorEditar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridSetorEditar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn2});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridSetorEditar.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DataGridSetorEditar.EnableHeadersVisualStyles = false;
+            this.DataGridSetorEditar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.DataGridSetorEditar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.DataGridSetorEditar.Location = new System.Drawing.Point(15, 62);
+            this.DataGridSetorEditar.Name = "DataGridSetorEditar";
+            this.DataGridSetorEditar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridSetorEditar.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DataGridSetorEditar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DataGridSetorEditar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridSetorEditar.Size = new System.Drawing.Size(819, 75);
+            this.DataGridSetorEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.DataGridSetorEditar.TabIndex = 25;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Seleciona";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewCheckBoxColumn2.Width = 79;
+            // 
+            // BtnExcluir
+            // 
+            this.BtnExcluir.Location = new System.Drawing.Point(687, 389);
+            this.BtnExcluir.Name = "BtnExcluir";
+            this.BtnExcluir.Size = new System.Drawing.Size(75, 20);
+            this.BtnExcluir.Style = MetroFramework.MetroColorStyle.Green;
+            this.BtnExcluir.TabIndex = 24;
+            this.BtnExcluir.Text = "Excluir";
+            this.BtnExcluir.UseSelectable = true;
+            this.BtnExcluir.UseStyleColors = true;
+            this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
+            // 
+            // BtnEditar
+            // 
+            this.BtnEditar.Location = new System.Drawing.Point(768, 389);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(75, 20);
+            this.BtnEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.BtnEditar.TabIndex = 23;
+            this.BtnEditar.Text = "Editar";
+            this.BtnEditar.UseSelectable = true;
+            this.BtnEditar.UseStyleColors = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
             // BtnBuscaEmpresaEditar
             // 
             this.BtnBuscaEmpresaEditar.Location = new System.Drawing.Point(759, 162);
@@ -477,153 +619,13 @@
             this.TextNomeSetorEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNomeSetorEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // BtnEditar
-            // 
-            this.BtnEditar.Location = new System.Drawing.Point(768, 389);
-            this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(75, 20);
-            this.BtnEditar.Style = MetroFramework.MetroColorStyle.Green;
-            this.BtnEditar.TabIndex = 23;
-            this.BtnEditar.Text = "Editar";
-            this.BtnEditar.UseSelectable = true;
-            this.BtnEditar.UseStyleColors = true;
-            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
-            // 
-            // BtnExcluir
-            // 
-            this.BtnExcluir.Location = new System.Drawing.Point(687, 389);
-            this.BtnExcluir.Name = "BtnExcluir";
-            this.BtnExcluir.Size = new System.Drawing.Size(75, 20);
-            this.BtnExcluir.Style = MetroFramework.MetroColorStyle.Green;
-            this.BtnExcluir.TabIndex = 24;
-            this.BtnExcluir.Text = "Excluir";
-            this.BtnExcluir.UseSelectable = true;
-            this.BtnExcluir.UseStyleColors = true;
-            // 
-            // BtnBuscaSetorEditar
-            // 
-            this.BtnBuscaSetorEditar.Location = new System.Drawing.Point(759, 36);
-            this.BtnBuscaSetorEditar.Name = "BtnBuscaSetorEditar";
-            this.BtnBuscaSetorEditar.Size = new System.Drawing.Size(75, 20);
-            this.BtnBuscaSetorEditar.Style = MetroFramework.MetroColorStyle.Green;
-            this.BtnBuscaSetorEditar.TabIndex = 28;
-            this.BtnBuscaSetorEditar.Text = "Buscar";
-            this.BtnBuscaSetorEditar.UseSelectable = true;
-            this.BtnBuscaSetorEditar.UseStyleColors = true;
-            this.BtnBuscaSetorEditar.Click += new System.EventHandler(this.BtnBuscaSetorEditar_Click);
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(15, 14);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(85, 19);
-            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel4.TabIndex = 27;
-            this.metroLabel4.Text = "Nome Setor:";
-            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel4.UseStyleColors = true;
-            // 
-            // TextPesquisaSetorEditar
-            // 
-            this.TextPesquisaSetorEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextPesquisaSetorEditar.CustomButton.Image = null;
-            this.TextPesquisaSetorEditar.CustomButton.Location = new System.Drawing.Point(720, 2);
-            this.TextPesquisaSetorEditar.CustomButton.Name = "";
-            this.TextPesquisaSetorEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextPesquisaSetorEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextPesquisaSetorEditar.CustomButton.TabIndex = 1;
-            this.TextPesquisaSetorEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextPesquisaSetorEditar.CustomButton.UseSelectable = true;
-            this.TextPesquisaSetorEditar.CustomButton.Visible = false;
-            this.TextPesquisaSetorEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextPesquisaSetorEditar.Icon")));
-            this.TextPesquisaSetorEditar.Lines = new string[0];
-            this.TextPesquisaSetorEditar.Location = new System.Drawing.Point(15, 36);
-            this.TextPesquisaSetorEditar.MaxLength = 32767;
-            this.TextPesquisaSetorEditar.Name = "TextPesquisaSetorEditar";
-            this.TextPesquisaSetorEditar.PasswordChar = '\0';
-            this.TextPesquisaSetorEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextPesquisaSetorEditar.SelectedText = "";
-            this.TextPesquisaSetorEditar.SelectionLength = 0;
-            this.TextPesquisaSetorEditar.SelectionStart = 0;
-            this.TextPesquisaSetorEditar.ShortcutsEnabled = true;
-            this.TextPesquisaSetorEditar.Size = new System.Drawing.Size(738, 20);
-            this.TextPesquisaSetorEditar.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextPesquisaSetorEditar.TabIndex = 26;
-            this.TextPesquisaSetorEditar.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextPesquisaSetorEditar.UseSelectable = true;
-            this.TextPesquisaSetorEditar.UseStyleColors = true;
-            this.TextPesquisaSetorEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextPesquisaSetorEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.TextPesquisaSetorEditar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextPesquisaSetorEditar_KeyPress);
-            // 
-            // DataGridSetorEditar
-            // 
-            this.DataGridSetorEditar.AllowUserToAddRows = false;
-            this.DataGridSetorEditar.AllowUserToDeleteRows = false;
-            this.DataGridSetorEditar.AllowUserToResizeRows = false;
-            this.DataGridSetorEditar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DataGridSetorEditar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DataGridSetorEditar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.DataGridSetorEditar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataGridSetorEditar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.DataGridSetorEditar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridSetorEditar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.DataGridSetorEditar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridSetorEditar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn2});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridSetorEditar.DefaultCellStyle = dataGridViewCellStyle5;
-            this.DataGridSetorEditar.EnableHeadersVisualStyles = false;
-            this.DataGridSetorEditar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.DataGridSetorEditar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.DataGridSetorEditar.Location = new System.Drawing.Point(15, 62);
-            this.DataGridSetorEditar.Name = "DataGridSetorEditar";
-            this.DataGridSetorEditar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridSetorEditar.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.DataGridSetorEditar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.DataGridSetorEditar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridSetorEditar.Size = new System.Drawing.Size(819, 75);
-            this.DataGridSetorEditar.Style = MetroFramework.MetroColorStyle.Green;
-            this.DataGridSetorEditar.TabIndex = 25;
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Seleciona";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn2.Width = 79;
-            // 
             // Setores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 533);
             this.Controls.Add(this.TabSetores);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Setores";
@@ -635,8 +637,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DataGridEmpresas)).EndInit();
             this.EditarSetor.ResumeLayout(false);
             this.EditarSetor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridEmpresaEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridSetorEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridEmpresaEditar)).EndInit();
             this.ResumeLayout(false);
 
         }
