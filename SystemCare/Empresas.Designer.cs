@@ -99,7 +99,7 @@
             this.CadastrarEmpresa.Controls.Add(this.Editar);
             this.CadastrarEmpresa.Location = new System.Drawing.Point(23, 63);
             this.CadastrarEmpresa.Name = "CadastrarEmpresa";
-            this.CadastrarEmpresa.SelectedIndex = 1;
+            this.CadastrarEmpresa.SelectedIndex = 0;
             this.CadastrarEmpresa.Size = new System.Drawing.Size(843, 447);
             this.CadastrarEmpresa.Style = MetroFramework.MetroColorStyle.Green;
             this.CadastrarEmpresa.TabIndex = 0;
@@ -305,6 +305,7 @@
             this.TextBuscaCnae.UseStyleColors = true;
             this.TextBuscaCnae.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBuscaCnae.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.TextBuscaCnae.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBuscaCnae_KeyPress_1);
             // 
             // BtnBuscaCnae
             // 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Windows.Forms;
+using MetroFramework;
 using MetroFramework.Forms;
 
 namespace SystemCare
@@ -30,21 +32,24 @@ namespace SystemCare
             var BuscarFuncionario = new PesquisaFuncionario("0");
             BuscarFuncionario.ShowDialog();
             var IdFuncionario = Cadastro.GetFuncionario();
-            var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
-            var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
-            var Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
-            LabelRiscos.Text = "";
-            LabelRiscos.Visible = true;
-            var TabelaDadosRiscos = new DataTable();
-            for (var i = 1; i < Riscos.Length; i++)
+            if (!IdFuncionario.Equals(""))
             {
-                TabelaDadosRiscos = Cadastro.SelecionaRiscosFuncao(Riscos[i]);
-                LabelRiscos.Text = LabelRiscos.Text + TabelaDadosRiscos.Rows[0][0] + ": " +
-                                   TabelaDadosRiscos.Rows[0][1] + "\n";
+                var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
+                var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
+                var Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
+                LabelRiscos.Text = "";
+                LabelRiscos.Visible = true;
+                var TabelaDadosRiscos = new DataTable();
+                for (var i = 1; i < Riscos.Length; i++)
+                {
+                    TabelaDadosRiscos = Cadastro.SelecionaRiscosFuncao(Riscos[i]);
+                    LabelRiscos.Text = LabelRiscos.Text + TabelaDadosRiscos.Rows[0][0] + ": " +
+                                       TabelaDadosRiscos.Rows[0][1] + "\n";
+                }
+                LabelFuncionario.Text = "NOME: " + TabelaDadosFuncionario.Rows[0]["nome"] + "     CPF: " +
+                                        TabelaDadosFuncionario.Rows[0]["cpf"] + "     FUNÇÃO: " +
+                                        TabelaFuncao.Rows[0]["nome"];
             }
-            LabelFuncionario.Text = "NOME: " + TabelaDadosFuncionario.Rows[0]["nome"] + "     CPF: " +
-                                    TabelaDadosFuncionario.Rows[0]["cpf"] + "     FUNÇÃO: " +
-                                    TabelaFuncao.Rows[0]["nome"];
         }
 
         private void BtnGerarAos_Click(object sender, EventArgs e)
@@ -81,7 +86,8 @@ namespace SystemCare
                 try
                 {
                     if (Convert.ToBoolean(GridTipoExamePrimeira.Rows[i].Cells[0].Value.ToString()))
-                        TipoExame = TipoExame + ";" + GridTipoExamePrimeira.Rows[i].Cells[1].Value;
+                        TipoExame =  GridTipoExamePrimeira.Rows[i].Cells[1].Value.ToString();
+                    i = GridTipoExamePrimeira.Rows.Count;
                 }
                 catch
                 {
@@ -131,21 +137,25 @@ namespace SystemCare
             var BuscarFuncionario = new PesquisaFuncionario("1");
             BuscarFuncionario.ShowDialog();
             var IdFuncionario = Cadastro.GetFuncionarioNova();
-            var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
-            var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
-            var Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
-            LabelRiscoFuncionario.Text = "";
-            LabelRiscoFuncionario.Visible = true;
-            var TabelaDadosRiscos = new DataTable();
-            for (var i = 1; i < Riscos.Length; i++)
+            if (!IdFuncionario.Equals(""))
             {
-                TabelaDadosRiscos = Cadastro.SelecionaRiscosFuncao(Riscos[i]);
-                LabelRiscoFuncionario.Text = LabelRiscoFuncionario.Text + TabelaDadosRiscos.Rows[0][0] + ": " +
-                                             TabelaDadosRiscos.Rows[0][1] + "\n";
+                var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
+                var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
+                var Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
+                LabelRiscoFuncionario.Text = "";
+                LabelRiscoFuncionario.Visible = true;
+                var TabelaDadosRiscos = new DataTable();
+                for (var i = 1; i < Riscos.Length; i++)
+                {
+                    TabelaDadosRiscos = Cadastro.SelecionaRiscosFuncao(Riscos[i]);
+                    LabelRiscoFuncionario.Text = LabelRiscoFuncionario.Text + TabelaDadosRiscos.Rows[0][0] + ": " +
+                                                 TabelaDadosRiscos.Rows[0][1] + "\n";
+                }
+                LabelFuncionarioNova.Text = "NOME: " + TabelaDadosFuncionario.Rows[0]["nome"] + "     CPF: " +
+                                            TabelaDadosFuncionario.Rows[0]["cpf"] + "     FUNÇÃO: " +
+
+                                            TabelaFuncao.Rows[0]["nome"];
             }
-            LabelFuncionarioNova.Text = "NOME: " + TabelaDadosFuncionario.Rows[0]["nome"] + "     CPF: " +
-                                        TabelaDadosFuncionario.Rows[0]["cpf"] + "     FUNÇÃO: " +
-                                        TabelaFuncao.Rows[0]["nome"];
         }
 
         private void BtnGerarAsoNova_Click(object sender, EventArgs e)
@@ -182,7 +192,8 @@ namespace SystemCare
                 try
                 {
                     if (Convert.ToBoolean(GridTipoExameNova.Rows[i].Cells[0].Value.ToString()))
-                        TipoExame = TipoExame + ";" + GridTipoExameNova.Rows[i].Cells[1].Value;
+                        TipoExame = GridTipoExamePrimeira.Rows[i].Cells[1].Value.ToString();
+                    i = GridTipoExamePrimeira.Rows.Count;
                 }
                 catch
                 {
@@ -225,6 +236,21 @@ namespace SystemCare
                 Empresa,
                 TabelaFuncao.Rows[0]["nome"].ToString(), TabelaDadosFuncionario.Rows[0]["identidade"].ToString());
             AOS.ShowDialog();
+        }
+
+        private void BtnHistorico_Click(object sender, EventArgs e)
+        {
+            var IdFuncionario = Cadastro.GetFuncionarioNova();
+            if (!IdFuncionario.Equals(""))
+            {
+                Historico MostraHistorico = new Historico(IdFuncionario);
+                MostraHistorico.ShowDialog();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                        MessageBoxIcon.Hand);
+            }
         }
     }
 }

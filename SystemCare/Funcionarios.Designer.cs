@@ -1421,6 +1421,8 @@
             this.ClientSize = new System.Drawing.Size(982, 545);
             this.Controls.Add(this.Editar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Funcionarios";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Funcionários";

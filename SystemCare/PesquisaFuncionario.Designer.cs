@@ -161,6 +161,8 @@
             this.Controls.Add(this.metroLabel25);
             this.Controls.Add(this.TextFuncionarioBusca);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PesquisaFuncionario";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Pesquisar Funcionário";

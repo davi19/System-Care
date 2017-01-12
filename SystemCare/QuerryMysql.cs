@@ -10,9 +10,9 @@ namespace SystemCare
         private static string NomeSetor = "";
         private static string IdFuncionario = "";
         private static string IdFuncionarioNova = "";
-
+        //192.168.0.101
         private readonly MySqlConnection Com =
-            new MySqlConnection("Server = 192.168.0.101; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+            new MySqlConnection("Server =localhost ; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
         public bool Login(string Usuario, string Senha)
         {
@@ -536,6 +536,25 @@ namespace SystemCare
                     ",NOW())", Com);
             InserirHistorico.ExecuteNonQuery();
             Com.Close();
+        }
+
+        public DataTable SelecionaHistoricoFuncionario(string IdFuncionario)
+        {
+            Com.Open();
+            MySqlCommand SelecionaHistorico = new MySqlCommand("select c.id,a.nome,b.descricao,c.datadoexame,c.apto from funcionarios a,examesmedicos b, historicos c where a.id=c.idfuncionario AND b.id=c.tipoexame AND c.idfuncionario="+IdFuncionario+";",Com);
+            MySqlDataAdapter LeitorHistorico = new MySqlDataAdapter(SelecionaHistorico);
+            DataTable TabelaHistorico = new DataTable();
+            LeitorHistorico.Fill(TabelaHistorico);
+            Com.Close();
+            return TabelaHistorico;
+        }
+        public void AtualizaHistoricoFuncionario(string IdHistorico,string Apto)
+        {
+            Com.Open();
+            MySqlCommand AtualizaHistorico = new MySqlCommand("UPDATE historicos SET apto='"+Apto+"' WHERE id="+IdHistorico+";", Com);
+            AtualizaHistorico.ExecuteNonQuery();
+            Com.Close();
+            
         }
     }
 }

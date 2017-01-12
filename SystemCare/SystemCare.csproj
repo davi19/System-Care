@@ -28,7 +28,7 @@
     <TargetCulture>pt-BR</TargetCulture>
     <ProductName>System Care</ProductName>
     <PublisherName>Cactus Devs</PublisherName>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -137,11 +137,11 @@
     <Compile Include="Funcoes.Designer.cs">
       <DependentUpon>Funcoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Histórico.cs">
+    <Compile Include="Historico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Histórico.Designer.cs">
-      <DependentUpon>Histórico.cs</DependentUpon>
+    <Compile Include="Historico.Designer.cs">
+      <DependentUpon>Historico.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -201,8 +201,8 @@
     <EmbeddedResource Include="Funcoes.resx">
       <DependentUpon>Funcoes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Histórico.resx">
-      <DependentUpon>Histórico.cs</DependentUpon>
+    <EmbeddedResource Include="Historico.resx">
+      <DependentUpon>Historico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
