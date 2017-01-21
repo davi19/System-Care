@@ -12,7 +12,7 @@ namespace SystemCare
         private static string IdFuncionarioNova = "";
         //192.168.0.101
         private readonly MySqlConnection Com =
-            new MySqlConnection("Server =localhost ; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+            new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
         public bool Login(string Usuario, string Senha)
         {
@@ -555,6 +555,41 @@ namespace SystemCare
             AtualizaHistorico.ExecuteNonQuery();
             Com.Close();
             
+        }
+
+        public DataTable RetornaAsoHistorico(string IdHistorico)
+        {
+            Com.Open();
+            MySqlCommand SelecionaDadosAso = new MySqlCommand("SELECT * FROM historicos WHERE id=" + IdHistorico + ";",
+                Com);
+            MySqlDataAdapter LeitorAso = new MySqlDataAdapter(SelecionaDadosAso);
+            DataTable TabelaAso = new DataTable();
+            LeitorAso.Fill(TabelaAso);
+            Com.Close();
+            return TabelaAso;
+
+        }
+
+        public string RetornaTipoExame(string IdTipoExame)
+        {
+            Com.Open();
+            MySqlCommand SelecionaTipoExame = new MySqlCommand("SELECT descricao FROM examesmedicos WHERE id="+IdTipoExame+";",Com);
+            MySqlDataAdapter LeitorTipoExame = new MySqlDataAdapter(SelecionaTipoExame);
+            DataTable TabelaTipoExame = new DataTable();
+            LeitorTipoExame.Fill(TabelaTipoExame);
+            Com.Close();
+            return TabelaTipoExame.Rows[0][0].ToString();
+        }
+
+        public string RetornaModalidadeExame(string IdTipoExame)
+        {
+            Com.Open();
+            MySqlCommand SelecionaTipoExame = new MySqlCommand("SELECT descricao FROM modalidadeexames WHERE id=" + IdTipoExame + ";", Com);
+            MySqlDataAdapter LeitorTipoExame = new MySqlDataAdapter(SelecionaTipoExame);
+            DataTable TabelaTipoExame = new DataTable();
+            LeitorTipoExame.Fill(TabelaTipoExame);
+            Com.Close();
+            return TabelaTipoExame.Rows[0][0].ToString();
         }
     }
 }

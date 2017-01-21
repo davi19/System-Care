@@ -113,3 +113,17 @@ C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Funcionarios.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.ExamesAvaliacoes.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.PesquisaFuncionario.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Historico.resources
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\RdlCompile.cache
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\RdlCompile.compiled
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll

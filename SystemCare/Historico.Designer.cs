@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Historico));
             this.GridHistorico = new MetroFramework.Controls.MetroGrid();
-            this.GerarAso = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnSalvar = new MetroFramework.Controls.MetroButton();
+            this.GerarAso = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GridHistorico)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,16 +87,7 @@
             this.GridHistorico.Size = new System.Drawing.Size(483, 283);
             this.GridHistorico.Style = MetroFramework.MetroColorStyle.Green;
             this.GridHistorico.TabIndex = 116;
-            // 
-            // GerarAso
-            // 
-            this.GerarAso.HeaderText = "Gerar ASO";
-            this.GerarAso.Name = "GerarAso";
-            this.GerarAso.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GerarAso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.GerarAso.Text = "Gerar ASO";
-            this.GerarAso.ToolTipText = "Gerar ASO";
-            this.GerarAso.Width = 83;
+            this.GridHistorico.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridHistorico_CellClick);
             // 
             // BtnSalvar
             // 
@@ -110,6 +101,18 @@
             this.BtnSalvar.UseSelectable = true;
             this.BtnSalvar.UseStyleColors = true;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
+            // 
+            // GerarAso
+            // 
+            this.GerarAso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GerarAso.HeaderText = "Gerar ASO";
+            this.GerarAso.Name = "GerarAso";
+            this.GerarAso.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GerarAso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.GerarAso.Text = "Gerar ASO";
+            this.GerarAso.ToolTipText = "Gerar ASO";
+            this.GerarAso.UseColumnTextForButtonValue = true;
+            this.GerarAso.Width = 83;
             // 
             // Historico
             // 
@@ -132,7 +135,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroGrid GridHistorico;
-        private System.Windows.Forms.DataGridViewButtonColumn GerarAso;
         private MetroFramework.Controls.MetroButton BtnSalvar;
+        private System.Windows.Forms.DataGridViewButtonColumn GerarAso;
     }
 }
