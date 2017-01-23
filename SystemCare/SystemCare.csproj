@@ -119,6 +119,23 @@
     <Compile Include="Ajuda.Designer.cs">
       <DependentUpon>Ajuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Atestados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atestados.Designer.cs">
+      <DependentUpon>Atestados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="atestados1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>atestados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmpresaRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpresaRelatorio.Designer.cs">
+      <DependentUpon>EmpresaRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExamesAvaliacoes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +165,12 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesquisaEmpresas .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesquisaEmpresas .Designer.cs">
+      <DependentUpon>PesquisaEmpresas .cs</DependentUpon>
     </Compile>
     <Compile Include="PesquisaFuncionario.cs">
       <SubType>Form</SubType>
@@ -182,7 +205,37 @@
     <Compile Include="Setores.Designer.cs">
       <DependentUpon>Setores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vacinas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacinas.Designer.cs">
+      <DependentUpon>Vacinas.cs</DependentUpon>
+    </Compile>
     <Content Include="Icon.ico" />
+    <Content Include="Atestados.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="EmpresaRelatorio.resx">
+      <DependentUpon>EmpresaRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesquisaEmpresas .resx">
+      <DependentUpon>PesquisaEmpresas .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacinas.resx">
+      <DependentUpon>Vacinas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="atestados.xsc">
+      <DependentUpon>atestados.xsd</DependentUpon>
+    </None>
+    <None Include="atestados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>atestados1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="atestados.xss">
+      <DependentUpon>atestados.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Icon.png" />
     <None Include="Resources\thumbnail_med seg.jpg" />
     <EmbeddedResource Include="Ajuda.resx">
@@ -192,6 +245,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <EmbeddedResource Include="Atestados.resx">
+      <DependentUpon>Atestados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExamesAvaliacoes.resx">
       <DependentUpon>ExamesAvaliacoes.cs</DependentUpon>
     </EmbeddedResource>

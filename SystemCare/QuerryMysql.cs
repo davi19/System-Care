@@ -7,6 +7,7 @@ namespace SystemCare
     internal class QuerryMysql
     {
         private static string IdEmpresaEditar = "";
+        private static string IdEmpresaRelatorio = "";
         private static string NomeSetor = "";
         private static string IdFuncionario = "";
         private static string IdFuncionarioNova = "";
@@ -110,7 +111,15 @@ namespace SystemCare
         {
             return IdEmpresaEditar;
         }
+        public void SetEmpresaRelatorio(string IdEmpresa)
+        {
+            IdEmpresaRelatorio = IdEmpresa;
+        }
 
+        public string GetEmpresaRelatorio()
+        {
+            return IdEmpresaRelatorio;
+        }
         public void SetSetor(string NomeSetorUsar)
         {
             NomeSetor = NomeSetorUsar;
@@ -590,6 +599,33 @@ namespace SystemCare
             LeitorTipoExame.Fill(TabelaTipoExame);
             Com.Close();
             return TabelaTipoExame.Rows[0][0].ToString();
+        }
+
+        public void CadastrarAtestado(string Idfuncionario, string DataAtestado, string Cid, string Motivo, string DiasAfastafdo)
+        {
+            Com.Open();
+            MySqlCommand CadastrarAtestado = new MySqlCommand("INSERT INTO atestados (idfuncionario,dataatestado,cid,motivo,diaafastado) VALUES("+Idfuncionario+",'"+DataAtestado+"','"+Cid+"','"+Motivo+"',"+DiasAfastafdo+")",Com);
+            CadastrarAtestado.ExecuteNonQuery();
+            Com.Close();
+        }
+
+        public void CadastrarVacina(string IdFuncionario, string DataAplicacao,string NomeVacina, string Reforco, string Dose)
+        {
+            Com.Open();
+            MySqlCommand CadastrarVacina = new MySqlCommand("INSERT INTO vacinas(idfuncionario,nome,dataaplicacao,reforco,dose) VALUES("+IdFuncionario+",'"+NomeVacina+"','"+DataAplicacao+"','"+Reforco+"',"+Dose+")",Com);
+            CadastrarVacina.ExecuteNonQuery();
+            Com.Close();
+        }
+
+        public DataTable RetornaAtestados(string IdEmpresa, string MesReferencia)
+        {
+            Com.Open();
+            MySqlCommand SelecionaAtestados = new MySqlCommand("select a.nome as nome,b.nome as setor,c.nome as funcao,Date_format(d.dataatestado, '%d-%m-%Y') as dataatestado,d.cid,d.motivo,d.diaafastado from funcionarios a, setores b, funcoes c, atestados d WHERE d.idfuncionario=a.id AND a.idfuncao=c.id AND c.idsetor=b.id and b.idempresa=" + IdEmpresa+ " AND MONTH(d.dataatestado)="+MesReferencia+";", Com);
+            MySqlDataAdapter LeitorAtestado = new MySqlDataAdapter(SelecionaAtestados);
+            DataTable TabelaAtestados = new DataTable();
+            LeitorAtestado.Fill(TabelaAtestados);
+            Com.Close();
+            return TabelaAtestados;
         }
     }
 }

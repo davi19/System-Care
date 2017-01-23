@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="atestados" targetNamespace="http://tempuri.org/atestados.xsd" xmlns:mstns="http://tempuri.org/atestados.xsd" xmlns="http://tempuri.org/atestados.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="atestados" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="atestados" msprop:Generator_UserDSName="atestados">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Atestados" msprop:Generator_TableClassName="AtestadosDataTable" msprop:Generator_TableVarName="tableAtestados" msprop:Generator_RowChangedName="AtestadosRowChanged" msprop:Generator_TablePropName="Atestados" msprop:Generator_RowDeletingName="AtestadosRowDeleting" msprop:Generator_RowChangingName="AtestadosRowChanging" msprop:Generator_RowEvHandlerName="AtestadosRowChangeEventHandler" msprop:Generator_RowDeletedName="AtestadosRowDeleted" msprop:Generator_RowClassName="AtestadosRow" msprop:Generator_UserTableName="Atestados" msprop:Generator_RowEvArgName="AtestadosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome" type="xs:string" minOccurs="0" />
+              <xs:element name="setor" msprop:Generator_ColumnVarNameInTable="columnsetor" msprop:Generator_ColumnPropNameInRow="setor" msprop:Generator_ColumnPropNameInTable="setorColumn" msprop:Generator_UserColumnName="setor" type="xs:string" minOccurs="0" />
+              <xs:element name="funcao" msprop:Generator_ColumnVarNameInTable="columnfuncao" msprop:Generator_ColumnPropNameInRow="funcao" msprop:Generator_ColumnPropNameInTable="funcaoColumn" msprop:Generator_UserColumnName="funcao" type="xs:string" minOccurs="0" />
+              <xs:element name="dataatestado" msprop:Generator_ColumnVarNameInTable="columndataatestado" msprop:Generator_ColumnPropNameInRow="dataatestado" msprop:Generator_ColumnPropNameInTable="dataatestadoColumn" msprop:Generator_UserColumnName="dataatestado" type="xs:string" minOccurs="0" />
+              <xs:element name="cid" msprop:Generator_ColumnVarNameInTable="columncid" msprop:Generator_ColumnPropNameInRow="cid" msprop:Generator_ColumnPropNameInTable="cidColumn" msprop:Generator_UserColumnName="cid" type="xs:string" minOccurs="0" />
+              <xs:element name="motivo" msprop:Generator_ColumnVarNameInTable="columnmotivo" msprop:Generator_ColumnPropNameInRow="motivo" msprop:Generator_ColumnPropNameInTable="motivoColumn" msprop:Generator_UserColumnName="motivo" type="xs:string" minOccurs="0" />
+              <xs:element name="diaafastado" msprop:Generator_ColumnVarNameInTable="columndiaafastado" msprop:Generator_ColumnPropNameInRow="diaafastado" msprop:Generator_ColumnPropNameInTable="diaafastadoColumn" msprop:Generator_UserColumnName="diaafastado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

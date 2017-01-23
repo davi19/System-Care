@@ -43,6 +43,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamesAvaliacoes));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.CheckApto = new MetroFramework.Controls.MetroCheckBox();
+            this.BtnGerarAos = new MetroFramework.Controls.MetroButton();
             this.LabelRiscos = new MetroFramework.Controls.MetroLabel();
             this.BtnBuscarFuncionario = new MetroFramework.Controls.MetroButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -53,7 +55,10 @@
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LabelFuncionario = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.BtnCadastrarVacina = new MetroFramework.Controls.MetroButton();
+            this.BtnCadastrarAtestado = new MetroFramework.Controls.MetroButton();
             this.BtnHistorico = new MetroFramework.Controls.MetroButton();
+            this.CheckAptoNova = new MetroFramework.Controls.MetroCheckBox();
             this.BtnGerarAsoNova = new MetroFramework.Controls.MetroButton();
             this.LabelRiscoFuncionario = new MetroFramework.Controls.MetroLabel();
             this.BtnSelecionaFuncionarioNova = new MetroFramework.Controls.MetroButton();
@@ -64,9 +69,6 @@
             this.GridTipoExameNova = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LabelFuncionarioNova = new MetroFramework.Controls.MetroLabel();
-            this.BtnGerarAos = new MetroFramework.Controls.MetroButton();
-            this.CheckApto = new MetroFramework.Controls.MetroCheckBox();
-            this.CheckAptoNova = new MetroFramework.Controls.MetroCheckBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridExameMedicoPrimeira)).BeginInit();
@@ -82,7 +84,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(7, 58);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(991, 482);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTabControl1.TabIndex = 105;
@@ -110,6 +112,31 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // CheckApto
+            // 
+            this.CheckApto.AutoSize = true;
+            this.CheckApto.Location = new System.Drawing.Point(810, 178);
+            this.CheckApto.Name = "CheckApto";
+            this.CheckApto.Size = new System.Drawing.Size(53, 15);
+            this.CheckApto.Style = MetroFramework.MetroColorStyle.Green;
+            this.CheckApto.TabIndex = 113;
+            this.CheckApto.Text = "APTO";
+            this.CheckApto.UseSelectable = true;
+            this.CheckApto.UseStyleColors = true;
+            // 
+            // BtnGerarAos
+            // 
+            this.BtnGerarAos.Location = new System.Drawing.Point(869, 174);
+            this.BtnGerarAos.Name = "BtnGerarAos";
+            this.BtnGerarAos.Size = new System.Drawing.Size(84, 23);
+            this.BtnGerarAos.Style = MetroFramework.MetroColorStyle.Green;
+            this.BtnGerarAos.TabIndex = 112;
+            this.BtnGerarAos.Text = "Gerar ASO";
+            this.BtnGerarAos.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnGerarAos.UseSelectable = true;
+            this.BtnGerarAos.UseStyleColors = true;
+            this.BtnGerarAos.Click += new System.EventHandler(this.BtnGerarAos_Click);
             // 
             // LabelRiscos
             // 
@@ -289,6 +316,8 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.BtnCadastrarVacina);
+            this.metroTabPage2.Controls.Add(this.BtnCadastrarAtestado);
             this.metroTabPage2.Controls.Add(this.BtnHistorico);
             this.metroTabPage2.Controls.Add(this.CheckAptoNova);
             this.metroTabPage2.Controls.Add(this.BtnGerarAsoNova);
@@ -311,11 +340,37 @@
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
+            // BtnCadastrarVacina
+            // 
+            this.BtnCadastrarVacina.Location = new System.Drawing.Point(815, 64);
+            this.BtnCadastrarVacina.Name = "BtnCadastrarVacina";
+            this.BtnCadastrarVacina.Size = new System.Drawing.Size(136, 23);
+            this.BtnCadastrarVacina.Style = MetroFramework.MetroColorStyle.Green;
+            this.BtnCadastrarVacina.TabIndex = 125;
+            this.BtnCadastrarVacina.Text = "Cadastrar Vacina";
+            this.BtnCadastrarVacina.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnCadastrarVacina.UseSelectable = true;
+            this.BtnCadastrarVacina.UseStyleColors = true;
+            this.BtnCadastrarVacina.Click += new System.EventHandler(this.BtnCadastrarVacina_Click);
+            // 
+            // BtnCadastrarAtestado
+            // 
+            this.BtnCadastrarAtestado.Location = new System.Drawing.Point(815, 35);
+            this.BtnCadastrarAtestado.Name = "BtnCadastrarAtestado";
+            this.BtnCadastrarAtestado.Size = new System.Drawing.Size(136, 23);
+            this.BtnCadastrarAtestado.Style = MetroFramework.MetroColorStyle.Green;
+            this.BtnCadastrarAtestado.TabIndex = 124;
+            this.BtnCadastrarAtestado.Text = "Adcionar Atestado";
+            this.BtnCadastrarAtestado.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnCadastrarAtestado.UseSelectable = true;
+            this.BtnCadastrarAtestado.UseStyleColors = true;
+            this.BtnCadastrarAtestado.Click += new System.EventHandler(this.BtnCadastrarAtestado_Click);
+            // 
             // BtnHistorico
             // 
-            this.BtnHistorico.Location = new System.Drawing.Point(867, 35);
+            this.BtnHistorico.Location = new System.Drawing.Point(815, 93);
             this.BtnHistorico.Name = "BtnHistorico";
-            this.BtnHistorico.Size = new System.Drawing.Size(84, 23);
+            this.BtnHistorico.Size = new System.Drawing.Size(136, 23);
             this.BtnHistorico.Style = MetroFramework.MetroColorStyle.Green;
             this.BtnHistorico.TabIndex = 123;
             this.BtnHistorico.Text = "Histórico";
@@ -323,6 +378,18 @@
             this.BtnHistorico.UseSelectable = true;
             this.BtnHistorico.UseStyleColors = true;
             this.BtnHistorico.Click += new System.EventHandler(this.BtnHistorico_Click);
+            // 
+            // CheckAptoNova
+            // 
+            this.CheckAptoNova.AutoSize = true;
+            this.CheckAptoNova.Location = new System.Drawing.Point(808, 175);
+            this.CheckAptoNova.Name = "CheckAptoNova";
+            this.CheckAptoNova.Size = new System.Drawing.Size(53, 15);
+            this.CheckAptoNova.Style = MetroFramework.MetroColorStyle.Green;
+            this.CheckAptoNova.TabIndex = 122;
+            this.CheckAptoNova.Text = "APTO";
+            this.CheckAptoNova.UseSelectable = true;
+            this.CheckAptoNova.UseStyleColors = true;
             // 
             // BtnGerarAsoNova
             // 
@@ -513,43 +580,6 @@
             this.LabelFuncionarioNova.Text = "Selecione um Funcionário";
             this.LabelFuncionarioNova.UseStyleColors = true;
             // 
-            // BtnGerarAos
-            // 
-            this.BtnGerarAos.Location = new System.Drawing.Point(869, 174);
-            this.BtnGerarAos.Name = "BtnGerarAos";
-            this.BtnGerarAos.Size = new System.Drawing.Size(84, 23);
-            this.BtnGerarAos.Style = MetroFramework.MetroColorStyle.Green;
-            this.BtnGerarAos.TabIndex = 112;
-            this.BtnGerarAos.Text = "Gerar ASO";
-            this.BtnGerarAos.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.BtnGerarAos.UseSelectable = true;
-            this.BtnGerarAos.UseStyleColors = true;
-            this.BtnGerarAos.Click += new System.EventHandler(this.BtnGerarAos_Click);
-            // 
-            // CheckApto
-            // 
-            this.CheckApto.AutoSize = true;
-            this.CheckApto.Location = new System.Drawing.Point(810, 178);
-            this.CheckApto.Name = "CheckApto";
-            this.CheckApto.Size = new System.Drawing.Size(53, 15);
-            this.CheckApto.Style = MetroFramework.MetroColorStyle.Green;
-            this.CheckApto.TabIndex = 113;
-            this.CheckApto.Text = "APTO";
-            this.CheckApto.UseSelectable = true;
-            this.CheckApto.UseStyleColors = true;
-            // 
-            // CheckAptoNova
-            // 
-            this.CheckAptoNova.AutoSize = true;
-            this.CheckAptoNova.Location = new System.Drawing.Point(808, 175);
-            this.CheckAptoNova.Name = "CheckAptoNova";
-            this.CheckAptoNova.Size = new System.Drawing.Size(53, 15);
-            this.CheckAptoNova.Style = MetroFramework.MetroColorStyle.Green;
-            this.CheckAptoNova.TabIndex = 122;
-            this.CheckAptoNova.Text = "APTO";
-            this.CheckAptoNova.UseSelectable = true;
-            this.CheckAptoNova.UseStyleColors = true;
-            // 
             // ExamesAvaliacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,5 +633,7 @@
         private MetroFramework.Controls.MetroCheckBox CheckApto;
         private MetroFramework.Controls.MetroButton BtnGerarAos;
         private MetroFramework.Controls.MetroCheckBox CheckAptoNova;
+        private MetroFramework.Controls.MetroButton BtnCadastrarVacina;
+        private MetroFramework.Controls.MetroButton BtnCadastrarAtestado;
     }
 }

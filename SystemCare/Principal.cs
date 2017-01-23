@@ -51,5 +51,11 @@ namespace SystemCare
             var CadastroAvaliação = new ExamesAvaliacoes();
             CadastroAvaliação.ShowDialog();
         }
+
+        private void empresasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            EmpresaRelatorio RelatoriosEmpresa = new EmpresaRelatorio();
+            RelatoriosEmpresa.ShowDialog();
+        }
     }
 }

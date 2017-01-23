@@ -86,7 +86,7 @@ namespace SystemCare
                 try
                 {
                     if (Convert.ToBoolean(GridTipoExamePrimeira.Rows[i].Cells[0].Value.ToString()))
-                        TipoExame =  GridTipoExamePrimeira.Rows[i].Cells[1].Value.ToString();
+                        TipoExame = GridTipoExamePrimeira.Rows[i].Cells[1].Value.ToString();
                     i = GridTipoExamePrimeira.Rows.Count;
                 }
                 catch
@@ -250,6 +250,36 @@ namespace SystemCare
             {
                 MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
                         MessageBoxIcon.Hand);
+            }
+        }
+
+        private void BtnCadastrarAtestado_Click(object sender, EventArgs e)
+        {
+            var IdFuncionario = Cadastro.GetFuncionarioNova();
+            if (!IdFuncionario.Equals(""))
+            {
+                Atestados CadastrarAtestado = new Atestados(IdFuncionario);
+                CadastrarAtestado.ShowDialog();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                    MessageBoxIcon.Hand);
+            }
+        }
+
+        private void BtnCadastrarVacina_Click(object sender, EventArgs e)
+        {
+            var IdFuncionario = Cadastro.GetFuncionarioNova();
+            if (!IdFuncionario.Equals(""))
+            {
+                Vacinas CadastrarVacinas = new Vacinas(IdFuncionario);
+                CadastrarVacinas.ShowDialog();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                    MessageBoxIcon.Hand);
             }
         }
     }

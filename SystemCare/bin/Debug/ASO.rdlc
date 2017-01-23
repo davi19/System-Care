@@ -17,7 +17,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Nome</rd:DefaultName>
-        <Top>18.27458cm</Top>
+        <Top>18.61854cm</Top>
         <Left>6.14115cm</Left>
         <Height>0.70583cm</Height>
         <Width>5.0438cm</Width>
@@ -46,7 +46,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Data</rd:DefaultName>
-        <Top>20.85145cm</Top>
+        <Top>21.16895cm</Top>
         <Left>5.36787cm</Left>
         <Height>0.6cm</Height>
         <Width>4.21979cm</Width>
@@ -69,7 +69,10 @@
             <TextRuns>
               <TextRun>
                 <Value>=Parameters!Resultado.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>15pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -78,7 +81,7 @@
         <rd:DefaultName>Resultado</rd:DefaultName>
         <Top>19.67687cm</Top>
         <Left>0.3469cm</Left>
-        <Height>0.75875cm</Height>
+        <Height>0.94396cm</Height>
         <Width>4.21538cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -381,6 +384,96 @@
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="RiscosOperacionais">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!RiscosOperacionais.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>RiscosOperacionais</rd:DefaultName>
+        <Top>9.01912cm</Top>
+        <Left>0.3469cm</Left>
+        <Height>1.92292cm</Height>
+        <Width>20.38583cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ModalidadeExames">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!ModalidadeExames.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ModalidadeExames</rd:DefaultName>
+        <Top>12.51162cm</Top>
+        <Left>0.3469cm</Left>
+        <Height>4.64812cm</Height>
+        <Width>20.38583cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ExameMedico">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!ExameMedico.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ExameMedico</rd:DefaultName>
+        <Top>7.03474cm</Top>
+        <Left>8.30474cm</Left>
+        <Height>0.83812cm</Height>
+        <Width>4.56375cm</Width>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
