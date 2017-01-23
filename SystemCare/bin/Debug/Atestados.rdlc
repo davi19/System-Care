@@ -541,7 +541,7 @@
         <Top>3.48933cm</Top>
         <Left>0.28787cm</Left>
         <Height>1.2cm</Height>
-        <Width>28.094cm</Width>
+        <Width>28.09398cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -556,7 +556,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>RELATÓRIO DE ABSENTEÍSMO</Value>
+                <Value>RELATÓRIO DE ABSENTEÍSMO DA EMPRESA</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -569,7 +569,7 @@
         <Top>1.00224cm</Top>
         <Left>4.26613cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.35679cm</Width>
+        <Width>7.7645cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -599,9 +599,9 @@
         </Paragraphs>
         <rd:DefaultName>Empresa</rd:DefaultName>
         <Top>1.00224cm</Top>
-        <Left>9.7993cm</Left>
+        <Left>11.7043cm</Left>
         <Height>0.6cm</Height>
-        <Width>11.04194cm</Width>
+        <Width>9.13694cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -630,8 +630,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MesReferencia</rd:DefaultName>
-        <Top>1.74335cm</Top>
-        <Left>9.08054cm</Left>
+        <Top>1.70807cm</Top>
+        <Left>8.56777cm</Left>
         <Height>0.6cm</Height>
         <Width>11.7607cm</Width>
         <ZIndex>4</ZIndex>

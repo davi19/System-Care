@@ -131,3 +131,4 @@ C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Atestados.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Vacinas.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.EmpresaRelatorio.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.PesquisaEmpresas.resources
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\Atestados.rdlc

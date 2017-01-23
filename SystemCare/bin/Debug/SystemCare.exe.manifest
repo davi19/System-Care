@@ -168,14 +168,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SystemCare.exe" size="16235480">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SystemCare.exe" size="16252376">
       <assemblyIdentity name="SystemCare" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>a7CQK9N+gDEV9zfvxymXO2WqeCNRcExatbxKyT5l6NQ=</dsig:DigestValue>
+        <dsig:DigestValue>Bo0sqnXz7gzVNY9U083sxPpdsTFwjVjvdIumsN9qzVg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -186,6 +186,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>cCmfZerA343kpmP1Ag6Lse+iLnqOhIv1mWeFG5+O0Fo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Atestados.rdlc" size="231289">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>WQpbxWLT9RiwsAptVG2YDl21VjVXhWtWoEQWvjFCq3k=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icon.ico" size="370070">
