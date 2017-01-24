@@ -7,11 +7,10 @@ namespace SystemCare
     public partial class PesquisaEmpresas : MetroForm
     {
         private readonly QuerryMysql Cadastro = new QuerryMysql();
-        
+
 
         public PesquisaEmpresas()
         {
-            
             InitializeComponent();
         }
 
@@ -24,11 +23,8 @@ namespace SystemCare
 
         private void GridFuncionarioEditar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            
-                Cadastro.SetEmpresaRelatorio(GridEmpresa.Rows[e.RowIndex].Cells[0].Value.ToString());
-                Hide();
-            
+            Cadastro.SetEmpresaRelatorio(GridEmpresa.Rows[e.RowIndex].Cells[0].Value.ToString());
+            Hide();
         }
 
         private void TextFuncionarioBusca_KeyPress(object sender, KeyPressEventArgs e)

@@ -153,7 +153,6 @@ namespace SystemCare
                 }
                 LabelFuncionarioNova.Text = "NOME: " + TabelaDadosFuncionario.Rows[0]["nome"] + "     CPF: " +
                                             TabelaDadosFuncionario.Rows[0]["cpf"] + "     FUNÇÃO: " +
-
                                             TabelaFuncao.Rows[0]["nome"];
             }
         }
@@ -243,13 +242,13 @@ namespace SystemCare
             var IdFuncionario = Cadastro.GetFuncionarioNova();
             if (!IdFuncionario.Equals(""))
             {
-                Historico MostraHistorico = new Historico(IdFuncionario);
+                var MostraHistorico = new Historico(IdFuncionario);
                 MostraHistorico.ShowDialog();
             }
             else
             {
                 MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
-                        MessageBoxIcon.Hand);
+                    MessageBoxIcon.Hand);
             }
         }
 
@@ -258,7 +257,7 @@ namespace SystemCare
             var IdFuncionario = Cadastro.GetFuncionarioNova();
             if (!IdFuncionario.Equals(""))
             {
-                Atestados CadastrarAtestado = new Atestados(IdFuncionario);
+                var CadastrarAtestado = new Atestados(IdFuncionario);
                 CadastrarAtestado.ShowDialog();
             }
             else
@@ -273,7 +272,7 @@ namespace SystemCare
             var IdFuncionario = Cadastro.GetFuncionarioNova();
             if (!IdFuncionario.Equals(""))
             {
-                Vacinas CadastrarVacinas = new Vacinas(IdFuncionario);
+                var CadastrarVacinas = new Vacinas(IdFuncionario);
                 CadastrarVacinas.ShowDialog();
             }
             else

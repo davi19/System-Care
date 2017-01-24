@@ -54,7 +54,7 @@ namespace SystemCare
 
         private void empresasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            EmpresaRelatorio RelatoriosEmpresa = new EmpresaRelatorio();
+            var RelatoriosEmpresa = new EmpresaRelatorio();
             RelatoriosEmpresa.ShowDialog();
         }
     }

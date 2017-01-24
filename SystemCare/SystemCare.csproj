@@ -28,7 +28,7 @@
     <TargetCulture>pt-BR</TargetCulture>
     <ProductName>System Care</ProductName>
     <PublisherName>Cactus Devs</PublisherName>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -130,6 +130,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>atestados.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Vacinas1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Vacinas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EmpresaRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +221,10 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Vacinas.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="EmpresaRelatorio.resx">
       <DependentUpon>EmpresaRelatorio.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +244,17 @@
     </None>
     <None Include="atestados.xss">
       <DependentUpon>atestados.xsd</DependentUpon>
+    </None>
+    <None Include="Vacinas.xsc">
+      <DependentUpon>Vacinas.xsd</DependentUpon>
+    </None>
+    <None Include="Vacinas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Vacinas1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vacinas.xss">
+      <DependentUpon>Vacinas.xsd</DependentUpon>
     </None>
     <None Include="Resources\Icon.png" />
     <None Include="Resources\thumbnail_med seg.jpg" />

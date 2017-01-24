@@ -255,9 +255,7 @@ namespace SystemCare
         private void TextBuscaCnae_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
-            {
-                BtnBuscaCnae_Click_1(sender,e);
-            }
+                BtnBuscaCnae_Click_1(sender, e);
         }
     }
 }

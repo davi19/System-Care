@@ -48,7 +48,7 @@ namespace SystemCare
             else
                 Sexo = "F";
             Cadastro.CadastraFuncionario(TextNomeFuncionario.Text, TextIdade.Text, Sexo,
-                Convert.ToDecimal(TextAltura.Text.Replace(",", ".")), Convert.ToDecimal(TextPeso.Text.Replace(",",".")),
+                Convert.ToDecimal(TextAltura.Text.Replace(",", ".")), Convert.ToDecimal(TextPeso.Text.Replace(",", ".")),
                 TextImc.Text, TextCpf.Text, TextIdentidade.Text, TextTelefoneFuncionario.Text,
                 Convert.ToDateTime(TextDataNascimento.Text), TextNaturalidade.Text, IdFuncao);
             TextNomeFuncionario.Text = "";

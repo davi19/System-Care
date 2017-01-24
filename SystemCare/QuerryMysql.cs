@@ -13,7 +13,7 @@ namespace SystemCare
         private static string IdFuncionarioNova = "";
         //192.168.0.101
         private readonly MySqlConnection Com =
-            new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+            new MySqlConnection("Server =192.168.0.101; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
         public bool Login(string Usuario, string Senha)
         {
@@ -111,6 +111,7 @@ namespace SystemCare
         {
             return IdEmpresaEditar;
         }
+
         public void SetEmpresaRelatorio(string IdEmpresa)
         {
             IdEmpresaRelatorio = IdEmpresa;
@@ -120,6 +121,7 @@ namespace SystemCare
         {
             return IdEmpresaRelatorio;
         }
+
         public void SetSetor(string NomeSetorUsar)
         {
             NomeSetor = NomeSetorUsar;
@@ -550,41 +552,45 @@ namespace SystemCare
         public DataTable SelecionaHistoricoFuncionario(string IdFuncionario)
         {
             Com.Open();
-            MySqlCommand SelecionaHistorico = new MySqlCommand("select c.id,a.nome,b.descricao,c.datadoexame,c.apto from funcionarios a,examesmedicos b, historicos c where a.id=c.idfuncionario AND b.id=c.tipoexame AND c.idfuncionario="+IdFuncionario+";",Com);
-            MySqlDataAdapter LeitorHistorico = new MySqlDataAdapter(SelecionaHistorico);
-            DataTable TabelaHistorico = new DataTable();
+            var SelecionaHistorico =
+                new MySqlCommand(
+                    "select c.id,a.nome,b.descricao,c.datadoexame,c.apto from funcionarios a,examesmedicos b, historicos c where a.id=c.idfuncionario AND b.id=c.tipoexame AND c.idfuncionario=" +
+                    IdFuncionario + ";", Com);
+            var LeitorHistorico = new MySqlDataAdapter(SelecionaHistorico);
+            var TabelaHistorico = new DataTable();
             LeitorHistorico.Fill(TabelaHistorico);
             Com.Close();
             return TabelaHistorico;
         }
-        public void AtualizaHistoricoFuncionario(string IdHistorico,string Apto)
+
+        public void AtualizaHistoricoFuncionario(string IdHistorico, string Apto)
         {
             Com.Open();
-            MySqlCommand AtualizaHistorico = new MySqlCommand("UPDATE historicos SET apto='"+Apto+"' WHERE id="+IdHistorico+";", Com);
+            var AtualizaHistorico =
+                new MySqlCommand("UPDATE historicos SET apto='" + Apto + "' WHERE id=" + IdHistorico + ";", Com);
             AtualizaHistorico.ExecuteNonQuery();
             Com.Close();
-            
         }
 
         public DataTable RetornaAsoHistorico(string IdHistorico)
         {
             Com.Open();
-            MySqlCommand SelecionaDadosAso = new MySqlCommand("SELECT * FROM historicos WHERE id=" + IdHistorico + ";",
+            var SelecionaDadosAso = new MySqlCommand("SELECT * FROM historicos WHERE id=" + IdHistorico + ";",
                 Com);
-            MySqlDataAdapter LeitorAso = new MySqlDataAdapter(SelecionaDadosAso);
-            DataTable TabelaAso = new DataTable();
+            var LeitorAso = new MySqlDataAdapter(SelecionaDadosAso);
+            var TabelaAso = new DataTable();
             LeitorAso.Fill(TabelaAso);
             Com.Close();
             return TabelaAso;
-
         }
 
         public string RetornaTipoExame(string IdTipoExame)
         {
             Com.Open();
-            MySqlCommand SelecionaTipoExame = new MySqlCommand("SELECT descricao FROM examesmedicos WHERE id="+IdTipoExame+";",Com);
-            MySqlDataAdapter LeitorTipoExame = new MySqlDataAdapter(SelecionaTipoExame);
-            DataTable TabelaTipoExame = new DataTable();
+            var SelecionaTipoExame =
+                new MySqlCommand("SELECT descricao FROM examesmedicos WHERE id=" + IdTipoExame + ";", Com);
+            var LeitorTipoExame = new MySqlDataAdapter(SelecionaTipoExame);
+            var TabelaTipoExame = new DataTable();
             LeitorTipoExame.Fill(TabelaTipoExame);
             Com.Close();
             return TabelaTipoExame.Rows[0][0].ToString();
@@ -593,26 +599,35 @@ namespace SystemCare
         public string RetornaModalidadeExame(string IdTipoExame)
         {
             Com.Open();
-            MySqlCommand SelecionaTipoExame = new MySqlCommand("SELECT descricao FROM modalidadeexames WHERE id=" + IdTipoExame + ";", Com);
-            MySqlDataAdapter LeitorTipoExame = new MySqlDataAdapter(SelecionaTipoExame);
-            DataTable TabelaTipoExame = new DataTable();
+            var SelecionaTipoExame =
+                new MySqlCommand("SELECT descricao FROM modalidadeexames WHERE id=" + IdTipoExame + ";", Com);
+            var LeitorTipoExame = new MySqlDataAdapter(SelecionaTipoExame);
+            var TabelaTipoExame = new DataTable();
             LeitorTipoExame.Fill(TabelaTipoExame);
             Com.Close();
             return TabelaTipoExame.Rows[0][0].ToString();
         }
 
-        public void CadastrarAtestado(string Idfuncionario, string DataAtestado, string Cid, string Motivo, string DiasAfastafdo)
+        public void CadastrarAtestado(string Idfuncionario, string DataAtestado, string Cid, string Motivo,
+            string DiasAfastafdo)
         {
             Com.Open();
-            MySqlCommand CadastrarAtestado = new MySqlCommand("INSERT INTO atestados (idfuncionario,dataatestado,cid,motivo,diaafastado) VALUES("+Idfuncionario+",'"+DataAtestado+"','"+Cid+"','"+Motivo+"',"+DiasAfastafdo+")",Com);
+            var CadastrarAtestado =
+                new MySqlCommand(
+                    "INSERT INTO atestados (idfuncionario,dataatestado,cid,motivo,diaafastado) VALUES(" + Idfuncionario +
+                    ",'" + DataAtestado + "','" + Cid + "','" + Motivo + "'," + DiasAfastafdo + ")", Com);
             CadastrarAtestado.ExecuteNonQuery();
             Com.Close();
         }
 
-        public void CadastrarVacina(string IdFuncionario, string DataAplicacao,string NomeVacina, string Reforco, string Dose)
+        public void CadastrarVacina(string IdFuncionario, string DataAplicacao, string NomeVacina, string Reforco,
+            string Dose)
         {
             Com.Open();
-            MySqlCommand CadastrarVacina = new MySqlCommand("INSERT INTO vacinas(idfuncionario,nome,dataaplicacao,reforco,dose) VALUES("+IdFuncionario+",'"+NomeVacina+"','"+DataAplicacao+"','"+Reforco+"',"+Dose+")",Com);
+            var CadastrarVacina =
+                new MySqlCommand(
+                    "INSERT INTO vacinas(idfuncionario,nome,dataaplicacao,reforco,dose) VALUES(" + IdFuncionario + ",'" +
+                    NomeVacina + "','" + DataAplicacao + "','" + Reforco + "'," + Dose + ")", Com);
             CadastrarVacina.ExecuteNonQuery();
             Com.Close();
         }
@@ -620,12 +635,50 @@ namespace SystemCare
         public DataTable RetornaAtestados(string IdEmpresa, string MesReferencia)
         {
             Com.Open();
-            MySqlCommand SelecionaAtestados = new MySqlCommand("select a.nome as nome,b.nome as setor,c.nome as funcao,Date_format(d.dataatestado, '%d-%m-%Y') as dataatestado,d.cid,d.motivo,d.diaafastado from funcionarios a, setores b, funcoes c, atestados d WHERE d.idfuncionario=a.id AND a.idfuncao=c.id AND c.idsetor=b.id and b.idempresa=" + IdEmpresa+ " AND MONTH(d.dataatestado)="+MesReferencia+";", Com);
-            MySqlDataAdapter LeitorAtestado = new MySqlDataAdapter(SelecionaAtestados);
-            DataTable TabelaAtestados = new DataTable();
+            var SelecionaAtestados =
+                new MySqlCommand(
+                    "select a.nome as nome,b.nome as setor,c.nome as funcao,Date_format(d.dataatestado, '%d-%m-%Y') as dataatestado,d.cid,d.motivo,d.diaafastado from funcionarios a, setores b, funcoes c, atestados d WHERE d.idfuncionario=a.id AND a.idfuncao=c.id AND c.idsetor=b.id and b.idempresa=" +
+                    IdEmpresa + " AND MONTH(d.dataatestado)=" + MesReferencia + ";", Com);
+            var LeitorAtestado = new MySqlDataAdapter(SelecionaAtestados);
+            var TabelaAtestados = new DataTable();
             LeitorAtestado.Fill(TabelaAtestados);
             Com.Close();
             return TabelaAtestados;
+        }
+
+        public DataTable RetornaFuncionariosEmpresa(string IdEmpresa)
+        {
+            Com.Open();
+            MySqlCommand SelecionaFuncionarios = new MySqlCommand("select a.nome as nome,b.nome as funcao from funcionarios a, funcoes b, setores c, empresas d where a.idfuncao=b.id and b.idsetor=c.id and c.idempresa=d.id and d.id="+IdEmpresa+ " order by a.nome   asc;", Com);
+            MySqlDataAdapter LeitorFuncionario = new MySqlDataAdapter(SelecionaFuncionarios);
+            DataTable TabelaFuncionario = new DataTable();
+            LeitorFuncionario.Fill(TabelaFuncionario);
+            Com.Close();
+            return TabelaFuncionario;
+
+        }
+
+        public DataTable RetornaVacinasFuncionarios(string IdFuncionario)
+        {
+            Com.Open();
+            MySqlCommand SelecionaVacina = new MySqlCommand("select a.nome as nome,a.dose as dose, a.reforco as reforco, a.dataaplicacao as dataaplicacao from vacinas a, funcionarios b WHERE a.idfuncionario=b.id and a.idfuncionario="+IdFuncionario+ " order by a.nome   asc;", Com);
+            MySqlDataAdapter LeitorVacina = new MySqlDataAdapter(SelecionaVacina);
+            DataTable TabelaVacina = new DataTable();
+            LeitorVacina.Fill(TabelaVacina);
+            Com.Close();
+            return TabelaVacina;
+
+        }
+        public DataTable RetornaIdFuncionario(string NomeFuncionario)
+        {
+            Com.Open();
+            MySqlCommand SelecionaVacina = new MySqlCommand("select id from funcionarios WHERE nome='" + NomeFuncionario + "';", Com);
+            MySqlDataAdapter LeitorVacina = new MySqlDataAdapter(SelecionaVacina);
+            DataTable TabelaVacina = new DataTable();
+            LeitorVacina.Fill(TabelaVacina);
+            Com.Close();
+            return TabelaVacina;
+
         }
     }
 }

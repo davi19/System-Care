@@ -168,14 +168,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SystemCare.exe" size="16252376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SystemCare.exe" size="16265176">
       <assemblyIdentity name="SystemCare" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Bo0sqnXz7gzVNY9U083sxPpdsTFwjVjvdIumsN9qzVg=</dsig:DigestValue>
+        <dsig:DigestValue>gtP0njqnYghMyCqlV40TsEmslUdC+2vwhoctdqdL8YE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -194,7 +194,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>WQpbxWLT9RiwsAptVG2YDl21VjVXhWtWoEQWvjFCq3k=</dsig:DigestValue>
+      <dsig:DigestValue>hyc93ZYlTR3n1o4OrCINDuUw/QVfYyhIFH44QHKJ1g0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icon.ico" size="370070">
@@ -213,6 +213,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>V4yWPrWoAMRScw4NC/bTWTdF2Q8gORSC1ZNU1PY+neI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Vacinas.rdlc" size="233282">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6rkA5+ksB+ibHsPtG/ezMrc5cXyxIA2wY4OVzxUP2pU=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
