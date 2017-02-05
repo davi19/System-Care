@@ -133,3 +133,5 @@ C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.EmpresaRelatorio.resou
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.PesquisaEmpresas.resources
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\Atestados.rdlc
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\Vacinas.rdlc
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\PrestacaodeServico.rdlc
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\Microsoft.ReportViewer.DataVisualization.DLL

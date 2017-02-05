@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
@@ -12,6 +13,10 @@ namespace SystemCare
         public Empresas()
         {
             InitializeComponent();
+            DataTable TabelaServicos = Cadastro.RetornaServicosPrestados();
+            GridServicosPrestados.DataSource = TabelaServicos;
+            
+
         }
 
         private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -50,17 +55,26 @@ namespace SystemCare
             if (TextNome.Text.Length == 0 || TextCnpj.Text.Length == 0 || TextQuantidadeFuncionario.Text.Length == 0 ||
                 TextEndereco.Text.Length == 0 || TextTelefone.Text.Length == 0 || TextRisco.Text.Length == 0)
             {
-                MetroMessageBox.Show(this, "Favor preencher todos os campos em destaque!", "Atenção !",
+                MetroMessageBox.Show(this, "Favor preencher todos os campos!", "Atenção !",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
             else
             {
+                string Servicos = "";
+                for (int i = 0; i<GridServicosPrestados.RowCount; i++)
+                {
+                    if (Convert.ToBoolean(GridServicosPrestados.Rows[i].Cells[0].Value))
+                    {
+                        Servicos = Servicos + ";" + GridServicosPrestados.Rows[i].Cells[1].Value.ToString();
+                    }
+                   
+                }
                 var Cnae = LabelCnae.Text.Split('|');
                 Cadastro.CadastraEmpresa(TextNome.Text, TextEndereco.Text, TextCnpj.Text,
                     Convert.ToInt32(TextQuantidadeFuncionario.Text), TextTelefone.Text, TextEmail.Text,
                     Cnae[1] + " | " + Cnae[2],
-                    Convert.ToInt32(TextRisco.Text));
+                    Convert.ToInt32(TextRisco.Text),Servicos);
                 MetroMessageBox.Show(this, "Empresa cadastrada com sucesso!", "Sucesso !", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 TextNome.Text = "";

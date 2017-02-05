@@ -13,7 +13,7 @@ namespace SystemCare
         private static string IdFuncionarioNova = "";
         //192.168.0.101
         private readonly MySqlConnection Com =
-            new MySqlConnection("Server =192.168.0.101; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+            new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
         public bool Login(string Usuario, string Senha)
         {
@@ -48,14 +48,14 @@ namespace SystemCare
         }
 
         public void CadastraEmpresa(string Nome, string Endereco, string Cnpj, int QuantidadeFuncionario,
-            string Telefone, string Email, string IdCnae, int Risco)
+            string Telefone, string Email, string IdCnae, int Risco,string Servicos)
         {
             Com.Open();
             var InserirEmpresa =
                 new MySqlCommand(
-                    "INSERT INTO empresas (nome,endereco,cnpj,quantidadefuncionario,telefone,email,idcnae,risco) VALUES('" +
+                    "INSERT INTO empresas (nome,endereco,cnpj,quantidadefuncionario,telefone,email,idcnae,risco,servicoprestado) VALUES('" +
                     Nome + "','" + Endereco + "','" + Cnpj + "'," + QuantidadeFuncionario + ",'" + Telefone + "','" +
-                    Email + "','" + IdCnae + "'," + Risco + ")", Com);
+                    Email + "','" + IdCnae + "'," + Risco + ",'"+Servicos+"')", Com);
             InserirEmpresa.ExecuteNonQuery();
             Com.Close();
         }
@@ -679,6 +679,17 @@ namespace SystemCare
             Com.Close();
             return TabelaVacina;
 
+        }
+
+        public DataTable RetornaServicosPrestados()
+        {
+            Com.Open();
+            MySqlCommand SelecionaServicos = new MySqlCommand("SELECT id,descricao FROM servicosprestados WHERE excluido='N'", Com);
+            MySqlDataAdapter LeitorServicos = new MySqlDataAdapter(SelecionaServicos);
+            DataTable TabelaServicos = new DataTable();
+            LeitorServicos.Fill(TabelaServicos);
+            Com.Close();
+            return TabelaServicos;
         }
     }
 }

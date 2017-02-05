@@ -28,7 +28,7 @@
     <TargetCulture>pt-BR</TargetCulture>
     <ProductName>System Care</ProductName>
     <PublisherName>Cactus Devs</PublisherName>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -87,6 +87,10 @@
       <HintPath>..\packages\Microsoft.ReportViewer.2015.Runtime.12.0.2.2402\lib\Microsoft.ReportViewer.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Desktop\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.2015.Runtime.12.0.2.2402\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
       <Private>True</Private>
@@ -129,6 +133,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>atestados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PrestacaodeServico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrestacaodeServico.xsd</DependentUpon>
     </Compile>
     <Compile Include="Vacinas1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -231,6 +240,10 @@
     <EmbeddedResource Include="PesquisaEmpresas .resx">
       <DependentUpon>PesquisaEmpresas .cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="PrestacaodeServico.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Vacinas.resx">
       <DependentUpon>Vacinas.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +257,17 @@
     </None>
     <None Include="atestados.xss">
       <DependentUpon>atestados.xsd</DependentUpon>
+    </None>
+    <None Include="PrestacaodeServico.xsc">
+      <DependentUpon>PrestacaodeServico.xsd</DependentUpon>
+    </None>
+    <None Include="PrestacaodeServico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrestacaodeServico.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PrestacaodeServico.xss">
+      <DependentUpon>PrestacaodeServico.xsd</DependentUpon>
     </None>
     <None Include="Vacinas.xsc">
       <DependentUpon>Vacinas.xsd</DependentUpon>
