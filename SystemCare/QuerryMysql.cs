@@ -157,7 +157,7 @@ namespace SystemCare
             Com.Open();
             var SelecionaEmpresa =
                 new MySqlCommand(
-                    "SELECT nome,endereco, cnpj,quantidadefuncionario,telefone,email,idcnae,risco FROM empresas WHERE id=" +
+                    "SELECT nome,endereco, cnpj,quantidadefuncionario,telefone,email,idcnae,risco, servicoprestado FROM empresas WHERE id=" +
                     IdEmpresaEditar + ";", Com);
             var LeitorEmpresa = new MySqlDataAdapter(SelecionaEmpresa);
             var TabelaEmpresa = new DataTable();
@@ -179,14 +179,14 @@ namespace SystemCare
         }
 
         public void EditarEmpresa(string Nome, string Endereco, string Cnpj, int QuantidadeFuncionario, string Telefone,
-            string Email, string IdCnae, int Risco)
+            string Email, string IdCnae, int Risco,string Servicos)
         {
             Com.Open();
             var EditarEmpresa =
                 new MySqlCommand(
                     "UPDATE empresas SET nome ='" + Nome + "' ,endereco='" + Endereco + "',cnpj='" + Cnpj +
                     "',quantidadefuncionario=" + QuantidadeFuncionario + ",telefone='" + Telefone + "',email='" + Email +
-                    "',idcnae='" + IdCnae + "',risco=" + Risco + " WHERE id=" + IdEmpresaEditar + ";", Com);
+                    "',idcnae='" + IdCnae + "',risco=" + Risco + ", servicoprestado='"+Servicos+"' WHERE id=" + IdEmpresaEditar + ";", Com);
             EditarEmpresa.ExecuteNonQuery();
             SetEmpresa("");
             Com.Close();

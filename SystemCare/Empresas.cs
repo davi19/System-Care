@@ -15,7 +15,10 @@ namespace SystemCare
             InitializeComponent();
             DataTable TabelaServicos = Cadastro.RetornaServicosPrestados();
             GridServicosPrestados.DataSource = TabelaServicos;
-            
+
+            DataTable TabelaServicosEditar = Cadastro.RetornaServicosPrestados();
+            GridServicosEditar.DataSource = TabelaServicos;
+
 
         }
 
@@ -85,6 +88,9 @@ namespace SystemCare
                 TextRisco.Text = "";
                 TextEmail.Text = "";
                 LabelCnae.Text = "CNAE:";
+                GridServicosPrestados.DataSource = null;
+                DataTable TabelaServicos = Cadastro.RetornaServicosPrestados();
+                GridServicosPrestados.DataSource = TabelaServicos;
             }
         }
 
@@ -133,6 +139,9 @@ namespace SystemCare
                 TextRiscoEditar.Text = "";
                 TextBusca.Text = "";
                 DataGridEmpresa.DataSource = null;
+                GridServicosEditar.DataSource = null;
+                DataTable TabelaServicos = Cadastro.RetornaServicosPrestados();
+                GridServicosEditar.DataSource = TabelaServicos;
             }
         }
 
@@ -173,17 +182,40 @@ namespace SystemCare
                     TextEmailEditar.Text = TabelaEditarEmpresa.Rows[0][5].ToString();
                     LabelCnaeEditar.Text = "CNAE |" + TabelaEditarEmpresa.Rows[0][6];
                     TextRiscoEditar.Text = TabelaEditarEmpresa.Rows[0][7].ToString();
+                    string [] Servicos = TabelaEditarEmpresa.Rows[0]["servicoprestado"].ToString().Split(';');
+                    for (int j = 1; j < Servicos.Length; j++)
+                    {
+                        for (int k=0;k<GridServicosEditar.RowCount;k++)
+                            {
+                                if (GridServicosEditar.Rows[k].Cells[1].Value.ToString().Equals(Servicos[j].ToString()))
+                                {
+                                    GridServicosEditar.Rows[k].Cells[0].Value = true;
+                                }
+                            }
+                    }
+
+
+
                     BtnEditar.Text = "Salvar";
                 }
             }
             else
             {
+                string Servicos = "";
+                for (int i = 0; i < GridServicosEditar.RowCount; i++)
+                {
+                    if (Convert.ToBoolean(GridServicosEditar.Rows[i].Cells[0].Value))
+                    {
+                        Servicos = Servicos + ";" + GridServicosEditar.Rows[i].Cells[1].Value.ToString();
+                    }
+
+                }
                 var Cnae = LabelCnaeEditar.Text.Split('|');
                 Cadastro.EditarEmpresa(TextNomeEditar.Text, TextEnderecoEditar.Text, TextCnpjEditar.Text,
                     Convert.ToInt32(TextQuantidadeFuncionarioEditar.Text), TextTelefoneEditar.Text, TextEmailEditar.Text,
                     Cnae[1] + " " +
                     "| " + Cnae[2],
-                    Convert.ToInt32(TextRiscoEditar.Text));
+                    Convert.ToInt32(TextRiscoEditar.Text),Servicos);
                 MetroMessageBox.Show(this, "Dados da empresa atualizados com sucesso!", "Sucesso !",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -199,6 +231,7 @@ namespace SystemCare
                 TextRiscoEditar.Text = "";
                 TextBusca.Text = "";
                 DataGridEmpresa.DataSource = null;
+                
             }
         }
 
