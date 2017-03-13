@@ -691,5 +691,41 @@ namespace SystemCare
             Com.Close();
             return TabelaServicos;
         }
+
+        public void CadastraUsuario(string Usuario, string Senha)
+        {
+            Com.Open();
+            MySqlCommand InserirUsuario = new MySqlCommand("INSERT INTO usuarios (login,senha) VALUES('"+Usuario+"',MD5('"+Senha+"'))",Com);
+            InserirUsuario.ExecuteNonQuery();
+            Com.Close();
+        }
+
+        public DataTable RetornaUsuarios(string TextoPesquisa)
+        {
+            Com.Open();
+            MySqlCommand SelecionaUsuarios = new MySqlCommand("SELECT id,login FROM usuarios WHERE login like'%"+TextoPesquisa+"%' AND excluido='N'",Com);
+            MySqlDataAdapter LeitorUsuarios = new MySqlDataAdapter(SelecionaUsuarios);
+            DataTable TabelaUsuarios = new DataTable();
+            LeitorUsuarios.Fill(TabelaUsuarios);
+            Com.Close();
+            return TabelaUsuarios;
+        }
+
+        public void AtualizaUsuarios(string Usuario, string Senha,string Id)
+        {
+            Com.Open();
+            MySqlCommand AtualizaUsuario = new MySqlCommand("UPDATE usuarios SET login='"+Usuario+"', senha=MD5('"+Senha+"') WHERE id="+Id+"",Com);
+            AtualizaUsuario.ExecuteNonQuery();
+            Com.Close();
+        }
+
+        public void ExcluirUsuario(string Id)
+        {   
+            Com.Open();
+            MySqlCommand ExcluiFuncionario = new MySqlCommand("UPDATE usuarios SET excluido='S' WHERE id="+Id+"",Com);
+            ExcluiFuncionario.ExecuteNonQuery();
+            Com.Close();
+
+        }
     }
 }

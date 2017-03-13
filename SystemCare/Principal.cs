@@ -57,5 +57,11 @@ namespace SystemCare
             var RelatoriosEmpresa = new EmpresaRelatorio();
             RelatoriosEmpresa.ShowDialog();
         }
+
+        private void usuáriosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Usuarios CriarUsuario = new Usuarios();
+            CriarUsuario.ShowDialog();
+        }
     }
 }

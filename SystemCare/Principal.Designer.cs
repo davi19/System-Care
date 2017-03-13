@@ -43,13 +43,13 @@
             this.examesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cnaeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cBOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empresasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.serviçosPrestadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelaDePreçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empresasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.atestadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -135,6 +135,7 @@
             this.usuáriosToolStripMenuItem1.Name = "usuáriosToolStripMenuItem1";
             this.usuáriosToolStripMenuItem1.Size = new System.Drawing.Size(200, 22);
             this.usuáriosToolStripMenuItem1.Text = "Usuários";
+            this.usuáriosToolStripMenuItem1.Click += new System.EventHandler(this.usuáriosToolStripMenuItem1_Click);
             // 
             // riscosOperacionaisToolStripMenuItem
             // 
@@ -166,6 +167,18 @@
             this.cBOToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.cBOToolStripMenuItem.Text = "CBO";
             // 
+            // serviçosPrestadosToolStripMenuItem
+            // 
+            this.serviçosPrestadosToolStripMenuItem.Name = "serviçosPrestadosToolStripMenuItem";
+            this.serviçosPrestadosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.serviçosPrestadosToolStripMenuItem.Text = "Serviços Prestados";
+            // 
+            // tabelaDePreçoToolStripMenuItem
+            // 
+            this.tabelaDePreçoToolStripMenuItem.Name = "tabelaDePreçoToolStripMenuItem";
+            this.tabelaDePreçoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.tabelaDePreçoToolStripMenuItem.Text = "Tabela de Preço";
+            // 
             // relatórioToolStripMenuItem
             // 
             this.relatórioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -178,9 +191,15 @@
             // empresasToolStripMenuItem1
             // 
             this.empresasToolStripMenuItem1.Name = "empresasToolStripMenuItem1";
-            this.empresasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.empresasToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.empresasToolStripMenuItem1.Text = "Empresas";
             this.empresasToolStripMenuItem1.Click += new System.EventHandler(this.empresasToolStripMenuItem1_Click);
+            // 
+            // atestadoToolStripMenuItem
+            // 
+            this.atestadoToolStripMenuItem.Name = "atestadoToolStripMenuItem";
+            this.atestadoToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.atestadoToolStripMenuItem.Text = "Atestado";
             // 
             // ajudaToolStripMenuItem
             // 
@@ -198,24 +217,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // serviçosPrestadosToolStripMenuItem
-            // 
-            this.serviçosPrestadosToolStripMenuItem.Name = "serviçosPrestadosToolStripMenuItem";
-            this.serviçosPrestadosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.serviçosPrestadosToolStripMenuItem.Text = "Serviços Prestados";
-            // 
-            // tabelaDePreçoToolStripMenuItem
-            // 
-            this.tabelaDePreçoToolStripMenuItem.Name = "tabelaDePreçoToolStripMenuItem";
-            this.tabelaDePreçoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.tabelaDePreçoToolStripMenuItem.Text = "Tabela de Preço";
-            // 
-            // atestadoToolStripMenuItem
-            // 
-            this.atestadoToolStripMenuItem.Name = "atestadoToolStripMenuItem";
-            this.atestadoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.atestadoToolStripMenuItem.Text = "Atestado";
             // 
             // Principal
             // 
