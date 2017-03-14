@@ -63,5 +63,11 @@ namespace SystemCare
             Usuarios CriarUsuario = new Usuarios();
             CriarUsuario.ShowDialog();
         }
+
+        private void riscosOperacionaisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RiscosOperacionais riscos = new RiscosOperacionais();
+            riscos.ShowDialog();
+        }
     }
 }

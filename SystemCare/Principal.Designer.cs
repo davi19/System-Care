@@ -142,6 +142,7 @@
             this.riscosOperacionaisToolStripMenuItem.Name = "riscosOperacionaisToolStripMenuItem";
             this.riscosOperacionaisToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.riscosOperacionaisToolStripMenuItem.Text = "Riscos Operacionais";
+            this.riscosOperacionaisToolStripMenuItem.Click += new System.EventHandler(this.riscosOperacionaisToolStripMenuItem_Click);
             // 
             // modalidadesDeExamesToolStripMenuItem
             // 

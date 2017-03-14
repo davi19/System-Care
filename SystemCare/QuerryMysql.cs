@@ -11,7 +11,7 @@ namespace SystemCare
         private static string NomeSetor = "";
         private static string IdFuncionario = "";
         private static string IdFuncionarioNova = "";
-        //192.168.0.101
+        //192.168.0.200
         private readonly MySqlConnection Com =
             new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
@@ -726,6 +726,63 @@ namespace SystemCare
             ExcluiFuncionario.ExecuteNonQuery();
             Com.Close();
 
+        }
+        public void CadastraRisco(string Descricao, string IdGrupo)
+        {
+            Com.Open();
+            MySqlCommand InserirRisco = new MySqlCommand("INSERT INTO riscos (descricao,idgrupo) VALUES('" + Descricao + "'," + IdGrupo + ")", Com);
+            InserirRisco.ExecuteNonQuery();
+            Com.Close();
+        }
+
+        public DataTable RetornaRisco(string TextoPesquisa)
+        {
+            Com.Open();
+            MySqlCommand SelecionaRiscos = new MySqlCommand("SELECT id,descricao FROM riscos WHERE descricao like'%" + TextoPesquisa + "%' AND excluido='N'", Com);
+            MySqlDataAdapter LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
+            DataTable TabelaRiscos = new DataTable();
+            LeitorRiscos.Fill(TabelaRiscos);
+            Com.Close();
+            return TabelaRiscos;
+        }
+
+        public void AtualizaRisco(string Descricao, string IdGrupo, string Id)
+        {
+            Com.Open();
+            MySqlCommand AtualizaRiscos = new MySqlCommand("UPDATE riscos SET descricao='" + Descricao + "', idgrupo=" +IdGrupo + " WHERE id=" + Id + "", Com);
+            AtualizaRiscos.ExecuteNonQuery();
+            Com.Close();
+        }
+
+        public void ExcluirRisco(string Id)
+        {
+            Com.Open();
+            MySqlCommand ExcluiRiscos = new MySqlCommand("UPDATE riscos SET excluido='S' WHERE id=" + Id + "", Com);
+            ExcluiRiscos.ExecuteNonQuery();
+            Com.Close();
+
+        }
+
+        public DataTable RetornaGrupoRisco()
+        {
+            Com.Open();
+            MySqlCommand SelecionaRiscos = new MySqlCommand("SELECT id,descricao FROM gruposriscos", Com);
+            MySqlDataAdapter LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
+            DataTable TabelaRiscos = new DataTable();
+            LeitorRiscos.Fill(TabelaRiscos);
+            Com.Close();
+            return TabelaRiscos;
+        }
+
+        public DataTable RetornaGrupoRiscoEditar(string Id)
+        {
+            Com.Open();
+            MySqlCommand SelecionaRiscos = new MySqlCommand("SELECT idgrupo FROM riscos where id="+Id+"", Com);
+            MySqlDataAdapter LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
+            DataTable TabelaRiscos = new DataTable();
+            LeitorRiscos.Fill(TabelaRiscos);
+            Com.Close();
+            return TabelaRiscos;
         }
     }
 }
