@@ -19,7 +19,7 @@ namespace SystemCare
         public RiscosOperacionais()
         {
             InitializeComponent();
-            DataTable TabelaGrupo =CadastrarRiscos.RetornaGrupoRisco();
+            DataTable TabelaGrupo = CadastrarRiscos.RetornaGrupoRisco();
             ComboGrupoRisco.DataSource = TabelaGrupo;
             ComboGrupoRisco.DisplayMember = "descricao";
             ComboGrupoRisco.ValueMember = "id";
@@ -28,7 +28,14 @@ namespace SystemCare
             ComboGrupoEditar.DataSource = TabelaGrupoEditar;
             ComboGrupoEditar.DisplayMember = "descricao";
             ComboGrupoEditar.ValueMember = "id";
-          
+
+            DataTable TabelaExames = CadastrarRiscos.RetornaTodaModalidadeExame();
+            GridExames.DataSource = TabelaExames;
+
+            DataTable TabelaExamesEditar = CadastrarRiscos.RetornaTodaModalidadeExame();
+            GridExamesEditar.DataSource = TabelaExames;
+
+
         }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
@@ -41,8 +48,27 @@ namespace SystemCare
             }
             else
             {
-                CadastrarRiscos.CadastraRisco(TextDescricao.Text, ComboGrupoRisco.SelectedValue.ToString());
+                string RelacaoExames = ";";
+
+                for (int i = 0; i < GridExames.RowCount; i++)
+                {
+                    try
+                    {
+                        if (Convert.ToBoolean(GridExames.Rows[i].Cells[0].Value.ToString()))
+                        {
+                            RelacaoExames = RelacaoExames + GridExames.Rows[i].Cells[1].Value.ToString() + ";";
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                CadastrarRiscos.CadastraRisco(TextDescricao.Text, ComboGrupoRisco.SelectedValue.ToString(),RelacaoExames);
                 TextDescricao.Text = "";
+                GridExames.DataSource = null;
+                DataTable TabelaExames = CadastrarRiscos.RetornaTodaModalidadeExame();
+                GridExames.DataSource = TabelaExames;
                 MetroMessageBox.Show(this, "Risco cadastrado com sucesso!", "Sucesso!",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -81,16 +107,47 @@ namespace SystemCare
                     }
                     catch
                     {
+
                     }
                 DataTable TabelaIdGrupo = CadastrarRiscos.RetornaGrupoRiscoEditar(IdRisco);
+                string TabelaExames = CadastrarRiscos.RetornaRelacaoExamesEditar(IdRisco);
+                string[] Exames = TabelaExames.Split(';');
+                for(int j =0; j < GridExamesEditar.RowCount; j++)
+                {
+                    for(int k = 0; k < Exames.Length; k++)
+                    {
+                        if (GridExamesEditar.Rows[j].Cells[1].Value.ToString().Equals(Exames[k].ToString()))
+                        {
+                            GridExamesEditar.Rows[j].Cells[0].Value = true;
+                            k = Exames.Length;
+                        }
+                    }
+                }
                 ComboGrupoEditar.SelectedValue = TabelaIdGrupo.Rows[0][0].ToString();
                 BtnEditar.Text = "Salvar";
 
             }
             else
             {
+                string RelacaoExames = ";";
 
-                CadastrarRiscos.AtualizaRisco(TextDescricaoEditar.Text, ComboGrupoEditar.SelectedValue.ToString(), IdRisco);
+                for (int i = 0; i < GridExames.RowCount; i++)
+                {
+                    try
+                    {
+                        if (Convert.ToBoolean(GridExamesEditar.Rows[i].Cells[0].Value.ToString()))
+                        {
+                            RelacaoExames = RelacaoExames + GridExamesEditar.Rows[i].Cells[1].Value.ToString() + ";";
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                }
+
+
+                CadastrarRiscos.AtualizaRisco(TextDescricaoEditar.Text, ComboGrupoEditar.SelectedValue.ToString(), IdRisco,RelacaoExames);
                 MetroMessageBox.Show(this,
                     "Dados salvos com sucesso !", "Sucesso !",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,6 +160,9 @@ namespace SystemCare
                 TextDescricaoEditar.Visible = false;
                 ComboGrupoEditar.Visible = false;
                 BtnExcluir.Visible = false;
+                GridExamesEditar.DataSource = null;
+                DataTable TabelaExames = CadastrarRiscos.RetornaTodaModalidadeExame();
+                GridExamesEditar.DataSource = TabelaExames;
             }
         }
 

@@ -608,6 +608,17 @@ namespace SystemCare
             return TabelaTipoExame.Rows[0][0].ToString();
         }
 
+        public DataTable RetornaTodaModalidadeExame()
+        {
+            Com.Open();
+            var SelecionaTipoExame =
+                new MySqlCommand("SELECT id,descricao FROM modalidadeexames;", Com);
+            var LeitorTipoExame = new MySqlDataAdapter(SelecionaTipoExame);
+            var TabelaTipoExame = new DataTable();
+            LeitorTipoExame.Fill(TabelaTipoExame);
+            Com.Close();
+            return TabelaTipoExame;
+        }
         public void CadastrarAtestado(string Idfuncionario, string DataAtestado, string Cid, string Motivo,
             string DiasAfastafdo)
         {
@@ -727,10 +738,10 @@ namespace SystemCare
             Com.Close();
 
         }
-        public void CadastraRisco(string Descricao, string IdGrupo)
+        public void CadastraRisco(string Descricao, string IdGrupo,string Relacao)
         {
             Com.Open();
-            MySqlCommand InserirRisco = new MySqlCommand("INSERT INTO riscos (descricao,idgrupo) VALUES('" + Descricao + "'," + IdGrupo + ")", Com);
+            MySqlCommand InserirRisco = new MySqlCommand("INSERT INTO riscos (descricao,idgrupo,relacaoexames) VALUES('" + Descricao + "'," + IdGrupo + " ,'"+Relacao+"')", Com);
             InserirRisco.ExecuteNonQuery();
             Com.Close();
         }
@@ -746,10 +757,10 @@ namespace SystemCare
             return TabelaRiscos;
         }
 
-        public void AtualizaRisco(string Descricao, string IdGrupo, string Id)
+        public void AtualizaRisco(string Descricao, string IdGrupo, string Id,string Relacao)
         {
             Com.Open();
-            MySqlCommand AtualizaRiscos = new MySqlCommand("UPDATE riscos SET descricao='" + Descricao + "', idgrupo=" +IdGrupo + " WHERE id=" + Id + "", Com);
+            MySqlCommand AtualizaRiscos = new MySqlCommand("UPDATE riscos SET descricao='" + Descricao + "', idgrupo=" +IdGrupo + ",relacaoexames='"+Relacao+"' WHERE id=" + Id + "", Com);
             AtualizaRiscos.ExecuteNonQuery();
             Com.Close();
         }
@@ -784,5 +795,16 @@ namespace SystemCare
             Com.Close();
             return TabelaRiscos;
         }
+        public string RetornaRelacaoExamesEditar(string Id)
+        {
+            Com.Open();
+            MySqlCommand SelecionaRiscos = new MySqlCommand("SELECT relacaoexames FROM riscos where id=" + Id + "", Com);
+            MySqlDataAdapter LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
+            DataTable TabelaRiscos = new DataTable();
+            LeitorRiscos.Fill(TabelaRiscos);
+            Com.Close();
+            return TabelaRiscos.Rows[0][0].ToString();
+        }
+        
     }
 }

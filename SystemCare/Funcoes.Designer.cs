@@ -87,6 +87,7 @@
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.TextNomeFuncaoEditar = new MetroFramework.Controls.MetroTextBox();
+            this.CheckMaisExames = new MetroFramework.Controls.MetroCheckBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridSetores)).BeginInit();
@@ -105,7 +106,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(4, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(865, 637);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTabControl1.TabIndex = 0;
@@ -113,6 +114,7 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.CheckMaisExames);
             this.metroTabPage1.Controls.Add(this.BtnBuscaSetor);
             this.metroTabPage1.Controls.Add(this.BtnCadastrar);
             this.metroTabPage1.Controls.Add(this.metroLabel1);
@@ -1021,6 +1023,20 @@
             this.TextNomeFuncaoEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNomeFuncaoEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // CheckMaisExames
+            // 
+            this.CheckMaisExames.AutoSize = true;
+            this.CheckMaisExames.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.CheckMaisExames.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
+            this.CheckMaisExames.Location = new System.Drawing.Point(15, 461);
+            this.CheckMaisExames.Name = "CheckMaisExames";
+            this.CheckMaisExames.Size = new System.Drawing.Size(373, 19);
+            this.CheckMaisExames.Style = MetroFramework.MetroColorStyle.Green;
+            this.CheckMaisExames.TabIndex = 48;
+            this.CheckMaisExames.Text = "Adcionar mais exames além dos vinculados no risco";
+            this.CheckMaisExames.UseSelectable = true;
+            this.CheckMaisExames.UseStyleColors = true;
+            // 
             // Funcoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1088,5 +1104,6 @@
         private MetroFramework.Controls.MetroButton BtnBuscaFuncao;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroTextBox TextBuscaFuncao;
+        private MetroFramework.Controls.MetroCheckBox CheckMaisExames;
     }
 }

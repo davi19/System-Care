@@ -118,14 +118,14 @@
             // parametrosDoSistemaToolStripMenuItem
             // 
             this.parametrosDoSistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuáriosToolStripMenuItem1,
             this.riscosOperacionaisToolStripMenuItem,
-            this.modalidadesDeExamesToolStripMenuItem,
             this.examesToolStripMenuItem,
+            this.modalidadesDeExamesToolStripMenuItem,
             this.cnaeToolStripMenuItem,
             this.cBOToolStripMenuItem,
             this.serviçosPrestadosToolStripMenuItem,
-            this.tabelaDePreçoToolStripMenuItem});
+            this.tabelaDePreçoToolStripMenuItem,
+            this.usuáriosToolStripMenuItem1});
             this.parametrosDoSistemaToolStripMenuItem.Name = "parametrosDoSistemaToolStripMenuItem";
             this.parametrosDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.parametrosDoSistemaToolStripMenuItem.Text = " Parametros do Sistema";
