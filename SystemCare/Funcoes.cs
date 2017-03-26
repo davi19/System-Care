@@ -74,19 +74,54 @@ namespace SystemCare
                         }
                         else
                         {
-                            Cadastro.CadastrarFuncao(TextNomeFuncao.Text, IdCbo[1], IdRiscos, IdSetor);
-                            MetroMessageBox.Show(this, "Função cadastrada com sucesso!", "Sucesso !",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-                            TextNomeFuncao.Text = "";
-                            GridSetores.DataSource = null;
-                            GridCbo.DataSource = null;
-                            TextNomeSetor.Text = "";
-                            TextCbo.Text = "";
-                            LabelCbo.Text = "CBO";
-                            DataGridRiscos.DataSource = null;
-                            var TabelaRiscos = Cadastro.SelecionaRisco();
-                            DataGridRiscos.DataSource = TabelaRiscos;
+                            if (CheckMaisExames.Checked)
+                            {
+                                var Exames = "";
+                                for (var j = 0; j < GridExames.RowCount; j++)
+                                {
+                                    try
+                                    {
+                                        if (Convert.ToBoolean(GridExames.Rows[j].Cells[0].Value.ToString()))
+                                            Exames = Exames + ";" + GridExames.Rows[j].Cells[1].Value;
+                                    }
+                                    catch
+                                    {
+                                    }
+                                }
+
+                                Cadastro.CadastrarFuncaoExame(TextNomeFuncao.Text, IdCbo[1], IdRiscos, IdSetor, Exames);
+                                MetroMessageBox.Show(this, "Função cadastrada com sucesso!", "Sucesso !",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                                TextNomeFuncao.Text = "";
+                                GridSetores.DataSource = null;
+                                GridCbo.DataSource = null;
+                                TextNomeSetor.Text = "";
+                                TextCbo.Text = "";
+                                LabelCbo.Text = "CBO";
+                                DataGridRiscos.DataSource = null;
+                                var TabelaRiscos = Cadastro.SelecionaRisco();
+                                DataGridRiscos.DataSource = TabelaRiscos;
+                                GridExames.Visible = false;
+                                GridExames.DataSource = null;
+                            }
+                            else
+                            {
+                                Cadastro.CadastrarFuncao(TextNomeFuncao.Text, IdCbo[1], IdRiscos, IdSetor);
+                                MetroMessageBox.Show(this, "Função cadastrada com sucesso!", "Sucesso !",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                                TextNomeFuncao.Text = "";
+                                GridSetores.DataSource = null;
+                                GridCbo.DataSource = null;
+                                TextNomeSetor.Text = "";
+                                TextCbo.Text = "";
+                                LabelCbo.Text = "CBO";
+                                DataGridRiscos.DataSource = null;
+                                var TabelaRiscos = Cadastro.SelecionaRisco();
+                                DataGridRiscos.DataSource = TabelaRiscos;
+                                CheckMaisExames.Checked = false;
+                            }
                         }
                     }
                 }
@@ -189,6 +224,7 @@ namespace SystemCare
                 TextCboEditar.Visible = true;
                 BtnBuscaSetorEditar.Visible = true;
                 BtnBuscarCboEditar.Visible = true;
+               
 
                 for (var i = 0; i < GridFuncaoEditar.Rows.Count; i++)
                     try
@@ -203,6 +239,22 @@ namespace SystemCare
                     {
                     }
                 var DadosFuncao = Cadastro.RetornaDadosFuncao(IdFuncao);
+                var TabelaExames = Cadastro.RetornaTodaModalidadeExame();
+                GridExamesEditar.DataSource = TabelaExames;
+                GridExamesEditar.Visible = true;
+
+                if (DadosFuncao.Rows[0][6].ToString().Length > 0)
+                {
+                   
+                    string [] Exames = DadosFuncao.Rows[0][6].ToString().Split(';');
+                    for (var j = 0; j < GridExamesEditar.RowCount; j++)
+                        for (var k = 0; k < Exames.Length; k++)
+                        if (GridExamesEditar.Rows[j].Cells[1].Value.ToString().Equals(Exames[k]))
+                        {
+                            GridExamesEditar.Rows[j].Cells[0].Value = true;
+                            k = Exames.Length;
+                        }
+                }
                 LabelCboEditar.Text = " CBO | " + Cadastro.RetornaCbo(DadosFuncao.Rows[0]["idcbo"].ToString());
                 var NomeSetor = Cadastro.RetornaSetor(DadosFuncao.Rows[0]["idsetor"].ToString());
                 TextNomeSetorEditar.Text = NomeSetor;
@@ -274,27 +326,74 @@ namespace SystemCare
                     catch
                     {
                     }
-                var IdCbo = LabelCboEditar.Text.Split('|');
-                Cadastro.EditarFuncao(TextNomeFuncaoEditar.Text, IdSetor, IdFuncao, IdRiscos, IdCbo[1]);
-                MetroMessageBox.Show(this,
-                    "Dados salvos com sucesso !", "Sucesso !",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                metroLabel2.Visible = false;
-                metroLabel4.Visible = false;
-                LabelCboEditar.Visible = false;
-                GridSetorEditar.Visible = false;
-                GridRiscosEditar.Visible = false;
-                GridCboEditar.Visible = false;
-                TextNomeFuncaoEditar.Visible = false;
-                TextNomeSetorEditar.Visible = false;
-                BtnBuscaSetorEditar.Visible = false;
-                BtnBuscarCboEditar.Visible = false;
-                TextCboEditar.Visible = false;
-                TextBuscaFuncao.Text = "";
-                GridFuncaoEditar.DataSource = null;
-                GridRiscosEditar.DataSource = null;
-                var TabelaRiscosEditar = Cadastro.SelecionaRisco();
-                GridRiscosEditar.DataSource = TabelaRiscosEditar;
+
+
+                var RelacaoExames = ";";
+
+                for (var i = 0; i < GridExamesEditar.RowCount; i++)
+                    try
+                    {
+                        if (Convert.ToBoolean(GridExamesEditar.Rows[i].Cells[0].Value.ToString()))
+                            RelacaoExames = RelacaoExames + GridExamesEditar.Rows[i].Cells[1].Value + ";";
+                    }
+                    catch
+                    {
+                    }
+
+                if (RelacaoExames.Length>1)
+                {
+
+                    var IdCbo = LabelCboEditar.Text.Split('|');
+                    Cadastro.EditarFuncaoExames(TextNomeFuncaoEditar.Text, IdSetor, IdFuncao, IdRiscos, IdCbo[1],RelacaoExames);
+                    MetroMessageBox.Show(this,
+                        "Dados salvos com sucesso !", "Sucesso !",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    metroLabel2.Visible = false;
+                    metroLabel4.Visible = false;
+                    LabelCboEditar.Visible = false;
+                    GridSetorEditar.Visible = false;
+                    GridRiscosEditar.Visible = false;
+                    GridCboEditar.Visible = false;
+                    TextNomeFuncaoEditar.Visible = false;
+                    TextNomeSetorEditar.Visible = false;
+                    BtnBuscaSetorEditar.Visible = false;
+                    BtnBuscarCboEditar.Visible = false;
+                    TextCboEditar.Visible = false;
+                    TextBuscaFuncao.Text = "";
+                    GridFuncaoEditar.DataSource = null;
+                    GridRiscosEditar.DataSource = null;
+                    var TabelaRiscosEditar = Cadastro.SelecionaRisco();
+                    GridRiscosEditar.DataSource = TabelaRiscosEditar;
+                    GridExamesEditar.DataSource = null;
+                    GridExamesEditar.Visible = false;
+
+                }
+                else
+                {
+                    var IdCbo = LabelCboEditar.Text.Split('|');
+                    Cadastro.EditarFuncao(TextNomeFuncaoEditar.Text, IdSetor, IdFuncao, IdRiscos, IdCbo[1]);
+                    MetroMessageBox.Show(this,
+                        "Dados salvos com sucesso !", "Sucesso !",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    metroLabel2.Visible = false;
+                    metroLabel4.Visible = false;
+                    LabelCboEditar.Visible = false;
+                    GridSetorEditar.Visible = false;
+                    GridRiscosEditar.Visible = false;
+                    GridCboEditar.Visible = false;
+                    TextNomeFuncaoEditar.Visible = false;
+                    TextNomeSetorEditar.Visible = false;
+                    BtnBuscaSetorEditar.Visible = false;
+                    BtnBuscarCboEditar.Visible = false;
+                    TextCboEditar.Visible = false;
+                    TextBuscaFuncao.Text = "";
+                    GridFuncaoEditar.DataSource = null;
+                    GridRiscosEditar.DataSource = null;
+                    var TabelaRiscosEditar = Cadastro.SelecionaRisco();
+                    GridRiscosEditar.DataSource = TabelaRiscosEditar;
+                    GridExamesEditar.DataSource = null;
+                    GridExamesEditar.Visible = false;
+                }
             }
         }
 
@@ -354,6 +453,21 @@ namespace SystemCare
             TextCboEditar.Text = "";
             GridCboEditar.DataSource = null;
             GridCboEditar.Visible = false;
+        }
+
+        private void CheckMaisExames_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckMaisExames.Checked)
+            {
+                var TabelaExame = Cadastro.RetornaTodaModalidadeExame();
+                GridExames.DataSource = TabelaExame;
+                GridExames.Visible = true;
+            }
+            else
+            {
+                GridExames.Visible = false;
+                GridExames.DataSource = null;
+            }
         }
     }
 }

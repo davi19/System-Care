@@ -60,13 +60,13 @@ namespace SystemCare
 
         private void usuáriosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Usuarios CriarUsuario = new Usuarios();
+            var CriarUsuario = new Usuarios();
             CriarUsuario.ShowDialog();
         }
 
         private void riscosOperacionaisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RiscosOperacionais riscos = new RiscosOperacionais();
+            var riscos = new RiscosOperacionais();
             riscos.ShowDialog();
         }
     }

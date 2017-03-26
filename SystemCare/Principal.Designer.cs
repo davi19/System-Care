@@ -37,14 +37,14 @@
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.examesEAvaliaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parametrosDoSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuáriosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.riscosOperacionaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modalidadesDeExamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.examesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modalidadesDeExamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cnaeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cBOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviçosPrestadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabelaDePreçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuáriosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.atestadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,13 +130,6 @@
             this.parametrosDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.parametrosDoSistemaToolStripMenuItem.Text = " Parametros do Sistema";
             // 
-            // usuáriosToolStripMenuItem1
-            // 
-            this.usuáriosToolStripMenuItem1.Name = "usuáriosToolStripMenuItem1";
-            this.usuáriosToolStripMenuItem1.Size = new System.Drawing.Size(200, 22);
-            this.usuáriosToolStripMenuItem1.Text = "Usuários";
-            this.usuáriosToolStripMenuItem1.Click += new System.EventHandler(this.usuáriosToolStripMenuItem1_Click);
-            // 
             // riscosOperacionaisToolStripMenuItem
             // 
             this.riscosOperacionaisToolStripMenuItem.Name = "riscosOperacionaisToolStripMenuItem";
@@ -144,17 +137,17 @@
             this.riscosOperacionaisToolStripMenuItem.Text = "Riscos Operacionais";
             this.riscosOperacionaisToolStripMenuItem.Click += new System.EventHandler(this.riscosOperacionaisToolStripMenuItem_Click);
             // 
-            // modalidadesDeExamesToolStripMenuItem
-            // 
-            this.modalidadesDeExamesToolStripMenuItem.Name = "modalidadesDeExamesToolStripMenuItem";
-            this.modalidadesDeExamesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.modalidadesDeExamesToolStripMenuItem.Text = "Modalidades de Exames";
-            // 
             // examesToolStripMenuItem
             // 
             this.examesToolStripMenuItem.Name = "examesToolStripMenuItem";
             this.examesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.examesToolStripMenuItem.Text = "Exames";
+            // 
+            // modalidadesDeExamesToolStripMenuItem
+            // 
+            this.modalidadesDeExamesToolStripMenuItem.Name = "modalidadesDeExamesToolStripMenuItem";
+            this.modalidadesDeExamesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.modalidadesDeExamesToolStripMenuItem.Text = "Modalidades de Exames";
             // 
             // cnaeToolStripMenuItem
             // 
@@ -179,6 +172,13 @@
             this.tabelaDePreçoToolStripMenuItem.Name = "tabelaDePreçoToolStripMenuItem";
             this.tabelaDePreçoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.tabelaDePreçoToolStripMenuItem.Text = "Tabela de Preço";
+            // 
+            // usuáriosToolStripMenuItem1
+            // 
+            this.usuáriosToolStripMenuItem1.Name = "usuáriosToolStripMenuItem1";
+            this.usuáriosToolStripMenuItem1.Size = new System.Drawing.Size(200, 22);
+            this.usuáriosToolStripMenuItem1.Text = "Usuários";
+            this.usuáriosToolStripMenuItem1.Click += new System.EventHandler(this.usuáriosToolStripMenuItem1_Click);
             // 
             // relatórioToolStripMenuItem
             // 
@@ -211,11 +211,14 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::SystemCare.Properties.Resources.thumbnail_med_seg;
-            this.pictureBox1.Location = new System.Drawing.Point(349, 253);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 87);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(552, 178);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(1280, 523);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -223,6 +226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1126, 557);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
@@ -257,12 +261,12 @@
         private System.Windows.Forms.ToolStripMenuItem examesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem examesEAvaliaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem empresasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cnaeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cBOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem serviçosPrestadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tabelaDePreçoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atestadoToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

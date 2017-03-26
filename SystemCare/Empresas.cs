@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
@@ -13,13 +12,11 @@ namespace SystemCare
         public Empresas()
         {
             InitializeComponent();
-            DataTable TabelaServicos = Cadastro.RetornaServicosPrestados();
+            var TabelaServicos = Cadastro.RetornaServicosPrestados();
             GridServicosPrestados.DataSource = TabelaServicos;
 
-            DataTable TabelaServicosEditar = Cadastro.RetornaServicosPrestados();
+            var TabelaServicosEditar = Cadastro.RetornaServicosPrestados();
             GridServicosEditar.DataSource = TabelaServicos;
-
-
         }
 
         private void metroTextBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -64,20 +61,15 @@ namespace SystemCare
             }
             else
             {
-                string Servicos = "";
-                for (int i = 0; i<GridServicosPrestados.RowCount; i++)
-                {
+                var Servicos = "";
+                for (var i = 0; i < GridServicosPrestados.RowCount; i++)
                     if (Convert.ToBoolean(GridServicosPrestados.Rows[i].Cells[0].Value))
-                    {
-                        Servicos = Servicos + ";" + GridServicosPrestados.Rows[i].Cells[1].Value.ToString();
-                    }
-                   
-                }
+                        Servicos = Servicos + ";" + GridServicosPrestados.Rows[i].Cells[1].Value;
                 var Cnae = LabelCnae.Text.Split('|');
                 Cadastro.CadastraEmpresa(TextNome.Text, TextEndereco.Text, TextCnpj.Text,
                     Convert.ToInt32(TextQuantidadeFuncionario.Text), TextTelefone.Text, TextEmail.Text,
                     Cnae[1] + " | " + Cnae[2],
-                    Convert.ToInt32(TextRisco.Text),Servicos);
+                    Convert.ToInt32(TextRisco.Text), Servicos);
                 MetroMessageBox.Show(this, "Empresa cadastrada com sucesso!", "Sucesso !", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 TextNome.Text = "";
@@ -89,7 +81,7 @@ namespace SystemCare
                 TextEmail.Text = "";
                 LabelCnae.Text = "CNAE:";
                 GridServicosPrestados.DataSource = null;
-                DataTable TabelaServicos = Cadastro.RetornaServicosPrestados();
+                var TabelaServicos = Cadastro.RetornaServicosPrestados();
                 GridServicosPrestados.DataSource = TabelaServicos;
             }
         }
@@ -140,7 +132,7 @@ namespace SystemCare
                 TextBusca.Text = "";
                 DataGridEmpresa.DataSource = null;
                 GridServicosEditar.DataSource = null;
-                DataTable TabelaServicos = Cadastro.RetornaServicosPrestados();
+                var TabelaServicos = Cadastro.RetornaServicosPrestados();
                 GridServicosEditar.DataSource = TabelaServicos;
             }
         }
@@ -182,18 +174,11 @@ namespace SystemCare
                     TextEmailEditar.Text = TabelaEditarEmpresa.Rows[0][5].ToString();
                     LabelCnaeEditar.Text = "CNAE |" + TabelaEditarEmpresa.Rows[0][6];
                     TextRiscoEditar.Text = TabelaEditarEmpresa.Rows[0][7].ToString();
-                    string [] Servicos = TabelaEditarEmpresa.Rows[0]["servicoprestado"].ToString().Split(';');
-                    for (int j = 1; j < Servicos.Length; j++)
-                    {
-                        for (int k=0;k<GridServicosEditar.RowCount;k++)
-                            {
-                                if (GridServicosEditar.Rows[k].Cells[1].Value.ToString().Equals(Servicos[j].ToString()))
-                                {
-                                    GridServicosEditar.Rows[k].Cells[0].Value = true;
-                                }
-                            }
-                    }
-
+                    var Servicos = TabelaEditarEmpresa.Rows[0]["servicoprestado"].ToString().Split(';');
+                    for (var j = 1; j < Servicos.Length; j++)
+                    for (var k = 0; k < GridServicosEditar.RowCount; k++)
+                        if (GridServicosEditar.Rows[k].Cells[1].Value.ToString().Equals(Servicos[j]))
+                            GridServicosEditar.Rows[k].Cells[0].Value = true;
 
 
                     BtnEditar.Text = "Salvar";
@@ -201,21 +186,16 @@ namespace SystemCare
             }
             else
             {
-                string Servicos = "";
-                for (int i = 0; i < GridServicosEditar.RowCount; i++)
-                {
+                var Servicos = "";
+                for (var i = 0; i < GridServicosEditar.RowCount; i++)
                     if (Convert.ToBoolean(GridServicosEditar.Rows[i].Cells[0].Value))
-                    {
-                        Servicos = Servicos + ";" + GridServicosEditar.Rows[i].Cells[1].Value.ToString();
-                    }
-
-                }
+                        Servicos = Servicos + ";" + GridServicosEditar.Rows[i].Cells[1].Value;
                 var Cnae = LabelCnaeEditar.Text.Split('|');
                 Cadastro.EditarEmpresa(TextNomeEditar.Text, TextEnderecoEditar.Text, TextCnpjEditar.Text,
                     Convert.ToInt32(TextQuantidadeFuncionarioEditar.Text), TextTelefoneEditar.Text, TextEmailEditar.Text,
                     Cnae[1] + " " +
                     "| " + Cnae[2],
-                    Convert.ToInt32(TextRiscoEditar.Text),Servicos);
+                    Convert.ToInt32(TextRiscoEditar.Text), Servicos);
                 MetroMessageBox.Show(this, "Dados da empresa atualizados com sucesso!", "Sucesso !",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -231,7 +211,6 @@ namespace SystemCare
                 TextRiscoEditar.Text = "";
                 TextBusca.Text = "";
                 DataGridEmpresa.DataSource = null;
-                
             }
         }
 

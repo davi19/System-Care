@@ -1,25 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="PrestacaodeServico" targetNamespace="http://tempuri.org/PrestacaodeServico.xsd" xmlns:mstns="http://tempuri.org/PrestacaodeServico.xsd" xmlns="http://tempuri.org/PrestacaodeServico.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+
+<xs:schema id="PrestacaodeServico" targetNamespace="http://tempuri.org/PrestacaodeServico.xsd"
+           xmlns:mstns="http://tempuri.org/PrestacaodeServico.xsd" xmlns="http://tempuri.org/PrestacaodeServico.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified"
+           elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter"
+                  Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema"
+                  xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections />
         <Tables />
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="PrestacaodeServico" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PrestacaodeServico" msprop:Generator_UserDSName="PrestacaodeServico">
+  <xs:element name="PrestacaodeServico" msdata:IsDataSet="true" msdata:UseCurrentLocale="true"
+              msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PrestacaodeServico"
+              msprop:Generator_UserDSName="PrestacaodeServico">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Historico" msprop:Generator_TableClassName="HistoricoDataTable" msprop:Generator_TableVarName="tableHistorico" msprop:Generator_TablePropName="Historico" msprop:Generator_RowDeletingName="HistoricoRowDeleting" msprop:Generator_RowChangingName="HistoricoRowChanging" msprop:Generator_RowEvHandlerName="HistoricoRowChangeEventHandler" msprop:Generator_RowDeletedName="HistoricoRowDeleted" msprop:Generator_UserTableName="Historico" msprop:Generator_RowChangedName="HistoricoRowChanged" msprop:Generator_RowEvArgName="HistoricoRowChangeEvent" msprop:Generator_RowClassName="HistoricoRow">
+        <xs:element name="Historico" msprop:Generator_TableClassName="HistoricoDataTable"
+                    msprop:Generator_TableVarName="tableHistorico" msprop:Generator_TablePropName="Historico"
+                    msprop:Generator_RowDeletingName="HistoricoRowDeleting"
+                    msprop:Generator_RowChangingName="HistoricoRowChanging"
+                    msprop:Generator_RowEvHandlerName="HistoricoRowChangeEventHandler"
+                    msprop:Generator_RowDeletedName="HistoricoRowDeleted" msprop:Generator_UserTableName="Historico"
+                    msprop:Generator_RowChangedName="HistoricoRowChanged"
+                    msprop:Generator_RowEvArgName="HistoricoRowChangeEvent"
+                    msprop:Generator_RowClassName="HistoricoRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="nomefuncionario" msprop:Generator_ColumnVarNameInTable="columnnomefuncionario" msprop:Generator_ColumnPropNameInRow="nomefuncionario" msprop:Generator_ColumnPropNameInTable="nomefuncionarioColumn" msprop:Generator_UserColumnName="nomefuncionario" type="xs:string" minOccurs="0" />
-              <xs:element name="funcao" msprop:Generator_ColumnVarNameInTable="columnfuncao" msprop:Generator_ColumnPropNameInRow="funcao" msprop:Generator_ColumnPropNameInTable="funcaoColumn" msprop:Generator_UserColumnName="funcao" type="xs:string" minOccurs="0" />
-              <xs:element name="nomexame" msprop:Generator_ColumnVarNameInTable="columnnomexame" msprop:Generator_ColumnPropNameInRow="nomexame" msprop:Generator_ColumnPropNameInTable="nomexameColumn" msprop:Generator_UserColumnName="nomexame" type="xs:string" minOccurs="0" />
-              <xs:element name="valor" msprop:Generator_ColumnVarNameInTable="columnvalor" msprop:Generator_ColumnPropNameInRow="valor" msprop:Generator_ColumnPropNameInTable="valorColumn" msprop:Generator_UserColumnName="valor" type="xs:string" minOccurs="0" />
-              <xs:element name="dataexame" msprop:Generator_ColumnVarNameInTable="columndataexame" msprop:Generator_ColumnPropNameInRow="dataexame" msprop:Generator_ColumnPropNameInTable="dataexameColumn" msprop:Generator_UserColumnName="dataexame" type="xs:string" minOccurs="0" />
+              <xs:element name="nomefuncionario" msprop:Generator_ColumnVarNameInTable="columnnomefuncionario"
+                          msprop:Generator_ColumnPropNameInRow="nomefuncionario"
+                          msprop:Generator_ColumnPropNameInTable="nomefuncionarioColumn"
+                          msprop:Generator_UserColumnName="nomefuncionario" type="xs:string" minOccurs="0" />
+              <xs:element name="funcao" msprop:Generator_ColumnVarNameInTable="columnfuncao"
+                          msprop:Generator_ColumnPropNameInRow="funcao"
+                          msprop:Generator_ColumnPropNameInTable="funcaoColumn"
+                          msprop:Generator_UserColumnName="funcao" type="xs:string" minOccurs="0" />
+              <xs:element name="nomexame" msprop:Generator_ColumnVarNameInTable="columnnomexame"
+                          msprop:Generator_ColumnPropNameInRow="nomexame"
+                          msprop:Generator_ColumnPropNameInTable="nomexameColumn"
+                          msprop:Generator_UserColumnName="nomexame" type="xs:string" minOccurs="0" />
+              <xs:element name="valor" msprop:Generator_ColumnVarNameInTable="columnvalor"
+                          msprop:Generator_ColumnPropNameInRow="valor"
+                          msprop:Generator_ColumnPropNameInTable="valorColumn" msprop:Generator_UserColumnName="valor"
+                          type="xs:string" minOccurs="0" />
+              <xs:element name="dataexame" msprop:Generator_ColumnVarNameInTable="columndataexame"
+                          msprop:Generator_ColumnPropNameInRow="dataexame"
+                          msprop:Generator_ColumnPropNameInTable="dataexameColumn"
+                          msprop:Generator_UserColumnName="dataexame" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
@@ -14,8 +7,9 @@ namespace SystemCare
 {
     public partial class Usuarios : MetroForm
     {
-        QuerryMysql CriarUsuario = new QuerryMysql();
-        static string IdUsuario = "";
+        private static string IdUsuario = "";
+        private readonly QuerryMysql CriarUsuario = new QuerryMysql();
+
         public Usuarios()
         {
             InitializeComponent();
@@ -31,7 +25,7 @@ namespace SystemCare
             }
             else
             {
-                CriarUsuario.CadastraUsuario(TextUsuario.Text,TextSenha.Text);
+                CriarUsuario.CadastraUsuario(TextUsuario.Text, TextSenha.Text);
                 TextUsuario.Text = "";
                 TextSenha.Text = "";
                 MetroMessageBox.Show(this, "Usuário cadastrado com sucesso!", "Sucesso!",
@@ -42,16 +36,12 @@ namespace SystemCare
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            DataTable TabelaResultadoBusca = CriarUsuario.RetornaUsuarios(TextBuscar.Text);
+            var TabelaResultadoBusca = CriarUsuario.RetornaUsuarios(TextBuscar.Text);
             GridUsuarios.DataSource = TabelaResultadoBusca;
-
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-           
-
-           
             if (BtnEditar.Text.Equals("Editar"))
             {
                 metroLabel3.Visible = true;
@@ -68,18 +58,15 @@ namespace SystemCare
                             IdUsuario = GridUsuarios.Rows[i].Cells[1].Value.ToString();
                             TextUsuarioEditar.Text = GridUsuarios.Rows[i].Cells[2].Value.ToString();
                             i = GridUsuarios.Rows.Count;
-                           
                         }
                     }
                     catch
                     {
                     }
                 BtnEditar.Text = "Salvar";
-               
             }
             else
             {
-               
                 CriarUsuario.AtualizaUsuarios(TextUsuarioEditar.Text, TextSenhaEditar.Text, IdUsuario);
                 MetroMessageBox.Show(this,
                     "Dados salvos com sucesso !", "Sucesso !",

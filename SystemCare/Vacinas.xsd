@@ -1,26 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd"
+           xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified"
+           elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter"
+                  Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema"
+                  xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections />
         <Tables />
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true"
+              msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1"
+              msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Vacinas" msprop:Generator_TableClassName="VacinasDataTable" msprop:Generator_TableVarName="tableVacinas" msprop:Generator_RowChangedName="VacinasRowChanged" msprop:Generator_TablePropName="Vacinas" msprop:Generator_RowDeletingName="VacinasRowDeleting" msprop:Generator_RowChangingName="VacinasRowChanging" msprop:Generator_RowEvHandlerName="VacinasRowChangeEventHandler" msprop:Generator_RowDeletedName="VacinasRowDeleted" msprop:Generator_RowClassName="VacinasRow" msprop:Generator_UserTableName="Vacinas" msprop:Generator_RowEvArgName="VacinasRowChangeEvent">
+        <xs:element name="Vacinas" msprop:Generator_TableClassName="VacinasDataTable"
+                    msprop:Generator_TableVarName="tableVacinas" msprop:Generator_RowChangedName="VacinasRowChanged"
+                    msprop:Generator_TablePropName="Vacinas" msprop:Generator_RowDeletingName="VacinasRowDeleting"
+                    msprop:Generator_RowChangingName="VacinasRowChanging"
+                    msprop:Generator_RowEvHandlerName="VacinasRowChangeEventHandler"
+                    msprop:Generator_RowDeletedName="VacinasRowDeleted" msprop:Generator_RowClassName="VacinasRow"
+                    msprop:Generator_UserTableName="Vacinas" msprop:Generator_RowEvArgName="VacinasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="dataaplicacao" msprop:Generator_ColumnVarNameInTable="columndataaplicacao" msprop:Generator_ColumnPropNameInRow="dataaplicacao" msprop:Generator_ColumnPropNameInTable="dataaplicacaoColumn" msprop:Generator_UserColumnName="dataaplicacao" type="xs:string" minOccurs="0" />
-              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome" type="xs:string" minOccurs="0" />
-              <xs:element name="reforco" msprop:Generator_ColumnVarNameInTable="columnreforco" msprop:Generator_ColumnPropNameInRow="reforco" msprop:Generator_ColumnPropNameInTable="reforcoColumn" msprop:Generator_UserColumnName="reforco" type="xs:string" minOccurs="0" />
-              <xs:element name="dose" msprop:Generator_ColumnVarNameInTable="columndose" msprop:Generator_ColumnPropNameInRow="dose" msprop:Generator_ColumnPropNameInTable="doseColumn" msprop:Generator_UserColumnName="dose" type="xs:string" minOccurs="0" />
-              <xs:element name="nomefuncionario" msprop:Generator_ColumnVarNameInTable="columnnomefuncionario" msprop:Generator_ColumnPropNameInRow="nomefuncionario" msprop:Generator_ColumnPropNameInTable="nomefuncionarioColumn" msprop:Generator_UserColumnName="nomefuncionario" type="xs:string" minOccurs="0" />
-              <xs:element name="funcao" msprop:Generator_ColumnVarNameInTable="columnfuncao" msprop:Generator_ColumnPropNameInRow="funcao" msprop:Generator_ColumnPropNameInTable="funcaoColumn" msprop:Generator_UserColumnName="funcao" type="xs:string" minOccurs="0" />
+              <xs:element name="dataaplicacao" msprop:Generator_ColumnVarNameInTable="columndataaplicacao"
+                          msprop:Generator_ColumnPropNameInRow="dataaplicacao"
+                          msprop:Generator_ColumnPropNameInTable="dataaplicacaoColumn"
+                          msprop:Generator_UserColumnName="dataaplicacao" type="xs:string" minOccurs="0" />
+              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome"
+                          msprop:Generator_ColumnPropNameInRow="nome"
+                          msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome"
+                          type="xs:string" minOccurs="0" />
+              <xs:element name="reforco" msprop:Generator_ColumnVarNameInTable="columnreforco"
+                          msprop:Generator_ColumnPropNameInRow="reforco"
+                          msprop:Generator_ColumnPropNameInTable="reforcoColumn"
+                          msprop:Generator_UserColumnName="reforco" type="xs:string" minOccurs="0" />
+              <xs:element name="dose" msprop:Generator_ColumnVarNameInTable="columndose"
+                          msprop:Generator_ColumnPropNameInRow="dose"
+                          msprop:Generator_ColumnPropNameInTable="doseColumn" msprop:Generator_UserColumnName="dose"
+                          type="xs:string" minOccurs="0" />
+              <xs:element name="nomefuncionario" msprop:Generator_ColumnVarNameInTable="columnnomefuncionario"
+                          msprop:Generator_ColumnPropNameInRow="nomefuncionario"
+                          msprop:Generator_ColumnPropNameInTable="nomefuncionarioColumn"
+                          msprop:Generator_UserColumnName="nomefuncionario" type="xs:string" minOccurs="0" />
+              <xs:element name="funcao" msprop:Generator_ColumnVarNameInTable="columnfuncao"
+                          msprop:Generator_ColumnPropNameInRow="funcao"
+                          msprop:Generator_ColumnPropNameInTable="funcaoColumn"
+                          msprop:Generator_UserColumnName="funcao" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -48,14 +48,14 @@ namespace SystemCare
         }
 
         public void CadastraEmpresa(string Nome, string Endereco, string Cnpj, int QuantidadeFuncionario,
-            string Telefone, string Email, string IdCnae, int Risco,string Servicos)
+            string Telefone, string Email, string IdCnae, int Risco, string Servicos)
         {
             Com.Open();
             var InserirEmpresa =
                 new MySqlCommand(
                     "INSERT INTO empresas (nome,endereco,cnpj,quantidadefuncionario,telefone,email,idcnae,risco,servicoprestado) VALUES('" +
                     Nome + "','" + Endereco + "','" + Cnpj + "'," + QuantidadeFuncionario + ",'" + Telefone + "','" +
-                    Email + "','" + IdCnae + "'," + Risco + ",'"+Servicos+"')", Com);
+                    Email + "','" + IdCnae + "'," + Risco + ",'" + Servicos + "')", Com);
             InserirEmpresa.ExecuteNonQuery();
             Com.Close();
         }
@@ -179,14 +179,15 @@ namespace SystemCare
         }
 
         public void EditarEmpresa(string Nome, string Endereco, string Cnpj, int QuantidadeFuncionario, string Telefone,
-            string Email, string IdCnae, int Risco,string Servicos)
+            string Email, string IdCnae, int Risco, string Servicos)
         {
             Com.Open();
             var EditarEmpresa =
                 new MySqlCommand(
                     "UPDATE empresas SET nome ='" + Nome + "' ,endereco='" + Endereco + "',cnpj='" + Cnpj +
                     "',quantidadefuncionario=" + QuantidadeFuncionario + ",telefone='" + Telefone + "',email='" + Email +
-                    "',idcnae='" + IdCnae + "',risco=" + Risco + ", servicoprestado='"+Servicos+"' WHERE id=" + IdEmpresaEditar + ";", Com);
+                    "',idcnae='" + IdCnae + "',risco=" + Risco + ", servicoprestado='" + Servicos + "' WHERE id=" +
+                    IdEmpresaEditar + ";", Com);
             EditarEmpresa.ExecuteNonQuery();
             SetEmpresa("");
             Com.Close();
@@ -349,6 +350,18 @@ namespace SystemCare
             Com.Close();
         }
 
+        public void CadastrarFuncaoExame(string NomeFuncao, string IdCbo, string IdRiscos, string IdSetor, string Exames)
+        {
+            Com.Open();
+            var CadastrarFuncao =
+                new MySqlCommand(
+                    "INSERT INTO funcoes (idsetor,nome,idrisco,idcbo,modalidadeexame) VALUE(" + IdSetor + ",'" +
+                    NomeFuncao + "','" +
+                    IdRiscos + "'," + IdCbo + ",'" + Exames + "')", Com);
+            CadastrarFuncao.ExecuteNonQuery();
+            Com.Close();
+        }
+
         public void CadastrarSetor(string IdEmpresa, string NomeSetor)
         {
             Com.Open();
@@ -469,7 +482,17 @@ namespace SystemCare
             SetEmpresa("");
             Com.Close();
         }
-
+        public void EditarFuncaoExames(string Nome, string IdSetor, string IdFuncao, string IdRiscos, string IdCbo,string Exames)
+        {
+            Com.Open();
+            var EditarEmpresa =
+                new MySqlCommand(
+                    "UPDATE funcoes SET nome ='" + Nome + "' ,idsetor=" + IdSetor + ", idrisco='" + IdRiscos +
+                    "', idcbo=" + IdCbo + ",modalidadeexame='"+Exames+"' WHERE id=" + IdFuncao + ";", Com);
+            EditarEmpresa.ExecuteNonQuery();
+            SetEmpresa("");
+            Com.Close();
+        }
         public void ExcluirFuncao(string IdFuncao)
         {
             Com.Open();
@@ -619,6 +642,7 @@ namespace SystemCare
             Com.Close();
             return TabelaTipoExame;
         }
+
         public void CadastrarAtestado(string Idfuncionario, string DataAtestado, string Cid, string Motivo,
             string DiasAfastafdo)
         {
@@ -660,44 +684,50 @@ namespace SystemCare
         public DataTable RetornaFuncionariosEmpresa(string IdEmpresa)
         {
             Com.Open();
-            MySqlCommand SelecionaFuncionarios = new MySqlCommand("select a.nome as nome,b.nome as funcao from funcionarios a, funcoes b, setores c, empresas d where a.idfuncao=b.id and b.idsetor=c.id and c.idempresa=d.id and d.id="+IdEmpresa+ " order by a.nome   asc;", Com);
-            MySqlDataAdapter LeitorFuncionario = new MySqlDataAdapter(SelecionaFuncionarios);
-            DataTable TabelaFuncionario = new DataTable();
+            var SelecionaFuncionarios =
+                new MySqlCommand(
+                    "select a.nome as nome,b.nome as funcao from funcionarios a, funcoes b, setores c, empresas d where a.idfuncao=b.id and b.idsetor=c.id and c.idempresa=d.id and d.id=" +
+                    IdEmpresa + " order by a.nome   asc;", Com);
+            var LeitorFuncionario = new MySqlDataAdapter(SelecionaFuncionarios);
+            var TabelaFuncionario = new DataTable();
             LeitorFuncionario.Fill(TabelaFuncionario);
             Com.Close();
             return TabelaFuncionario;
-
         }
 
         public DataTable RetornaVacinasFuncionarios(string IdFuncionario)
         {
             Com.Open();
-            MySqlCommand SelecionaVacina = new MySqlCommand("select a.nome as nome,a.dose as dose, a.reforco as reforco, a.dataaplicacao as dataaplicacao from vacinas a, funcionarios b WHERE a.idfuncionario=b.id and a.idfuncionario="+IdFuncionario+ " order by a.nome   asc;", Com);
-            MySqlDataAdapter LeitorVacina = new MySqlDataAdapter(SelecionaVacina);
-            DataTable TabelaVacina = new DataTable();
+            var SelecionaVacina =
+                new MySqlCommand(
+                    "select a.nome as nome,a.dose as dose, a.reforco as reforco, a.dataaplicacao as dataaplicacao from vacinas a, funcionarios b WHERE a.idfuncionario=b.id and a.idfuncionario=" +
+                    IdFuncionario + " order by a.nome   asc;", Com);
+            var LeitorVacina = new MySqlDataAdapter(SelecionaVacina);
+            var TabelaVacina = new DataTable();
             LeitorVacina.Fill(TabelaVacina);
             Com.Close();
             return TabelaVacina;
-
         }
+
         public DataTable RetornaIdFuncionario(string NomeFuncionario)
         {
             Com.Open();
-            MySqlCommand SelecionaVacina = new MySqlCommand("select id from funcionarios WHERE nome='" + NomeFuncionario + "';", Com);
-            MySqlDataAdapter LeitorVacina = new MySqlDataAdapter(SelecionaVacina);
-            DataTable TabelaVacina = new DataTable();
+            var SelecionaVacina = new MySqlCommand("select id from funcionarios WHERE nome='" + NomeFuncionario + "';",
+                Com);
+            var LeitorVacina = new MySqlDataAdapter(SelecionaVacina);
+            var TabelaVacina = new DataTable();
             LeitorVacina.Fill(TabelaVacina);
             Com.Close();
             return TabelaVacina;
-
         }
 
         public DataTable RetornaServicosPrestados()
         {
             Com.Open();
-            MySqlCommand SelecionaServicos = new MySqlCommand("SELECT id,descricao FROM servicosprestados WHERE excluido='N'", Com);
-            MySqlDataAdapter LeitorServicos = new MySqlDataAdapter(SelecionaServicos);
-            DataTable TabelaServicos = new DataTable();
+            var SelecionaServicos = new MySqlCommand("SELECT id,descricao FROM servicosprestados WHERE excluido='N'",
+                Com);
+            var LeitorServicos = new MySqlDataAdapter(SelecionaServicos);
+            var TabelaServicos = new DataTable();
             LeitorServicos.Fill(TabelaServicos);
             Com.Close();
             return TabelaServicos;
@@ -706,7 +736,9 @@ namespace SystemCare
         public void CadastraUsuario(string Usuario, string Senha)
         {
             Com.Open();
-            MySqlCommand InserirUsuario = new MySqlCommand("INSERT INTO usuarios (login,senha) VALUES('"+Usuario+"',MD5('"+Senha+"'))",Com);
+            var InserirUsuario =
+                new MySqlCommand("INSERT INTO usuarios (login,senha) VALUES('" + Usuario + "',MD5('" + Senha + "'))",
+                    Com);
             InserirUsuario.ExecuteNonQuery();
             Com.Close();
         }
@@ -714,34 +746,41 @@ namespace SystemCare
         public DataTable RetornaUsuarios(string TextoPesquisa)
         {
             Com.Open();
-            MySqlCommand SelecionaUsuarios = new MySqlCommand("SELECT id,login FROM usuarios WHERE login like'%"+TextoPesquisa+"%' AND excluido='N'",Com);
-            MySqlDataAdapter LeitorUsuarios = new MySqlDataAdapter(SelecionaUsuarios);
-            DataTable TabelaUsuarios = new DataTable();
+            var SelecionaUsuarios =
+                new MySqlCommand(
+                    "SELECT id,login FROM usuarios WHERE login like'%" + TextoPesquisa + "%' AND excluido='N'", Com);
+            var LeitorUsuarios = new MySqlDataAdapter(SelecionaUsuarios);
+            var TabelaUsuarios = new DataTable();
             LeitorUsuarios.Fill(TabelaUsuarios);
             Com.Close();
             return TabelaUsuarios;
         }
 
-        public void AtualizaUsuarios(string Usuario, string Senha,string Id)
+        public void AtualizaUsuarios(string Usuario, string Senha, string Id)
         {
             Com.Open();
-            MySqlCommand AtualizaUsuario = new MySqlCommand("UPDATE usuarios SET login='"+Usuario+"', senha=MD5('"+Senha+"') WHERE id="+Id+"",Com);
+            var AtualizaUsuario =
+                new MySqlCommand(
+                    "UPDATE usuarios SET login='" + Usuario + "', senha=MD5('" + Senha + "') WHERE id=" + Id + "", Com);
             AtualizaUsuario.ExecuteNonQuery();
             Com.Close();
         }
 
         public void ExcluirUsuario(string Id)
-        {   
-            Com.Open();
-            MySqlCommand ExcluiFuncionario = new MySqlCommand("UPDATE usuarios SET excluido='S' WHERE id="+Id+"",Com);
-            ExcluiFuncionario.ExecuteNonQuery();
-            Com.Close();
-
-        }
-        public void CadastraRisco(string Descricao, string IdGrupo,string Relacao)
         {
             Com.Open();
-            MySqlCommand InserirRisco = new MySqlCommand("INSERT INTO riscos (descricao,idgrupo,relacaoexames) VALUES('" + Descricao + "'," + IdGrupo + " ,'"+Relacao+"')", Com);
+            var ExcluiFuncionario = new MySqlCommand("UPDATE usuarios SET excluido='S' WHERE id=" + Id + "", Com);
+            ExcluiFuncionario.ExecuteNonQuery();
+            Com.Close();
+        }
+
+        public void CadastraRisco(string Descricao, string IdGrupo, string Relacao)
+        {
+            Com.Open();
+            var InserirRisco =
+                new MySqlCommand(
+                    "INSERT INTO riscos (descricao,idgrupo,relacaoexames) VALUES('" + Descricao + "'," + IdGrupo + " ,'" +
+                    Relacao + "')", Com);
             InserirRisco.ExecuteNonQuery();
             Com.Close();
         }
@@ -749,18 +788,24 @@ namespace SystemCare
         public DataTable RetornaRisco(string TextoPesquisa)
         {
             Com.Open();
-            MySqlCommand SelecionaRiscos = new MySqlCommand("SELECT id,descricao FROM riscos WHERE descricao like'%" + TextoPesquisa + "%' AND excluido='N'", Com);
-            MySqlDataAdapter LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
-            DataTable TabelaRiscos = new DataTable();
+            var SelecionaRiscos =
+                new MySqlCommand(
+                    "SELECT id,descricao FROM riscos WHERE descricao like'%" + TextoPesquisa + "%' AND excluido='N'",
+                    Com);
+            var LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
+            var TabelaRiscos = new DataTable();
             LeitorRiscos.Fill(TabelaRiscos);
             Com.Close();
             return TabelaRiscos;
         }
 
-        public void AtualizaRisco(string Descricao, string IdGrupo, string Id,string Relacao)
+        public void AtualizaRisco(string Descricao, string IdGrupo, string Id, string Relacao)
         {
             Com.Open();
-            MySqlCommand AtualizaRiscos = new MySqlCommand("UPDATE riscos SET descricao='" + Descricao + "', idgrupo=" +IdGrupo + ",relacaoexames='"+Relacao+"' WHERE id=" + Id + "", Com);
+            var AtualizaRiscos =
+                new MySqlCommand(
+                    "UPDATE riscos SET descricao='" + Descricao + "', idgrupo=" + IdGrupo + ",relacaoexames='" + Relacao +
+                    "' WHERE id=" + Id + "", Com);
             AtualizaRiscos.ExecuteNonQuery();
             Com.Close();
         }
@@ -768,18 +813,17 @@ namespace SystemCare
         public void ExcluirRisco(string Id)
         {
             Com.Open();
-            MySqlCommand ExcluiRiscos = new MySqlCommand("UPDATE riscos SET excluido='S' WHERE id=" + Id + "", Com);
+            var ExcluiRiscos = new MySqlCommand("UPDATE riscos SET excluido='S' WHERE id=" + Id + "", Com);
             ExcluiRiscos.ExecuteNonQuery();
             Com.Close();
-
         }
 
         public DataTable RetornaGrupoRisco()
         {
             Com.Open();
-            MySqlCommand SelecionaRiscos = new MySqlCommand("SELECT id,descricao FROM gruposriscos", Com);
-            MySqlDataAdapter LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
-            DataTable TabelaRiscos = new DataTable();
+            var SelecionaRiscos = new MySqlCommand("SELECT id,descricao FROM gruposriscos", Com);
+            var LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
+            var TabelaRiscos = new DataTable();
             LeitorRiscos.Fill(TabelaRiscos);
             Com.Close();
             return TabelaRiscos;
@@ -788,23 +832,23 @@ namespace SystemCare
         public DataTable RetornaGrupoRiscoEditar(string Id)
         {
             Com.Open();
-            MySqlCommand SelecionaRiscos = new MySqlCommand("SELECT idgrupo FROM riscos where id="+Id+"", Com);
-            MySqlDataAdapter LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
-            DataTable TabelaRiscos = new DataTable();
+            var SelecionaRiscos = new MySqlCommand("SELECT idgrupo FROM riscos where id=" + Id + "", Com);
+            var LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
+            var TabelaRiscos = new DataTable();
             LeitorRiscos.Fill(TabelaRiscos);
             Com.Close();
             return TabelaRiscos;
         }
+
         public string RetornaRelacaoExamesEditar(string Id)
         {
             Com.Open();
-            MySqlCommand SelecionaRiscos = new MySqlCommand("SELECT relacaoexames FROM riscos where id=" + Id + "", Com);
-            MySqlDataAdapter LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
-            DataTable TabelaRiscos = new DataTable();
+            var SelecionaRiscos = new MySqlCommand("SELECT relacaoexames FROM riscos where id=" + Id + "", Com);
+            var LeitorRiscos = new MySqlDataAdapter(SelecionaRiscos);
+            var TabelaRiscos = new DataTable();
             LeitorRiscos.Fill(TabelaRiscos);
             Com.Close();
             return TabelaRiscos.Rows[0][0].ToString();
         }
-        
     }
 }

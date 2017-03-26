@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
@@ -14,28 +7,27 @@ namespace SystemCare
 {
     public partial class RiscosOperacionais : MetroForm
     {
-        QuerryMysql CadastrarRiscos = new QuerryMysql();
-        static string IdRisco = "";
+        private static string IdRisco = "";
+        private readonly QuerryMysql CadastrarRiscos = new QuerryMysql();
+
         public RiscosOperacionais()
         {
             InitializeComponent();
-            DataTable TabelaGrupo = CadastrarRiscos.RetornaGrupoRisco();
+            var TabelaGrupo = CadastrarRiscos.RetornaGrupoRisco();
             ComboGrupoRisco.DataSource = TabelaGrupo;
             ComboGrupoRisco.DisplayMember = "descricao";
             ComboGrupoRisco.ValueMember = "id";
 
-            DataTable TabelaGrupoEditar = CadastrarRiscos.RetornaGrupoRisco();
+            var TabelaGrupoEditar = CadastrarRiscos.RetornaGrupoRisco();
             ComboGrupoEditar.DataSource = TabelaGrupoEditar;
             ComboGrupoEditar.DisplayMember = "descricao";
             ComboGrupoEditar.ValueMember = "id";
 
-            DataTable TabelaExames = CadastrarRiscos.RetornaTodaModalidadeExame();
+            var TabelaExames = CadastrarRiscos.RetornaTodaModalidadeExame();
             GridExames.DataSource = TabelaExames;
 
-            DataTable TabelaExamesEditar = CadastrarRiscos.RetornaTodaModalidadeExame();
+            var TabelaExamesEditar = CadastrarRiscos.RetornaTodaModalidadeExame();
             GridExamesEditar.DataSource = TabelaExames;
-
-
         }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
@@ -48,44 +40,37 @@ namespace SystemCare
             }
             else
             {
-                string RelacaoExames = ";";
+                var RelacaoExames = ";";
 
-                for (int i = 0; i < GridExames.RowCount; i++)
-                {
+                for (var i = 0; i < GridExames.RowCount; i++)
                     try
                     {
                         if (Convert.ToBoolean(GridExames.Rows[i].Cells[0].Value.ToString()))
-                        {
-                            RelacaoExames = RelacaoExames + GridExames.Rows[i].Cells[1].Value.ToString() + ";";
-                        }
+                            RelacaoExames = RelacaoExames + GridExames.Rows[i].Cells[1].Value + ";";
                     }
                     catch
                     {
-
                     }
-                }
-                CadastrarRiscos.CadastraRisco(TextDescricao.Text, ComboGrupoRisco.SelectedValue.ToString(),RelacaoExames);
+                CadastrarRiscos.CadastraRisco(TextDescricao.Text, ComboGrupoRisco.SelectedValue.ToString(),
+                    RelacaoExames);
                 TextDescricao.Text = "";
                 GridExames.DataSource = null;
-                DataTable TabelaExames = CadastrarRiscos.RetornaTodaModalidadeExame();
+                var TabelaExames = CadastrarRiscos.RetornaTodaModalidadeExame();
                 GridExames.DataSource = TabelaExames;
                 MetroMessageBox.Show(this, "Risco cadastrado com sucesso!", "Sucesso!",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
         }
+
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            DataTable TabelaResultadoBusca = CadastrarRiscos.RetornaRisco(TextBuscar.Text);
+            var TabelaResultadoBusca = CadastrarRiscos.RetornaRisco(TextBuscar.Text);
             GridRiscos.DataSource = TabelaResultadoBusca;
-
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-
-
-
             if (BtnEditar.Text.Equals("Editar"))
             {
                 metroLabel3.Visible = true;
@@ -102,52 +87,41 @@ namespace SystemCare
                             IdRisco = GridRiscos.Rows[i].Cells[1].Value.ToString();
                             TextDescricaoEditar.Text = GridRiscos.Rows[i].Cells[2].Value.ToString();
                             i = GridRiscos.Rows.Count;
-
                         }
                     }
                     catch
                     {
-
                     }
-                DataTable TabelaIdGrupo = CadastrarRiscos.RetornaGrupoRiscoEditar(IdRisco);
-                string TabelaExames = CadastrarRiscos.RetornaRelacaoExamesEditar(IdRisco);
-                string[] Exames = TabelaExames.Split(';');
-                for(int j =0; j < GridExamesEditar.RowCount; j++)
-                {
-                    for(int k = 0; k < Exames.Length; k++)
+                var TabelaIdGrupo = CadastrarRiscos.RetornaGrupoRiscoEditar(IdRisco);
+                var TabelaExames = CadastrarRiscos.RetornaRelacaoExamesEditar(IdRisco);
+                var Exames = TabelaExames.Split(';');
+                for (var j = 0; j < GridExamesEditar.RowCount; j++)
+                for (var k = 0; k < Exames.Length; k++)
+                    if (GridExamesEditar.Rows[j].Cells[1].Value.ToString().Equals(Exames[k]))
                     {
-                        if (GridExamesEditar.Rows[j].Cells[1].Value.ToString().Equals(Exames[k].ToString()))
-                        {
-                            GridExamesEditar.Rows[j].Cells[0].Value = true;
-                            k = Exames.Length;
-                        }
+                        GridExamesEditar.Rows[j].Cells[0].Value = true;
+                        k = Exames.Length;
                     }
-                }
                 ComboGrupoEditar.SelectedValue = TabelaIdGrupo.Rows[0][0].ToString();
                 BtnEditar.Text = "Salvar";
-
             }
             else
             {
-                string RelacaoExames = ";";
+                var RelacaoExames = ";";
 
-                for (int i = 0; i < GridExames.RowCount; i++)
-                {
+                for (var i = 0; i < GridExames.RowCount; i++)
                     try
                     {
                         if (Convert.ToBoolean(GridExamesEditar.Rows[i].Cells[0].Value.ToString()))
-                        {
-                            RelacaoExames = RelacaoExames + GridExamesEditar.Rows[i].Cells[1].Value.ToString() + ";";
-                        }
+                            RelacaoExames = RelacaoExames + GridExamesEditar.Rows[i].Cells[1].Value + ";";
                     }
                     catch
                     {
-
                     }
-                }
 
 
-                CadastrarRiscos.AtualizaRisco(TextDescricaoEditar.Text, ComboGrupoEditar.SelectedValue.ToString(), IdRisco,RelacaoExames);
+                CadastrarRiscos.AtualizaRisco(TextDescricaoEditar.Text, ComboGrupoEditar.SelectedValue.ToString(),
+                    IdRisco, RelacaoExames);
                 MetroMessageBox.Show(this,
                     "Dados salvos com sucesso !", "Sucesso !",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -161,7 +135,7 @@ namespace SystemCare
                 ComboGrupoEditar.Visible = false;
                 BtnExcluir.Visible = false;
                 GridExamesEditar.DataSource = null;
-                DataTable TabelaExames = CadastrarRiscos.RetornaTodaModalidadeExame();
+                var TabelaExames = CadastrarRiscos.RetornaTodaModalidadeExame();
                 GridExamesEditar.DataSource = TabelaExames;
             }
         }
