@@ -113,7 +113,6 @@
             this.metroLabel25.TabIndex = 101;
             this.metroLabel25.Text = "Buscar Funcionario:";
             this.metroLabel25.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel25.UseStyleColors = true;
             // 
             // TextFuncionarioBusca
             // 
@@ -146,7 +145,6 @@
             this.TextFuncionarioBusca.TabIndex = 100;
             this.TextFuncionarioBusca.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextFuncionarioBusca.UseSelectable = true;
-            this.TextFuncionarioBusca.UseStyleColors = true;
             this.TextFuncionarioBusca.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextFuncionarioBusca.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.TextFuncionarioBusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextFuncionarioBusca_KeyPress);

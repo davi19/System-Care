@@ -28,7 +28,7 @@
     <TargetCulture>pt-BR</TargetCulture>
     <ProductName>System Care</ProductName>
     <PublisherName>Cactus Devs</PublisherName>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -138,6 +138,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PrestacaodeServico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionarioMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuestionarioMedico.Designer.cs">
+      <DependentUpon>QuestionarioMedico.cs</DependentUpon>
     </Compile>
     <Compile Include="RiscosOperacionais.cs">
       <SubType>Form</SubType>
@@ -256,6 +262,9 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="QuestionarioMedico.resx">
+      <DependentUpon>QuestionarioMedico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RiscosOperacionais.resx">
       <DependentUpon>RiscosOperacionais.cs</DependentUpon>
     </EmbeddedResource>

@@ -113,7 +113,6 @@
             this.BtnBuscarEmpresa.TabIndex = 16;
             this.BtnBuscarEmpresa.Text = "Buscar";
             this.BtnBuscarEmpresa.UseSelectable = true;
-            this.BtnBuscarEmpresa.UseStyleColors = true;
             this.BtnBuscarEmpresa.Click += new System.EventHandler(this.BtnBuscarEmpresa_Click);
             // 
             // metroLabel1
@@ -126,7 +125,6 @@
             this.metroLabel1.TabIndex = 15;
             this.metroLabel1.Text = "Nome Empresa:";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel1.UseStyleColors = true;
             // 
             // TextPesdquisaEmpresa
             // 
@@ -159,7 +157,6 @@
             this.TextPesdquisaEmpresa.TabIndex = 14;
             this.TextPesdquisaEmpresa.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextPesdquisaEmpresa.UseSelectable = true;
-            this.TextPesdquisaEmpresa.UseStyleColors = true;
             this.TextPesdquisaEmpresa.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextPesdquisaEmpresa.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.TextPesdquisaEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextPesdquisaEmpresa_KeyPress);
@@ -231,7 +228,6 @@
             this.BtnCadastrarSetor.TabIndex = 10;
             this.BtnCadastrarSetor.Text = "Cadastrar";
             this.BtnCadastrarSetor.UseSelectable = true;
-            this.BtnCadastrarSetor.UseStyleColors = true;
             this.BtnCadastrarSetor.Click += new System.EventHandler(this.BtnCadastrarSetor_Click);
             // 
             // metroLabel8
@@ -244,7 +240,6 @@
             this.metroLabel8.TabIndex = 7;
             this.metroLabel8.Text = "Nome Setor:";
             this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel8.UseStyleColors = true;
             // 
             // TextNomeSetor
             // 
@@ -277,7 +272,6 @@
             this.TextNomeSetor.TabIndex = 6;
             this.TextNomeSetor.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextNomeSetor.UseSelectable = true;
-            this.TextNomeSetor.UseStyleColors = true;
             this.TextNomeSetor.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNomeSetor.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -316,7 +310,6 @@
             this.BtnBuscaSetorEditar.TabIndex = 28;
             this.BtnBuscaSetorEditar.Text = "Buscar";
             this.BtnBuscaSetorEditar.UseSelectable = true;
-            this.BtnBuscaSetorEditar.UseStyleColors = true;
             this.BtnBuscaSetorEditar.Click += new System.EventHandler(this.BtnBuscaSetorEditar_Click);
             // 
             // metroLabel4
@@ -329,7 +322,6 @@
             this.metroLabel4.TabIndex = 27;
             this.metroLabel4.Text = "Nome Setor:";
             this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel4.UseStyleColors = true;
             // 
             // TextPesquisaSetorEditar
             // 
@@ -362,7 +354,6 @@
             this.TextPesquisaSetorEditar.TabIndex = 26;
             this.TextPesquisaSetorEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextPesquisaSetorEditar.UseSelectable = true;
-            this.TextPesquisaSetorEditar.UseStyleColors = true;
             this.TextPesquisaSetorEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextPesquisaSetorEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.TextPesquisaSetorEditar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextPesquisaSetorEditar_KeyPress);
@@ -434,7 +425,6 @@
             this.BtnExcluir.TabIndex = 24;
             this.BtnExcluir.Text = "Excluir";
             this.BtnExcluir.UseSelectable = true;
-            this.BtnExcluir.UseStyleColors = true;
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // BtnEditar
@@ -446,7 +436,6 @@
             this.BtnEditar.TabIndex = 23;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseSelectable = true;
-            this.BtnEditar.UseStyleColors = true;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnBuscaEmpresaEditar
@@ -458,7 +447,6 @@
             this.BtnBuscaEmpresaEditar.TabIndex = 22;
             this.BtnBuscaEmpresaEditar.Text = "Buscar";
             this.BtnBuscaEmpresaEditar.UseSelectable = true;
-            this.BtnBuscaEmpresaEditar.UseStyleColors = true;
             this.BtnBuscaEmpresaEditar.Visible = false;
             this.BtnBuscaEmpresaEditar.Click += new System.EventHandler(this.BtnBuscaEmpresaEditar_Click);
             // 
@@ -472,7 +460,6 @@
             this.metroLabel2.TabIndex = 21;
             this.metroLabel2.Text = "Nome Empresa:";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel2.UseStyleColors = true;
             this.metroLabel2.Visible = false;
             // 
             // TextPesquisaEmpresaEditar
@@ -506,7 +493,6 @@
             this.TextPesquisaEmpresaEditar.TabIndex = 20;
             this.TextPesquisaEmpresaEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextPesquisaEmpresaEditar.UseSelectable = true;
-            this.TextPesquisaEmpresaEditar.UseStyleColors = true;
             this.TextPesquisaEmpresaEditar.Visible = false;
             this.TextPesquisaEmpresaEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextPesquisaEmpresaEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -580,7 +566,6 @@
             this.metroLabel3.TabIndex = 18;
             this.metroLabel3.Text = "Nome Setor:";
             this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel3.UseStyleColors = true;
             this.metroLabel3.Visible = false;
             // 
             // TextNomeSetorEditar
@@ -614,7 +599,6 @@
             this.TextNomeSetorEditar.TabIndex = 17;
             this.TextNomeSetorEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextNomeSetorEditar.UseSelectable = true;
-            this.TextNomeSetorEditar.UseStyleColors = true;
             this.TextNomeSetorEditar.Visible = false;
             this.TextNomeSetorEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNomeSetorEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);

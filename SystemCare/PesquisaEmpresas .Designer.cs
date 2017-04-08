@@ -113,7 +113,6 @@
             this.metroLabel25.TabIndex = 101;
             this.metroLabel25.Text = "BuscarEmpresa:";
             this.metroLabel25.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel25.UseStyleColors = true;
             // 
             // TextEmpresaBusca
             // 
@@ -146,7 +145,6 @@
             this.TextEmpresaBusca.TabIndex = 0;
             this.TextEmpresaBusca.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextEmpresaBusca.UseSelectable = true;
-            this.TextEmpresaBusca.UseStyleColors = true;
             this.TextEmpresaBusca.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextEmpresaBusca.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.TextEmpresaBusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextFuncionarioBusca_KeyPress);

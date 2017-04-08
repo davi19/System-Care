@@ -34,12 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamesAvaliacoes));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
@@ -47,10 +41,7 @@
             this.BtnGerarAos = new MetroFramework.Controls.MetroButton();
             this.LabelRiscos = new MetroFramework.Controls.MetroLabel();
             this.BtnBuscarFuncionario = new MetroFramework.Controls.MetroButton();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.GridExameMedicoPrimeira = new MetroFramework.Controls.MetroGrid();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.GridTipoExamePrimeira = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LabelFuncionario = new MetroFramework.Controls.MetroLabel();
@@ -62,19 +53,14 @@
             this.BtnGerarAsoNova = new MetroFramework.Controls.MetroButton();
             this.LabelRiscoFuncionario = new MetroFramework.Controls.MetroLabel();
             this.BtnSelecionaFuncionarioNova = new MetroFramework.Controls.MetroButton();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.GridExamesMedicosNova = new MetroFramework.Controls.MetroGrid();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.GridTipoExameNova = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LabelFuncionarioNova = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridExameMedicoPrimeira)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridTipoExamePrimeira)).BeginInit();
             this.metroTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridExamesMedicosNova)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridTipoExameNova)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +70,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(7, 58);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(991, 482);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTabControl1.TabIndex = 105;
@@ -96,9 +82,7 @@
             this.metroTabPage1.Controls.Add(this.BtnGerarAos);
             this.metroTabPage1.Controls.Add(this.LabelRiscos);
             this.metroTabPage1.Controls.Add(this.BtnBuscarFuncionario);
-            this.metroTabPage1.Controls.Add(this.metroLabel2);
             this.metroTabPage1.Controls.Add(this.metroLabel1);
-            this.metroTabPage1.Controls.Add(this.GridExameMedicoPrimeira);
             this.metroTabPage1.Controls.Add(this.GridTipoExamePrimeira);
             this.metroTabPage1.Controls.Add(this.LabelFuncionario);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
@@ -123,7 +107,6 @@
             this.CheckApto.TabIndex = 113;
             this.CheckApto.Text = "APTO";
             this.CheckApto.UseSelectable = true;
-            this.CheckApto.UseStyleColors = true;
             // 
             // BtnGerarAos
             // 
@@ -135,7 +118,6 @@
             this.BtnGerarAos.Text = "Gerar ASO";
             this.BtnGerarAos.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnGerarAos.UseSelectable = true;
-            this.BtnGerarAos.UseStyleColors = true;
             this.BtnGerarAos.Click += new System.EventHandler(this.BtnGerarAos_Click);
             // 
             // LabelRiscos
@@ -148,7 +130,6 @@
             this.LabelRiscos.Style = MetroFramework.MetroColorStyle.Green;
             this.LabelRiscos.TabIndex = 111;
             this.LabelRiscos.Text = "Selecione um Funcionário";
-            this.LabelRiscos.UseStyleColors = true;
             this.LabelRiscos.Visible = false;
             // 
             // BtnBuscarFuncionario
@@ -161,19 +142,7 @@
             this.BtnBuscarFuncionario.Text = "Selecionar Funcionário";
             this.BtnBuscarFuncionario.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnBuscarFuncionario.UseSelectable = true;
-            this.BtnBuscarFuncionario.UseStyleColors = true;
             this.BtnBuscarFuncionario.Click += new System.EventHandler(this.BtnBuscarFuncionario_Click);
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(461, 181);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(106, 19);
-            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel2.TabIndex = 109;
-            this.metroLabel2.Text = "Exames Medicos";
-            this.metroLabel2.UseStyleColors = true;
             // 
             // metroLabel1
             // 
@@ -184,65 +153,6 @@
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel1.TabIndex = 108;
             this.metroLabel1.Text = "Tipo de Exame";
-            this.metroLabel1.UseStyleColors = true;
-            // 
-            // GridExameMedicoPrimeira
-            // 
-            this.GridExameMedicoPrimeira.AllowUserToAddRows = false;
-            this.GridExameMedicoPrimeira.AllowUserToDeleteRows = false;
-            this.GridExameMedicoPrimeira.AllowUserToResizeRows = false;
-            this.GridExameMedicoPrimeira.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.GridExameMedicoPrimeira.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.GridExameMedicoPrimeira.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridExameMedicoPrimeira.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GridExameMedicoPrimeira.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.GridExameMedicoPrimeira.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridExameMedicoPrimeira.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.GridExameMedicoPrimeira.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridExameMedicoPrimeira.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn1});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridExameMedicoPrimeira.DefaultCellStyle = dataGridViewCellStyle2;
-            this.GridExameMedicoPrimeira.EnableHeadersVisualStyles = false;
-            this.GridExameMedicoPrimeira.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.GridExameMedicoPrimeira.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridExameMedicoPrimeira.Location = new System.Drawing.Point(461, 203);
-            this.GridExameMedicoPrimeira.Name = "GridExameMedicoPrimeira";
-            this.GridExameMedicoPrimeira.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridExameMedicoPrimeira.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.GridExameMedicoPrimeira.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.GridExameMedicoPrimeira.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridExameMedicoPrimeira.Size = new System.Drawing.Size(522, 234);
-            this.GridExameMedicoPrimeira.Style = MetroFramework.MetroColorStyle.Green;
-            this.GridExameMedicoPrimeira.TabIndex = 107;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Seleciona";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn1.Width = 79;
             // 
             // GridTipoExamePrimeira
             // 
@@ -255,39 +165,39 @@
             this.GridTipoExamePrimeira.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridTipoExamePrimeira.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridTipoExamePrimeira.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridTipoExamePrimeira.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridTipoExamePrimeira.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GridTipoExamePrimeira.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridTipoExamePrimeira.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn2});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridTipoExamePrimeira.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridTipoExamePrimeira.DefaultCellStyle = dataGridViewCellStyle2;
             this.GridTipoExamePrimeira.EnableHeadersVisualStyles = false;
             this.GridTipoExamePrimeira.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridTipoExamePrimeira.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.GridTipoExamePrimeira.Location = new System.Drawing.Point(9, 203);
             this.GridTipoExamePrimeira.Name = "GridTipoExamePrimeira";
             this.GridTipoExamePrimeira.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridTipoExamePrimeira.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridTipoExamePrimeira.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.GridTipoExamePrimeira.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridTipoExamePrimeira.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridTipoExamePrimeira.Size = new System.Drawing.Size(440, 234);
@@ -312,7 +222,6 @@
             this.LabelFuncionario.Style = MetroFramework.MetroColorStyle.Green;
             this.LabelFuncionario.TabIndex = 105;
             this.LabelFuncionario.Text = "Selecione um Funcionário";
-            this.LabelFuncionario.UseStyleColors = true;
             // 
             // metroTabPage2
             // 
@@ -323,9 +232,7 @@
             this.metroTabPage2.Controls.Add(this.BtnGerarAsoNova);
             this.metroTabPage2.Controls.Add(this.LabelRiscoFuncionario);
             this.metroTabPage2.Controls.Add(this.BtnSelecionaFuncionarioNova);
-            this.metroTabPage2.Controls.Add(this.metroLabel4);
             this.metroTabPage2.Controls.Add(this.metroLabel5);
-            this.metroTabPage2.Controls.Add(this.GridExamesMedicosNova);
             this.metroTabPage2.Controls.Add(this.GridTipoExameNova);
             this.metroTabPage2.Controls.Add(this.LabelFuncionarioNova);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
@@ -350,7 +257,6 @@
             this.BtnCadastrarVacina.Text = "Cadastrar Vacina";
             this.BtnCadastrarVacina.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnCadastrarVacina.UseSelectable = true;
-            this.BtnCadastrarVacina.UseStyleColors = true;
             this.BtnCadastrarVacina.Click += new System.EventHandler(this.BtnCadastrarVacina_Click);
             // 
             // BtnCadastrarAtestado
@@ -363,7 +269,6 @@
             this.BtnCadastrarAtestado.Text = "Adcionar Atestado";
             this.BtnCadastrarAtestado.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnCadastrarAtestado.UseSelectable = true;
-            this.BtnCadastrarAtestado.UseStyleColors = true;
             this.BtnCadastrarAtestado.Click += new System.EventHandler(this.BtnCadastrarAtestado_Click);
             // 
             // BtnHistorico
@@ -376,7 +281,6 @@
             this.BtnHistorico.Text = "Histórico";
             this.BtnHistorico.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnHistorico.UseSelectable = true;
-            this.BtnHistorico.UseStyleColors = true;
             this.BtnHistorico.Click += new System.EventHandler(this.BtnHistorico_Click);
             // 
             // CheckAptoNova
@@ -389,7 +293,6 @@
             this.CheckAptoNova.TabIndex = 122;
             this.CheckAptoNova.Text = "APTO";
             this.CheckAptoNova.UseSelectable = true;
-            this.CheckAptoNova.UseStyleColors = true;
             // 
             // BtnGerarAsoNova
             // 
@@ -401,7 +304,6 @@
             this.BtnGerarAsoNova.Text = "Gerar ASO";
             this.BtnGerarAsoNova.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnGerarAsoNova.UseSelectable = true;
-            this.BtnGerarAsoNova.UseStyleColors = true;
             this.BtnGerarAsoNova.Click += new System.EventHandler(this.BtnGerarAsoNova_Click);
             // 
             // LabelRiscoFuncionario
@@ -414,7 +316,6 @@
             this.LabelRiscoFuncionario.Style = MetroFramework.MetroColorStyle.Green;
             this.LabelRiscoFuncionario.TabIndex = 120;
             this.LabelRiscoFuncionario.Text = "Selecione um Funcionário";
-            this.LabelRiscoFuncionario.UseStyleColors = true;
             this.LabelRiscoFuncionario.Visible = false;
             // 
             // BtnSelecionaFuncionarioNova
@@ -427,19 +328,7 @@
             this.BtnSelecionaFuncionarioNova.Text = "Selecionar Funcionário";
             this.BtnSelecionaFuncionarioNova.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnSelecionaFuncionarioNova.UseSelectable = true;
-            this.BtnSelecionaFuncionarioNova.UseStyleColors = true;
             this.BtnSelecionaFuncionarioNova.Click += new System.EventHandler(this.BtnSelecionaFuncionarioNova_Click);
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(459, 178);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(106, 19);
-            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel4.TabIndex = 118;
-            this.metroLabel4.Text = "Exames Medicos";
-            this.metroLabel4.UseStyleColors = true;
             // 
             // metroLabel5
             // 
@@ -450,65 +339,6 @@
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel5.TabIndex = 117;
             this.metroLabel5.Text = "Tipo de Exame";
-            this.metroLabel5.UseStyleColors = true;
-            // 
-            // GridExamesMedicosNova
-            // 
-            this.GridExamesMedicosNova.AllowUserToAddRows = false;
-            this.GridExamesMedicosNova.AllowUserToDeleteRows = false;
-            this.GridExamesMedicosNova.AllowUserToResizeRows = false;
-            this.GridExamesMedicosNova.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.GridExamesMedicosNova.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.GridExamesMedicosNova.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridExamesMedicosNova.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.GridExamesMedicosNova.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.GridExamesMedicosNova.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridExamesMedicosNova.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.GridExamesMedicosNova.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridExamesMedicosNova.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn3});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridExamesMedicosNova.DefaultCellStyle = dataGridViewCellStyle8;
-            this.GridExamesMedicosNova.EnableHeadersVisualStyles = false;
-            this.GridExamesMedicosNova.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.GridExamesMedicosNova.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridExamesMedicosNova.Location = new System.Drawing.Point(459, 200);
-            this.GridExamesMedicosNova.Name = "GridExamesMedicosNova";
-            this.GridExamesMedicosNova.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridExamesMedicosNova.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.GridExamesMedicosNova.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.GridExamesMedicosNova.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridExamesMedicosNova.Size = new System.Drawing.Size(522, 234);
-            this.GridExamesMedicosNova.Style = MetroFramework.MetroColorStyle.Green;
-            this.GridExamesMedicosNova.TabIndex = 116;
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Seleciona";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn3.Width = 79;
             // 
             // GridTipoExameNova
             // 
@@ -521,39 +351,39 @@
             this.GridTipoExameNova.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridTipoExameNova.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridTipoExameNova.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridTipoExameNova.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridTipoExameNova.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GridTipoExameNova.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridTipoExameNova.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn4});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridTipoExameNova.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridTipoExameNova.DefaultCellStyle = dataGridViewCellStyle5;
             this.GridTipoExameNova.EnableHeadersVisualStyles = false;
             this.GridTipoExameNova.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridTipoExameNova.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.GridTipoExameNova.Location = new System.Drawing.Point(7, 200);
             this.GridTipoExameNova.Name = "GridTipoExameNova";
             this.GridTipoExameNova.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridTipoExameNova.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridTipoExameNova.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GridTipoExameNova.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridTipoExameNova.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridTipoExameNova.Size = new System.Drawing.Size(440, 234);
@@ -578,7 +408,6 @@
             this.LabelFuncionarioNova.Style = MetroFramework.MetroColorStyle.Green;
             this.LabelFuncionarioNova.TabIndex = 114;
             this.LabelFuncionarioNova.Text = "Selecione um Funcionário";
-            this.LabelFuncionarioNova.UseStyleColors = true;
             // 
             // ExamesAvaliacoes
             // 
@@ -595,11 +424,9 @@
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridExameMedicoPrimeira)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridTipoExamePrimeira)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridExamesMedicosNova)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridTipoExameNova)).EndInit();
             this.ResumeLayout(false);
 
@@ -610,10 +437,7 @@
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroButton BtnBuscarFuncionario;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroGrid GridExameMedicoPrimeira;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private MetroFramework.Controls.MetroGrid GridTipoExamePrimeira;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private MetroFramework.Controls.MetroLabel LabelFuncionario;
@@ -623,10 +447,7 @@
         private MetroFramework.Controls.MetroButton BtnGerarAsoNova;
         private MetroFramework.Controls.MetroLabel LabelRiscoFuncionario;
         private MetroFramework.Controls.MetroButton BtnSelecionaFuncionarioNova;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroGrid GridExamesMedicosNova;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private MetroFramework.Controls.MetroGrid GridTipoExameNova;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
         private MetroFramework.Controls.MetroLabel LabelFuncionarioNova;

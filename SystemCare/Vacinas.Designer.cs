@@ -51,7 +51,6 @@
             this.LabelFuncionario.Style = MetroFramework.MetroColorStyle.Green;
             this.LabelFuncionario.TabIndex = 126;
             this.LabelFuncionario.Text = "Nome Funcionario";
-            this.LabelFuncionario.UseStyleColors = true;
             // 
             // metroLabel4
             // 
@@ -62,7 +61,6 @@
             this.metroLabel4.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel4.TabIndex = 128;
             this.metroLabel4.Text = "Nome da Vacina";
-            this.metroLabel4.UseStyleColors = true;
             // 
             // TextNomeVacina
             // 
@@ -93,7 +91,6 @@
             this.TextNomeVacina.Style = MetroFramework.MetroColorStyle.Green;
             this.TextNomeVacina.TabIndex = 127;
             this.TextNomeVacina.UseSelectable = true;
-            this.TextNomeVacina.UseStyleColors = true;
             this.TextNomeVacina.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNomeVacina.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -106,7 +103,6 @@
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel1.TabIndex = 130;
             this.metroLabel1.Text = "Data da Aplicação";
-            this.metroLabel1.UseStyleColors = true;
             // 
             // DatePickerDataAplicacao
             // 
@@ -116,7 +112,6 @@
             this.DatePickerDataAplicacao.Size = new System.Drawing.Size(259, 29);
             this.DatePickerDataAplicacao.Style = MetroFramework.MetroColorStyle.Green;
             this.DatePickerDataAplicacao.TabIndex = 129;
-            this.DatePickerDataAplicacao.UseStyleColors = true;
             // 
             // CheckReforco
             // 
@@ -129,7 +124,6 @@
             this.CheckReforco.TabIndex = 131;
             this.CheckReforco.Text = "Reforço";
             this.CheckReforco.UseSelectable = true;
-            this.CheckReforco.UseStyleColors = true;
             // 
             // TextDose
             // 
@@ -159,7 +153,6 @@
             this.TextDose.Style = MetroFramework.MetroColorStyle.Green;
             this.TextDose.TabIndex = 132;
             this.TextDose.UseSelectable = true;
-            this.TextDose.UseStyleColors = true;
             this.TextDose.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextDose.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -172,7 +165,6 @@
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel2.TabIndex = 133;
             this.metroLabel2.Text = "Dose";
-            this.metroLabel2.UseStyleColors = true;
             // 
             // BtnHistorico
             // 
@@ -184,7 +176,6 @@
             this.BtnHistorico.Text = "Cadastrar";
             this.BtnHistorico.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnHistorico.UseSelectable = true;
-            this.BtnHistorico.UseStyleColors = true;
             this.BtnHistorico.Click += new System.EventHandler(this.BtnHistorico_Click);
             // 
             // Vacinas

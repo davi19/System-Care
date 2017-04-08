@@ -111,7 +111,6 @@
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel5.TabIndex = 9;
             this.metroLabel5.Text = "Exames Relacionados";
-            this.metroLabel5.UseStyleColors = true;
             // 
             // GridExames
             // 
@@ -175,7 +174,6 @@
             this.BtnCadastrar.TabIndex = 6;
             this.BtnCadastrar.Text = "Cadastrar";
             this.BtnCadastrar.UseSelectable = true;
-            this.BtnCadastrar.UseStyleColors = true;
             this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
             // metroLabel2
@@ -187,7 +185,6 @@
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "Grupo de risco";
-            this.metroLabel2.UseStyleColors = true;
             // 
             // metroLabel1
             // 
@@ -198,7 +195,6 @@
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel1.TabIndex = 4;
             this.metroLabel1.Text = "Descrição do risco";
-            this.metroLabel1.UseStyleColors = true;
             // 
             // TextDescricao
             // 
@@ -228,7 +224,6 @@
             this.TextDescricao.Style = MetroFramework.MetroColorStyle.Green;
             this.TextDescricao.TabIndex = 3;
             this.TextDescricao.UseSelectable = true;
-            this.TextDescricao.UseStyleColors = true;
             this.TextDescricao.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextDescricao.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -242,7 +237,6 @@
             this.ComboGrupoRisco.Style = MetroFramework.MetroColorStyle.Green;
             this.ComboGrupoRisco.TabIndex = 2;
             this.ComboGrupoRisco.UseSelectable = true;
-            this.ComboGrupoRisco.UseStyleColors = true;
             // 
             // metroTabPage2
             // 
@@ -278,7 +272,6 @@
             this.metroLabel6.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel6.TabIndex = 16;
             this.metroLabel6.Text = "Exames Relacionados";
-            this.metroLabel6.UseStyleColors = true;
             // 
             // GridExamesEditar
             // 
@@ -326,7 +319,6 @@
             this.GridExamesEditar.Size = new System.Drawing.Size(804, 148);
             this.GridExamesEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.GridExamesEditar.TabIndex = 15;
-            this.GridExamesEditar.UseStyleColors = true;
             // 
             // dataGridViewCheckBoxColumn2
             // 
@@ -342,7 +334,6 @@
             this.BtnEditar.TabIndex = 14;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseSelectable = true;
-            this.BtnEditar.UseStyleColors = true;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnExcluir
@@ -354,7 +345,6 @@
             this.BtnExcluir.TabIndex = 13;
             this.BtnExcluir.Text = "Excluir";
             this.BtnExcluir.UseSelectable = true;
-            this.BtnExcluir.UseStyleColors = true;
             this.BtnExcluir.Visible = false;
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
@@ -367,7 +357,6 @@
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel3.TabIndex = 12;
             this.metroLabel3.Text = "Grupo de risco";
-            this.metroLabel3.UseStyleColors = true;
             this.metroLabel3.Visible = false;
             // 
             // metroLabel4
@@ -379,7 +368,6 @@
             this.metroLabel4.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel4.TabIndex = 11;
             this.metroLabel4.Text = "Descrição do risco";
-            this.metroLabel4.UseStyleColors = true;
             this.metroLabel4.Visible = false;
             // 
             // TextDescricaoEditar
@@ -410,7 +398,6 @@
             this.TextDescricaoEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.TextDescricaoEditar.TabIndex = 10;
             this.TextDescricaoEditar.UseSelectable = true;
-            this.TextDescricaoEditar.UseStyleColors = true;
             this.TextDescricaoEditar.Visible = false;
             this.TextDescricaoEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextDescricaoEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -425,7 +412,6 @@
             this.ComboGrupoEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.ComboGrupoEditar.TabIndex = 9;
             this.ComboGrupoEditar.UseSelectable = true;
-            this.ComboGrupoEditar.UseStyleColors = true;
             this.ComboGrupoEditar.Visible = false;
             // 
             // BtnBuscar
@@ -437,7 +423,6 @@
             this.BtnBuscar.TabIndex = 8;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseSelectable = true;
-            this.BtnBuscar.UseStyleColors = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // GridRiscos
@@ -521,7 +506,6 @@
             this.TextBuscar.Style = MetroFramework.MetroColorStyle.Green;
             this.TextBuscar.TabIndex = 6;
             this.TextBuscar.UseSelectable = true;
-            this.TextBuscar.UseStyleColors = true;
             this.TextBuscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBuscar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 

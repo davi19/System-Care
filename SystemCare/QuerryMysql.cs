@@ -11,7 +11,7 @@ namespace SystemCare
         private static string NomeSetor = "";
         private static string IdFuncionario = "";
         private static string IdFuncionarioNova = "";
-        //192.168.0.200
+        //192.168.1.200
         private readonly MySqlConnection Com =
             new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
@@ -48,14 +48,14 @@ namespace SystemCare
         }
 
         public void CadastraEmpresa(string Nome, string Endereco, string Cnpj, int QuantidadeFuncionario,
-            string Telefone, string Email, string IdCnae, int Risco, string Servicos)
+            string Telefone, string Email, string IdCnae, string Servicos)
         {
             Com.Open();
             var InserirEmpresa =
                 new MySqlCommand(
-                    "INSERT INTO empresas (nome,endereco,cnpj,quantidadefuncionario,telefone,email,idcnae,risco,servicoprestado) VALUES('" +
+                    "INSERT INTO empresas (nome,endereco,cnpj,quantidadefuncionario,telefone,email,idcnae,servicoprestado) VALUES('" +
                     Nome + "','" + Endereco + "','" + Cnpj + "'," + QuantidadeFuncionario + ",'" + Telefone + "','" +
-                    Email + "','" + IdCnae + "'," + Risco + ",'" + Servicos + "')", Com);
+                    Email + "','" + IdCnae + "','" + Servicos + "')", Com);
             InserirEmpresa.ExecuteNonQuery();
             Com.Close();
         }
@@ -179,14 +179,14 @@ namespace SystemCare
         }
 
         public void EditarEmpresa(string Nome, string Endereco, string Cnpj, int QuantidadeFuncionario, string Telefone,
-            string Email, string IdCnae, int Risco, string Servicos)
+            string Email, string IdCnae, string Servicos)
         {
             Com.Open();
             var EditarEmpresa =
                 new MySqlCommand(
                     "UPDATE empresas SET nome ='" + Nome + "' ,endereco='" + Endereco + "',cnpj='" + Cnpj +
                     "',quantidadefuncionario=" + QuantidadeFuncionario + ",telefone='" + Telefone + "',email='" + Email +
-                    "',idcnae='" + IdCnae + "',risco=" + Risco + ", servicoprestado='" + Servicos + "' WHERE id=" +
+                    "',idcnae='" + IdCnae + "', servicoprestado='" + Servicos + "' WHERE id=" +
                     IdEmpresaEditar + ";", Com);
             EditarEmpresa.ExecuteNonQuery();
             SetEmpresa("");
@@ -850,5 +850,7 @@ namespace SystemCare
             Com.Close();
             return TabelaRiscos.Rows[0][0].ToString();
         }
+
+       
     }
 }

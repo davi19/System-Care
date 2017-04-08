@@ -31,10 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empresas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empresas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -51,8 +51,6 @@
             this.TextTelefone = new System.Windows.Forms.MaskedTextBox();
             this.BtnCadastrar = new MetroFramework.Controls.MetroButton();
             this.BtnCancelar = new MetroFramework.Controls.MetroButton();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.TextRisco = new MetroFramework.Controls.MetroTextBox();
             this.DataViewCnae = new MetroFramework.Controls.MetroGrid();
             this.TextBuscaCnae = new MetroFramework.Controls.MetroTextBox();
             this.BtnBuscaCnae = new MetroFramework.Controls.MetroButton();
@@ -72,8 +70,6 @@
             this.GridServicosEditar = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TextTelefoneEditar = new System.Windows.Forms.MaskedTextBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.TextRiscoEditar = new MetroFramework.Controls.MetroTextBox();
             this.GridCnaeEditar = new MetroFramework.Controls.MetroGrid();
             this.TextBuscaCnaeEditar = new MetroFramework.Controls.MetroTextBox();
             this.BtnCnaeEditar = new MetroFramework.Controls.MetroButton();
@@ -111,7 +107,7 @@
             this.CadastrarEmpresa.Controls.Add(this.Editar);
             this.CadastrarEmpresa.Location = new System.Drawing.Point(23, 63);
             this.CadastrarEmpresa.Name = "CadastrarEmpresa";
-            this.CadastrarEmpresa.SelectedIndex = 1;
+            this.CadastrarEmpresa.SelectedIndex = 0;
             this.CadastrarEmpresa.Size = new System.Drawing.Size(843, 447);
             this.CadastrarEmpresa.Style = MetroFramework.MetroColorStyle.Green;
             this.CadastrarEmpresa.TabIndex = 0;
@@ -123,8 +119,6 @@
             this.CadastroEmpresa.Controls.Add(this.TextTelefone);
             this.CadastroEmpresa.Controls.Add(this.BtnCadastrar);
             this.CadastroEmpresa.Controls.Add(this.BtnCancelar);
-            this.CadastroEmpresa.Controls.Add(this.metroLabel7);
-            this.CadastroEmpresa.Controls.Add(this.TextRisco);
             this.CadastroEmpresa.Controls.Add(this.DataViewCnae);
             this.CadastroEmpresa.Controls.Add(this.TextBuscaCnae);
             this.CadastroEmpresa.Controls.Add(this.BtnBuscaCnae);
@@ -229,7 +223,6 @@
             this.BtnCadastrar.Text = "Cadastrar";
             this.BtnCadastrar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnCadastrar.UseSelectable = true;
-            this.BtnCadastrar.UseStyleColors = true;
             this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
             // BtnCancelar
@@ -243,54 +236,7 @@
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnCancelar.UseSelectable = true;
-            this.BtnCancelar.UseStyleColors = true;
             this.BtnCancelar.Visible = false;
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(453, 55);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(115, 19);
-            this.metroLabel7.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel7.TabIndex = 44;
-            this.metroLabel7.Text = "Risco Operacional";
-            this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel7.UseStyleColors = true;
-            // 
-            // TextRisco
-            // 
-            // 
-            // 
-            // 
-            this.TextRisco.CustomButton.Image = null;
-            this.TextRisco.CustomButton.Location = new System.Drawing.Point(156, 2);
-            this.TextRisco.CustomButton.Name = "";
-            this.TextRisco.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextRisco.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextRisco.CustomButton.TabIndex = 1;
-            this.TextRisco.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextRisco.CustomButton.UseSelectable = true;
-            this.TextRisco.CustomButton.Visible = false;
-            this.TextRisco.Icon = ((System.Drawing.Image)(resources.GetObject("TextRisco.Icon")));
-            this.TextRisco.Lines = new string[0];
-            this.TextRisco.Location = new System.Drawing.Point(453, 77);
-            this.TextRisco.MaxLength = 32767;
-            this.TextRisco.Name = "TextRisco";
-            this.TextRisco.PasswordChar = '\0';
-            this.TextRisco.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextRisco.SelectedText = "";
-            this.TextRisco.SelectionLength = 0;
-            this.TextRisco.SelectionStart = 0;
-            this.TextRisco.ShortcutsEnabled = true;
-            this.TextRisco.Size = new System.Drawing.Size(174, 20);
-            this.TextRisco.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextRisco.TabIndex = 5;
-            this.TextRisco.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextRisco.UseSelectable = true;
-            this.TextRisco.UseStyleColors = true;
-            this.TextRisco.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextRisco.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // DataViewCnae
             // 
@@ -373,7 +319,6 @@
             this.TextBuscaCnae.TabIndex = 7;
             this.TextBuscaCnae.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBuscaCnae.UseSelectable = true;
-            this.TextBuscaCnae.UseStyleColors = true;
             this.TextBuscaCnae.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBuscaCnae.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.TextBuscaCnae.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBuscaCnae_KeyPress_1);
@@ -403,7 +348,6 @@
             this.metroLabel4.TabIndex = 41;
             this.metroLabel4.Text = "Quantidade de Funcionários";
             this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel4.UseStyleColors = true;
             // 
             // TextQuantidadeFuncionario
             // 
@@ -435,7 +379,6 @@
             this.TextQuantidadeFuncionario.TabIndex = 2;
             this.TextQuantidadeFuncionario.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextQuantidadeFuncionario.UseSelectable = true;
-            this.TextQuantidadeFuncionario.UseStyleColors = true;
             this.TextQuantidadeFuncionario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextQuantidadeFuncionario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -449,7 +392,6 @@
             this.LabelCnae.TabIndex = 40;
             this.LabelCnae.Text = "CNAE";
             this.LabelCnae.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.LabelCnae.UseStyleColors = true;
             // 
             // metroLabel6
             // 
@@ -493,7 +435,6 @@
             this.TextEmail.TabIndex = 6;
             this.TextEmail.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextEmail.UseSelectable = true;
-            this.TextEmail.UseStyleColors = true;
             this.TextEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextEmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -507,7 +448,6 @@
             this.metroLabel5.TabIndex = 38;
             this.metroLabel5.Text = "Telefone";
             this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel5.UseStyleColors = true;
             // 
             // metroLabel3
             // 
@@ -519,7 +459,6 @@
             this.metroLabel3.TabIndex = 37;
             this.metroLabel3.Text = "CNPJ";
             this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel3.UseStyleColors = true;
             // 
             // TextCnpj
             // 
@@ -552,7 +491,6 @@
             this.TextCnpj.TabIndex = 1;
             this.TextCnpj.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextCnpj.UseSelectable = true;
-            this.TextCnpj.UseStyleColors = true;
             this.TextCnpj.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextCnpj.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -566,7 +504,6 @@
             this.metroLabel2.TabIndex = 34;
             this.metroLabel2.Text = "Endereço";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel2.UseStyleColors = true;
             // 
             // TextEndereco
             // 
@@ -599,7 +536,6 @@
             this.TextEndereco.TabIndex = 3;
             this.TextEndereco.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextEndereco.UseSelectable = true;
-            this.TextEndereco.UseStyleColors = true;
             this.TextEndereco.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextEndereco.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -613,7 +549,6 @@
             this.metroLabel1.TabIndex = 31;
             this.metroLabel1.Text = "Nome";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel1.UseStyleColors = true;
             // 
             // TextNome
             // 
@@ -646,7 +581,6 @@
             this.TextNome.TabIndex = 0;
             this.TextNome.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextNome.UseSelectable = true;
-            this.TextNome.UseStyleColors = true;
             this.TextNome.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNome.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -654,8 +588,6 @@
             // 
             this.Editar.Controls.Add(this.GridServicosEditar);
             this.Editar.Controls.Add(this.TextTelefoneEditar);
-            this.Editar.Controls.Add(this.metroLabel8);
-            this.Editar.Controls.Add(this.TextRiscoEditar);
             this.Editar.Controls.Add(this.GridCnaeEditar);
             this.Editar.Controls.Add(this.TextBuscaCnaeEditar);
             this.Editar.Controls.Add(this.BtnCnaeEditar);
@@ -754,52 +686,6 @@
             this.TextTelefoneEditar.Size = new System.Drawing.Size(152, 20);
             this.TextTelefoneEditar.TabIndex = 5;
             // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(453, 152);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(115, 19);
-            this.metroLabel8.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel8.TabIndex = 62;
-            this.metroLabel8.Text = "Risco Operacional";
-            this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel8.UseStyleColors = true;
-            // 
-            // TextRiscoEditar
-            // 
-            // 
-            // 
-            // 
-            this.TextRiscoEditar.CustomButton.Image = null;
-            this.TextRiscoEditar.CustomButton.Location = new System.Drawing.Point(156, 2);
-            this.TextRiscoEditar.CustomButton.Name = "";
-            this.TextRiscoEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextRiscoEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextRiscoEditar.CustomButton.TabIndex = 1;
-            this.TextRiscoEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextRiscoEditar.CustomButton.UseSelectable = true;
-            this.TextRiscoEditar.CustomButton.Visible = false;
-            this.TextRiscoEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextRiscoEditar.Icon")));
-            this.TextRiscoEditar.Lines = new string[0];
-            this.TextRiscoEditar.Location = new System.Drawing.Point(453, 174);
-            this.TextRiscoEditar.MaxLength = 32767;
-            this.TextRiscoEditar.Name = "TextRiscoEditar";
-            this.TextRiscoEditar.PasswordChar = '\0';
-            this.TextRiscoEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextRiscoEditar.SelectedText = "";
-            this.TextRiscoEditar.SelectionLength = 0;
-            this.TextRiscoEditar.SelectionStart = 0;
-            this.TextRiscoEditar.ShortcutsEnabled = true;
-            this.TextRiscoEditar.Size = new System.Drawing.Size(174, 20);
-            this.TextRiscoEditar.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextRiscoEditar.TabIndex = 6;
-            this.TextRiscoEditar.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextRiscoEditar.UseSelectable = true;
-            this.TextRiscoEditar.UseStyleColors = true;
-            this.TextRiscoEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextRiscoEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // GridCnaeEditar
             // 
             this.GridCnaeEditar.AllowUserToResizeRows = false;
@@ -881,7 +767,6 @@
             this.TextBuscaCnaeEditar.TabIndex = 8;
             this.TextBuscaCnaeEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBuscaCnaeEditar.UseSelectable = true;
-            this.TextBuscaCnaeEditar.UseStyleColors = true;
             this.TextBuscaCnaeEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBuscaCnaeEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.TextBuscaCnaeEditar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBuscaCnaeEditar_KeyPress);
@@ -911,7 +796,6 @@
             this.metroLabel9.TabIndex = 59;
             this.metroLabel9.Text = "Quantidade de Funcionários";
             this.metroLabel9.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel9.UseStyleColors = true;
             // 
             // TextQuantidadeFuncionarioEditar
             // 
@@ -943,7 +827,6 @@
             this.TextQuantidadeFuncionarioEditar.TabIndex = 3;
             this.TextQuantidadeFuncionarioEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextQuantidadeFuncionarioEditar.UseSelectable = true;
-            this.TextQuantidadeFuncionarioEditar.UseStyleColors = true;
             this.TextQuantidadeFuncionarioEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextQuantidadeFuncionarioEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -957,7 +840,6 @@
             this.LabelCnaeEditar.TabIndex = 58;
             this.LabelCnaeEditar.Text = "CNAE";
             this.LabelCnaeEditar.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.LabelCnaeEditar.UseStyleColors = true;
             // 
             // metroLabel11
             // 
@@ -1001,7 +883,6 @@
             this.TextEmailEditar.TabIndex = 7;
             this.TextEmailEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextEmailEditar.UseSelectable = true;
-            this.TextEmailEditar.UseStyleColors = true;
             this.TextEmailEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextEmailEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1015,7 +896,6 @@
             this.metroLabel12.TabIndex = 56;
             this.metroLabel12.Text = "Telefone";
             this.metroLabel12.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel12.UseStyleColors = true;
             // 
             // metroLabel13
             // 
@@ -1027,7 +907,6 @@
             this.metroLabel13.TabIndex = 55;
             this.metroLabel13.Text = "CNPJ";
             this.metroLabel13.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel13.UseStyleColors = true;
             // 
             // TextCnpjEditar
             // 
@@ -1060,7 +939,6 @@
             this.TextCnpjEditar.TabIndex = 2;
             this.TextCnpjEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextCnpjEditar.UseSelectable = true;
-            this.TextCnpjEditar.UseStyleColors = true;
             this.TextCnpjEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextCnpjEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1074,7 +952,6 @@
             this.metroLabel14.TabIndex = 52;
             this.metroLabel14.Text = "Endereço";
             this.metroLabel14.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel14.UseStyleColors = true;
             // 
             // TextEnderecoEditar
             // 
@@ -1107,7 +984,6 @@
             this.TextEnderecoEditar.TabIndex = 4;
             this.TextEnderecoEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextEnderecoEditar.UseSelectable = true;
-            this.TextEnderecoEditar.UseStyleColors = true;
             this.TextEnderecoEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextEnderecoEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1121,7 +997,6 @@
             this.metroLabel15.TabIndex = 49;
             this.metroLabel15.Text = "Nome";
             this.metroLabel15.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel15.UseStyleColors = true;
             // 
             // TextNomeEditar
             // 
@@ -1154,7 +1029,6 @@
             this.TextNomeEditar.TabIndex = 1;
             this.TextNomeEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextNomeEditar.UseSelectable = true;
-            this.TextNomeEditar.UseStyleColors = true;
             this.TextNomeEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNomeEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1168,7 +1042,6 @@
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnEditar.UseSelectable = true;
-            this.BtnEditar.UseStyleColors = true;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnExcluir
@@ -1181,7 +1054,6 @@
             this.BtnExcluir.Text = "Excluir";
             this.BtnExcluir.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnExcluir.UseSelectable = true;
-            this.BtnExcluir.UseStyleColors = true;
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // DataGridEmpresa
@@ -1253,7 +1125,6 @@
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnBuscar.UseSelectable = true;
-            this.BtnBuscar.UseStyleColors = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TextBusca
@@ -1322,8 +1193,6 @@
         private MetroFramework.Controls.MetroTabPage CadastroEmpresa;
         private MetroFramework.Controls.MetroTabPage Editar;
         private MetroFramework.Controls.MetroButton BtnCancelar;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroTextBox TextRisco;
         private MetroFramework.Controls.MetroGrid DataViewCnae;
         private MetroFramework.Controls.MetroTextBox TextBuscaCnae;
         private MetroFramework.Controls.MetroButton BtnBuscaCnae;
@@ -1346,8 +1215,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn SelecionaEmpres;
         private MetroFramework.Controls.MetroButton BtnBuscar;
         private MetroFramework.Controls.MetroTextBox TextBusca;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroTextBox TextRiscoEditar;
         private MetroFramework.Controls.MetroGrid GridCnaeEditar;
         private MetroFramework.Controls.MetroTextBox TextBuscaCnaeEditar;
         private MetroFramework.Controls.MetroButton BtnCnaeEditar;

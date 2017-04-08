@@ -250,7 +250,6 @@
             this.metroLabel5.TabIndex = 64;
             this.metroLabel5.Text = "Buscar Função";
             this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel5.UseStyleColors = true;
             // 
             // TextBuscaFuncao
             // 
@@ -283,7 +282,6 @@
             this.TextBuscaFuncao.TabIndex = 63;
             this.TextBuscaFuncao.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBuscaFuncao.UseSelectable = true;
-            this.TextBuscaFuncao.UseStyleColors = true;
             this.TextBuscaFuncao.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBuscaFuncao.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.TextBuscaFuncao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBuscaFuncao_KeyPress);
@@ -344,7 +342,6 @@
             this.metroLabel21.TabIndex = 56;
             this.metroLabel21.Text = "Naturalidade:";
             this.metroLabel21.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel21.UseStyleColors = true;
             // 
             // TextNaturalidade
             // 
@@ -377,7 +374,6 @@
             this.TextNaturalidade.TabIndex = 44;
             this.TextNaturalidade.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextNaturalidade.UseSelectable = true;
-            this.TextNaturalidade.UseStyleColors = true;
             this.TextNaturalidade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNaturalidade.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -391,7 +387,6 @@
             this.metroLabel1.TabIndex = 55;
             this.metroLabel1.Text = "IMC:";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel1.UseStyleColors = true;
             // 
             // TextImc
             // 
@@ -424,7 +419,6 @@
             this.TextImc.TabIndex = 39;
             this.TextImc.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextImc.UseSelectable = true;
-            this.TextImc.UseStyleColors = true;
             this.TextImc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextImc.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -438,7 +432,6 @@
             this.metroLabel19.TabIndex = 54;
             this.metroLabel19.Text = "Data de Nascimento:";
             this.metroLabel19.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel19.UseStyleColors = true;
             // 
             // metroLabel18
             // 
@@ -450,7 +443,6 @@
             this.metroLabel18.TabIndex = 53;
             this.metroLabel18.Text = "Telefone:";
             this.metroLabel18.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel18.UseStyleColors = true;
             // 
             // metroLabel17
             // 
@@ -462,7 +454,6 @@
             this.metroLabel17.TabIndex = 52;
             this.metroLabel17.Text = "Identidade:";
             this.metroLabel17.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel17.UseStyleColors = true;
             // 
             // metroLabel16
             // 
@@ -474,7 +465,6 @@
             this.metroLabel16.TabIndex = 51;
             this.metroLabel16.Text = "CPF:";
             this.metroLabel16.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel16.UseStyleColors = true;
             // 
             // metroLabel15
             // 
@@ -486,7 +476,6 @@
             this.metroLabel15.TabIndex = 50;
             this.metroLabel15.Text = "Peso:";
             this.metroLabel15.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel15.UseStyleColors = true;
             // 
             // TextPeso
             // 
@@ -519,7 +508,6 @@
             this.TextPeso.TabIndex = 38;
             this.TextPeso.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextPeso.UseSelectable = true;
-            this.TextPeso.UseStyleColors = true;
             this.TextPeso.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextPeso.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -533,7 +521,6 @@
             this.metroLabel14.TabIndex = 49;
             this.metroLabel14.Text = "Altura:";
             this.metroLabel14.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel14.UseStyleColors = true;
             // 
             // TextAltura
             // 
@@ -566,7 +553,6 @@
             this.TextAltura.TabIndex = 37;
             this.TextAltura.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextAltura.UseSelectable = true;
-            this.TextAltura.UseStyleColors = true;
             this.TextAltura.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextAltura.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -580,7 +566,6 @@
             this.metroLabel13.TabIndex = 48;
             this.metroLabel13.Text = "Sexo:";
             this.metroLabel13.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel13.UseStyleColors = true;
             // 
             // RadioFeminino
             // 
@@ -592,7 +577,6 @@
             this.RadioFeminino.TabIndex = 47;
             this.RadioFeminino.Text = "Feminino";
             this.RadioFeminino.UseSelectable = true;
-            this.RadioFeminino.UseStyleColors = true;
             // 
             // RadioMasculino
             // 
@@ -604,7 +588,6 @@
             this.RadioMasculino.TabIndex = 36;
             this.RadioMasculino.Text = "Masculino";
             this.RadioMasculino.UseSelectable = true;
-            this.RadioMasculino.UseStyleColors = true;
             // 
             // metroLabel12
             // 
@@ -616,7 +599,6 @@
             this.metroLabel12.TabIndex = 46;
             this.metroLabel12.Text = "Idade:";
             this.metroLabel12.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel12.UseStyleColors = true;
             // 
             // TextIdade
             // 
@@ -649,7 +631,6 @@
             this.TextIdade.TabIndex = 35;
             this.TextIdade.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextIdade.UseSelectable = true;
-            this.TextIdade.UseStyleColors = true;
             this.TextIdade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextIdade.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -663,7 +644,6 @@
             this.metroLabel9.TabIndex = 45;
             this.metroLabel9.Text = "Nome Funcionário:";
             this.metroLabel9.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel9.UseStyleColors = true;
             // 
             // TextNomeFuncionario
             // 
@@ -696,7 +676,6 @@
             this.TextNomeFuncionario.TabIndex = 34;
             this.TextNomeFuncionario.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextNomeFuncionario.UseSelectable = true;
-            this.TextNomeFuncionario.UseStyleColors = true;
             this.TextNomeFuncionario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNomeFuncionario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -830,7 +809,6 @@
             this.metroLabel25.TabIndex = 97;
             this.metroLabel25.Text = "Buscar Funcionario:";
             this.metroLabel25.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel25.UseStyleColors = true;
             // 
             // TextFuncionarioBusca
             // 
@@ -863,7 +841,6 @@
             this.TextFuncionarioBusca.TabIndex = 96;
             this.TextFuncionarioBusca.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextFuncionarioBusca.UseSelectable = true;
-            this.TextFuncionarioBusca.UseStyleColors = true;
             this.TextFuncionarioBusca.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextFuncionarioBusca.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.TextFuncionarioBusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextFuncionarioBusca_KeyPress);
@@ -878,7 +855,6 @@
             this.metroLabel23.TabIndex = 95;
             this.metroLabel23.Text = "Naturalidade:";
             this.metroLabel23.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel23.UseStyleColors = true;
             // 
             // metroLabel24
             // 
@@ -890,7 +866,6 @@
             this.metroLabel24.TabIndex = 94;
             this.metroLabel24.Text = "Data de Nascimento:";
             this.metroLabel24.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel24.UseStyleColors = true;
             // 
             // metroLabel20
             // 
@@ -902,7 +877,6 @@
             this.metroLabel20.TabIndex = 93;
             this.metroLabel20.Text = "Peso:";
             this.metroLabel20.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel20.UseStyleColors = true;
             // 
             // metroLabel22
             // 
@@ -914,7 +888,6 @@
             this.metroLabel22.TabIndex = 92;
             this.metroLabel22.Text = "Altura:";
             this.metroLabel22.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel22.UseStyleColors = true;
             // 
             // TextIdadeEditar
             // 
@@ -947,7 +920,6 @@
             this.TextIdadeEditar.TabIndex = 91;
             this.TextIdadeEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextIdadeEditar.UseSelectable = true;
-            this.TextIdadeEditar.UseStyleColors = true;
             this.TextIdadeEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextIdadeEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -961,7 +933,6 @@
             this.BtnExcluir.Text = "Excluir";
             this.BtnExcluir.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnExcluir.UseSelectable = true;
-            this.BtnExcluir.UseStyleColors = true;
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // GridFuncaoFuncionarioEditar
@@ -1047,7 +1018,6 @@
             this.metroLabel2.TabIndex = 87;
             this.metroLabel2.Text = "Buscar Função";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel2.UseStyleColors = true;
             // 
             // TextBuscaFuncaoEditar
             // 
@@ -1080,7 +1050,6 @@
             this.TextBuscaFuncaoEditar.TabIndex = 86;
             this.TextBuscaFuncaoEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBuscaFuncaoEditar.UseSelectable = true;
-            this.TextBuscaFuncaoEditar.UseStyleColors = true;
             this.TextBuscaFuncaoEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBuscaFuncaoEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.TextBuscaFuncaoEditar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBuscaFuncaoEditar_KeyPress);
@@ -1095,7 +1064,6 @@
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnEditar.UseSelectable = true;
-            this.BtnEditar.UseStyleColors = true;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // TextIdentidadeEditar
@@ -1162,7 +1130,6 @@
             this.TextNaturalidadeEditar.TabIndex = 76;
             this.TextNaturalidadeEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextNaturalidadeEditar.UseSelectable = true;
-            this.TextNaturalidadeEditar.UseStyleColors = true;
             this.TextNaturalidadeEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNaturalidadeEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1176,7 +1143,6 @@
             this.metroLabel3.TabIndex = 84;
             this.metroLabel3.Text = "IMC:";
             this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel3.UseStyleColors = true;
             // 
             // TextImcEditar
             // 
@@ -1209,7 +1175,6 @@
             this.TextImcEditar.TabIndex = 71;
             this.TextImcEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextImcEditar.UseSelectable = true;
-            this.TextImcEditar.UseStyleColors = true;
             this.TextImcEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextImcEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1223,7 +1188,6 @@
             this.metroLabel4.TabIndex = 83;
             this.metroLabel4.Text = "Telefone:";
             this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel4.UseStyleColors = true;
             // 
             // metroLabel6
             // 
@@ -1235,7 +1199,6 @@
             this.metroLabel6.TabIndex = 82;
             this.metroLabel6.Text = "Identidade:";
             this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel6.UseStyleColors = true;
             // 
             // metroLabel7
             // 
@@ -1247,7 +1210,6 @@
             this.metroLabel7.TabIndex = 81;
             this.metroLabel7.Text = "CPF:";
             this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel7.UseStyleColors = true;
             // 
             // TextPesoEditar
             // 
@@ -1280,7 +1242,6 @@
             this.TextPesoEditar.TabIndex = 70;
             this.TextPesoEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextPesoEditar.UseSelectable = true;
-            this.TextPesoEditar.UseStyleColors = true;
             this.TextPesoEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextPesoEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1315,7 +1276,6 @@
             this.TextAlturaEditar.TabIndex = 69;
             this.TextAlturaEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextAlturaEditar.UseSelectable = true;
-            this.TextAlturaEditar.UseStyleColors = true;
             this.TextAlturaEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextAlturaEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -1329,7 +1289,6 @@
             this.metroLabel8.TabIndex = 80;
             this.metroLabel8.Text = "Sexo:";
             this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel8.UseStyleColors = true;
             // 
             // RadioFemininoEditar
             // 
@@ -1341,7 +1300,6 @@
             this.RadioFemininoEditar.TabIndex = 79;
             this.RadioFemininoEditar.Text = "Feminino";
             this.RadioFemininoEditar.UseSelectable = true;
-            this.RadioFemininoEditar.UseStyleColors = true;
             // 
             // RadioMasculinoEditar
             // 
@@ -1353,7 +1311,6 @@
             this.RadioMasculinoEditar.TabIndex = 68;
             this.RadioMasculinoEditar.Text = "Masculino";
             this.RadioMasculinoEditar.UseSelectable = true;
-            this.RadioMasculinoEditar.UseStyleColors = true;
             // 
             // metroLabel10
             // 
@@ -1365,7 +1322,6 @@
             this.metroLabel10.TabIndex = 78;
             this.metroLabel10.Text = "Idade:";
             this.metroLabel10.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel10.UseStyleColors = true;
             // 
             // metroLabel11
             // 
@@ -1377,7 +1333,6 @@
             this.metroLabel11.TabIndex = 77;
             this.metroLabel11.Text = "Nome Funcionário:";
             this.metroLabel11.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel11.UseStyleColors = true;
             // 
             // TextNomeFuncionarioEditar
             // 
@@ -1410,7 +1365,6 @@
             this.TextNomeFuncionarioEditar.TabIndex = 67;
             this.TextNomeFuncionarioEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextNomeFuncionarioEditar.UseSelectable = true;
-            this.TextNomeFuncionarioEditar.UseStyleColors = true;
             this.TextNomeFuncionarioEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNomeFuncionarioEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 

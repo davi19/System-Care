@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Historico));
             this.GridHistorico = new MetroFramework.Controls.MetroGrid();
-            this.BtnSalvar = new MetroFramework.Controls.MetroButton();
             this.GerarAso = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnSalvar = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridHistorico)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,19 +89,6 @@
             this.GridHistorico.TabIndex = 116;
             this.GridHistorico.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridHistorico_CellClick);
             // 
-            // BtnSalvar
-            // 
-            this.BtnSalvar.Location = new System.Drawing.Point(392, 56);
-            this.BtnSalvar.Name = "BtnSalvar";
-            this.BtnSalvar.Size = new System.Drawing.Size(112, 23);
-            this.BtnSalvar.Style = MetroFramework.MetroColorStyle.Green;
-            this.BtnSalvar.TabIndex = 117;
-            this.BtnSalvar.Text = "Salvar Alterações";
-            this.BtnSalvar.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.BtnSalvar.UseSelectable = true;
-            this.BtnSalvar.UseStyleColors = true;
-            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
-            // 
             // GerarAso
             // 
             this.GerarAso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -113,6 +100,18 @@
             this.GerarAso.ToolTipText = "Gerar ASO";
             this.GerarAso.UseColumnTextForButtonValue = true;
             this.GerarAso.Width = 83;
+            // 
+            // BtnSalvar
+            // 
+            this.BtnSalvar.Location = new System.Drawing.Point(392, 56);
+            this.BtnSalvar.Name = "BtnSalvar";
+            this.BtnSalvar.Size = new System.Drawing.Size(112, 23);
+            this.BtnSalvar.Style = MetroFramework.MetroColorStyle.Green;
+            this.BtnSalvar.TabIndex = 117;
+            this.BtnSalvar.Text = "Salvar Alterações";
+            this.BtnSalvar.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnSalvar.UseSelectable = true;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // Historico
             // 

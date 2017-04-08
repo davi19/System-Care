@@ -52,7 +52,6 @@
             this.BtnSelecionaEmpresa.Text = "Selecionar Empresa";
             this.BtnSelecionaEmpresa.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnSelecionaEmpresa.UseSelectable = true;
-            this.BtnSelecionaEmpresa.UseStyleColors = true;
             this.BtnSelecionaEmpresa.Click += new System.EventHandler(this.BtnSelecionaEmpresa_Click);
             // 
             // LabelFuncionarioNova
@@ -65,7 +64,6 @@
             this.LabelFuncionarioNova.Style = MetroFramework.MetroColorStyle.Green;
             this.LabelFuncionarioNova.TabIndex = 121;
             this.LabelFuncionarioNova.Text = "Selecione uma empresa";
-            this.LabelFuncionarioNova.UseStyleColors = true;
             // 
             // menuStrip1
             // 
@@ -125,7 +123,6 @@
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel1.TabIndex = 124;
             this.metroLabel1.Text = "Mês de Referência";
-            this.metroLabel1.UseStyleColors = true;
             // 
             // reportViewer1
             // 

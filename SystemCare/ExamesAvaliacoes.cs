@@ -14,14 +14,8 @@ namespace SystemCare
         {
             InitializeComponent();
 
-            var TabelaExamesMedicos = Cadastro.SelecionaModalidadeExame();
-            GridExameMedicoPrimeira.DataSource = TabelaExamesMedicos;
-
             var TabelaTipoExame = Cadastro.SelecionaExameMedico();
             GridTipoExamePrimeira.DataSource = TabelaTipoExame;
-
-            var TabelaExamesMedicosNova = Cadastro.SelecionaModalidadeExame();
-            GridExamesMedicosNova.DataSource = TabelaExamesMedicosNova;
 
             var TabelaTipoExameNova = Cadastro.SelecionaExameMedico();
             GridTipoExameNova.DataSource = TabelaTipoExameNova;
@@ -72,15 +66,7 @@ namespace SystemCare
                 Resultado = "NÃO APTO";
             }
             var ModalidadeExames = "";
-            for (var i = 0; i < GridExameMedicoPrimeira.Rows.Count; i++)
-                try
-                {
-                    if (Convert.ToBoolean(GridExameMedicoPrimeira.Rows[i].Cells[0].Value.ToString()))
-                        ModalidadeExames = ModalidadeExames + ";" + GridExameMedicoPrimeira.Rows[i].Cells[1].Value;
-                }
-                catch
-                {
-                }
+           
             var TipoExame = "";
             for (var i = 0; i < GridTipoExamePrimeira.Rows.Count; i++)
                 try
@@ -98,15 +84,7 @@ namespace SystemCare
             else
                 Sexo = "FEMININO";
             var ModalidadeExameAos = "";
-            for (var i = 0; i < GridExameMedicoPrimeira.Rows.Count; i++)
-                try
-                {
-                    if (Convert.ToBoolean(GridExameMedicoPrimeira.Rows[i].Cells[0].Value.ToString()))
-                        ModalidadeExameAos = ModalidadeExameAos + GridExameMedicoPrimeira.Rows[i].Cells[2].Value + "\n";
-                }
-                catch
-                {
-                }
+           
             var TipoExameAos = "";
             for (var i = 0; i < GridTipoExamePrimeira.Rows.Count; i++)
                 try
@@ -177,15 +155,7 @@ namespace SystemCare
                 Resultado = "NÃO APTO";
             }
             var ModalidadeExames = "";
-            for (var i = 0; i < GridExamesMedicosNova.Rows.Count; i++)
-                try
-                {
-                    if (Convert.ToBoolean(GridExamesMedicosNova.Rows[i].Cells[0].Value.ToString()))
-                        ModalidadeExames = ModalidadeExames + ";" + GridExamesMedicosNova.Rows[i].Cells[1].Value;
-                }
-                catch
-                {
-                }
+           
             var TipoExame = "";
             for (var i = 0; i < GridTipoExameNova.Rows.Count; i++)
                 try
@@ -203,15 +173,7 @@ namespace SystemCare
             else
                 Sexo = "FEMININO";
             var ModalidadeExameAos = "";
-            for (var i = 0; i < GridExamesMedicosNova.Rows.Count; i++)
-                try
-                {
-                    if (Convert.ToBoolean(GridExamesMedicosNova.Rows[i].Cells[0].Value.ToString()))
-                        ModalidadeExameAos = ModalidadeExameAos + GridExamesMedicosNova.Rows[i].Cells[2].Value + "\n";
-                }
-                catch
-                {
-                }
+           
             var TipoExameAos = "";
             for (var i = 0; i < GridTipoExameNova.Rows.Count; i++)
                 try

@@ -49,7 +49,6 @@
             this.DatePickerDataAtestado.Size = new System.Drawing.Size(259, 29);
             this.DatePickerDataAtestado.Style = MetroFramework.MetroColorStyle.Green;
             this.DatePickerDataAtestado.TabIndex = 0;
-            this.DatePickerDataAtestado.UseStyleColors = true;
             // 
             // TextMotivo
             // 
@@ -80,7 +79,6 @@
             this.TextMotivo.Style = MetroFramework.MetroColorStyle.Green;
             this.TextMotivo.TabIndex = 3;
             this.TextMotivo.UseSelectable = true;
-            this.TextMotivo.UseStyleColors = true;
             this.TextMotivo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextMotivo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -112,7 +110,6 @@
             this.TextCid.Style = MetroFramework.MetroColorStyle.Green;
             this.TextCid.TabIndex = 2;
             this.TextCid.UseSelectable = true;
-            this.TextCid.UseStyleColors = true;
             this.TextCid.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextCid.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -144,7 +141,6 @@
             this.TextDiasAfastado.Style = MetroFramework.MetroColorStyle.Green;
             this.TextDiasAfastado.TabIndex = 1;
             this.TextDiasAfastado.UseSelectable = true;
-            this.TextDiasAfastado.UseStyleColors = true;
             this.TextDiasAfastado.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextDiasAfastado.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -157,7 +153,6 @@
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel1.TabIndex = 4;
             this.metroLabel1.Text = "Data do Atestado";
-            this.metroLabel1.UseStyleColors = true;
             // 
             // metroLabel2
             // 
@@ -168,7 +163,6 @@
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "Dias de afastamento";
-            this.metroLabel2.UseStyleColors = true;
             // 
             // metroLabel3
             // 
@@ -179,7 +173,6 @@
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "Motivo";
-            this.metroLabel3.UseStyleColors = true;
             // 
             // metroLabel4
             // 
@@ -190,7 +183,6 @@
             this.metroLabel4.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel4.TabIndex = 7;
             this.metroLabel4.Text = "CID";
-            this.metroLabel4.UseStyleColors = true;
             // 
             // BtnHistorico
             // 
@@ -202,7 +194,6 @@
             this.BtnHistorico.Text = "Cadastrar";
             this.BtnHistorico.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnHistorico.UseSelectable = true;
-            this.BtnHistorico.UseStyleColors = true;
             this.BtnHistorico.Click += new System.EventHandler(this.BtnHistorico_Click);
             // 
             // LabelFuncionario
@@ -216,7 +207,6 @@
             this.LabelFuncionario.Style = MetroFramework.MetroColorStyle.Green;
             this.LabelFuncionario.TabIndex = 125;
             this.LabelFuncionario.Text = "Nome Funcionario";
-            this.LabelFuncionario.UseStyleColors = true;
             // 
             // Atestados
             // 

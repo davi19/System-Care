@@ -69,7 +69,6 @@
             this.TextUsuario.TabIndex = 0;
             this.TextUsuario.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextUsuario.UseSelectable = true;
-            this.TextUsuario.UseStyleColors = true;
             this.TextUsuario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextUsuario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -102,7 +101,6 @@
             this.TextSenha.TabIndex = 1;
             this.TextSenha.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextSenha.UseSelectable = true;
-            this.TextSenha.UseStyleColors = true;
             this.TextSenha.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextSenha.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.TextSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextSenha_KeyPress);
@@ -137,7 +135,6 @@
             this.metroButton1.Text = "Logar";
             this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.UseStyleColors = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // BtnSair
@@ -150,7 +147,6 @@
             this.BtnSair.Text = "Sair";
             this.BtnSair.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnSair.UseSelectable = true;
-            this.BtnSair.UseStyleColors = true;
             this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // pictureBox1
