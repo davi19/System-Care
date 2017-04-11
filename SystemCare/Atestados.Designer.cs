@@ -147,9 +147,10 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.Location = new System.Drawing.Point(23, 124);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(112, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(117, 19);
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel1.TabIndex = 4;
             this.metroLabel1.Text = "Data do Atestado";
@@ -157,9 +158,10 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.Location = new System.Drawing.Point(288, 124);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(128, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(134, 19);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel2.TabIndex = 5;
             this.metroLabel2.Text = "Dias de afastamento";
@@ -167,9 +169,10 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.Location = new System.Drawing.Point(288, 180);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(50, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(53, 19);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "Motivo";
@@ -177,9 +180,10 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel4.Location = new System.Drawing.Point(23, 180);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(30, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(32, 19);
             this.metroLabel4.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel4.TabIndex = 7;
             this.metroLabel4.Text = "CID";

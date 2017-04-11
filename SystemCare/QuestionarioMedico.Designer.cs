@@ -43,7 +43,6 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
@@ -59,10 +58,10 @@
             this.TextRespiratoria = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.TextGastro = new MetroFramework.Controls.MetroTextBox();
-            this.metroCheckBox4 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroCheckBox8 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroCheckBox9 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroCheckBox10 = new MetroFramework.Controls.MetroCheckBox();
+            this.Constipacao = new MetroFramework.Controls.MetroCheckBox();
+            this.Ulcera = new MetroFramework.Controls.MetroCheckBox();
+            this.Diarreia = new MetroFramework.Controls.MetroCheckBox();
+            this.Gastrite = new MetroFramework.Controls.MetroCheckBox();
             this.TextCardio = new MetroFramework.Controls.MetroTextBox();
             this.Arritimia = new MetroFramework.Controls.MetroCheckBox();
             this.Insuficiencia = new MetroFramework.Controls.MetroCheckBox();
@@ -89,12 +88,36 @@
             this.TextAfastamentoAcidente = new MetroFramework.Controls.MetroTextBox();
             this.TextAlergia = new MetroFramework.Controls.MetroTextBox();
             this.DataFratura = new MetroFramework.Controls.MetroDateTime();
-            this.TextFratura = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
+            this.LabelFuncionario = new MetroFramework.Controls.MetroLabel();
+            this.BtnCadastrar = new MetroFramework.Controls.MetroButton();
+            this.TextHistorico = new System.Windows.Forms.RichTextBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // TextQueixa
@@ -121,7 +144,8 @@
             this.TextQueixa.SelectionLength = 0;
             this.TextQueixa.SelectionStart = 0;
             this.TextQueixa.ShortcutsEnabled = true;
-            this.TextQueixa.Size = new System.Drawing.Size(561, 23);
+            this.TextQueixa.Size = new System.Drawing.Size(1048, 23);
+            this.TextQueixa.Style = MetroFramework.MetroColorStyle.Green;
             this.TextQueixa.TabIndex = 0;
             this.TextQueixa.UseSelectable = true;
             this.TextQueixa.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -130,16 +154,17 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.Location = new System.Drawing.Point(23, 84);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(50, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(56, 19);
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "Queixa";
             // 
             // RadioSimCirurgia
             // 
             this.RadioSimCirurgia.AutoSize = true;
-            this.RadioSimCirurgia.Location = new System.Drawing.Point(23, 165);
+            this.RadioSimCirurgia.Location = new System.Drawing.Point(6, 5);
             this.RadioSimCirurgia.Name = "RadioSimCirurgia";
             this.RadioSimCirurgia.Size = new System.Drawing.Size(43, 15);
             this.RadioSimCirurgia.Style = MetroFramework.MetroColorStyle.Green;
@@ -150,9 +175,10 @@
             // RadioNaoAcidente
             // 
             this.RadioNaoAcidente.AutoSize = true;
-            this.RadioNaoAcidente.Location = new System.Drawing.Point(537, 165);
+            this.RadioNaoAcidente.Location = new System.Drawing.Point(57, 8);
             this.RadioNaoAcidente.Name = "RadioNaoAcidente";
             this.RadioNaoAcidente.Size = new System.Drawing.Size(45, 15);
+            this.RadioNaoAcidente.Style = MetroFramework.MetroColorStyle.Green;
             this.RadioNaoAcidente.TabIndex = 3;
             this.RadioNaoAcidente.Text = "Não";
             this.RadioNaoAcidente.UseSelectable = true;
@@ -160,9 +186,10 @@
             // RadioSimAcidente
             // 
             this.RadioSimAcidente.AutoSize = true;
-            this.RadioSimAcidente.Location = new System.Drawing.Point(488, 165);
+            this.RadioSimAcidente.Location = new System.Drawing.Point(6, 8);
             this.RadioSimAcidente.Name = "RadioSimAcidente";
             this.RadioSimAcidente.Size = new System.Drawing.Size(43, 15);
+            this.RadioSimAcidente.Style = MetroFramework.MetroColorStyle.Green;
             this.RadioSimAcidente.TabIndex = 4;
             this.RadioSimAcidente.Text = "Sim";
             this.RadioSimAcidente.UseSelectable = true;
@@ -170,7 +197,7 @@
             // RadioAlergiaNao
             // 
             this.RadioAlergiaNao.AutoSize = true;
-            this.RadioAlergiaNao.Location = new System.Drawing.Point(72, 292);
+            this.RadioAlergiaNao.Location = new System.Drawing.Point(57, 8);
             this.RadioAlergiaNao.Name = "RadioAlergiaNao";
             this.RadioAlergiaNao.Size = new System.Drawing.Size(45, 15);
             this.RadioAlergiaNao.Style = MetroFramework.MetroColorStyle.Green;
@@ -181,7 +208,7 @@
             // RadioAlergiaSim
             // 
             this.RadioAlergiaSim.AutoSize = true;
-            this.RadioAlergiaSim.Location = new System.Drawing.Point(23, 292);
+            this.RadioAlergiaSim.Location = new System.Drawing.Point(6, 8);
             this.RadioAlergiaSim.Name = "RadioAlergiaSim";
             this.RadioAlergiaSim.Size = new System.Drawing.Size(43, 15);
             this.RadioAlergiaSim.Style = MetroFramework.MetroColorStyle.Green;
@@ -192,7 +219,7 @@
             // RadioFraturaNao
             // 
             this.RadioFraturaNao.AutoSize = true;
-            this.RadioFraturaNao.Location = new System.Drawing.Point(72, 252);
+            this.RadioFraturaNao.Location = new System.Drawing.Point(57, 7);
             this.RadioFraturaNao.Name = "RadioFraturaNao";
             this.RadioFraturaNao.Size = new System.Drawing.Size(45, 15);
             this.RadioFraturaNao.Style = MetroFramework.MetroColorStyle.Green;
@@ -203,7 +230,7 @@
             // RadioFraturaSim
             // 
             this.RadioFraturaSim.AutoSize = true;
-            this.RadioFraturaSim.Location = new System.Drawing.Point(23, 251);
+            this.RadioFraturaSim.Location = new System.Drawing.Point(6, 7);
             this.RadioFraturaSim.Name = "RadioFraturaSim";
             this.RadioFraturaSim.Size = new System.Drawing.Size(43, 15);
             this.RadioFraturaSim.Style = MetroFramework.MetroColorStyle.Green;
@@ -214,7 +241,7 @@
             // RadioNaoInternacao
             // 
             this.RadioNaoInternacao.AutoSize = true;
-            this.RadioNaoInternacao.Location = new System.Drawing.Point(72, 211);
+            this.RadioNaoInternacao.Location = new System.Drawing.Point(55, 9);
             this.RadioNaoInternacao.Name = "RadioNaoInternacao";
             this.RadioNaoInternacao.Size = new System.Drawing.Size(45, 15);
             this.RadioNaoInternacao.Style = MetroFramework.MetroColorStyle.Green;
@@ -225,7 +252,7 @@
             // RadioNaoCirurgia
             // 
             this.RadioNaoCirurgia.AutoSize = true;
-            this.RadioNaoCirurgia.Location = new System.Drawing.Point(72, 165);
+            this.RadioNaoCirurgia.Location = new System.Drawing.Point(55, 5);
             this.RadioNaoCirurgia.Name = "RadioNaoCirurgia";
             this.RadioNaoCirurgia.Size = new System.Drawing.Size(45, 15);
             this.RadioNaoCirurgia.Style = MetroFramework.MetroColorStyle.Green;
@@ -236,7 +263,7 @@
             // RadioSimInternacao
             // 
             this.RadioSimInternacao.AutoSize = true;
-            this.RadioSimInternacao.Location = new System.Drawing.Point(23, 211);
+            this.RadioSimInternacao.Location = new System.Drawing.Point(6, 9);
             this.RadioSimInternacao.Name = "RadioSimInternacao";
             this.RadioSimInternacao.Size = new System.Drawing.Size(43, 15);
             this.RadioSimInternacao.Style = MetroFramework.MetroColorStyle.Green;
@@ -247,72 +274,70 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.Location = new System.Drawing.Point(486, 136);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(174, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(198, 19);
             this.metroLabel2.TabIndex = 12;
             this.metroLabel2.Text = "Sofreu Acidente de trabalho";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel3.Location = new System.Drawing.Point(486, 229);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(183, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(210, 19);
             this.metroLabel3.TabIndex = 13;
             this.metroLabel3.Text = "Afastamento pela previdência";
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel4.Location = new System.Drawing.Point(488, 189);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(233, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(265, 19);
             this.metroLabel4.TabIndex = 14;
             this.metroLabel4.Text = "Afastamento por acidente de trabalho";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(19, 324);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(137, 19);
-            this.metroLabel5.TabIndex = 15;
-            this.metroLabel5.Text = "Doenças respiratórias:";
             // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(23, 270);
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel6.Location = new System.Drawing.Point(820, 136);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(68, 19);
             this.metroLabel6.TabIndex = 16;
             this.metroLabel6.Text = "Alergias:";
             // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(23, 189);
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel7.Location = new System.Drawing.Point(2, 189);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(90, 19);
             this.metroLabel7.TabIndex = 17;
             this.metroLabel7.Text = "Internações:";
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(23, 229);
+            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel8.Location = new System.Drawing.Point(2, 248);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(67, 19);
             this.metroLabel8.TabIndex = 18;
             this.metroLabel8.Text = "Fraturas:";
             // 
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(23, 143);
+            this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel9.Location = new System.Drawing.Point(0, 146);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(112, 19);
+            this.metroLabel9.Size = new System.Drawing.Size(128, 19);
             this.metroLabel9.TabIndex = 19;
             this.metroLabel9.Text = "Cirurgia Anterior:";
             // 
@@ -358,7 +383,7 @@
             // 
             // DataInternacao
             // 
-            this.DataInternacao.Location = new System.Drawing.Point(269, 204);
+            this.DataInternacao.Location = new System.Drawing.Point(269, 209);
             this.DataInternacao.MinimumSize = new System.Drawing.Size(0, 29);
             this.DataInternacao.Name = "DataInternacao";
             this.DataInternacao.Size = new System.Drawing.Size(198, 29);
@@ -474,9 +499,10 @@
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
+            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel10.Location = new System.Drawing.Point(19, 364);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(157, 19);
+            this.metroLabel10.Size = new System.Drawing.Size(182, 19);
             this.metroLabel10.TabIndex = 31;
             this.metroLabel10.Text = "Doenças gastrointestinais:";
             // 
@@ -511,49 +537,49 @@
             this.TextGastro.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextGastro.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroCheckBox4
+            // Constipacao
             // 
-            this.metroCheckBox4.AutoSize = true;
-            this.metroCheckBox4.Location = new System.Drawing.Point(405, 389);
-            this.metroCheckBox4.Name = "metroCheckBox4";
-            this.metroCheckBox4.Size = new System.Drawing.Size(89, 15);
-            this.metroCheckBox4.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroCheckBox4.TabIndex = 36;
-            this.metroCheckBox4.Text = "Constipação";
-            this.metroCheckBox4.UseSelectable = true;
+            this.Constipacao.AutoSize = true;
+            this.Constipacao.Location = new System.Drawing.Point(405, 389);
+            this.Constipacao.Name = "Constipacao";
+            this.Constipacao.Size = new System.Drawing.Size(89, 15);
+            this.Constipacao.Style = MetroFramework.MetroColorStyle.Green;
+            this.Constipacao.TabIndex = 36;
+            this.Constipacao.Text = "Constipação";
+            this.Constipacao.UseSelectable = true;
             // 
-            // metroCheckBox8
+            // Ulcera
             // 
-            this.metroCheckBox8.AutoSize = true;
-            this.metroCheckBox8.Location = new System.Drawing.Point(124, 386);
-            this.metroCheckBox8.Name = "metroCheckBox8";
-            this.metroCheckBox8.Size = new System.Drawing.Size(56, 15);
-            this.metroCheckBox8.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroCheckBox8.TabIndex = 34;
-            this.metroCheckBox8.Text = "Ulcera";
-            this.metroCheckBox8.UseSelectable = true;
+            this.Ulcera.AutoSize = true;
+            this.Ulcera.Location = new System.Drawing.Point(124, 386);
+            this.Ulcera.Name = "Ulcera";
+            this.Ulcera.Size = new System.Drawing.Size(56, 15);
+            this.Ulcera.Style = MetroFramework.MetroColorStyle.Green;
+            this.Ulcera.TabIndex = 34;
+            this.Ulcera.Text = "Ulcera";
+            this.Ulcera.UseSelectable = true;
             // 
-            // metroCheckBox9
+            // Diarreia
             // 
-            this.metroCheckBox9.AutoSize = true;
-            this.metroCheckBox9.Location = new System.Drawing.Point(249, 389);
-            this.metroCheckBox9.Name = "metroCheckBox9";
-            this.metroCheckBox9.Size = new System.Drawing.Size(63, 15);
-            this.metroCheckBox9.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroCheckBox9.TabIndex = 33;
-            this.metroCheckBox9.Text = "Diarreia";
-            this.metroCheckBox9.UseSelectable = true;
+            this.Diarreia.AutoSize = true;
+            this.Diarreia.Location = new System.Drawing.Point(249, 389);
+            this.Diarreia.Name = "Diarreia";
+            this.Diarreia.Size = new System.Drawing.Size(63, 15);
+            this.Diarreia.Style = MetroFramework.MetroColorStyle.Green;
+            this.Diarreia.TabIndex = 33;
+            this.Diarreia.Text = "Diarreia";
+            this.Diarreia.UseSelectable = true;
             // 
-            // metroCheckBox10
+            // Gastrite
             // 
-            this.metroCheckBox10.AutoSize = true;
-            this.metroCheckBox10.Location = new System.Drawing.Point(23, 389);
-            this.metroCheckBox10.Name = "metroCheckBox10";
-            this.metroCheckBox10.Size = new System.Drawing.Size(63, 15);
-            this.metroCheckBox10.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroCheckBox10.TabIndex = 32;
-            this.metroCheckBox10.Text = "Gastrite";
-            this.metroCheckBox10.UseSelectable = true;
+            this.Gastrite.AutoSize = true;
+            this.Gastrite.Location = new System.Drawing.Point(23, 389);
+            this.Gastrite.Name = "Gastrite";
+            this.Gastrite.Size = new System.Drawing.Size(63, 15);
+            this.Gastrite.Style = MetroFramework.MetroColorStyle.Green;
+            this.Gastrite.TabIndex = 32;
+            this.Gastrite.Text = "Gastrite";
+            this.Gastrite.UseSelectable = true;
             // 
             // TextCardio
             // 
@@ -622,9 +648,10 @@
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
+            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel11.Location = new System.Drawing.Point(19, 407);
             this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(139, 19);
+            this.metroLabel11.Size = new System.Drawing.Size(159, 19);
             this.metroLabel11.TabIndex = 38;
             this.metroLabel11.Text = "Doenças cardiológicas";
             // 
@@ -695,9 +722,10 @@
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
+            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel12.Location = new System.Drawing.Point(19, 447);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(125, 19);
+            this.metroLabel12.Size = new System.Drawing.Size(141, 19);
             this.metroLabel12.TabIndex = 45;
             this.metroLabel12.Text = "Doenças Endocrinas";
             // 
@@ -768,9 +796,10 @@
             // metroLabel13
             // 
             this.metroLabel13.AutoSize = true;
+            this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel13.Location = new System.Drawing.Point(19, 487);
             this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(161, 19);
+            this.metroLabel13.Size = new System.Drawing.Size(182, 19);
             this.metroLabel13.TabIndex = 51;
             this.metroLabel13.Text = "Doenças Osteomusculares";
             // 
@@ -798,7 +827,7 @@
             // 
             // DataAcidente
             // 
-            this.DataAcidente.Location = new System.Drawing.Point(588, 158);
+            this.DataAcidente.Location = new System.Drawing.Point(602, 158);
             this.DataAcidente.MinimumSize = new System.Drawing.Size(0, 29);
             this.DataAcidente.Name = "DataAcidente";
             this.DataAcidente.Size = new System.Drawing.Size(198, 29);
@@ -808,9 +837,10 @@
             // RadioSimAfastamento
             // 
             this.RadioSimAfastamento.AutoSize = true;
-            this.RadioSimAfastamento.Location = new System.Drawing.Point(488, 211);
+            this.RadioSimAfastamento.Location = new System.Drawing.Point(8, 6);
             this.RadioSimAfastamento.Name = "RadioSimAfastamento";
             this.RadioSimAfastamento.Size = new System.Drawing.Size(43, 15);
+            this.RadioSimAfastamento.Style = MetroFramework.MetroColorStyle.Green;
             this.RadioSimAfastamento.TabIndex = 61;
             this.RadioSimAfastamento.Text = "Sim";
             this.RadioSimAfastamento.UseSelectable = true;
@@ -818,9 +848,10 @@
             // RadioNaoAfastamento
             // 
             this.RadioNaoAfastamento.AutoSize = true;
-            this.RadioNaoAfastamento.Location = new System.Drawing.Point(537, 211);
+            this.RadioNaoAfastamento.Location = new System.Drawing.Point(57, 6);
             this.RadioNaoAfastamento.Name = "RadioNaoAfastamento";
             this.RadioNaoAfastamento.Size = new System.Drawing.Size(45, 15);
+            this.RadioNaoAfastamento.Style = MetroFramework.MetroColorStyle.Green;
             this.RadioNaoAfastamento.TabIndex = 60;
             this.RadioNaoAfastamento.Text = "Não";
             this.RadioNaoAfastamento.UseSelectable = true;
@@ -840,7 +871,7 @@
             this.TextAfastamentoPrevidencia.CustomButton.UseSelectable = true;
             this.TextAfastamentoPrevidencia.CustomButton.Visible = false;
             this.TextAfastamentoPrevidencia.Lines = new string[0];
-            this.TextAfastamentoPrevidencia.Location = new System.Drawing.Point(588, 251);
+            this.TextAfastamentoPrevidencia.Location = new System.Drawing.Point(602, 251);
             this.TextAfastamentoPrevidencia.MaxLength = 32767;
             this.TextAfastamentoPrevidencia.Name = "TextAfastamentoPrevidencia";
             this.TextAfastamentoPrevidencia.PasswordChar = '\0';
@@ -859,9 +890,10 @@
             // RadioPrevidenciaSim
             // 
             this.RadioPrevidenciaSim.AutoSize = true;
-            this.RadioPrevidenciaSim.Location = new System.Drawing.Point(488, 251);
+            this.RadioPrevidenciaSim.Location = new System.Drawing.Point(6, 6);
             this.RadioPrevidenciaSim.Name = "RadioPrevidenciaSim";
             this.RadioPrevidenciaSim.Size = new System.Drawing.Size(43, 15);
+            this.RadioPrevidenciaSim.Style = MetroFramework.MetroColorStyle.Green;
             this.RadioPrevidenciaSim.TabIndex = 64;
             this.RadioPrevidenciaSim.Text = "Sim";
             this.RadioPrevidenciaSim.UseSelectable = true;
@@ -869,9 +901,10 @@
             // RadioPrevidenciaNao
             // 
             this.RadioPrevidenciaNao.AutoSize = true;
-            this.RadioPrevidenciaNao.Location = new System.Drawing.Point(537, 251);
+            this.RadioPrevidenciaNao.Location = new System.Drawing.Point(63, 6);
             this.RadioPrevidenciaNao.Name = "RadioPrevidenciaNao";
             this.RadioPrevidenciaNao.Size = new System.Drawing.Size(45, 15);
+            this.RadioPrevidenciaNao.Style = MetroFramework.MetroColorStyle.Green;
             this.RadioPrevidenciaNao.TabIndex = 63;
             this.RadioPrevidenciaNao.Text = "Não";
             this.RadioPrevidenciaNao.UseSelectable = true;
@@ -891,7 +924,7 @@
             this.TextAfastamentoAcidente.CustomButton.UseSelectable = true;
             this.TextAfastamentoAcidente.CustomButton.Visible = false;
             this.TextAfastamentoAcidente.Lines = new string[0];
-            this.TextAfastamentoAcidente.Location = new System.Drawing.Point(588, 209);
+            this.TextAfastamentoAcidente.Location = new System.Drawing.Point(602, 209);
             this.TextAfastamentoAcidente.MaxLength = 32767;
             this.TextAfastamentoAcidente.Name = "TextAfastamentoAcidente";
             this.TextAfastamentoAcidente.PasswordChar = '\0';
@@ -913,7 +946,7 @@
             // 
             // 
             this.TextAlergia.CustomButton.Image = null;
-            this.TextAlergia.CustomButton.Location = new System.Drawing.Point(117, 1);
+            this.TextAlergia.CustomButton.Location = new System.Drawing.Point(112, 1);
             this.TextAlergia.CustomButton.Name = "";
             this.TextAlergia.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TextAlergia.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -922,7 +955,7 @@
             this.TextAlergia.CustomButton.UseSelectable = true;
             this.TextAlergia.CustomButton.Visible = false;
             this.TextAlergia.Lines = new string[0];
-            this.TextAlergia.Location = new System.Drawing.Point(124, 290);
+            this.TextAlergia.Location = new System.Drawing.Point(934, 158);
             this.TextAlergia.MaxLength = 32767;
             this.TextAlergia.Name = "TextAlergia";
             this.TextAlergia.PasswordChar = '\0';
@@ -931,7 +964,7 @@
             this.TextAlergia.SelectionLength = 0;
             this.TextAlergia.SelectionStart = 0;
             this.TextAlergia.ShortcutsEnabled = true;
-            this.TextAlergia.Size = new System.Drawing.Size(139, 23);
+            this.TextAlergia.Size = new System.Drawing.Size(134, 23);
             this.TextAlergia.Style = MetroFramework.MetroColorStyle.Green;
             this.TextAlergia.TabIndex = 68;
             this.TextAlergia.UseSelectable = true;
@@ -940,43 +973,12 @@
             // 
             // DataFratura
             // 
-            this.DataFratura.Location = new System.Drawing.Point(269, 245);
+            this.DataFratura.Location = new System.Drawing.Point(124, 270);
             this.DataFratura.MinimumSize = new System.Drawing.Size(0, 29);
             this.DataFratura.Name = "DataFratura";
-            this.DataFratura.Size = new System.Drawing.Size(198, 29);
+            this.DataFratura.Size = new System.Drawing.Size(343, 29);
             this.DataFratura.Style = MetroFramework.MetroColorStyle.Green;
             this.DataFratura.TabIndex = 67;
-            // 
-            // TextFratura
-            // 
-            // 
-            // 
-            // 
-            this.TextFratura.CustomButton.Image = null;
-            this.TextFratura.CustomButton.Location = new System.Drawing.Point(117, 1);
-            this.TextFratura.CustomButton.Name = "";
-            this.TextFratura.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.TextFratura.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextFratura.CustomButton.TabIndex = 1;
-            this.TextFratura.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextFratura.CustomButton.UseSelectable = true;
-            this.TextFratura.CustomButton.Visible = false;
-            this.TextFratura.Lines = new string[0];
-            this.TextFratura.Location = new System.Drawing.Point(124, 250);
-            this.TextFratura.MaxLength = 32767;
-            this.TextFratura.Name = "TextFratura";
-            this.TextFratura.PasswordChar = '\0';
-            this.TextFratura.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextFratura.SelectedText = "";
-            this.TextFratura.SelectionLength = 0;
-            this.TextFratura.SelectionStart = 0;
-            this.TextFratura.ShortcutsEnabled = true;
-            this.TextFratura.Size = new System.Drawing.Size(139, 23);
-            this.TextFratura.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextFratura.TabIndex = 66;
-            this.TextFratura.UseSelectable = true;
-            this.TextFratura.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextFratura.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel18
             // 
@@ -1023,11 +1025,209 @@
             this.metroLabel19.TabIndex = 78;
             this.metroLabel19.Text = "Outra:";
             // 
+            // LabelFuncionario
+            // 
+            this.LabelFuncionario.AutoSize = true;
+            this.LabelFuncionario.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.LabelFuncionario.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LabelFuncionario.Location = new System.Drawing.Point(16, 60);
+            this.LabelFuncionario.Name = "LabelFuncionario";
+            this.LabelFuncionario.Size = new System.Drawing.Size(112, 25);
+            this.LabelFuncionario.Style = MetroFramework.MetroColorStyle.Green;
+            this.LabelFuncionario.TabIndex = 79;
+            this.LabelFuncionario.Text = "Funcionario";
+            // 
+            // BtnCadastrar
+            // 
+            this.BtnCadastrar.Location = new System.Drawing.Point(981, 530);
+            this.BtnCadastrar.Name = "BtnCadastrar";
+            this.BtnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.BtnCadastrar.TabIndex = 80;
+            this.BtnCadastrar.Text = "Cadastrar";
+            this.BtnCadastrar.UseSelectable = true;
+            this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
+            // 
+            // TextHistorico
+            // 
+            this.TextHistorico.Location = new System.Drawing.Point(666, 345);
+            this.TextHistorico.Name = "TextHistorico";
+            this.TextHistorico.Size = new System.Drawing.Size(402, 179);
+            this.TextHistorico.TabIndex = 81;
+            this.TextHistorico.Text = "";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel5.Location = new System.Drawing.Point(19, 324);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(158, 19);
+            this.metroLabel5.TabIndex = 15;
+            this.metroLabel5.Text = "Doenças respiratórias:";
+            // 
+            // metroLabel14
+            // 
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel14.Location = new System.Drawing.Point(666, 324);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(157, 19);
+            this.metroLabel14.TabIndex = 82;
+            this.metroLabel14.Text = "Histórico Ocupacional";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.RadioSimCirurgia);
+            this.groupBox1.Controls.Add(this.RadioNaoCirurgia);
+            this.groupBox1.Location = new System.Drawing.Point(10, 163);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(108, 23);
+            this.groupBox1.TabIndex = 83;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.RadioNaoAcidente);
+            this.groupBox2.Controls.Add(this.RadioSimAcidente);
+            this.groupBox2.Location = new System.Drawing.Point(488, 158);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(108, 23);
+            this.groupBox2.TabIndex = 84;
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.RadioAlergiaSim);
+            this.groupBox3.Controls.Add(this.RadioAlergiaNao);
+            this.groupBox3.Location = new System.Drawing.Point(820, 158);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(108, 23);
+            this.groupBox3.TabIndex = 85;
+            this.groupBox3.TabStop = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.RadioFraturaSim);
+            this.groupBox4.Controls.Add(this.RadioFraturaNao);
+            this.groupBox4.Location = new System.Drawing.Point(10, 263);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(108, 23);
+            this.groupBox4.TabIndex = 85;
+            this.groupBox4.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.RadioSimInternacao);
+            this.groupBox5.Controls.Add(this.RadioNaoInternacao);
+            this.groupBox5.Location = new System.Drawing.Point(10, 209);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(108, 23);
+            this.groupBox5.TabIndex = 85;
+            this.groupBox5.TabStop = false;
+            // 
+            // metroLabel20
+            // 
+            this.metroLabel20.AutoSize = true;
+            this.metroLabel20.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel20.Location = new System.Drawing.Point(124, 141);
+            this.metroLabel20.Name = "metroLabel20";
+            this.metroLabel20.Size = new System.Drawing.Size(136, 19);
+            this.metroLabel20.TabIndex = 86;
+            this.metroLabel20.Text = "Descrição Cirurgia:";
+            // 
+            // metroLabel21
+            // 
+            this.metroLabel21.AutoSize = true;
+            this.metroLabel21.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel21.Location = new System.Drawing.Point(269, 136);
+            this.metroLabel21.Name = "metroLabel21";
+            this.metroLabel21.Size = new System.Drawing.Size(102, 19);
+            this.metroLabel21.TabIndex = 87;
+            this.metroLabel21.Text = "Data Cirurgia:";
+            // 
+            // metroLabel22
+            // 
+            this.metroLabel22.AutoSize = true;
+            this.metroLabel22.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel22.Location = new System.Drawing.Point(124, 189);
+            this.metroLabel22.Name = "metroLabel22";
+            this.metroLabel22.Size = new System.Drawing.Size(142, 19);
+            this.metroLabel22.TabIndex = 88;
+            this.metroLabel22.Text = "Motivo Internações:";
+            // 
+            // metroLabel23
+            // 
+            this.metroLabel23.AutoSize = true;
+            this.metroLabel23.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel23.Location = new System.Drawing.Point(269, 189);
+            this.metroLabel23.Name = "metroLabel23";
+            this.metroLabel23.Size = new System.Drawing.Size(125, 19);
+            this.metroLabel23.TabIndex = 89;
+            this.metroLabel23.Text = "Data Internações:";
+            // 
+            // metroLabel24
+            // 
+            this.metroLabel24.AutoSize = true;
+            this.metroLabel24.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel24.Location = new System.Drawing.Point(124, 248);
+            this.metroLabel24.Name = "metroLabel24";
+            this.metroLabel24.Size = new System.Drawing.Size(96, 19);
+            this.metroLabel24.TabIndex = 90;
+            this.metroLabel24.Text = "Data Fratura:";
+            // 
+            // metroLabel25
+            // 
+            this.metroLabel25.AutoSize = true;
+            this.metroLabel25.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel25.Location = new System.Drawing.Point(934, 136);
+            this.metroLabel25.Name = "metroLabel25";
+            this.metroLabel25.Size = new System.Drawing.Size(137, 19);
+            this.metroLabel25.TabIndex = 91;
+            this.metroLabel25.Text = "Descrição Alergias:";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.RadioSimAfastamento);
+            this.groupBox6.Controls.Add(this.RadioNaoAfastamento);
+            this.groupBox6.Location = new System.Drawing.Point(488, 209);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(108, 23);
+            this.groupBox6.TabIndex = 85;
+            this.groupBox6.TabStop = false;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.RadioPrevidenciaSim);
+            this.groupBox7.Controls.Add(this.RadioPrevidenciaNao);
+            this.groupBox7.Location = new System.Drawing.Point(488, 251);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(108, 23);
+            this.groupBox7.TabIndex = 85;
+            this.groupBox7.TabStop = false;
+            // 
             // QuestionarioMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 576);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.metroLabel25);
+            this.Controls.Add(this.metroLabel24);
+            this.Controls.Add(this.metroLabel23);
+            this.Controls.Add(this.metroLabel22);
+            this.Controls.Add(this.metroLabel21);
+            this.Controls.Add(this.metroLabel20);
+            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.metroLabel14);
+            this.Controls.Add(this.TextHistorico);
+            this.Controls.Add(this.BtnCadastrar);
+            this.Controls.Add(this.LabelFuncionario);
             this.Controls.Add(this.metroLabel19);
             this.Controls.Add(this.metroLabel17);
             this.Controls.Add(this.metroLabel16);
@@ -1035,13 +1235,8 @@
             this.Controls.Add(this.metroLabel18);
             this.Controls.Add(this.TextAlergia);
             this.Controls.Add(this.DataFratura);
-            this.Controls.Add(this.TextFratura);
             this.Controls.Add(this.TextAfastamentoAcidente);
-            this.Controls.Add(this.RadioPrevidenciaSim);
-            this.Controls.Add(this.RadioPrevidenciaNao);
             this.Controls.Add(this.TextAfastamentoPrevidencia);
-            this.Controls.Add(this.RadioSimAfastamento);
-            this.Controls.Add(this.RadioNaoAfastamento);
             this.Controls.Add(this.DataAcidente);
             this.Controls.Add(this.Mao);
             this.Controls.Add(this.Bracos);
@@ -1061,10 +1256,10 @@
             this.Controls.Add(this.Hipertensao);
             this.Controls.Add(this.metroLabel11);
             this.Controls.Add(this.TextGastro);
-            this.Controls.Add(this.metroCheckBox4);
-            this.Controls.Add(this.metroCheckBox8);
-            this.Controls.Add(this.metroCheckBox9);
-            this.Controls.Add(this.metroCheckBox10);
+            this.Controls.Add(this.Constipacao);
+            this.Controls.Add(this.Ulcera);
+            this.Controls.Add(this.Diarreia);
+            this.Controls.Add(this.Gastrite);
             this.Controls.Add(this.metroLabel10);
             this.Controls.Add(this.TextRespiratoria);
             this.Controls.Add(this.Sinusite);
@@ -1078,26 +1273,30 @@
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroLabel7);
-            this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.RadioSimInternacao);
-            this.Controls.Add(this.RadioNaoCirurgia);
-            this.Controls.Add(this.RadioNaoInternacao);
-            this.Controls.Add(this.RadioFraturaSim);
-            this.Controls.Add(this.RadioFraturaNao);
-            this.Controls.Add(this.RadioAlergiaSim);
-            this.Controls.Add(this.RadioAlergiaNao);
-            this.Controls.Add(this.RadioSimAcidente);
-            this.Controls.Add(this.RadioNaoAcidente);
-            this.Controls.Add(this.RadioSimCirurgia);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.TextQueixa);
             this.Name = "QuestionarioMedico";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Questionario Medico";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1120,7 +1319,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel8;
@@ -1136,10 +1334,10 @@
         private MetroFramework.Controls.MetroTextBox TextRespiratoria;
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroTextBox TextGastro;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox4;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox8;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox9;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox10;
+        private MetroFramework.Controls.MetroCheckBox Constipacao;
+        private MetroFramework.Controls.MetroCheckBox Ulcera;
+        private MetroFramework.Controls.MetroCheckBox Diarreia;
+        private MetroFramework.Controls.MetroCheckBox Gastrite;
         private MetroFramework.Controls.MetroTextBox TextCardio;
         private MetroFramework.Controls.MetroCheckBox Arritimia;
         private MetroFramework.Controls.MetroCheckBox Insuficiencia;
@@ -1166,11 +1364,28 @@
         private MetroFramework.Controls.MetroTextBox TextAfastamentoAcidente;
         private MetroFramework.Controls.MetroTextBox TextAlergia;
         private MetroFramework.Controls.MetroDateTime DataFratura;
-        private MetroFramework.Controls.MetroTextBox TextFratura;
         private MetroFramework.Controls.MetroLabel metroLabel18;
         private MetroFramework.Controls.MetroLabel metroLabel15;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private MetroFramework.Controls.MetroLabel metroLabel17;
         private MetroFramework.Controls.MetroLabel metroLabel19;
+        private MetroFramework.Controls.MetroLabel LabelFuncionario;
+        private MetroFramework.Controls.MetroButton BtnCadastrar;
+        private System.Windows.Forms.RichTextBox TextHistorico;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel14;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private MetroFramework.Controls.MetroLabel metroLabel20;
+        private MetroFramework.Controls.MetroLabel metroLabel21;
+        private MetroFramework.Controls.MetroLabel metroLabel22;
+        private MetroFramework.Controls.MetroLabel metroLabel23;
+        private MetroFramework.Controls.MetroLabel metroLabel24;
+        private MetroFramework.Controls.MetroLabel metroLabel25;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox7;
     }
 }

@@ -108,9 +108,10 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.Location = new System.Drawing.Point(23, 170);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(53, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(56, 19);
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Usuário";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -118,9 +119,10 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.Location = new System.Drawing.Point(23, 218);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(44, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(46, 19);
             this.metroLabel2.TabIndex = 3;
             this.metroLabel2.Text = "Senha";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;

@@ -37,6 +37,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamesAvaliacoes));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.BtnQuestionario = new MetroFramework.Controls.MetroButton();
             this.CheckApto = new MetroFramework.Controls.MetroCheckBox();
             this.BtnGerarAos = new MetroFramework.Controls.MetroButton();
             this.LabelRiscos = new MetroFramework.Controls.MetroLabel();
@@ -46,6 +47,7 @@
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LabelFuncionario = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.BtnCadastrarVacina = new MetroFramework.Controls.MetroButton();
             this.BtnCadastrarAtestado = new MetroFramework.Controls.MetroButton();
             this.BtnHistorico = new MetroFramework.Controls.MetroButton();
@@ -70,7 +72,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(7, 58);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(991, 482);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTabControl1.TabIndex = 105;
@@ -78,6 +80,7 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.BtnQuestionario);
             this.metroTabPage1.Controls.Add(this.CheckApto);
             this.metroTabPage1.Controls.Add(this.BtnGerarAos);
             this.metroTabPage1.Controls.Add(this.LabelRiscos);
@@ -96,6 +99,18 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // BtnQuestionario
+            // 
+            this.BtnQuestionario.Location = new System.Drawing.Point(817, 38);
+            this.BtnQuestionario.Name = "BtnQuestionario";
+            this.BtnQuestionario.Size = new System.Drawing.Size(136, 23);
+            this.BtnQuestionario.Style = MetroFramework.MetroColorStyle.Green;
+            this.BtnQuestionario.TabIndex = 114;
+            this.BtnQuestionario.Text = "Realizar Questionario";
+            this.BtnQuestionario.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnQuestionario.UseSelectable = true;
+            this.BtnQuestionario.Click += new System.EventHandler(this.BtnQuestionario_Click);
             // 
             // CheckApto
             // 
@@ -178,9 +193,9 @@
             this.dataGridViewCheckBoxColumn2});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridTipoExamePrimeira.DefaultCellStyle = dataGridViewCellStyle2;
@@ -225,6 +240,7 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.metroButton1);
             this.metroTabPage2.Controls.Add(this.BtnCadastrarVacina);
             this.metroTabPage2.Controls.Add(this.BtnCadastrarAtestado);
             this.metroTabPage2.Controls.Add(this.BtnHistorico);
@@ -246,6 +262,18 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(815, 122);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(136, 23);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroButton1.TabIndex = 126;
+            this.metroButton1.Text = "Realizar Questionario";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // BtnCadastrarVacina
             // 
@@ -364,9 +392,9 @@
             this.dataGridViewCheckBoxColumn4});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridTipoExameNova.DefaultCellStyle = dataGridViewCellStyle5;
@@ -456,5 +484,7 @@
         private MetroFramework.Controls.MetroCheckBox CheckAptoNova;
         private MetroFramework.Controls.MetroButton BtnCadastrarVacina;
         private MetroFramework.Controls.MetroButton BtnCadastrarAtestado;
+        private MetroFramework.Controls.MetroButton BtnQuestionario;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

@@ -8,6 +8,7 @@ namespace SystemCare
 {
     public partial class ExamesAvaliacoes : MetroForm
     {
+        private string IdfuncionarioQuestionario;
         private readonly QuerryMysql Cadastro = new QuerryMysql();
 
         public ExamesAvaliacoes()
@@ -26,6 +27,7 @@ namespace SystemCare
             var BuscarFuncionario = new PesquisaFuncionario("0");
             BuscarFuncionario.ShowDialog();
             var IdFuncionario = Cadastro.GetFuncionario();
+            IdfuncionarioQuestionario = IdFuncionario;
             if (!IdFuncionario.Equals(""))
             {
                 var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
@@ -114,7 +116,9 @@ namespace SystemCare
         {
             var BuscarFuncionario = new PesquisaFuncionario("1");
             BuscarFuncionario.ShowDialog();
+            
             var IdFuncionario = Cadastro.GetFuncionarioNova();
+            IdfuncionarioQuestionario = IdFuncionario;
             if (!IdFuncionario.Equals(""))
             {
                 var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
@@ -241,6 +245,37 @@ namespace SystemCare
             {
                 MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
                     MessageBoxIcon.Hand);
+            }
+        }
+
+        private void BtnQuestionario_Click(object sender, EventArgs e)
+        {
+            if (IdfuncionarioQuestionario.Equals(""))
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                   MessageBoxIcon.Hand);
+            }
+            else
+            {
+                QuestionarioMedico Questionario = new QuestionarioMedico(IdfuncionarioQuestionario);
+                Questionario.ShowDialog();
+                IdfuncionarioQuestionario = "";
+            }
+           
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            if (IdfuncionarioQuestionario.Equals(""))
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                   MessageBoxIcon.Hand);
+            }
+            else
+            {
+                QuestionarioMedico Questionario = new QuestionarioMedico(IdfuncionarioQuestionario);
+                Questionario.ShowDialog();
+                IdfuncionarioQuestionario = "";
             }
         }
     }

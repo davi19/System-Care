@@ -13,7 +13,7 @@ namespace SystemCare
         private static string IdFuncionarioNova = "";
         //192.168.1.200
         private readonly MySqlConnection Com =
-            new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+            new MySqlConnection("Server =192.168.1.200; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
         public bool Login(string Usuario, string Senha)
         {
@@ -849,6 +849,14 @@ namespace SystemCare
             LeitorRiscos.Fill(TabelaRiscos);
             Com.Close();
             return TabelaRiscos.Rows[0][0].ToString();
+        }
+
+        public void CadastraQuestionario(string idfuncionario, string queixa ,string cirurgiaanterior, DateTime datacirurgia, string nomecirurgia, string fratura, DateTime datatomografia, string internacao ,string motivointernacao ,DateTime datainternacao, string alergia,string descricaoalergia, string doencarespiratoria, string doencagastrointestinal, string doencacardiaca,string doencaendocrina,string  doencaosteomusculares, string historiaocupacional, string acidentedetrabalho, DateTime dataacidente, string afastamentoacidente, string afastamentoinss, string periodoafastamento)
+        {
+            Com.Open();
+            MySqlCommand InserirQuesrtionario = new MySqlCommand("INSERT INTO atendimentosmedicos (idfuncionario,queixa ,cirurgiaanterior,datacirurgia,nomecirurgia,fratura,datatomografia,internacao ,motivointernacao ,datainternacao,alergia,descricaoalergia,doencarespiratoria,doencagastrointestinal,doencacardiaca,doencaendocrina,doencaosteomusculares,historiaocupacional,acidentedetrabalho,dataacidente,afastamentoacidente,afastamentoinss,periodoafastamento) VALUES ("+idfuncionario+",'"+queixa+"','"+cirurgiaanterior+"','"+datacirurgia.Date.ToString("yyyy/MM/dd")+"','"+nomecirurgia+"','"+fratura+"','"+datatomografia.Date.ToString("yyyy/MM/dd") + "','"+internacao +"','"+motivointernacao+"','"+datainternacao.Date.ToString("yyyy/MM/dd") + "','"+alergia+"','"+descricaoalergia+"','"+doencarespiratoria+"','"+doencagastrointestinal+"','"+doencacardiaca+"','"+doencaendocrina+"','"+doencaosteomusculares+"','"+historiaocupacional+"','"+acidentedetrabalho+"','"+dataacidente.Date.ToString("yyyy/MM/dd") + "','"+afastamentoacidente+"','"+afastamentoinss+"','"+periodoafastamento+"')", Com);
+            InserirQuesrtionario.ExecuteNonQuery();
+            Com.Close();
         }
 
        

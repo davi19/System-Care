@@ -191,9 +191,9 @@
             this.dataGridViewCheckBoxColumn4});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridFuncaoEditar.DefaultCellStyle = dataGridViewCellStyle2;
@@ -243,9 +243,10 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel5.Location = new System.Drawing.Point(3, 113);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(93, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(97, 19);
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel5.TabIndex = 64;
             this.metroLabel5.Text = "Buscar Função";
@@ -335,9 +336,10 @@
             // metroLabel21
             // 
             this.metroLabel21.AutoSize = true;
+            this.metroLabel21.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel21.Location = new System.Drawing.Point(804, 58);
             this.metroLabel21.Name = "metroLabel21";
-            this.metroLabel21.Size = new System.Drawing.Size(88, 19);
+            this.metroLabel21.Size = new System.Drawing.Size(90, 19);
             this.metroLabel21.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel21.TabIndex = 56;
             this.metroLabel21.Text = "Naturalidade:";
@@ -380,9 +382,10 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.Location = new System.Drawing.Point(872, 13);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(38, 19);
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel1.TabIndex = 55;
             this.metroLabel1.Text = "IMC:";
@@ -425,9 +428,10 @@
             // metroLabel19
             // 
             this.metroLabel19.AutoSize = true;
+            this.metroLabel19.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel19.Location = new System.Drawing.Point(644, 58);
             this.metroLabel19.Name = "metroLabel19";
-            this.metroLabel19.Size = new System.Drawing.Size(131, 19);
+            this.metroLabel19.Size = new System.Drawing.Size(136, 19);
             this.metroLabel19.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel19.TabIndex = 54;
             this.metroLabel19.Text = "Data de Nascimento:";
@@ -436,9 +440,10 @@
             // metroLabel18
             // 
             this.metroLabel18.AutoSize = true;
+            this.metroLabel18.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel18.Location = new System.Drawing.Point(401, 58);
             this.metroLabel18.Name = "metroLabel18";
-            this.metroLabel18.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel18.Size = new System.Drawing.Size(62, 19);
             this.metroLabel18.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel18.TabIndex = 53;
             this.metroLabel18.Text = "Telefone:";
@@ -447,9 +452,10 @@
             // metroLabel17
             // 
             this.metroLabel17.AutoSize = true;
+            this.metroLabel17.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel17.Location = new System.Drawing.Point(203, 58);
             this.metroLabel17.Name = "metroLabel17";
-            this.metroLabel17.Size = new System.Drawing.Size(74, 19);
+            this.metroLabel17.Size = new System.Drawing.Size(77, 19);
             this.metroLabel17.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel17.TabIndex = 52;
             this.metroLabel17.Text = "Identidade:";
@@ -458,6 +464,7 @@
             // metroLabel16
             // 
             this.metroLabel16.AutoSize = true;
+            this.metroLabel16.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel16.Location = new System.Drawing.Point(3, 58);
             this.metroLabel16.Name = "metroLabel16";
             this.metroLabel16.Size = new System.Drawing.Size(36, 19);
@@ -469,9 +476,10 @@
             // metroLabel15
             // 
             this.metroLabel15.AutoSize = true;
+            this.metroLabel15.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel15.Location = new System.Drawing.Point(758, 13);
             this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel15.Size = new System.Drawing.Size(40, 19);
             this.metroLabel15.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel15.TabIndex = 50;
             this.metroLabel15.Text = "Peso:";
@@ -514,9 +522,10 @@
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
+            this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel14.Location = new System.Drawing.Point(644, 13);
             this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(47, 19);
+            this.metroLabel14.Size = new System.Drawing.Size(49, 19);
             this.metroLabel14.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel14.TabIndex = 49;
             this.metroLabel14.Text = "Altura:";
@@ -559,6 +568,7 @@
             // metroLabel13
             // 
             this.metroLabel13.AutoSize = true;
+            this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel13.Location = new System.Drawing.Point(481, 13);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(40, 19);
@@ -592,9 +602,10 @@
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
+            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel12.Location = new System.Drawing.Point(401, 13);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(45, 19);
+            this.metroLabel12.Size = new System.Drawing.Size(46, 19);
             this.metroLabel12.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel12.TabIndex = 46;
             this.metroLabel12.Text = "Idade:";
@@ -637,9 +648,10 @@
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
+            this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel9.Location = new System.Drawing.Point(3, 13);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(121, 19);
+            this.metroLabel9.Size = new System.Drawing.Size(124, 19);
             this.metroLabel9.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel9.TabIndex = 45;
             this.metroLabel9.Text = "Nome Funcionário:";
@@ -750,9 +762,9 @@
             this.dataGridViewCheckBoxColumn2});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridFuncionarioEditar.DefaultCellStyle = dataGridViewCellStyle5;
@@ -802,9 +814,10 @@
             // metroLabel25
             // 
             this.metroLabel25.AutoSize = true;
+            this.metroLabel25.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel25.Location = new System.Drawing.Point(10, 7);
             this.metroLabel25.Name = "metroLabel25";
-            this.metroLabel25.Size = new System.Drawing.Size(122, 19);
+            this.metroLabel25.Size = new System.Drawing.Size(127, 19);
             this.metroLabel25.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel25.TabIndex = 97;
             this.metroLabel25.Text = "Buscar Funcionario:";
@@ -848,9 +861,10 @@
             // metroLabel23
             // 
             this.metroLabel23.AutoSize = true;
+            this.metroLabel23.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel23.Location = new System.Drawing.Point(810, 184);
             this.metroLabel23.Name = "metroLabel23";
-            this.metroLabel23.Size = new System.Drawing.Size(88, 19);
+            this.metroLabel23.Size = new System.Drawing.Size(90, 19);
             this.metroLabel23.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel23.TabIndex = 95;
             this.metroLabel23.Text = "Naturalidade:";
@@ -859,9 +873,10 @@
             // metroLabel24
             // 
             this.metroLabel24.AutoSize = true;
+            this.metroLabel24.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel24.Location = new System.Drawing.Point(650, 184);
             this.metroLabel24.Name = "metroLabel24";
-            this.metroLabel24.Size = new System.Drawing.Size(131, 19);
+            this.metroLabel24.Size = new System.Drawing.Size(136, 19);
             this.metroLabel24.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel24.TabIndex = 94;
             this.metroLabel24.Text = "Data de Nascimento:";
@@ -870,9 +885,10 @@
             // metroLabel20
             // 
             this.metroLabel20.AutoSize = true;
+            this.metroLabel20.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel20.Location = new System.Drawing.Point(764, 139);
             this.metroLabel20.Name = "metroLabel20";
-            this.metroLabel20.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel20.Size = new System.Drawing.Size(40, 19);
             this.metroLabel20.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel20.TabIndex = 93;
             this.metroLabel20.Text = "Peso:";
@@ -881,9 +897,10 @@
             // metroLabel22
             // 
             this.metroLabel22.AutoSize = true;
+            this.metroLabel22.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel22.Location = new System.Drawing.Point(650, 139);
             this.metroLabel22.Name = "metroLabel22";
-            this.metroLabel22.Size = new System.Drawing.Size(47, 19);
+            this.metroLabel22.Size = new System.Drawing.Size(49, 19);
             this.metroLabel22.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel22.TabIndex = 92;
             this.metroLabel22.Text = "Altura:";
@@ -959,9 +976,9 @@
             this.dataGridViewCheckBoxColumn1});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridFuncaoFuncionarioEditar.DefaultCellStyle = dataGridViewCellStyle8;
@@ -1011,9 +1028,10 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.Location = new System.Drawing.Point(9, 239);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(93, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(97, 19);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel2.TabIndex = 87;
             this.metroLabel2.Text = "Buscar Função";
@@ -1136,9 +1154,10 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.Location = new System.Drawing.Point(878, 139);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(38, 19);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel3.TabIndex = 84;
             this.metroLabel3.Text = "IMC:";
@@ -1181,9 +1200,10 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel4.Location = new System.Drawing.Point(407, 184);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(62, 19);
             this.metroLabel4.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel4.TabIndex = 83;
             this.metroLabel4.Text = "Telefone:";
@@ -1192,9 +1212,10 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel6.Location = new System.Drawing.Point(209, 184);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(74, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(77, 19);
             this.metroLabel6.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel6.TabIndex = 82;
             this.metroLabel6.Text = "Identidade:";
@@ -1203,6 +1224,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel7.Location = new System.Drawing.Point(9, 184);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(36, 19);
@@ -1282,6 +1304,7 @@
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
+            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel8.Location = new System.Drawing.Point(487, 139);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(40, 19);
@@ -1315,9 +1338,10 @@
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
+            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel10.Location = new System.Drawing.Point(407, 139);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(45, 19);
+            this.metroLabel10.Size = new System.Drawing.Size(46, 19);
             this.metroLabel10.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel10.TabIndex = 78;
             this.metroLabel10.Text = "Idade:";
@@ -1326,9 +1350,10 @@
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
+            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel11.Location = new System.Drawing.Point(9, 139);
             this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(121, 19);
+            this.metroLabel11.Size = new System.Drawing.Size(124, 19);
             this.metroLabel11.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel11.TabIndex = 77;
             this.metroLabel11.Text = "Nome Funcionário:";
