@@ -8,7 +8,8 @@ namespace SystemCare
     public partial class Empresas : MetroForm
     {
         private readonly QuerryMysql Cadastro = new QuerryMysql();
-
+        private static string IdEmpresa = "";
+        
         public Empresas()
         {
             InitializeComponent();
@@ -84,16 +85,7 @@ namespace SystemCare
             }
         }
 
-        private void BtnBuscar_Click(object sender, EventArgs e)
-        {
-            var TabelaResultadoEmpresa = Cadastro.BuscaEmpresa(TextBusca.Text);
-            if (TabelaResultadoEmpresa.Rows.Count == 0)
-                MetroMessageBox.Show(this,
-                    "Sua busca não encontrou nenhum resultado", "Sucesso !",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                DataGridEmpresa.DataSource = TabelaResultadoEmpresa;
-        }
+     
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
@@ -102,18 +94,9 @@ namespace SystemCare
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (Certeza == DialogResult.OK)
             {
-                for (var i = 0; i < DataGridEmpresa.Rows.Count; i++)
-                    try
-                    {
-                        if (Convert.ToBoolean(DataGridEmpresa.Rows[i].Cells[0].Value.ToString()))
-                        {
-                            Cadastro.ExcluirEmpresa(DataGridEmpresa.Rows[i].Cells[1].Value.ToString());
-                            Hide();
-                        }
-                    }
-                    catch
-                    {
-                    }
+                
+                Cadastro.ExcluirEmpresa(IdEmpresa);
+                Hide();
                 MetroMessageBox.Show(this,
                     "Empresas excluidas com sucesso", "Sucesso !",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -126,42 +109,23 @@ namespace SystemCare
                 TextTelefoneEditar.Text = "";
                 TextEmailEditar.Text = "";
                 LabelCnaeEditar.Text = "CNAE:";
-                TextBusca.Text = "";
-                DataGridEmpresa.DataSource = null;
+                IdEmpresa = "";
                 GridServicosEditar.DataSource = null;
                 var TabelaServicos = Cadastro.RetornaServicosPrestados();
                 GridServicosEditar.DataSource = TabelaServicos;
             }
         }
 
-        private void TextBusca_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-                BtnBuscar_Click(sender, e);
-        }
-
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             if (BtnEditar.Text.Equals("Editar"))
             {
-                for (var i = 0; i < DataGridEmpresa.Rows.Count; i++)
-                    try
-                    {
-                        if (Convert.ToBoolean(DataGridEmpresa.Rows[i].Cells[0].Value.ToString()))
-                        {
-                            Cadastro.SetEmpresa(DataGridEmpresa.Rows[i].Cells[1].Value.ToString());
-                            i = DataGridEmpresa.RowCount;
-                        }
-                    }
-                    catch
-                    {
-                    }
-                var IdEmpresa = Cadastro.GetEmpresa();
                 if (IdEmpresa.Equals(""))
                 {
                 }
                 else
                 {
+                    Cadastro.SetEmpresa(IdEmpresa);
                     var TabelaEditarEmpresa = Cadastro.RecuperaDadosEmpresa();
                     TextNomeEditar.Text = TabelaEditarEmpresa.Rows[0][0].ToString();
                     TextEnderecoEditar.Text = TabelaEditarEmpresa.Rows[0][1].ToString();
@@ -203,8 +167,7 @@ namespace SystemCare
                 TextTelefoneEditar.Text = "";
                 TextEmailEditar.Text = "";
                 LabelCnaeEditar.Text = "CNAE:";
-                TextBusca.Text = "";
-                DataGridEmpresa.DataSource = null;
+                
             }
         }
 
@@ -276,6 +239,14 @@ namespace SystemCare
         {
             if (e.KeyChar == 13)
                 BtnBuscaCnae_Click_1(sender, e);
+        }
+
+        private void BtnBuscarEmpresa_Click(object sender, EventArgs e)
+        {
+            PesquisaEmpresas BuscarEmpresaEditar = new PesquisaEmpresas();
+            BuscarEmpresaEditar.ShowDialog();
+            IdEmpresa = Cadastro.GetEmpresaRelatorio();
+            LabelEmpresaEditar.Text = Cadastro.RetornaEmpresa(IdEmpresa);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace SystemCare
         private static string IdFuncionarioNova = "";
         //192.168.1.200
         private readonly MySqlConnection Com =
-            new MySqlConnection("Server =192.168.1.200; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+            new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
         public bool Login(string Usuario, string Senha)
         {
@@ -859,6 +859,32 @@ namespace SystemCare
             Com.Close();
         }
 
-       
+        public void CadastrarCbo(string Descricao)
+        {
+            Com.Open();
+            MySqlCommand InserirCbo = new MySqlCommand("INSERT INTO cbo (codigo) VALUES('"+Descricao+"')",Com);
+            InserirCbo.ExecuteNonQuery();
+            Com.Close();
+        }
+        public void AtualizaCbo(string Descricao,string IdCbo)
+        {
+            Com.Open();
+            MySqlCommand InserirCbo = new MySqlCommand("UPDATE cbo SET codigo='" + Descricao + "' where id="+IdCbo+";", Com);
+            InserirCbo.ExecuteNonQuery();
+            Com.Close();
+        }
+        public DataTable BuscaCbo(string Descricao)
+        {
+            Com.Open();
+            MySqlCommand InserirCbo = new MySqlCommand("Select * FROM cbo where codigo LIKE'%" + Descricao + "%';", Com);
+            MySqlDataAdapter SelecionaCbo = new MySqlDataAdapter(InserirCbo);
+            DataTable TabelaCbo = new DataTable();
+            SelecionaCbo.Fill(TabelaCbo);
+            Com.Close();
+            return TabelaCbo;
+           
+        }
+
+
     }
 }

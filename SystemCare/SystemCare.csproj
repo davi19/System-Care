@@ -28,7 +28,7 @@
     <TargetCulture>pt-BR</TargetCulture>
     <ProductName>System Care</ProductName>
     <PublisherName>Cactus Devs</PublisherName>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>19</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -133,6 +133,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>atestados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cbo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cbo.Designer.cs">
+      <DependentUpon>Cbo.cs</DependentUpon>
     </Compile>
     <Compile Include="PrestacaodeServico.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -252,6 +258,9 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Cbo.resx">
+      <DependentUpon>Cbo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmpresaRelatorio.resx">
       <DependentUpon>EmpresaRelatorio.cs</DependentUpon>
     </EmbeddedResource>

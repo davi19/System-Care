@@ -69,5 +69,11 @@ namespace SystemCare
             var riscos = new RiscosOperacionais();
             riscos.ShowDialog();
         }
+
+        private void cBOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cbo CadastroCbo = new Cbo();
+            CadastroCbo.ShowDialog();
+        }
     }
 }

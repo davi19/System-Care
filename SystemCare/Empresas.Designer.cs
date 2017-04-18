@@ -41,9 +41,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CadastrarEmpresa = new MetroFramework.Controls.MetroTabControl();
             this.CadastroEmpresa = new MetroFramework.Controls.MetroTabPage();
             this.GridServicosPrestados = new MetroFramework.Controls.MetroGrid();
@@ -80,17 +77,15 @@
             this.TextEmailEditar = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.TextCnpjEditar = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.TextEnderecoEditar = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.TextNomeEditar = new MetroFramework.Controls.MetroTextBox();
             this.BtnEditar = new MetroFramework.Controls.MetroButton();
             this.BtnExcluir = new MetroFramework.Controls.MetroButton();
-            this.DataGridEmpresa = new MetroFramework.Controls.MetroGrid();
-            this.SelecionaEmpres = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.BtnBuscar = new MetroFramework.Controls.MetroButton();
-            this.TextBusca = new MetroFramework.Controls.MetroTextBox();
+            this.TextCnpjEditar = new System.Windows.Forms.MaskedTextBox();
+            this.BtnBuscarEmpresa = new MetroFramework.Controls.MetroButton();
+            this.LabelEmpresaEditar = new MetroFramework.Controls.MetroLabel();
             this.CadastrarEmpresa.SuspendLayout();
             this.CadastroEmpresa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridServicosPrestados)).BeginInit();
@@ -98,7 +93,6 @@
             this.Editar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridServicosEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCnaeEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridEmpresa)).BeginInit();
             this.SuspendLayout();
             // 
             // CadastrarEmpresa
@@ -153,14 +147,14 @@
             this.GridServicosPrestados.AllowUserToResizeRows = false;
             this.GridServicosPrestados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.GridServicosPrestados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.GridServicosPrestados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GridServicosPrestados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.GridServicosPrestados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridServicosPrestados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridServicosPrestados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -172,13 +166,13 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridServicosPrestados.DefaultCellStyle = dataGridViewCellStyle2;
             this.GridServicosPrestados.EnableHeadersVisualStyles = false;
             this.GridServicosPrestados.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.GridServicosPrestados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GridServicosPrestados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.GridServicosPrestados.Location = new System.Drawing.Point(0, 151);
             this.GridServicosPrestados.MultiSelect = false;
             this.GridServicosPrestados.Name = "GridServicosPrestados";
@@ -248,10 +242,10 @@
             this.DataViewCnae.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DataViewCnae.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataViewCnae.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
@@ -593,6 +587,9 @@
             // 
             // Editar
             // 
+            this.Editar.Controls.Add(this.LabelEmpresaEditar);
+            this.Editar.Controls.Add(this.BtnBuscarEmpresa);
+            this.Editar.Controls.Add(this.TextCnpjEditar);
             this.Editar.Controls.Add(this.GridServicosEditar);
             this.Editar.Controls.Add(this.TextTelefoneEditar);
             this.Editar.Controls.Add(this.GridCnaeEditar);
@@ -605,16 +602,12 @@
             this.Editar.Controls.Add(this.TextEmailEditar);
             this.Editar.Controls.Add(this.metroLabel12);
             this.Editar.Controls.Add(this.metroLabel13);
-            this.Editar.Controls.Add(this.TextCnpjEditar);
             this.Editar.Controls.Add(this.metroLabel14);
             this.Editar.Controls.Add(this.TextEnderecoEditar);
             this.Editar.Controls.Add(this.metroLabel15);
             this.Editar.Controls.Add(this.TextNomeEditar);
             this.Editar.Controls.Add(this.BtnEditar);
             this.Editar.Controls.Add(this.BtnExcluir);
-            this.Editar.Controls.Add(this.DataGridEmpresa);
-            this.Editar.Controls.Add(this.BtnBuscar);
-            this.Editar.Controls.Add(this.TextBusca);
             this.Editar.HorizontalScrollbarBarColor = true;
             this.Editar.HorizontalScrollbarHighlightOnWheel = false;
             this.Editar.HorizontalScrollbarSize = 10;
@@ -653,14 +646,14 @@
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridServicosEditar.DefaultCellStyle = dataGridViewCellStyle8;
             this.GridServicosEditar.EnableHeadersVisualStyles = false;
             this.GridServicosEditar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridServicosEditar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridServicosEditar.Location = new System.Drawing.Point(3, 248);
+            this.GridServicosEditar.Location = new System.Drawing.Point(3, 168);
             this.GridServicosEditar.MultiSelect = false;
             this.GridServicosEditar.Name = "GridServicosEditar";
             this.GridServicosEditar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -674,7 +667,7 @@
             this.GridServicosEditar.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.GridServicosEditar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridServicosEditar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridServicosEditar.Size = new System.Drawing.Size(444, 154);
+            this.GridServicosEditar.Size = new System.Drawing.Size(444, 205);
             this.GridServicosEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.GridServicosEditar.TabIndex = 64;
             this.GridServicosEditar.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -687,7 +680,7 @@
             // 
             // TextTelefoneEditar
             // 
-            this.TextTelefoneEditar.Location = new System.Drawing.Point(295, 174);
+            this.TextTelefoneEditar.Location = new System.Drawing.Point(295, 97);
             this.TextTelefoneEditar.Mask = "(99) 0000-0000";
             this.TextTelefoneEditar.Name = "TextTelefoneEditar";
             this.TextTelefoneEditar.Size = new System.Drawing.Size(152, 20);
@@ -722,7 +715,7 @@
             this.GridCnaeEditar.EnableHeadersVisualStyles = false;
             this.GridCnaeEditar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridCnaeEditar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridCnaeEditar.Location = new System.Drawing.Point(450, 254);
+            this.GridCnaeEditar.Location = new System.Drawing.Point(450, 168);
             this.GridCnaeEditar.MultiSelect = false;
             this.GridCnaeEditar.Name = "GridCnaeEditar";
             this.GridCnaeEditar.ReadOnly = true;
@@ -737,7 +730,7 @@
             this.GridCnaeEditar.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.GridCnaeEditar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridCnaeEditar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridCnaeEditar.Size = new System.Drawing.Size(374, 119);
+            this.GridCnaeEditar.Size = new System.Drawing.Size(374, 205);
             this.GridCnaeEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.GridCnaeEditar.TabIndex = 61;
             this.GridCnaeEditar.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -760,7 +753,7 @@
             this.TextBuscaCnaeEditar.CustomButton.Visible = false;
             this.TextBuscaCnaeEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextBuscaCnaeEditar.Icon")));
             this.TextBuscaCnaeEditar.Lines = new string[0];
-            this.TextBuscaCnaeEditar.Location = new System.Drawing.Point(450, 222);
+            this.TextBuscaCnaeEditar.Location = new System.Drawing.Point(450, 142);
             this.TextBuscaCnaeEditar.MaxLength = 32767;
             this.TextBuscaCnaeEditar.Name = "TextBuscaCnaeEditar";
             this.TextBuscaCnaeEditar.PasswordChar = '\0';
@@ -784,7 +777,7 @@
             this.BtnCnaeEditar.BackgroundImage = global::SystemCare.Properties.Resources.magnifier;
             this.BtnCnaeEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnCnaeEditar.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnCnaeEditar.Location = new System.Drawing.Point(800, 218);
+            this.BtnCnaeEditar.Location = new System.Drawing.Point(800, 138);
             this.BtnCnaeEditar.Name = "BtnCnaeEditar";
             this.BtnCnaeEditar.Size = new System.Drawing.Size(24, 24);
             this.BtnCnaeEditar.Style = MetroFramework.MetroColorStyle.Blue;
@@ -797,7 +790,7 @@
             // 
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel9.Location = new System.Drawing.Point(453, 104);
+            this.metroLabel9.Location = new System.Drawing.Point(453, 30);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(181, 19);
             this.metroLabel9.Style = MetroFramework.MetroColorStyle.Green;
@@ -821,7 +814,7 @@
             this.TextQuantidadeFuncionarioEditar.CustomButton.Visible = false;
             this.TextQuantidadeFuncionarioEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextQuantidadeFuncionarioEditar.Icon")));
             this.TextQuantidadeFuncionarioEditar.Lines = new string[0];
-            this.TextQuantidadeFuncionarioEditar.Location = new System.Drawing.Point(453, 126);
+            this.TextQuantidadeFuncionarioEditar.Location = new System.Drawing.Point(453, 52);
             this.TextQuantidadeFuncionarioEditar.MaxLength = 32767;
             this.TextQuantidadeFuncionarioEditar.Name = "TextQuantidadeFuncionarioEditar";
             this.TextQuantidadeFuncionarioEditar.PasswordChar = '\0';
@@ -842,7 +835,7 @@
             // 
             this.LabelCnaeEditar.AutoSize = true;
             this.LabelCnaeEditar.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.LabelCnaeEditar.Location = new System.Drawing.Point(453, 200);
+            this.LabelCnaeEditar.Location = new System.Drawing.Point(453, 120);
             this.LabelCnaeEditar.Name = "LabelCnaeEditar";
             this.LabelCnaeEditar.Size = new System.Drawing.Size(44, 19);
             this.LabelCnaeEditar.Style = MetroFramework.MetroColorStyle.Green;
@@ -854,7 +847,7 @@
             // 
             this.metroLabel11.AutoSize = true;
             this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel11.Location = new System.Drawing.Point(3, 200);
+            this.metroLabel11.Location = new System.Drawing.Point(3, 120);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(47, 19);
             this.metroLabel11.Style = MetroFramework.MetroColorStyle.Green;
@@ -879,7 +872,7 @@
             this.TextEmailEditar.CustomButton.Visible = false;
             this.TextEmailEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextEmailEditar.Icon")));
             this.TextEmailEditar.Lines = new string[0];
-            this.TextEmailEditar.Location = new System.Drawing.Point(3, 222);
+            this.TextEmailEditar.Location = new System.Drawing.Point(3, 142);
             this.TextEmailEditar.MaxLength = 32767;
             this.TextEmailEditar.Name = "TextEmailEditar";
             this.TextEmailEditar.PasswordChar = '\0';
@@ -900,9 +893,9 @@
             // 
             this.metroLabel12.AutoSize = true;
             this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel12.Location = new System.Drawing.Point(295, 152);
+            this.metroLabel12.Location = new System.Drawing.Point(295, 75);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel12.Size = new System.Drawing.Size(59, 19);
             this.metroLabel12.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel12.TabIndex = 56;
             this.metroLabel12.Text = "Telefone";
@@ -912,7 +905,7 @@
             // 
             this.metroLabel13.AutoSize = true;
             this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel13.Location = new System.Drawing.Point(295, 104);
+            this.metroLabel13.Location = new System.Drawing.Point(295, 30);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(40, 19);
             this.metroLabel13.Style = MetroFramework.MetroColorStyle.Green;
@@ -920,45 +913,11 @@
             this.metroLabel13.Text = "CNPJ";
             this.metroLabel13.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // TextCnpjEditar
-            // 
-            this.TextCnpjEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextCnpjEditar.CustomButton.Image = null;
-            this.TextCnpjEditar.CustomButton.Location = new System.Drawing.Point(134, 2);
-            this.TextCnpjEditar.CustomButton.Name = "";
-            this.TextCnpjEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextCnpjEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextCnpjEditar.CustomButton.TabIndex = 1;
-            this.TextCnpjEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextCnpjEditar.CustomButton.UseSelectable = true;
-            this.TextCnpjEditar.CustomButton.Visible = false;
-            this.TextCnpjEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextCnpjEditar.Icon")));
-            this.TextCnpjEditar.Lines = new string[0];
-            this.TextCnpjEditar.Location = new System.Drawing.Point(295, 126);
-            this.TextCnpjEditar.MaxLength = 32767;
-            this.TextCnpjEditar.Name = "TextCnpjEditar";
-            this.TextCnpjEditar.PasswordChar = '\0';
-            this.TextCnpjEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextCnpjEditar.SelectedText = "";
-            this.TextCnpjEditar.SelectionLength = 0;
-            this.TextCnpjEditar.SelectionStart = 0;
-            this.TextCnpjEditar.ShortcutsEnabled = true;
-            this.TextCnpjEditar.Size = new System.Drawing.Size(152, 20);
-            this.TextCnpjEditar.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextCnpjEditar.TabIndex = 2;
-            this.TextCnpjEditar.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextCnpjEditar.UseSelectable = true;
-            this.TextCnpjEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextCnpjEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
             this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel14.Location = new System.Drawing.Point(3, 152);
+            this.metroLabel14.Location = new System.Drawing.Point(0, 75);
             this.metroLabel14.Name = "metroLabel14";
             this.metroLabel14.Size = new System.Drawing.Size(65, 19);
             this.metroLabel14.Style = MetroFramework.MetroColorStyle.Green;
@@ -983,7 +942,7 @@
             this.TextEnderecoEditar.CustomButton.Visible = false;
             this.TextEnderecoEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextEnderecoEditar.Icon")));
             this.TextEnderecoEditar.Lines = new string[0];
-            this.TextEnderecoEditar.Location = new System.Drawing.Point(3, 174);
+            this.TextEnderecoEditar.Location = new System.Drawing.Point(0, 97);
             this.TextEnderecoEditar.MaxLength = 32767;
             this.TextEnderecoEditar.Name = "TextEnderecoEditar";
             this.TextEnderecoEditar.PasswordChar = '\0';
@@ -1004,7 +963,7 @@
             // 
             this.metroLabel15.AutoSize = true;
             this.metroLabel15.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel15.Location = new System.Drawing.Point(3, 104);
+            this.metroLabel15.Location = new System.Drawing.Point(0, 30);
             this.metroLabel15.Name = "metroLabel15";
             this.metroLabel15.Size = new System.Drawing.Size(46, 19);
             this.metroLabel15.Style = MetroFramework.MetroColorStyle.Green;
@@ -1029,7 +988,7 @@
             this.TextNomeEditar.CustomButton.Visible = false;
             this.TextNomeEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextNomeEditar.Icon")));
             this.TextNomeEditar.Lines = new string[0];
-            this.TextNomeEditar.Location = new System.Drawing.Point(3, 126);
+            this.TextNomeEditar.Location = new System.Drawing.Point(0, 52);
             this.TextNomeEditar.MaxLength = 32767;
             this.TextNomeEditar.Name = "TextNomeEditar";
             this.TextNomeEditar.PasswordChar = '\0';
@@ -1070,110 +1029,35 @@
             this.BtnExcluir.UseSelectable = true;
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
-            // DataGridEmpresa
+            // TextCnpjEditar
             // 
-            this.DataGridEmpresa.AllowUserToAddRows = false;
-            this.DataGridEmpresa.AllowUserToDeleteRows = false;
-            this.DataGridEmpresa.AllowUserToResizeColumns = false;
-            this.DataGridEmpresa.AllowUserToResizeRows = false;
-            this.DataGridEmpresa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DataGridEmpresa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DataGridEmpresa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.DataGridEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataGridEmpresa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.DataGridEmpresa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridEmpresa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.DataGridEmpresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridEmpresa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SelecionaEmpres});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridEmpresa.DefaultCellStyle = dataGridViewCellStyle14;
-            this.DataGridEmpresa.EnableHeadersVisualStyles = false;
-            this.DataGridEmpresa.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.DataGridEmpresa.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.DataGridEmpresa.Location = new System.Drawing.Point(3, 43);
-            this.DataGridEmpresa.MultiSelect = false;
-            this.DataGridEmpresa.Name = "DataGridEmpresa";
-            this.DataGridEmpresa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridEmpresa.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.DataGridEmpresa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.DataGridEmpresa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridEmpresa.Size = new System.Drawing.Size(821, 58);
-            this.DataGridEmpresa.Style = MetroFramework.MetroColorStyle.Green;
-            this.DataGridEmpresa.TabIndex = 7;
-            this.DataGridEmpresa.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextCnpjEditar.Location = new System.Drawing.Point(295, 52);
+            this.TextCnpjEditar.Mask = "99.999.999/9999-99";
+            this.TextCnpjEditar.Name = "TextCnpjEditar";
+            this.TextCnpjEditar.Size = new System.Drawing.Size(152, 20);
+            this.TextCnpjEditar.TabIndex = 65;
             // 
-            // SelecionaEmpres
+            // BtnBuscarEmpresa
             // 
-            this.SelecionaEmpres.HeaderText = "Selecionar";
-            this.SelecionaEmpres.Name = "SelecionaEmpres";
-            this.SelecionaEmpres.Width = 64;
+            this.BtnBuscarEmpresa.Location = new System.Drawing.Point(523, 4);
+            this.BtnBuscarEmpresa.Name = "BtnBuscarEmpresa";
+            this.BtnBuscarEmpresa.Size = new System.Drawing.Size(111, 23);
+            this.BtnBuscarEmpresa.TabIndex = 66;
+            this.BtnBuscarEmpresa.Text = "Buscar Empresa";
+            this.BtnBuscarEmpresa.UseSelectable = true;
+            this.BtnBuscarEmpresa.Click += new System.EventHandler(this.BtnBuscarEmpresa_Click);
             // 
-            // BtnBuscar
+            // LabelEmpresaEditar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(749, 14);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.BtnBuscar.Style = MetroFramework.MetroColorStyle.Green;
-            this.BtnBuscar.TabIndex = 6;
-            this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.BtnBuscar.UseSelectable = true;
-            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
-            // 
-            // TextBusca
-            // 
-            this.TextBusca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextBusca.CustomButton.Image = null;
-            this.TextBusca.CustomButton.Location = new System.Drawing.Point(718, 1);
-            this.TextBusca.CustomButton.Name = "";
-            this.TextBusca.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.TextBusca.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextBusca.CustomButton.TabIndex = 1;
-            this.TextBusca.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextBusca.CustomButton.UseSelectable = true;
-            this.TextBusca.CustomButton.Visible = false;
-            this.TextBusca.Lines = new string[0];
-            this.TextBusca.Location = new System.Drawing.Point(3, 14);
-            this.TextBusca.MaxLength = 32767;
-            this.TextBusca.Name = "TextBusca";
-            this.TextBusca.PasswordChar = '\0';
-            this.TextBusca.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextBusca.SelectedText = "";
-            this.TextBusca.SelectionLength = 0;
-            this.TextBusca.SelectionStart = 0;
-            this.TextBusca.ShortcutsEnabled = true;
-            this.TextBusca.Size = new System.Drawing.Size(740, 23);
-            this.TextBusca.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextBusca.TabIndex = 0;
-            this.TextBusca.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextBusca.UseSelectable = true;
-            this.TextBusca.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextBusca.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.TextBusca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBusca_KeyPress);
+            this.LabelEmpresaEditar.AutoSize = true;
+            this.LabelEmpresaEditar.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LabelEmpresaEditar.Location = new System.Drawing.Point(0, 8);
+            this.LabelEmpresaEditar.Name = "LabelEmpresaEditar";
+            this.LabelEmpresaEditar.Size = new System.Drawing.Size(168, 19);
+            this.LabelEmpresaEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.LabelEmpresaEditar.TabIndex = 67;
+            this.LabelEmpresaEditar.Text = "Selecione uma empresa";
+            this.LabelEmpresaEditar.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // Empresas
             // 
@@ -1196,7 +1080,6 @@
             this.Editar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridServicosEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCnaeEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridEmpresa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1225,10 +1108,6 @@
         private MetroFramework.Controls.MetroButton BtnCadastrar;
         private MetroFramework.Controls.MetroButton BtnEditar;
         private MetroFramework.Controls.MetroButton BtnExcluir;
-        private MetroFramework.Controls.MetroGrid DataGridEmpresa;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn SelecionaEmpres;
-        private MetroFramework.Controls.MetroButton BtnBuscar;
-        private MetroFramework.Controls.MetroTextBox TextBusca;
         private MetroFramework.Controls.MetroGrid GridCnaeEditar;
         private MetroFramework.Controls.MetroTextBox TextBuscaCnaeEditar;
         private MetroFramework.Controls.MetroButton BtnCnaeEditar;
@@ -1239,7 +1118,6 @@
         private MetroFramework.Controls.MetroTextBox TextEmailEditar;
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroLabel metroLabel13;
-        private MetroFramework.Controls.MetroTextBox TextCnpjEditar;
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private MetroFramework.Controls.MetroTextBox TextEnderecoEditar;
         private MetroFramework.Controls.MetroLabel metroLabel15;
@@ -1250,5 +1128,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Selecionar;
         private MetroFramework.Controls.MetroGrid GridServicosEditar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private MetroFramework.Controls.MetroButton BtnBuscarEmpresa;
+        private System.Windows.Forms.MaskedTextBox TextCnpjEditar;
+        private MetroFramework.Controls.MetroLabel LabelEmpresaEditar;
     }
 }

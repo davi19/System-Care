@@ -160,6 +160,7 @@
             this.cBOToolStripMenuItem.Name = "cBOToolStripMenuItem";
             this.cBOToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.cBOToolStripMenuItem.Text = "CBO";
+            this.cBOToolStripMenuItem.Click += new System.EventHandler(this.cBOToolStripMenuItem_Click);
             // 
             // serviçosPrestadosToolStripMenuItem
             // 
