@@ -84,14 +84,10 @@ C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\D
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.application
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.exe
 C:\Users\davi1\Documents\Visual Studio 2017\Projects\SystemCare\SystemCare\obj\Debug\SystemCare.pdb
-C:\Users\davi1\systemcare\SystemCare\bin\Debug\SystemCare.exe
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\Atestados.rdlc
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\Vacinas.rdlc
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\PrestacaodeServico.rdlc
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\ASO.rdlc
-C:\Users\davi1\systemcare\SystemCare\bin\Debug\SystemCare.exe.config
-C:\Users\davi1\systemcare\SystemCare\bin\Debug\SystemCare.exe.manifest
-C:\Users\davi1\systemcare\SystemCare\bin\Debug\SystemCare.application
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\Microsoft.ReportViewer.DataVisualization.DLL
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
@@ -128,11 +124,16 @@ C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Empresas.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Relatorios.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Setores.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.csproj.GenerateResource.Cache
-C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.exe.manifest
-C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.application
-C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.exe
-C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.pdb
-C:\Users\davi1\systemcare\SystemCare\bin\Debug\SystemCare.pdb
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.csprojResolveAssemblyReference.cache
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.QuestionarioMedico.resources
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Cbo.resources
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\-SystemCare.exe.config
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\-SystemCare.exe.manifest
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\-SystemCare.application
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\-SystemCare.exe
+C:\Users\davi1\systemcare\SystemCare\bin\Debug\-SystemCare.pdb
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\-SystemCare.exe.manifest
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\-SystemCare.application
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\-SystemCare.exe
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\-SystemCare.pdb
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Exames.resources

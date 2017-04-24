@@ -885,6 +885,76 @@ namespace SystemCare
            
         }
 
+        public void CadastrarExame(string Descricao)
+        {
+            Com.Open();
+            MySqlCommand InserirExame = new MySqlCommand("INSERT INTO examesmedicos (descricao) VALUES('"+Descricao+"')",Com);
+            InserirExame.ExecuteNonQuery();
+            Com.Close();
+
+        }
+        public void CadastrarModalidadeExame(string Descricao)
+        {
+            Com.Open();
+            MySqlCommand InserirExame = new MySqlCommand("INSERT INTO modalidadeexames (descricao) VALUES('" + Descricao + "')", Com);
+            InserirExame.ExecuteNonQuery();
+            Com.Close();
+
+        }
+        public void EditarExame(string Descricao,string Id)
+        {
+            Com.Open();
+            MySqlCommand InserirExame = new MySqlCommand("UPDATE examesmedicos SET descricao='" + Descricao + "' WHERE id=" + Id + ";", Com);
+            InserirExame.ExecuteNonQuery();
+            Com.Close();
+
+        }
+        public void EditarModalidadeExame(string Descricao,string Id)
+        {
+            Com.Open();
+            MySqlCommand InserirExame = new MySqlCommand("UPDATE modalidadeexames SET descricao='" + Descricao + "' WHERE id=" + Id + ";", Com);
+            InserirExame.ExecuteNonQuery();
+            Com.Close();
+
+        }
+        public void ExcluirExame(string Id)
+        {
+            Com.Open();
+            MySqlCommand InserirExame = new MySqlCommand("UPDATE examesmedicos SET excluido='S' WHERE id=" + Id + ";", Com);
+            InserirExame.ExecuteNonQuery();
+            Com.Close();
+
+        }
+        public void ExcluirModalidadeExame(string Id)
+        {
+            Com.Open();
+            MySqlCommand InserirExame = new MySqlCommand("UPDATE modalidadeexames SET excluido='S' WHERE id="+Id+";", Com);
+            InserirExame.ExecuteNonQuery();
+            Com.Close();
+
+        }
+        public DataTable BuscarExame(string Descricao)
+        {
+            Com.Open();
+            MySqlCommand InserirExame = new MySqlCommand("SELECT id,descricao FROM examesmedicos WHERE descricao like'%" + Descricao + "%' AND excluido='N';", Com);
+            MySqlDataAdapter SelecionaExame = new MySqlDataAdapter(InserirExame);
+            DataTable ResultadoExames = new DataTable();
+            SelecionaExame.Fill(ResultadoExames);
+            Com.Close();
+            return ResultadoExames;
+
+        }
+        public DataTable BuscarModalidadeExame(string Descricao)
+        {
+            Com.Open();
+            MySqlCommand InserirExame = new MySqlCommand("SELECT id,descricao FROM modalidadeexames WHERE descricao like'%" + Descricao + "%' AND excluido='N';", Com);
+            MySqlDataAdapter SelecionaExame = new MySqlDataAdapter(InserirExame);
+            DataTable ResultadoExames = new DataTable();
+            SelecionaExame.Fill(ResultadoExames);
+            Com.Close();
+            return ResultadoExames;
+
+        }
 
     }
 }

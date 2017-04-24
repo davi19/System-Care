@@ -75,5 +75,11 @@ namespace SystemCare
             Cbo CadastroCbo = new Cbo();
             CadastroCbo.ShowDialog();
         }
+
+        private void examesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exames exame = new Exames();
+            exame.ShowDialog();
+        }
     }
 }
