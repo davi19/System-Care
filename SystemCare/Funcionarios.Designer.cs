@@ -119,7 +119,7 @@
             this.Editar.Controls.Add(this.metroTabPage2);
             this.Editar.Location = new System.Drawing.Point(2, 72);
             this.Editar.Name = "Editar";
-            this.Editar.SelectedIndex = 1;
+            this.Editar.SelectedIndex = 0;
             this.Editar.Size = new System.Drawing.Size(975, 462);
             this.Editar.Style = MetroFramework.MetroColorStyle.Green;
             this.Editar.TabIndex = 0;
@@ -311,7 +311,7 @@
             // TextCpf
             // 
             this.TextCpf.Location = new System.Drawing.Point(3, 80);
-            this.TextCpf.Mask = "000.000.000-00";
+            this.TextCpf.Mask = "999,999,999-99";
             this.TextCpf.Name = "TextCpf";
             this.TextCpf.Size = new System.Drawing.Size(194, 20);
             this.TextCpf.TabIndex = 40;
@@ -424,6 +424,7 @@
             this.TextImc.UseSelectable = true;
             this.TextImc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextImc.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.TextImc.Enter += new System.EventHandler(this.TextImc_Enter);
             // 
             // metroLabel19
             // 
@@ -1435,9 +1436,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel17;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private MetroFramework.Controls.MetroLabel metroLabel15;
-        private MetroFramework.Controls.MetroTextBox TextPeso;
         private MetroFramework.Controls.MetroLabel metroLabel14;
-        private MetroFramework.Controls.MetroTextBox TextAltura;
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroRadioButton RadioFeminino;
         private MetroFramework.Controls.MetroRadioButton RadioMasculino;
@@ -1451,7 +1450,6 @@
         private MetroFramework.Controls.MetroButton BtnBuscaFuncao;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroTextBox TextBuscaFuncao;
-        private MetroFramework.Controls.MetroTextBox TextIdadeEditar;
         private MetroFramework.Controls.MetroButton BtnExcluir;
         private MetroFramework.Controls.MetroGrid GridFuncaoFuncionarioEditar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
@@ -1474,7 +1472,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroRadioButton RadioFemininoEditar;
         private MetroFramework.Controls.MetroRadioButton RadioMasculinoEditar;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroTextBox TextNomeFuncionarioEditar;
         private MetroFramework.Controls.MetroGrid GridFuncionarioEditar;
@@ -1486,5 +1483,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel24;
         private MetroFramework.Controls.MetroLabel metroLabel20;
         private MetroFramework.Controls.MetroLabel metroLabel22;
+        private MetroFramework.Controls.MetroTextBox TextIdadeEditar;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroTextBox TextPeso;
+        private MetroFramework.Controls.MetroTextBox TextAltura;
     }
 }

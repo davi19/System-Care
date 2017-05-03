@@ -60,6 +60,12 @@ namespace SystemCare
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+            if (LabelCnae.Text.Equals("CNAE"))
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um CNAE!", "Atenção !",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning);
+            }
             else
             {
                 var Servicos = "";

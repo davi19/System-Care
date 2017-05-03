@@ -28,7 +28,7 @@ namespace SystemCare
             }
             else
             {
-                var IdCbo = LabelCbo.Text.Split('|');
+                
                 if (LabelCbo.Text.Equals("CBO"))
                 {
                     MetroMessageBox.Show(this, "Favor selecionar uma CBO!", "Atenção !", MessageBoxButtons.OK,
@@ -36,6 +36,7 @@ namespace SystemCare
                 }
                 else
                 {
+                    var IdCbo = LabelCbo.Text.Split('|');
                     var IdRiscos = "";
                     var IdSetor = "";
 

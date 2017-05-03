@@ -29,12 +29,27 @@ namespace SystemCare
                 catch
                 {
                 }
-            CadastroSetor.CadastrarSetor(IdEmpresa, TextNomeSetor.Text);
-            MetroMessageBox.Show(this, "Setor Cadastrado com sucesso!", "Atenção !", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            DataGridEmpresas.DataSource = null;
-            TextNomeSetor.Text = "";
-            TextPesdquisaEmpresa.Text = "";
+            if (IdEmpresa.Length == 0)
+            {
+                MetroMessageBox.Show(this, "Favor selecionar uma empresa!", "Atenção !",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            if (TextNomeSetor.Text.Length == 0)
+            {
+                MetroMessageBox.Show(this, "Favor preencher o nome do setor!", "Atenção !",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning);
+            }
+            else
+            {
+                CadastroSetor.CadastrarSetor(IdEmpresa, TextNomeSetor.Text);
+                MetroMessageBox.Show(this, "Setor Cadastrado com sucesso!", "Atenção !", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                DataGridEmpresas.DataSource = null;
+                TextNomeSetor.Text = "";
+                TextPesdquisaEmpresa.Text = "";
+            }
         }
 
         private void BtnBuscarEmpresa_Click(object sender, EventArgs e)
@@ -138,22 +153,37 @@ namespace SystemCare
                     catch
                     {
                     }
-                CadastroSetor.EditarSetor(TextNomeSetorEditar.Text, IdEmpresa, IdSetor);
-                MetroMessageBox.Show(this,
-                    "Dados salvos com sucesso !", "Sucesso !",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                TextPesquisaSetorEditar.Text = "";
-                TextPesquisaEmpresaEditar.Text = "";
-                TextNomeSetorEditar.Text = "";
-                DataGridSetorEditar.DataSource = null;
-                DataGridEmpresaEditar.DataSource = null;
-                BtnEditar.Text = "Editar";
-                metroLabel2.Visible = false;
-                metroLabel3.Visible = false;
-                DataGridEmpresaEditar.Visible = false;
-                TextPesquisaEmpresaEditar.Visible = false;
-                TextNomeSetorEditar.Visible = false;
-                BtnBuscaEmpresaEditar.Visible = false;
+                if (IdEmpresa.Length == 0)
+                {
+                    MetroMessageBox.Show(this, "Favor selecionar uma empresa!", "Atenção !",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+                if (TextNomeSetor.Text.Length == 0)
+                {
+                    MetroMessageBox.Show(this, "Favor preencher o nome do setor!", "Atenção !",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    CadastroSetor.EditarSetor(TextNomeSetorEditar.Text, IdEmpresa, IdSetor);
+                    MetroMessageBox.Show(this,
+                        "Dados salvos com sucesso !", "Sucesso !",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TextPesquisaSetorEditar.Text = "";
+                    TextPesquisaEmpresaEditar.Text = "";
+                    TextNomeSetorEditar.Text = "";
+                    DataGridSetorEditar.DataSource = null;
+                    DataGridEmpresaEditar.DataSource = null;
+                    BtnEditar.Text = "Editar";
+                    metroLabel2.Visible = false;
+                    metroLabel3.Visible = false;
+                    DataGridEmpresaEditar.Visible = false;
+                    TextPesquisaEmpresaEditar.Visible = false;
+                    TextNomeSetorEditar.Visible = false;
+                    BtnBuscaEmpresaEditar.Visible = false;
+                }
             }
         }
 

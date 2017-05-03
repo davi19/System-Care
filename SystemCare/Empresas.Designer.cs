@@ -58,12 +58,14 @@
             this.TextEmail = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.TextCnpj = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.TextEndereco = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.TextNome = new MetroFramework.Controls.MetroTextBox();
             this.Editar = new MetroFramework.Controls.MetroTabPage();
+            this.LabelEmpresaEditar = new MetroFramework.Controls.MetroLabel();
+            this.BtnBuscarEmpresa = new MetroFramework.Controls.MetroButton();
+            this.TextCnpjEditar = new System.Windows.Forms.MaskedTextBox();
             this.GridServicosEditar = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TextTelefoneEditar = new System.Windows.Forms.MaskedTextBox();
@@ -83,9 +85,7 @@
             this.TextNomeEditar = new MetroFramework.Controls.MetroTextBox();
             this.BtnEditar = new MetroFramework.Controls.MetroButton();
             this.BtnExcluir = new MetroFramework.Controls.MetroButton();
-            this.TextCnpjEditar = new System.Windows.Forms.MaskedTextBox();
-            this.BtnBuscarEmpresa = new MetroFramework.Controls.MetroButton();
-            this.LabelEmpresaEditar = new MetroFramework.Controls.MetroLabel();
+            this.TextCnpj = new System.Windows.Forms.MaskedTextBox();
             this.CadastrarEmpresa.SuspendLayout();
             this.CadastroEmpresa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridServicosPrestados)).BeginInit();
@@ -101,7 +101,7 @@
             this.CadastrarEmpresa.Controls.Add(this.Editar);
             this.CadastrarEmpresa.Location = new System.Drawing.Point(23, 63);
             this.CadastrarEmpresa.Name = "CadastrarEmpresa";
-            this.CadastrarEmpresa.SelectedIndex = 1;
+            this.CadastrarEmpresa.SelectedIndex = 0;
             this.CadastrarEmpresa.Size = new System.Drawing.Size(843, 447);
             this.CadastrarEmpresa.Style = MetroFramework.MetroColorStyle.Green;
             this.CadastrarEmpresa.TabIndex = 0;
@@ -109,6 +109,7 @@
             // 
             // CadastroEmpresa
             // 
+            this.CadastroEmpresa.Controls.Add(this.TextCnpj);
             this.CadastroEmpresa.Controls.Add(this.GridServicosPrestados);
             this.CadastroEmpresa.Controls.Add(this.TextTelefone);
             this.CadastroEmpresa.Controls.Add(this.BtnCadastrar);
@@ -123,7 +124,6 @@
             this.CadastroEmpresa.Controls.Add(this.TextEmail);
             this.CadastroEmpresa.Controls.Add(this.metroLabel5);
             this.CadastroEmpresa.Controls.Add(this.metroLabel3);
-            this.CadastroEmpresa.Controls.Add(this.TextCnpj);
             this.CadastroEmpresa.Controls.Add(this.metroLabel2);
             this.CadastroEmpresa.Controls.Add(this.TextEndereco);
             this.CadastroEmpresa.Controls.Add(this.metroLabel1);
@@ -459,40 +459,6 @@
             this.metroLabel3.Text = "CNPJ";
             this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // TextCnpj
-            // 
-            this.TextCnpj.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextCnpj.CustomButton.Image = null;
-            this.TextCnpj.CustomButton.Location = new System.Drawing.Point(134, 2);
-            this.TextCnpj.CustomButton.Name = "";
-            this.TextCnpj.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextCnpj.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextCnpj.CustomButton.TabIndex = 1;
-            this.TextCnpj.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextCnpj.CustomButton.UseSelectable = true;
-            this.TextCnpj.CustomButton.Visible = false;
-            this.TextCnpj.Icon = ((System.Drawing.Image)(resources.GetObject("TextCnpj.Icon")));
-            this.TextCnpj.Lines = new string[0];
-            this.TextCnpj.Location = new System.Drawing.Point(295, 29);
-            this.TextCnpj.MaxLength = 32767;
-            this.TextCnpj.Name = "TextCnpj";
-            this.TextCnpj.PasswordChar = '\0';
-            this.TextCnpj.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextCnpj.SelectedText = "";
-            this.TextCnpj.SelectionLength = 0;
-            this.TextCnpj.SelectionStart = 0;
-            this.TextCnpj.ShortcutsEnabled = true;
-            this.TextCnpj.Size = new System.Drawing.Size(152, 20);
-            this.TextCnpj.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextCnpj.TabIndex = 1;
-            this.TextCnpj.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextCnpj.UseSelectable = true;
-            this.TextCnpj.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextCnpj.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
@@ -619,6 +585,36 @@
             this.Editar.VerticalScrollbarBarColor = true;
             this.Editar.VerticalScrollbarHighlightOnWheel = false;
             this.Editar.VerticalScrollbarSize = 10;
+            // 
+            // LabelEmpresaEditar
+            // 
+            this.LabelEmpresaEditar.AutoSize = true;
+            this.LabelEmpresaEditar.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LabelEmpresaEditar.Location = new System.Drawing.Point(0, 8);
+            this.LabelEmpresaEditar.Name = "LabelEmpresaEditar";
+            this.LabelEmpresaEditar.Size = new System.Drawing.Size(168, 19);
+            this.LabelEmpresaEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.LabelEmpresaEditar.TabIndex = 67;
+            this.LabelEmpresaEditar.Text = "Selecione uma empresa";
+            this.LabelEmpresaEditar.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // BtnBuscarEmpresa
+            // 
+            this.BtnBuscarEmpresa.Location = new System.Drawing.Point(523, 4);
+            this.BtnBuscarEmpresa.Name = "BtnBuscarEmpresa";
+            this.BtnBuscarEmpresa.Size = new System.Drawing.Size(111, 23);
+            this.BtnBuscarEmpresa.TabIndex = 66;
+            this.BtnBuscarEmpresa.Text = "Buscar Empresa";
+            this.BtnBuscarEmpresa.UseSelectable = true;
+            this.BtnBuscarEmpresa.Click += new System.EventHandler(this.BtnBuscarEmpresa_Click);
+            // 
+            // TextCnpjEditar
+            // 
+            this.TextCnpjEditar.Location = new System.Drawing.Point(295, 52);
+            this.TextCnpjEditar.Mask = "99.999.999/9999-99";
+            this.TextCnpjEditar.Name = "TextCnpjEditar";
+            this.TextCnpjEditar.Size = new System.Drawing.Size(152, 20);
+            this.TextCnpjEditar.TabIndex = 65;
             // 
             // GridServicosEditar
             // 
@@ -1029,35 +1025,13 @@
             this.BtnExcluir.UseSelectable = true;
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
-            // TextCnpjEditar
+            // TextCnpj
             // 
-            this.TextCnpjEditar.Location = new System.Drawing.Point(295, 52);
-            this.TextCnpjEditar.Mask = "99.999.999/9999-99";
-            this.TextCnpjEditar.Name = "TextCnpjEditar";
-            this.TextCnpjEditar.Size = new System.Drawing.Size(152, 20);
-            this.TextCnpjEditar.TabIndex = 65;
-            // 
-            // BtnBuscarEmpresa
-            // 
-            this.BtnBuscarEmpresa.Location = new System.Drawing.Point(523, 4);
-            this.BtnBuscarEmpresa.Name = "BtnBuscarEmpresa";
-            this.BtnBuscarEmpresa.Size = new System.Drawing.Size(111, 23);
-            this.BtnBuscarEmpresa.TabIndex = 66;
-            this.BtnBuscarEmpresa.Text = "Buscar Empresa";
-            this.BtnBuscarEmpresa.UseSelectable = true;
-            this.BtnBuscarEmpresa.Click += new System.EventHandler(this.BtnBuscarEmpresa_Click);
-            // 
-            // LabelEmpresaEditar
-            // 
-            this.LabelEmpresaEditar.AutoSize = true;
-            this.LabelEmpresaEditar.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.LabelEmpresaEditar.Location = new System.Drawing.Point(0, 8);
-            this.LabelEmpresaEditar.Name = "LabelEmpresaEditar";
-            this.LabelEmpresaEditar.Size = new System.Drawing.Size(168, 19);
-            this.LabelEmpresaEditar.Style = MetroFramework.MetroColorStyle.Green;
-            this.LabelEmpresaEditar.TabIndex = 67;
-            this.LabelEmpresaEditar.Text = "Selecione uma empresa";
-            this.LabelEmpresaEditar.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextCnpj.Location = new System.Drawing.Point(295, 29);
+            this.TextCnpj.Mask = "00.000.000/0000-00";
+            this.TextCnpj.Name = "TextCnpj";
+            this.TextCnpj.Size = new System.Drawing.Size(152, 20);
+            this.TextCnpj.TabIndex = 49;
             // 
             // Empresas
             // 
@@ -1100,7 +1074,6 @@
         private MetroFramework.Controls.MetroTextBox TextEmail;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTextBox TextCnpj;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox TextEndereco;
         private MetroFramework.Controls.MetroLabel metroLabel1;
@@ -1131,5 +1104,6 @@
         private MetroFramework.Controls.MetroButton BtnBuscarEmpresa;
         private System.Windows.Forms.MaskedTextBox TextCnpjEditar;
         private MetroFramework.Controls.MetroLabel LabelEmpresaEditar;
+        private System.Windows.Forms.MaskedTextBox TextCnpj;
     }
 }
