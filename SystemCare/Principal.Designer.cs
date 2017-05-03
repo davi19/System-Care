@@ -149,12 +149,14 @@
             this.modalidadesDeExamesToolStripMenuItem.Name = "modalidadesDeExamesToolStripMenuItem";
             this.modalidadesDeExamesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.modalidadesDeExamesToolStripMenuItem.Text = "Modalidades de Exames";
+            this.modalidadesDeExamesToolStripMenuItem.Click += new System.EventHandler(this.modalidadesDeExamesToolStripMenuItem_Click);
             // 
             // cnaeToolStripMenuItem
             // 
             this.cnaeToolStripMenuItem.Name = "cnaeToolStripMenuItem";
             this.cnaeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.cnaeToolStripMenuItem.Text = "CNAE";
+            this.cnaeToolStripMenuItem.Click += new System.EventHandler(this.cnaeToolStripMenuItem_Click);
             // 
             // cBOToolStripMenuItem
             // 
@@ -168,12 +170,14 @@
             this.serviçosPrestadosToolStripMenuItem.Name = "serviçosPrestadosToolStripMenuItem";
             this.serviçosPrestadosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.serviçosPrestadosToolStripMenuItem.Text = "Serviços Prestados";
+            this.serviçosPrestadosToolStripMenuItem.Click += new System.EventHandler(this.serviçosPrestadosToolStripMenuItem_Click);
             // 
             // tabelaDePreçoToolStripMenuItem
             // 
             this.tabelaDePreçoToolStripMenuItem.Name = "tabelaDePreçoToolStripMenuItem";
             this.tabelaDePreçoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.tabelaDePreçoToolStripMenuItem.Text = "Tabela de Preço";
+            this.tabelaDePreçoToolStripMenuItem.Click += new System.EventHandler(this.tabelaDePreçoToolStripMenuItem_Click);
             // 
             // usuáriosToolStripMenuItem1
             // 

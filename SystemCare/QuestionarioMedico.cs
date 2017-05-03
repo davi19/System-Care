@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 using MetroFramework.Forms;
 
 namespace SystemCare
@@ -177,6 +178,8 @@ namespace SystemCare
             }
             Osseo =  Osseo + ";" + TextOsteo.Text;
             CadastraQuestionario.CadastraQuestionario(IdFuncionarioQuestiona,TextQueixa.Text,Cirurgia,DataCirurgia.Value,TextCirurgia.Text,Fraturas,DataFratura.Value,Internacao,TextInternacao.Text,DataInternacao.Value,Alergias,TextAlergia.Text,Respiratoria,Gastro,Cardiaca,Endocrino,Osseo,TextHistorico.Text,AcidenteTrabalho,DataAcidente.Value,AfastamentoAcidente,AfastamentoPrevidencia,TextAfastamentoPrevidencia.Text);
+            MetroMessageBox.Show(this,"Questionário cadastrado com sucesso","Sucesso !",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            this.Hide();
         }
     }
 }

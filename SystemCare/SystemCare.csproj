@@ -140,11 +140,23 @@
     <Compile Include="Cbo.Designer.cs">
       <DependentUpon>Cbo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cnae.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cnae.Designer.cs">
+      <DependentUpon>Cnae.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exames.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Exames.Designer.cs">
       <DependentUpon>Exames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModalidadeExame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalidadeExame.Designer.cs">
+      <DependentUpon>ModalidadeExame.cs</DependentUpon>
     </Compile>
     <Compile Include="PrestacaodeServico.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -162,6 +174,18 @@
     </Compile>
     <Compile Include="RiscosOperacionais.Designer.cs">
       <DependentUpon>RiscosOperacionais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServicoPrestado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServicoPrestado.Designer.cs">
+      <DependentUpon>ServicoPrestado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaPreco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabelaPreco.Designer.cs">
+      <DependentUpon>TabelaPreco.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
@@ -267,11 +291,17 @@
     <EmbeddedResource Include="Cbo.resx">
       <DependentUpon>Cbo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cnae.resx">
+      <DependentUpon>Cnae.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmpresaRelatorio.resx">
       <DependentUpon>EmpresaRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Exames.resx">
       <DependentUpon>Exames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalidadeExame.resx">
+      <DependentUpon>ModalidadeExame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PesquisaEmpresas .resx">
       <DependentUpon>PesquisaEmpresas .cs</DependentUpon>
@@ -285,6 +315,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RiscosOperacionais.resx">
       <DependentUpon>RiscosOperacionais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicoPrestado.resx">
+      <DependentUpon>ServicoPrestado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabelaPreco.resx">
+      <DependentUpon>TabelaPreco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>

@@ -81,5 +81,30 @@ namespace SystemCare
             Exames exame = new Exames();
             exame.ShowDialog();
         }
+
+        private void modalidadesDeExamesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModalidadeExame Modalidade = new ModalidadeExame();
+            Modalidade.ShowDialog();
+        }
+
+        private void cnaeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cnae cnae = new Cnae();
+            cnae.ShowDialog();
+        }
+
+        private void serviçosPrestadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ServicoPrestado Servico = new ServicoPrestado();
+            Servico.ShowDialog();
+        }
+
+        private void tabelaDePreçoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TabelaPreco Tabela = new TabelaPreco();
+            Tabela.ShowDialog();
+
+        }
     }
 }

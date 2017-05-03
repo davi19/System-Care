@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.Common;
 using MySql.Data.MySqlClient;
 
 namespace SystemCare
@@ -39,6 +40,19 @@ namespace SystemCare
             var SelecionaCnae =
                 new MySqlCommand(
                     "SELECT cnae as CNAE,descricao as DESCRIÇÃO FROM cnae WHERE cnae LIKE '%" + ValorDigitado +
+                    "%' OR descricao LIKE'%" + ValorDigitado + "%';", Com);
+            var LeitorCnae = new MySqlDataAdapter(SelecionaCnae);
+            var TabelaCnae = new DataTable();
+            LeitorCnae.Fill(TabelaCnae);
+            Com.Close();
+            return TabelaCnae;
+        }
+        public DataTable BuscaCnaeEditar(string ValorDigitado)
+        {
+            Com.Open();
+            var SelecionaCnae =
+                new MySqlCommand(
+                    "SELECT id as ID,cnae as CNAE,descricao as DESCRIÇÃO FROM cnae WHERE cnae LIKE '%" + ValorDigitado +
                     "%' OR descricao LIKE'%" + ValorDigitado + "%';", Com);
             var LeitorCnae = new MySqlDataAdapter(SelecionaCnae);
             var TabelaCnae = new DataTable();
@@ -873,6 +887,20 @@ namespace SystemCare
             InserirCbo.ExecuteNonQuery();
             Com.Close();
         }
+        public void CadastrarCnae(string Descricao,string Codigo)
+        {
+            Com.Open();
+            MySqlCommand InserirCnae = new MySqlCommand("INSERT INTO cnae (cnae,descricao) VALUES('"+Codigo+"','" + Descricao + "')", Com);
+            InserirCnae.ExecuteNonQuery();
+            Com.Close();
+        }
+        public void AtualizaCnae(string Descricao,string Codigo, string IdCnae)
+        {
+            Com.Open();
+            MySqlCommand InserirCnae = new MySqlCommand("UPDATE cnae SET cnae='"+Codigo+"',descricao='" + Descricao + "' where id=" + IdCnae + ";", Com);
+            InserirCnae.ExecuteNonQuery();
+            Com.Close();
+        }
         public DataTable BuscaCbo(string Descricao)
         {
             Com.Open();
@@ -954,6 +982,89 @@ namespace SystemCare
             Com.Close();
             return ResultadoExames;
 
+        }
+
+        public void CadastrarServicos(string Descricao)
+        {
+            Com.Open();
+            MySqlCommand InserirServico = new MySqlCommand("INSERT INTO servicosprestados (descricao) VALUES('"+Descricao+"');", Com);
+            InserirServico.ExecuteNonQuery();
+            Com.Close();
+        }
+
+        public void EditarServicos(string Descricao, string IdServico)
+        {
+            Com.Open();
+            MySqlCommand AtualizarServico = new MySqlCommand("UPDATE servicosprestados SET descricao ='"+Descricao+"' WHERE id=" + IdServico + ";", Com);
+            AtualizarServico.ExecuteNonQuery();
+            Com.Close();
+        }
+
+        public DataTable BuscarServico(string Busca)
+        {
+            Com.Open();
+            MySqlCommand BuscaServico = new MySqlCommand("select id as ID,descricao as DESCRIÇÃO from servicosprestados WHERE descricao like'%" + Busca+ "%' AND excluido='S';", Com);
+            MySqlDataAdapter LeitorServico = new MySqlDataAdapter(BuscaServico);
+            DataTable TabelaServico = new DataTable();
+            LeitorServico.Fill(TabelaServico);
+            Com.Close();
+            return TabelaServico;
+        }
+
+        public void ExcluirServico(string IdServico)
+        {
+            Com.Open();
+            MySqlCommand ExcluirServico= new MySqlCommand("UPDATE servicosprestados SET excluido ='S' WHERE id="+IdServico+";",Com);
+            ExcluirServico.ExecuteNonQuery();
+            Com.Close();
+        }
+
+        public DataTable BuscarExameModalidade(string Busca)
+        {
+            Com.Open();
+            MySqlCommand SelecionaExame = new MySqlCommand("SELECT id,descricao FROM examesmedicos where descricao like'%"+Busca+"%'",Com);
+            MySqlCommand SelecionaExame2 = new MySqlCommand("SELECT id, descricao FROM modalidadeexames where descricao like'%"+Busca+"%'", Com);
+            MySqlDataAdapter LeitorExame = new MySqlDataAdapter(SelecionaExame);
+            MySqlDataAdapter LeitorExame2 = new MySqlDataAdapter(SelecionaExame2);
+            DataTable TabelaExame = new DataTable();
+            LeitorExame.Fill(TabelaExame);
+            LeitorExame2.Fill(TabelaExame);
+            Com.Close();
+            return TabelaExame;
+            
+        }
+        public string   RecuperaDadosPreco(string IdExame)
+        {
+            Com.Open();
+            MySqlCommand SelecionaExame = new MySqlCommand("SELECT valor FROM precosexames where idexame=" + IdExame + "", Com);
+            MySqlDataAdapter LeitorExame = new MySqlDataAdapter(SelecionaExame);
+            DataTable TabelaExame = new DataTable();
+            LeitorExame.Fill(TabelaExame);
+            Com.Close();
+            try
+            {
+                return TabelaExame.Rows[0][0].ToString();
+            }
+            catch
+            {
+                return "";
+            }
+
+        }
+
+        public void CadastrarPreco(string Valor, string IdExame)
+        {
+            Com.Open();
+            MySqlCommand InserirPreco = new MySqlCommand("INSERT INTO precosexames (idexame,valor) VALUES("+IdExame+",'"+Valor.Replace(",",".")+"')",Com);
+            InserirPreco.ExecuteNonQuery();
+            Com.Close();
+        }
+        public void AtualizaPreco(string IdExame, string Valor)
+        {
+            Com.Open();
+            MySqlCommand InserirPreco = new MySqlCommand("UPDATE precosexames  SET valor='" + Valor.Replace(",", ".") + "' WHERE idexame="+IdExame+"", Com);
+            InserirPreco.ExecuteNonQuery();
+            Com.Close();
         }
 
     }

@@ -122,11 +122,12 @@
             // 
             // TextQueixa
             // 
+            this.TextQueixa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
             this.TextQueixa.CustomButton.Image = null;
-            this.TextQueixa.CustomButton.Location = new System.Drawing.Point(539, 1);
+            this.TextQueixa.CustomButton.Location = new System.Drawing.Point(1026, 1);
             this.TextQueixa.CustomButton.Name = "";
             this.TextQueixa.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TextQueixa.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -135,7 +136,7 @@
             this.TextQueixa.CustomButton.UseSelectable = true;
             this.TextQueixa.CustomButton.Visible = false;
             this.TextQueixa.Lines = new string[0];
-            this.TextQueixa.Location = new System.Drawing.Point(23, 106);
+            this.TextQueixa.Location = new System.Drawing.Point(2, 106);
             this.TextQueixa.MaxLength = 32767;
             this.TextQueixa.Name = "TextQueixa";
             this.TextQueixa.PasswordChar = '\0';
@@ -144,7 +145,7 @@
             this.TextQueixa.SelectionLength = 0;
             this.TextQueixa.SelectionStart = 0;
             this.TextQueixa.ShortcutsEnabled = true;
-            this.TextQueixa.Size = new System.Drawing.Size(1048, 23);
+            this.TextQueixa.Size = new System.Drawing.Size(1069, 23);
             this.TextQueixa.Style = MetroFramework.MetroColorStyle.Green;
             this.TextQueixa.TabIndex = 0;
             this.TextQueixa.UseSelectable = true;
@@ -155,7 +156,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 84);
+            this.metroLabel1.Location = new System.Drawing.Point(10, 84);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(56, 19);
             this.metroLabel1.TabIndex = 1;
@@ -343,6 +344,7 @@
             // 
             // TextCirurgia
             // 
+            this.TextCirurgia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
@@ -392,6 +394,7 @@
             // 
             // TextInternacao
             // 
+            this.TextInternacao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
@@ -467,6 +470,7 @@
             // 
             // TextRespiratoria
             // 
+            this.TextRespiratoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
@@ -508,6 +512,7 @@
             // 
             // TextGastro
             // 
+            this.TextGastro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
@@ -583,6 +588,7 @@
             // 
             // TextCardio
             // 
+            this.TextCardio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
@@ -657,6 +663,7 @@
             // 
             // TextEndocrino
             // 
+            this.TextEndocrino.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
@@ -731,6 +738,7 @@
             // 
             // TextOsteo
             // 
+            this.TextOsteo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
@@ -858,6 +866,7 @@
             // 
             // TextAfastamentoPrevidencia
             // 
+            this.TextAfastamentoPrevidencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
@@ -911,6 +920,7 @@
             // 
             // TextAfastamentoAcidente
             // 
+            this.TextAfastamentoAcidente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
@@ -942,6 +952,7 @@
             // 
             // TextAlergia
             // 
+            this.TextAlergia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 

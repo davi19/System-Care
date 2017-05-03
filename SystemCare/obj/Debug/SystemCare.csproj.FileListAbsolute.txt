@@ -137,3 +137,7 @@ C:\Users\davi1\systemcare\SystemCare\obj\Debug\-SystemCare.application
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\-SystemCare.exe
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\-SystemCare.pdb
 C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Exames.resources
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.ModalidadeExame.resources
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.Cnae.resources
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.ServicoPrestado.resources
+C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.TabelaPreco.resources

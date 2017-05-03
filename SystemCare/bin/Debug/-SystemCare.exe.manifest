@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="-SystemCare" version="1.0.0.3" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="-SystemCare" version="1.0.0.4" language="neutral" processorArchitecture="msil" />
     <commandLine file="-SystemCare.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -175,14 +175,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="-SystemCare.exe" size="16708056">
-      <assemblyIdentity name="-SystemCare" version="1.0.0.3" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="-SystemCare.exe" size="18223576">
+      <assemblyIdentity name="-SystemCare" version="1.0.0.4" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RILKWeTgYMVZa0/VwyQzaQ5k6DyVXdWrhFSAo6zIJ0I=</dsig:DigestValue>
+        <dsig:DigestValue>AmXcLjz5XUsU0/vp23WPqvJ4rvWlA9p42EWCzpNLZJE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
