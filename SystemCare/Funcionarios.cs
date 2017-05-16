@@ -68,19 +68,19 @@ namespace SystemCare
                         "Preencha o nome do funcionário", "Atenção",
                         MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
-                else if (TextCpf.MaskCompleted)
+                else if (!TextCpf.MaskCompleted)
                 {
                     MetroMessageBox.Show(this,
                         "Preencha o CPF do funcionário", "Atenção",
                         MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
-                else if (TextIdentidade.MaskCompleted)
+                else if (!TextIdentidade.MaskCompleted)
                 {
                     MetroMessageBox.Show(this,
                         "Preencha a identidade do funcionário", "Atenção",
                         MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
-                else if (TextDataNascimento.MaskCompleted)
+                else if (!TextDataNascimento.MaskCompleted)
                 {
                     MetroMessageBox.Show(this,
                         "Preencha a data de nascimento do funcionário", "Atenção",
@@ -89,8 +89,8 @@ namespace SystemCare
                 else
                 {
                     Cadastro.CadastraFuncionario(TextNomeFuncionario.Text, TextIdade.Text, Sexo,
-                        Convert.ToDecimal(TextAltura.Text.Replace(",", ".")),
-                        Convert.ToDecimal(TextPeso.Text.Replace(",", ".")),
+                        TextAltura.Text.Replace(',', '.'),
+                        TextPeso.Text.Replace(',', '.'),
                         TextImc.Text, TextCpf.Text, TextIdentidade.Text, TextTelefoneFuncionario.Text,
                         Convert.ToDateTime(TextDataNascimento.Text), TextNaturalidade.Text, IdFuncao);
                     TextNomeFuncionario.Text = "";

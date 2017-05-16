@@ -1,99 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
-  <Body>
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+    <Body>
     <ReportItems>
-      <Textbox Name="Nome2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!Nome.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Nome</rd:DefaultName>
-        <Top>18.61854cm</Top>
-        <Left>6.14115cm</Left>
-        <Height>0.70583cm</Height>
-        <Width>5.0438cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Data">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!Data.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Data</rd:DefaultName>
-        <Top>21.16895cm</Top>
-        <Left>5.36787cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.21979cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Resultado">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!Resultado.Value</Value>
-                <Style>
-                  <FontSize>15pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Resultado</rd:DefaultName>
-        <Top>19.67687cm</Top>
-        <Left>0.3469cm</Left>
-        <Height>0.94396cm</Height>
-        <Width>4.21538cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Empresa">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -109,11 +17,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Empresa</rd:DefaultName>
-        <Top>3.54224cm</Top>
-        <Left>2.06228cm</Left>
+        <Top>2.64266cm</Top>
+        <Left>2.13995cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.52538cm</Width>
-        <ZIndex>3</ZIndex>
+        <Width>7.95042cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -139,11 +46,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Nome</rd:DefaultName>
-        <Top>4.14224cm</Top>
-        <Left>1.53141cm</Left>
+        <Top>3.24266cm</Top>
+        <Left>1.37266cm</Left>
         <Height>0.6cm</Height>
-        <Width>8.05625cm</Width>
-        <ZIndex>4</ZIndex>
+        <Width>8.71771cm</Width>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -169,11 +76,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Funcao</rd:DefaultName>
-        <Top>4.74224cm</Top>
-        <Left>1.82245cm</Left>
+        <Top>3.84266cm</Top>
+        <Left>1.47849cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.76521cm</Width>
-        <ZIndex>5</ZIndex>
+        <Width>8.61188cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -199,11 +106,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Rg</rd:DefaultName>
-        <Top>5.34224cm</Top>
-        <Left>1.08162cm</Left>
+        <Top>4.44266cm</Top>
+        <Left>0.97578cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>6</ZIndex>
+        <Width>3.37312cm</Width>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -229,11 +136,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Naturalidade</rd:DefaultName>
-        <Top>5.34224cm</Top>
-        <Left>6.14115cm</Left>
+        <Top>4.44266cm</Top>
+        <Left>7.0612cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.44651cm</Width>
-        <ZIndex>7</ZIndex>
+        <Width>3.02917cm</Width>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -259,11 +166,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Sexo</rd:DefaultName>
-        <Top>3.54224cm</Top>
-        <Left>11.5062cm</Left>
+        <Top>2.64266cm</Top>
+        <Left>11.58558cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.70146cm</Width>
-        <ZIndex>8</ZIndex>
+        <Width>5.33104cm</Width>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -289,11 +196,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DataNascimento</rd:DefaultName>
-        <Top>4.14224cm</Top>
-        <Left>13.62287cm</Left>
+        <Top>3.27794cm</Top>
+        <Left>13.67578cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.42063cm</Width>
-        <ZIndex>9</ZIndex>
+        <Width>6.68042cm</Width>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -319,11 +226,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Telefone</rd:DefaultName>
-        <Top>4.74224cm</Top>
-        <Left>12.37933cm</Left>
+        <Top>3.84266cm</Top>
+        <Left>12.27349cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.82833cm</Width>
-        <ZIndex>10</ZIndex>
+        <Width>2.5cm</Width>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -349,11 +256,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cpf</rd:DefaultName>
-        <Top>5.34224cm</Top>
-        <Left>11.21516cm</Left>
+        <Top>4.44266cm</Top>
+        <Left>11.40037cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.9925cm</Width>
-        <ZIndex>11</ZIndex>
+        <Width>4.53729cm</Width>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -379,8 +286,98 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Idade</rd:DefaultName>
-        <Top>4.14224cm</Top>
-        <Left>17.38405cm</Left>
+        <Top>3.84266cm</Top>
+        <Left>16.13641cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Data">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!Data.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Data</rd:DefaultName>
+        <Top>5.04266cm</Top>
+        <Left>14.41662cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.42604cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Altura">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!Altura.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Altura</rd:DefaultName>
+        <Top>5.04266cm</Top>
+        <Left>1.55787cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Peso">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!Peso.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Peso</rd:DefaultName>
+        <Top>5.04266cm</Top>
+        <Left>5.44724cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>12</ZIndex>
@@ -394,25 +391,25 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="RiscosOperacionais">
+      <Textbox Name="Imc">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!RiscosOperacionais.Value</Value>
+                <Value>=Parameters!Imc.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>RiscosOperacionais</rd:DefaultName>
-        <Top>9.01912cm</Top>
-        <Left>0.3469cm</Left>
-        <Height>1.92292cm</Height>
-        <Width>20.38583cm</Width>
+        <rd:DefaultName>Imc</rd:DefaultName>
+        <Top>5.04266cm</Top>
+        <Left>8.72398cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.36639cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -424,56 +421,26 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="ModalidadeExames">
+      <Textbox Name="Observacoes">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!ModalidadeExames.Value</Value>
+                <Value>=Parameters!Observacoes.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>ModalidadeExames</rd:DefaultName>
-        <Top>12.51162cm</Top>
-        <Left>0.3469cm</Left>
-        <Height>4.64812cm</Height>
-        <Width>20.38583cm</Width>
-        <ZIndex>14</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="ExameMedico">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!ExameMedico.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>ExameMedico</rd:DefaultName>
+        <rd:DefaultName>Observacoes</rd:DefaultName>
         <Top>7.03474cm</Top>
-        <Left>8.30474cm</Left>
-        <Height>0.83812cm</Height>
-        <Width>4.56375cm</Width>
-        <ZIndex>15</ZIndex>
+        <Left>0.28787cm</Left>
+        <Height>5.12438cm</Height>
+        <Width>20.43875cm</Width>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -489,11 +456,11 @@
     <Style>
       <BackgroundImage>
         <Source>Embedded</Source>
-        <Value>RelatorioASO</Value>
+        <Value>RelatorioProntuario</Value>
       </BackgroundImage>
     </Style>
   </Body>
-  <Width>21.13229cm</Width>
+  <Width>21cm</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -505,7 +472,8 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
-  <ReportParameters>
+    
+      <ReportParameters>
     <ReportParameter Name="Empresa">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
@@ -567,6 +535,18 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
+  <Width>21.7645cm</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <Style>
+      <Border />
+    </Style>
+  </Page>
   <EmbeddedImages>
     <EmbeddedImage Name="RelatorioASO">
       <MIMEType>image/jpeg</MIMEType>
@@ -740,6 +720,8 @@ tn/8cqiP+CcP7PoP/JEfhP8A+ErY/wDxutL/AIYR+CO7P/Cnfhfn/sVrH/41QBH/AMN6/A//AKK/8M//
 ooAKKKKACiiigAooooAKKKKAP//Z</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <DeferVariableEvaluation>false</DeferVariableEvaluation>
+  <ConsumeContainerWhitespace>false</ConsumeContainerWhitespace>
+  <DataElementStyle>Attribute</DataElementStyle>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>32c2723c-9a7f-49f2-a621-125b27e0ce11</rd:ReportID>
 </Report>

@@ -147,6 +147,24 @@ namespace SystemCare
             var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
             var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
             var TabelaSetor = Cadastro.RetornaDadosSetor(TabelaFuncao.Rows[0]["idsetor"].ToString());
+            string[] Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
+            var ModalidadeExameAos = "";
+            for (int i = 1; i < Riscos.Length; i++)
+            {
+                if (Riscos[i].Length > 0)
+                {
+                    var TabelaRisco = Cadastro.RecuperaDadosRiscos(Riscos[i]);
+                    string[] Modalidade = TabelaRisco.Rows[0]["relacaoexames"].ToString().Split(';');
+                    for (int j = 1; j < Modalidade.Length; j++)
+                    {
+                        if (Modalidade[j].Length > 0)
+                        {
+                            string Exame = Cadastro.RetornaModalidadeExame(Modalidade[j]);
+                            ModalidadeExameAos = ModalidadeExameAos + "\n" + Exame;
+                        }
+                    }
+                }
+            }
             var Empresa = Cadastro.RetornaEmpresa(TabelaSetor.Rows[0]["idempresa"].ToString());
             if (CheckAptoNova.Checked)
             {
@@ -176,18 +194,10 @@ namespace SystemCare
                 Sexo = "MASCULINO";
             else
                 Sexo = "FEMININO";
-            var ModalidadeExameAos = "";
+            
            
             var TipoExameAos = "";
-            for (var i = 0; i < GridTipoExameNova.Rows.Count; i++)
-                try
-                {
-                    if (Convert.ToBoolean(GridTipoExameNova.Rows[i].Cells[0].Value.ToString()))
-                        TipoExameAos = TipoExameAos + GridTipoExameNova.Rows[i].Cells[2].Value + "\n";
-                }
-                catch
-                {
-                }
+            
 
 
             Cadastro.CadastraHistorico(IdFuncionario, Apto, ModalidadeExames, TipoExame,

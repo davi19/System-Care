@@ -192,6 +192,18 @@ namespace SystemCare
             return TabelaFuncionario;
         }
 
+        public DataTable RecuperaDadosRiscos(string IdRisco)
+        {
+            Com.Open();
+            var SelecionaFuncionario = new MySqlCommand("SELECT * FROM riscos WHERE id=" + IdRisco + ";",
+                Com);
+            var LeitorFuncionario = new MySqlDataAdapter(SelecionaFuncionario);
+            var TabelaFuncionario = new DataTable();
+            LeitorFuncionario.Fill(TabelaFuncionario);
+            Com.Close();
+            return TabelaFuncionario;
+        }
+
         public void EditarEmpresa(string Nome, string Endereco, string Cnpj, int QuantidadeFuncionario, string Telefone,
             string Email, string IdCnae, string Servicos)
         {
@@ -525,7 +537,7 @@ namespace SystemCare
             Com.Close();
         }
 
-        public void CadastraFuncionario(string Nome, string Idade, string Sexo, decimal Altura, decimal Peso, string Imc,
+        public void CadastraFuncionario(string Nome, string Idade, string Sexo, string Altura, string Peso, string Imc,
             string Cpf, string Identidade, string Telefone, DateTime DataNascimento, string Naturalidade,
             string IdFuncao)
         {
@@ -533,7 +545,7 @@ namespace SystemCare
             var InserirFuncionario =
                 new MySqlCommand(
                     "insert into funcionarios (nome,idade,sexo,altura,peso,imc,cpf,identidade,telefone,datanascimento,naturalidade,idfuncao) VALUES ('" +
-                    Nome + "'," + Idade + ",'" + Sexo + "','" + Altura + "','" + Peso + "'," + Imc + ",'" +
+                    Nome + "'," + Idade + ",'" + Sexo + "','" + Altura + "','" + Peso + "','" + Imc.Replace(',','.') + "','" +
                     Cpf.Replace(',', '.') + "','" +
                     Identidade + "','" + Telefone + "','" + DataNascimento.Date.ToString("yyyy-MM-dd") + "','" +
                     Naturalidade + "'," + IdFuncao + ")", Com);

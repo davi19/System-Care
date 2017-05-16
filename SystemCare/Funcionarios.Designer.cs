@@ -311,7 +311,7 @@
             // TextCpf
             // 
             this.TextCpf.Location = new System.Drawing.Point(3, 80);
-            this.TextCpf.Mask = "999,999,999-99";
+            this.TextCpf.Mask = "000.000.000-00";
             this.TextCpf.Name = "TextCpf";
             this.TextCpf.Size = new System.Drawing.Size(194, 20);
             this.TextCpf.TabIndex = 40;
