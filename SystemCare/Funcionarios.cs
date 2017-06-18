@@ -29,86 +29,96 @@ namespace SystemCare
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
-            var IdFuncao = "";
-            var Sexo = "";
-            for (var i = 0; i < GridFuncaoEditar.Rows.Count; i++)
-                try
-                {
-                    if (Convert.ToBoolean(GridFuncaoEditar.Rows[i].Cells[0].Value.ToString()))
+            bool Validado=Cadastro.ValidaCpf(TextCpf.Text);
+            if (Validado)
+            {
+                var IdFuncao = "";
+                var Sexo = "";
+                for (var i = 0; i < GridFuncaoEditar.Rows.Count; i++)
+                    try
                     {
-                        IdFuncao = GridFuncaoEditar.Rows[i].Cells[1].Value.ToString();
-                        i = GridFuncaoEditar.Rows.Count;
+                        if (Convert.ToBoolean(GridFuncaoEditar.Rows[i].Cells[0].Value.ToString()))
+                        {
+                            IdFuncao = GridFuncaoEditar.Rows[i].Cells[1].Value.ToString();
+                            i = GridFuncaoEditar.Rows.Count;
+                        }
+                    }
+                    catch
+                    {
+                    }
+                if (IdFuncao.Length == 0)
+                {
+                    MetroMessageBox.Show(this,
+                        "Nenhuma função selecionada", "Atenção",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (RadioMasculino.Checked)
+                        Sexo = "M";
+                    else
+                        Sexo = "F";
+
+                    if (Sexo.Length == 0)
+                    {
+                        MetroMessageBox.Show(this,
+                            "Selecione o sexo do funcionário", "Atenção",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+                    else if (TextNomeFuncionario.Text.Length == 00)
+                    {
+                        MetroMessageBox.Show(this,
+                            "Preencha o nome do funcionário", "Atenção",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+                    else if (!TextCpf.MaskCompleted)
+                    {
+                        MetroMessageBox.Show(this,
+                            "Preencha o CPF do funcionário", "Atenção",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+                    else if (!TextIdentidade.MaskCompleted)
+                    {
+                        MetroMessageBox.Show(this,
+                            "Preencha a identidade do funcionário", "Atenção",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+                    else if (!TextDataNascimento.MaskCompleted)
+                    {
+                        MetroMessageBox.Show(this,
+                            "Preencha a data de nascimento do funcionário", "Atenção",
+                            MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        Cadastro.CadastraFuncionario(TextNomeFuncionario.Text, TextIdade.Text, Sexo,
+                            TextAltura.Text.Replace(',', '.'),
+                            TextPeso.Text.Replace(',', '.'),
+                            TextImc.Text, TextCpf.Text, TextIdentidade.Text, TextTelefoneFuncionario.Text,
+                            Convert.ToDateTime(TextDataNascimento.Text), TextNaturalidade.Text, IdFuncao);
+                        TextNomeFuncionario.Text = "";
+                        TextIdade.Text = "";
+                        TextAltura.Text = "";
+                        TextPeso.Text = "";
+                        TextImc.Text = "";
+                        TextCpf.Text = "";
+                        TextIdentidade.Text = "";
+                        TextTelefoneFuncionario.Text = "";
+                        TextDataNascimento.Text = "";
+                        TextNaturalidade.Text = "";
+                        TextBuscaFuncao.Text = "";
+                        GridFuncaoEditar.DataSource = null;
+                        MetroMessageBox.Show(this,
+                            "Funcionário cadastrado com sucesso!", "Sucesso !",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                catch
-                {
-                }
-            if (IdFuncao.Length == 0)
-            {
-                MetroMessageBox.Show(this,
-                    "Nenhuma função selecionada", "Atenção",
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else
             {
-                if (RadioMasculino.Checked)
-                    Sexo = "M";
-                else
-                    Sexo = "F";
-
-                if (Sexo.Length == 0)
-                {
-                    MetroMessageBox.Show(this,
-                        "Selecione o sexo do funcionário", "Atenção",
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                }
-                else if (TextNomeFuncionario.Text.Length == 00)
-                {
-                    MetroMessageBox.Show(this,
-                        "Preencha o nome do funcionário", "Atenção",
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                }
-                else if (!TextCpf.MaskCompleted)
-                {
-                    MetroMessageBox.Show(this,
-                        "Preencha o CPF do funcionário", "Atenção",
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                }
-                else if (!TextIdentidade.MaskCompleted)
-                {
-                    MetroMessageBox.Show(this,
-                        "Preencha a identidade do funcionário", "Atenção",
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                }
-                else if (!TextDataNascimento.MaskCompleted)
-                {
-                    MetroMessageBox.Show(this,
-                        "Preencha a data de nascimento do funcionário", "Atenção",
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    Cadastro.CadastraFuncionario(TextNomeFuncionario.Text, TextIdade.Text, Sexo,
-                        TextAltura.Text.Replace(',', '.'),
-                        TextPeso.Text.Replace(',', '.'),
-                        TextImc.Text, TextCpf.Text, TextIdentidade.Text, TextTelefoneFuncionario.Text,
-                        Convert.ToDateTime(TextDataNascimento.Text), TextNaturalidade.Text, IdFuncao);
-                    TextNomeFuncionario.Text = "";
-                    TextIdade.Text = "";
-                    TextAltura.Text = "";
-                    TextPeso.Text = "";
-                    TextImc.Text = "";
-                    TextCpf.Text = "";
-                    TextIdentidade.Text = "";
-                    TextTelefoneFuncionario.Text = "";
-                    TextDataNascimento.Text = "";
-                    TextNaturalidade.Text = "";
-                    TextBuscaFuncao.Text = "";
-                    GridFuncaoEditar.DataSource = null;
-                    MetroMessageBox.Show(this,
-                        "Funcionário cadastrado com sucesso!", "Sucesso !",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                MetroMessageBox.Show(this,
+                           "Este CPF já está cadastrado!", "Sucesso !",
+                           MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
 

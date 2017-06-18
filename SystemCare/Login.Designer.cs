@@ -42,6 +42,7 @@
             // 
             // TextUsuario
             // 
+            this.TextUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 

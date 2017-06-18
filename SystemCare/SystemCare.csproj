@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\davi1\Desktop\SystemCare\</PublishUrl>
+    <PublishUrl>C:\Users\davi\Desktop\SystemCare\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -28,7 +28,7 @@
     <TargetCulture>pt-BR</TargetCulture>
     <ProductName>System Care</ProductName>
     <PublisherName>Cactus Devs</PublisherName>
-    <ApplicationRevision>24</ApplicationRevision>
+    <ApplicationRevision>27</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -71,6 +71,9 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.11.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.11\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Desktop\MetroFramework\MetroFramework.dll</HintPath>
@@ -100,6 +103,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\Connector.NET 6.9\Assemblies\v4.5\MySql.Data.dll</HintPath>
@@ -146,11 +152,27 @@
     <Compile Include="Cnae.Designer.cs">
       <DependentUpon>Cnae.cs</DependentUpon>
     </Compile>
+    <Compile Include="DadosAso.cs">
+      <DependentUpon>DadosAso.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DadosAso.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DadosAso.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Exames.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Exames.Designer.cs">
       <DependentUpon>Exames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logs.cs">
+      <DependentUpon>Logs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Logs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Logs.xsd</DependentUpon>
     </Compile>
     <Compile Include="ModalidadeExame.cs">
       <SubType>Form</SubType>
@@ -181,6 +203,7 @@
     <Compile Include="ServicoPrestado.Designer.cs">
       <DependentUpon>ServicoPrestado.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TabelaPreco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,8 +307,24 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Vacinas.rdlc">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ASO.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Cbo.resx">
@@ -299,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Exames.resx">
       <DependentUpon>Exames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log.rdlc">
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ModalidadeExame.resx">
       <DependentUpon>ModalidadeExame.cs</DependentUpon>
@@ -328,6 +370,9 @@
     <EmbeddedResource Include="Vacinas.resx">
       <DependentUpon>Vacinas.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="ASO.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="atestados.xsc">
       <DependentUpon>atestados.xsd</DependentUpon>
     </None>
@@ -338,6 +383,28 @@
     </None>
     <None Include="atestados.xss">
       <DependentUpon>atestados.xsd</DependentUpon>
+    </None>
+    <None Include="DadosAso.xsc">
+      <DependentUpon>DadosAso.xsd</DependentUpon>
+    </None>
+    <None Include="DadosAso.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DadosAso.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DadosAso.xss">
+      <DependentUpon>DadosAso.xsd</DependentUpon>
+    </None>
+    <None Include="Logs.xsc">
+      <DependentUpon>Logs.xsd</DependentUpon>
+    </None>
+    <None Include="Logs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Logs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Logs.xss">
+      <DependentUpon>Logs.xsd</DependentUpon>
     </None>
     <None Include="PrestacaodeServico.xsc">
       <DependentUpon>PrestacaodeServico.xsd</DependentUpon>
@@ -366,10 +433,6 @@
     <EmbeddedResource Include="Ajuda.resx">
       <DependentUpon>Ajuda.cs</DependentUpon>
     </EmbeddedResource>
-    <Content Include="ASO.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
     <EmbeddedResource Include="Atestados.resx">
       <DependentUpon>Atestados.cs</DependentUpon>
     </EmbeddedResource>
@@ -461,6 +524,25 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

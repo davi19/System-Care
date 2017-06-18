@@ -64,14 +64,15 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(208)))), ((int)(((byte)(104)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.GridHistorico.DefaultCellStyle = dataGridViewCellStyle2;
+            this.GridHistorico.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridHistorico.EnableHeadersVisualStyles = false;
             this.GridHistorico.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridHistorico.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridHistorico.Location = new System.Drawing.Point(21, 85);
+            this.GridHistorico.Location = new System.Drawing.Point(20, 60);
             this.GridHistorico.Name = "GridHistorico";
             this.GridHistorico.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -84,7 +85,7 @@
             this.GridHistorico.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.GridHistorico.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridHistorico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridHistorico.Size = new System.Drawing.Size(483, 283);
+            this.GridHistorico.Size = new System.Drawing.Size(798, 325);
             this.GridHistorico.Style = MetroFramework.MetroColorStyle.Green;
             this.GridHistorico.TabIndex = 116;
             this.GridHistorico.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridHistorico_CellClick);
@@ -103,7 +104,7 @@
             // 
             // BtnSalvar
             // 
-            this.BtnSalvar.Location = new System.Drawing.Point(392, 56);
+            this.BtnSalvar.Location = new System.Drawing.Point(703, 31);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(112, 23);
             this.BtnSalvar.Style = MetroFramework.MetroColorStyle.Green;
@@ -117,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 405);
+            this.ClientSize = new System.Drawing.Size(838, 405);
             this.Controls.Add(this.BtnSalvar);
             this.Controls.Add(this.GridHistorico);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

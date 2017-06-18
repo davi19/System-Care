@@ -3,6 +3,11 @@ using System.Data;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
+using iTextSharp.text.pdf;
+using System.Collections.Generic;
+using System.IO;
+using System.Collections;
+using System.Text;
 
 namespace SystemCare
 {
@@ -15,108 +20,20 @@ namespace SystemCare
         {
             InitializeComponent();
 
-            var TabelaTipoExame = Cadastro.SelecionaExameMedico();
-            GridTipoExamePrimeira.DataSource = TabelaTipoExame;
+            DataTable ModalidadeExame = Cadastro.SelecionaModalidadeExame();
+            DataTable TipoExame = Cadastro.SelecionaExameMedico();
 
-            var TabelaTipoExameNova = Cadastro.SelecionaExameMedico();
-            GridTipoExameNova.DataSource = TabelaTipoExameNova;
+            GridTipoExame.DataSource = TipoExame;
+            GridExame.DataSource = ModalidadeExame;
+
+
+
         }
-
-        private void BtnBuscarFuncionario_Click(object sender, EventArgs e)
-        {
-            var BuscarFuncionario = new PesquisaFuncionario("0");
-            BuscarFuncionario.ShowDialog();
-            var IdFuncionario = Cadastro.GetFuncionario();
-            IdfuncionarioQuestionario = IdFuncionario;
-            if (!IdFuncionario.Equals(""))
-            {
-                var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
-                var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
-                var Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
-                LabelRiscos.Text = "";
-                LabelRiscos.Visible = true;
-                var TabelaDadosRiscos = new DataTable();
-                for (var i = 1; i < Riscos.Length; i++)
-                {
-                    TabelaDadosRiscos = Cadastro.SelecionaRiscosFuncao(Riscos[i]);
-                    LabelRiscos.Text = LabelRiscos.Text + TabelaDadosRiscos.Rows[0][0] + ": " +
-                                       TabelaDadosRiscos.Rows[0][1] + "\n";
-                }
-                LabelFuncionario.Text = "NOME: " + TabelaDadosFuncionario.Rows[0]["nome"] + "     CPF: " +
-                                        TabelaDadosFuncionario.Rows[0]["cpf"] + "     FUNÇÃO: " +
-                                        TabelaFuncao.Rows[0]["nome"];
-            }
-        }
-
-        private void BtnGerarAos_Click(object sender, EventArgs e)
-        {
-            var Apto = "";
-            var Resultado = "";
-            var IdFuncionario = Cadastro.GetFuncionario();
-            var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
-            var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
-            var TabelaSetor = Cadastro.RetornaDadosSetor(TabelaFuncao.Rows[0]["idsetor"].ToString());
-            var Empresa = Cadastro.RetornaEmpresa(TabelaSetor.Rows[0]["idempresa"].ToString());
-            if (CheckApto.Checked)
-            {
-                Apto = "S";
-                Resultado = "APTO";
-            }
-            else
-            {
-                Apto = "N";
-                Resultado = "NÃO APTO";
-            }
-            var ModalidadeExames = "";
-           
-            var TipoExame = "";
-            for (var i = 0; i < GridTipoExamePrimeira.Rows.Count; i++)
-                try
-                {
-                    if (Convert.ToBoolean(GridTipoExamePrimeira.Rows[i].Cells[0].Value.ToString()))
-                        TipoExame = GridTipoExamePrimeira.Rows[i].Cells[1].Value.ToString();
-                    i = GridTipoExamePrimeira.Rows.Count;
-                }
-                catch
-                {
-                }
-            var Sexo = "";
-            if (TabelaDadosFuncionario.Rows[0]["sexo"].ToString().Equals("M"))
-                Sexo = "MASCULINO";
-            else
-                Sexo = "FEMININO";
-            var ModalidadeExameAos = "";
-           
-            var TipoExameAos = "";
-            for (var i = 0; i < GridTipoExamePrimeira.Rows.Count; i++)
-                try
-                {
-                    if (Convert.ToBoolean(GridTipoExamePrimeira.Rows[i].Cells[0].Value.ToString()))
-                        TipoExameAos = TipoExameAos + GridTipoExamePrimeira.Rows[i].Cells[2].Value + "\n";
-                }
-                catch
-                {
-                }
-
-
-            Cadastro.CadastraHistorico(IdFuncionario, Apto, ModalidadeExames, TipoExame,
-                TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
-            var AOS = new Relatorios(TabelaDadosFuncionario.Rows[0]["nome"].ToString(),
-                TabelaDadosFuncionario.Rows[0]["idade"].ToString(), Resultado, ModalidadeExameAos, LabelRiscos.Text,
-                TipoExameAos, Sexo,
-                TabelaDadosFuncionario.Rows[0]["datanascimento"].ToString(),
-                TabelaDadosFuncionario.Rows[0]["telefone"].ToString(), TabelaDadosFuncionario.Rows[0]["cpf"].ToString(),
-                TabelaDadosFuncionario.Rows[0]["naturalidade"].ToString(),
-                Empresa,
-                TabelaFuncao.Rows[0]["nome"].ToString(), TabelaDadosFuncionario.Rows[0]["identidade"].ToString());
-            AOS.ShowDialog();
-        }
-
         private void BtnSelecionaFuncionarioNova_Click(object sender, EventArgs e)
         {
             var BuscarFuncionario = new PesquisaFuncionario("1");
             BuscarFuncionario.ShowDialog();
-            
+
             var IdFuncionario = Cadastro.GetFuncionarioNova();
             IdfuncionarioQuestionario = IdFuncionario;
             if (!IdFuncionario.Equals(""))
@@ -144,149 +61,249 @@ namespace SystemCare
             var Apto = "";
             var Resultado = "";
             var IdFuncionario = Cadastro.GetFuncionarioNova();
-            var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
-            var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
-            var TabelaSetor = Cadastro.RetornaDadosSetor(TabelaFuncao.Rows[0]["idsetor"].ToString());
-            string[] Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
-            var ModalidadeExameAos = "";
-            for (int i = 1; i < Riscos.Length; i++)
+            if (IdFuncionario.Length==0)
             {
-                if (Riscos[i].Length > 0)
+                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+               MessageBoxIcon.Hand);
+            }
+            else
+            {
+                var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
+                var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
+                var TabelaSetor = Cadastro.RetornaDadosSetor(TabelaFuncao.Rows[0]["idsetor"].ToString());
+                string[] Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
+                string Modalidades = "";
+                ArrayList ModalidadeExameAos = new ArrayList();
+                ArrayList RiscosAso = new ArrayList();
+                for (int i = 1; i < Riscos.Length; i++)
                 {
-                    var TabelaRisco = Cadastro.RecuperaDadosRiscos(Riscos[i]);
-                    string[] Modalidade = TabelaRisco.Rows[0]["relacaoexames"].ToString().Split(';');
-                    for (int j = 1; j < Modalidade.Length; j++)
+                    if (Riscos[i].Length > 0)
                     {
-                        if (Modalidade[j].Length > 0)
+                        var TabelaRisco = Cadastro.RecuperaDadosRiscos(Riscos[i]);
+                        RiscosAso.Add(TabelaRisco.Rows[0]["descricao"].ToString());
+                        string[] Modalidade = TabelaRisco.Rows[0]["relacaoexames"].ToString().Split(';');
+                        for (int j = 1; j < Modalidade.Length; j++)
                         {
-                            string Exame = Cadastro.RetornaModalidadeExame(Modalidade[j]);
-                            ModalidadeExameAos = ModalidadeExameAos + "\n" + Exame;
+                            if (Modalidade[j].Length > 0)
+                            {
+                                string Exame = Cadastro.RetornaModalidadeExame(Modalidade[j]);
+                                Modalidades = Exame + ";" + Modalidades;
+                                ModalidadeExameAos.Add(Exame);
+                            }
                         }
                     }
                 }
-            }
-            var Empresa = Cadastro.RetornaEmpresa(TabelaSetor.Rows[0]["idempresa"].ToString());
-            if (CheckAptoNova.Checked)
-            {
-                Apto = "S";
-                Resultado = "APTO";
-            }
-            else
-            {
-                Apto = "N";
-                Resultado = "NÃO APTO";
-            }
-            var ModalidadeExames = "";
-           
-            var TipoExame = "";
-            for (var i = 0; i < GridTipoExameNova.Rows.Count; i++)
-                try
+                var Empresa = Cadastro.RetornaEmpresa(TabelaSetor.Rows[0]["idempresa"].ToString());
+                if (CheckAptoNova.Checked)
                 {
-                    if (Convert.ToBoolean(GridTipoExameNova.Rows[i].Cells[0].Value.ToString()))
-                        TipoExame = GridTipoExamePrimeira.Rows[i].Cells[1].Value.ToString();
-                    i = GridTipoExamePrimeira.Rows.Count;
+                    Apto = "S";
+                    Resultado = "APTO";
                 }
-                catch
+                else
                 {
+                    Apto = "N";
+                    Resultado = "NÃO APTO";
                 }
-            var Sexo = "";
-            if (TabelaDadosFuncionario.Rows[0]["sexo"].ToString().Equals("M"))
-                Sexo = "MASCULINO";
-            else
-                Sexo = "FEMININO";
-            
-           
-            var TipoExameAos = "";
-            
+
+                var TipoExame = "";
+                for (var i = 0; i < GridTipoExame.Rows.Count; i++)
+                    try
+                    {
+                        if (Convert.ToBoolean(GridTipoExame.Rows[i].Cells[0].Value.ToString()))
+                            TipoExame = GridTipoExame.Rows[i].Cells[2].Value.ToString();
+                        i = GridTipoExame.Rows.Count;
+                    }
+                    catch
+                    {
+                    }
+                if (TipoExame.Length == 0)
+                {
+                    MetroMessageBox.Show(this, "Favor selecionar um tipo de exame!", "Atenção !", MessageBoxButtons.OK,
+               MessageBoxIcon.Hand);
+                }
+                else
+                {
+                    var Sexo = "";
+                    if (TabelaDadosFuncionario.Rows[0]["sexo"].ToString().Equals("M"))
+                        Sexo = "MASCULINO";
+                    else
+                        Sexo = "FEMININO";
 
 
-            Cadastro.CadastraHistorico(IdFuncionario, Apto, ModalidadeExames, TipoExame,
-                TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
-            var AOS = new Relatorios(TabelaDadosFuncionario.Rows[0]["nome"].ToString(),
-                TabelaDadosFuncionario.Rows[0]["idade"].ToString(), Resultado, ModalidadeExameAos,
-                LabelRiscoFuncionario.Text, TipoExameAos, Sexo,
-                TabelaDadosFuncionario.Rows[0]["datanascimento"].ToString(),
-                TabelaDadosFuncionario.Rows[0]["telefone"].ToString(), TabelaDadosFuncionario.Rows[0]["cpf"].ToString(),
-                TabelaDadosFuncionario.Rows[0]["naturalidade"].ToString(),
-                Empresa,
-                TabelaFuncao.Rows[0]["nome"].ToString(), TabelaDadosFuncionario.Rows[0]["identidade"].ToString());
-            AOS.ShowDialog();
+
+
+
+
+
+                    PdfReader reader = new PdfReader("ASO.pdf");
+                    reader.SelectPages("1-2"); //Work with only page# 1 & 2
+                    using (PdfStamper stamper = new PdfStamper(reader, new FileStream(@"C:\Aso\Teste.pdf", FileMode.Create)))
+                    {
+                        AcroFields form = stamper.AcroFields;
+                        var fieldKeys = form.Fields.Keys;
+                        form.SetField("Nome", TabelaDadosFuncionario.Rows[0]["nome"].ToString());
+                        form.SetField("Nome2", TabelaDadosFuncionario.Rows[0]["nome"].ToString());
+                        form.SetField("Empresa", Empresa);
+                        form.SetField("Funcao", TabelaFuncao.Rows[0]["nome"].ToString());
+                        form.SetField("Rg", TabelaDadosFuncionario.Rows[0]["identidade"].ToString());
+                        form.SetField("Cpf", TabelaDadosFuncionario.Rows[0]["cpf"].ToString());
+                        form.SetField("Naturalidade", TabelaDadosFuncionario.Rows[0]["naturalidade"].ToString());
+                        form.SetField("Sexo", Sexo);
+                        form.SetField("DataNascimento", Convert.ToDateTime(TabelaDadosFuncionario.Rows[0]["datanascimento"].ToString()).ToString("dd/MM/yyyy"));
+                        form.SetField("Telefone", TabelaDadosFuncionario.Rows[0]["telefone"].ToString());
+                        form.SetField("Idade", TabelaDadosFuncionario.Rows[0]["idade"].ToString());
+                        foreach (string fieldKey in fieldKeys)
+                        {
+                            //Replace Address Form field with my custom data
+                            if (fieldKey.ToLower().Contains(TipoExame.ToLower()))
+                            {
+                                form.SetField(fieldKey, "Sim");
+                            }
+                        }
+                        for (int i = 0; i < ModalidadeExameAos.Count; i++)
+                        {
+                            string Auxiliar = Cadastro.RemoveAccents(ModalidadeExameAos[i].ToString());
+                            foreach (string fieldKey in fieldKeys)
+                            {
+                                //Replace Address Form field with my custom data
+                                if (fieldKey.ToLower().Contains(Auxiliar.ToLower()))
+                                {
+                                    form.SetField(fieldKey, "Sim");
+                                }
+                            }
+                        }
+                        for (int i = 0; i < RiscosAso.Count; i++)
+                        {
+                            string Auxiliar = Cadastro.RemoveAccents(RiscosAso[i].ToString());
+                            foreach (string fieldKey in fieldKeys)
+                            {
+                                //Replace Address Form field with my custom data
+                                if (fieldKey.ToLower().Contains(Auxiliar.ToLower()))
+                                {
+                                    form.SetField(fieldKey, "Sim");
+                                }
+                            }
+                        }
+                        if (RiscosAso.Count > 0)
+                        {
+                            form.SetField("Sim", "Sim");
+                        }
+                        else
+                        {
+                            form.SetField("Não", "Sim");
+                        }
+                        form.SetField("Resultado", Resultado);
+                        form.SetField("Observacao", TextObservacao.Text);
+                        form.SetField("Data", DateTime.Now.ToString("dd/MM/yyyy"));
+
+                        for (var i = 0; i < GridExame.Rows.Count; i++)
+                        {
+                            try
+                            {
+                                if (Convert.ToBoolean(GridExame.Rows[i].Cells[0].Value.ToString()))
+                                {
+
+                                    string Auxiliar = Cadastro.RemoveAccents(GridExame.Rows[i].Cells[2].Value.ToString());
+                                    Modalidades = Auxiliar + ";" + Modalidades;
+                                    foreach (string fieldKey in fieldKeys)
+                                    {
+                                        //Replace Address Form field with my custom data
+                                        if (fieldKey.ToLower().Contains(Auxiliar.ToLower()))
+                                        {
+                                            form.SetField(fieldKey, "Sim");
+                                        }
+                                    }
+                                }
+
+                            }
+                            catch { }
+                        }
+
+
+                        stamper.FormFlattening = true;
+                    }
+                    byte[] arquivo = Cadastro.CadastraHistorico(TabelaDadosFuncionario.Rows[0]["id"].ToString(), Apto, Modalidades, TipoExame, TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
+                    Relatorios Aso = new Relatorios(arquivo);
+                    Aso.ShowDialog();
+                }
+            }
         }
 
-        private void BtnHistorico_Click(object sender, EventArgs e)
+    private void BtnHistorico_Click(object sender, EventArgs e)
+    {
+        var IdFuncionario = Cadastro.GetFuncionarioNova();
+        if (!IdFuncionario.Equals(""))
         {
-            var IdFuncionario = Cadastro.GetFuncionarioNova();
-            if (!IdFuncionario.Equals(""))
-            {
-                var MostraHistorico = new Historico(IdFuncionario);
-                MostraHistorico.ShowDialog();
-            }
-            else
-            {
-                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
-                    MessageBoxIcon.Hand);
-            }
+            var MostraHistorico = new Historico(IdFuncionario);
+            MostraHistorico.ShowDialog();
         }
-
-        private void BtnCadastrarAtestado_Click(object sender, EventArgs e)
+        else
         {
-            var IdFuncionario = Cadastro.GetFuncionarioNova();
-            if (!IdFuncionario.Equals(""))
-            {
-                var CadastrarAtestado = new Atestados(IdFuncionario);
-                CadastrarAtestado.ShowDialog();
-            }
-            else
-            {
-                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
-                    MessageBoxIcon.Hand);
-            }
-        }
-
-        private void BtnCadastrarVacina_Click(object sender, EventArgs e)
-        {
-            var IdFuncionario = Cadastro.GetFuncionarioNova();
-            if (!IdFuncionario.Equals(""))
-            {
-                var CadastrarVacinas = new Vacinas(IdFuncionario);
-                CadastrarVacinas.ShowDialog();
-            }
-            else
-            {
-                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
-                    MessageBoxIcon.Hand);
-            }
-        }
-
-        private void BtnQuestionario_Click(object sender, EventArgs e)
-        {
-            if (IdfuncionarioQuestionario.Equals(""))
-            {
-                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
-                   MessageBoxIcon.Hand);
-            }
-            else
-            {
-                QuestionarioMedico Questionario = new QuestionarioMedico(IdfuncionarioQuestionario);
-                Questionario.ShowDialog();
-                IdfuncionarioQuestionario = "";
-            }
-           
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            if (IdfuncionarioQuestionario.Equals(""))
-            {
-                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
-                   MessageBoxIcon.Hand);
-            }
-            else
-            {
-                QuestionarioMedico Questionario = new QuestionarioMedico(IdfuncionarioQuestionario);
-                Questionario.ShowDialog();
-                IdfuncionarioQuestionario = "";
-            }
+            MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                MessageBoxIcon.Hand);
         }
     }
+
+    private void BtnCadastrarAtestado_Click(object sender, EventArgs e)
+    {
+        var IdFuncionario = Cadastro.GetFuncionarioNova();
+        if (!IdFuncionario.Equals(""))
+        {
+            var CadastrarAtestado = new Atestados(IdFuncionario);
+            CadastrarAtestado.ShowDialog();
+        }
+        else
+        {
+            MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                MessageBoxIcon.Hand);
+        }
+    }
+
+    private void BtnCadastrarVacina_Click(object sender, EventArgs e)
+    {
+        var IdFuncionario = Cadastro.GetFuncionarioNova();
+        if (!IdFuncionario.Equals(""))
+        {
+            var CadastrarVacinas = new Vacinas(IdFuncionario);
+            CadastrarVacinas.ShowDialog();
+        }
+        else
+        {
+            MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                MessageBoxIcon.Hand);
+        }
+    }
+
+    private void BtnQuestionario_Click(object sender, EventArgs e)
+    {
+        if (IdfuncionarioQuestionario.Equals(""))
+        {
+            MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+               MessageBoxIcon.Hand);
+        }
+        else
+        {
+            QuestionarioMedico Questionario = new QuestionarioMedico(IdfuncionarioQuestionario);
+            Questionario.ShowDialog();
+            IdfuncionarioQuestionario = "";
+        }
+
+    }
+
+    private void metroButton1_Click(object sender, EventArgs e)
+    {
+        if (IdfuncionarioQuestionario.Equals(""))
+        {
+            MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+               MessageBoxIcon.Hand);
+        }
+        else
+        {
+            QuestionarioMedico Questionario = new QuestionarioMedico(IdfuncionarioQuestionario);
+            Questionario.ShowDialog();
+            IdfuncionarioQuestionario = "";
+        }
+    }
+
+}
 }

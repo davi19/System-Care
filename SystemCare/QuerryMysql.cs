@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.Common;
 using MySql.Data.MySqlClient;
+using System.Text;
+using System.IO;
 
 namespace SystemCare
 {
@@ -12,9 +14,10 @@ namespace SystemCare
         private static string NomeSetor = "";
         private static string IdFuncionario = "";
         private static string IdFuncionarioNova = "";
+        private static string IdUsuario = "";
         //192.168.1.200
         private readonly MySqlConnection Com =
-            new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+            new MySqlConnection("Server =192.168.1.200; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
         public bool Login(string Usuario, string Senha)
         {
@@ -28,6 +31,7 @@ namespace SystemCare
             if (TabelaUsuario.Rows.Count > 0)
             {
                 Com.Close();
+                IdUsuario = TabelaUsuario.Rows[0]["id"].ToString();
                 return true;
             }
             Com.Close();
@@ -71,7 +75,10 @@ namespace SystemCare
                     Nome + "','" + Endereco + "','" + Cnpj + "'," + QuantidadeFuncionario + ",'" + Telefone + "','" +
                     Email + "','" + IdCnae + "','" + Servicos + "')", Com);
             InserirEmpresa.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro da empresa " + Nome + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
+
         }
 
         public DataTable BuscaEmpresa(string ValorDigitado)
@@ -191,7 +198,24 @@ namespace SystemCare
             Com.Close();
             return TabelaFuncionario;
         }
-
+        public bool ValidaCpf(string Cpf)
+        {
+            Com.Open();
+            var SelecionaFuncionario = new MySqlCommand("SELECT count(id) FROM funcionarios WHERE cpf='" + Cpf.Replace(",",".") + "';",
+                Com);
+            var LeitorFuncionario = new MySqlDataAdapter(SelecionaFuncionario);
+            var TabelaFuncionario = new DataTable();
+            LeitorFuncionario.Fill(TabelaFuncionario);
+            Com.Close();
+            if (TabelaFuncionario.Rows[0][0].ToString().Equals("0"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public DataTable RecuperaDadosRiscos(string IdRisco)
         {
             Com.Open();
@@ -216,6 +240,8 @@ namespace SystemCare
                     IdEmpresaEditar + ";", Com);
             EditarEmpresa.ExecuteNonQuery();
             SetEmpresa("");
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Alterado dados da empresa " + Nome + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -225,6 +251,9 @@ namespace SystemCare
             var InserirEmpresa =
                 new MySqlCommand("UPDATE empresas set excluido='S' WHERE id=" + IdEmpresa + ";", Com);
             InserirEmpresa.ExecuteNonQuery();
+
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Excluido a empresa de ID:" + IdEmpresa + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -373,6 +402,8 @@ namespace SystemCare
                     "INSERT INTO funcoes (idsetor,nome,idrisco,idcbo) VALUE(" + IdSetor + ",'" + NomeFuncao + "','" +
                     IdRiscos + "'," + IdCbo + ")", Com);
             CadastrarFuncao.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro da função " + NomeFuncao + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -385,6 +416,8 @@ namespace SystemCare
                     NomeFuncao + "','" +
                     IdRiscos + "'," + IdCbo + ",'" + Exames + "')", Com);
             CadastrarFuncao.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro da função " + NomeFuncao + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -395,6 +428,8 @@ namespace SystemCare
                 new MySqlCommand("INSERT INTO setores (idempresa,nome) VALUES(" + IdEmpresa + ",'" + NomeSetor + "')",
                     Com);
             CadastraSetor.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro do setor " + NomeSetor + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -482,6 +517,8 @@ namespace SystemCare
             var InserirEmpresa =
                 new MySqlCommand("UPDATE setores set excluido='S' WHERE id=" + IdSetor + ";", Com);
             InserirEmpresa.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Excluido setor de ID:" + IdSetor + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -494,6 +531,8 @@ namespace SystemCare
                     Com);
             EditarEmpresa.ExecuteNonQuery();
             SetEmpresa("");
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Atualizado dados do setor " + NomeSetor + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -506,17 +545,21 @@ namespace SystemCare
                     "', idcbo=" + IdCbo + " WHERE id=" + IdFuncao + ";", Com);
             EditarEmpresa.ExecuteNonQuery();
             SetEmpresa("");
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Atualizado dados da função " + Nome + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
-        public void EditarFuncaoExames(string Nome, string IdSetor, string IdFuncao, string IdRiscos, string IdCbo,string Exames)
+        public void EditarFuncaoExames(string Nome, string IdSetor, string IdFuncao, string IdRiscos, string IdCbo, string Exames)
         {
             Com.Open();
             var EditarEmpresa =
                 new MySqlCommand(
                     "UPDATE funcoes SET nome ='" + Nome + "' ,idsetor=" + IdSetor + ", idrisco='" + IdRiscos +
-                    "', idcbo=" + IdCbo + ",modalidadeexame='"+Exames+"' WHERE id=" + IdFuncao + ";", Com);
+                    "', idcbo=" + IdCbo + ",modalidadeexame='" + Exames + "' WHERE id=" + IdFuncao + ";", Com);
             EditarEmpresa.ExecuteNonQuery();
             SetEmpresa("");
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Alterado dados da função " + Nome + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
         public void ExcluirFuncao(string IdFuncao)
@@ -525,6 +568,8 @@ namespace SystemCare
             var ExcluiFuncao =
                 new MySqlCommand("UPDATE funcoes set excluido='S' WHERE id=" + IdFuncao + ";", Com);
             ExcluiFuncao.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Excluido função de ID: " + IdFuncao + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -534,6 +579,8 @@ namespace SystemCare
             var ExcluiFuncionario =
                 new MySqlCommand("UPDATE funcionarios set excluido='S' WHERE id=" + IdFuncionario + ";", Com);
             ExcluiFuncionario.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Excluido funcionário de ID:" + IdFuncionario + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -545,11 +592,13 @@ namespace SystemCare
             var InserirFuncionario =
                 new MySqlCommand(
                     "insert into funcionarios (nome,idade,sexo,altura,peso,imc,cpf,identidade,telefone,datanascimento,naturalidade,idfuncao) VALUES ('" +
-                    Nome + "'," + Idade + ",'" + Sexo + "','" + Altura + "','" + Peso + "','" + Imc.Replace(',','.') + "','" +
+                    Nome + "'," + Idade + ",'" + Sexo + "','" + Altura + "','" + Peso + "','" + Imc.Replace(',', '.') + "','" +
                     Cpf.Replace(',', '.') + "','" +
                     Identidade + "','" + Telefone + "','" + DataNascimento.Date.ToString("yyyy-MM-dd") + "','" +
                     Naturalidade + "'," + IdFuncao + ")", Com);
             InserirFuncionario.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro do funcionário " + Nome + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -568,6 +617,8 @@ namespace SystemCare
                     DataNascimento.Date.ToString("yyyy-MM-dd") + "',naturalidade='" +
                     Naturalidade + "',idfuncao=" + IdFuncao + " WHERE id=" + IdFuncionario + ";", Com);
             InserirFuncionario.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Atualizado dados do funcionário " + Nome + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -585,25 +636,72 @@ namespace SystemCare
             return TabelaFuncionario;
         }
 
-        public void CadastraHistorico(string Idfuncionario, string Apto, string ModalidadeExame, string TipoExame,
+        public byte[] CadastraHistorico(string Idfuncionario, string Apto, string ModalidadeExame, string TipoExame,
             string IdFuncao)
         {
             Com.Open();
+
+            FileStream fs = new FileStream(@"C:\Aso\Teste.pdf", FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+
             var InserirHistorico =
                 new MySqlCommand(
-                    "INSERT INTO historicos (idfuncionario,apto,modalidadeexame,tipoexame,idfuncao,datadoexame) VALUES(" +
+                    "INSERT INTO historicos (idfuncionario,apto,modalidadeexame,tipoexame,idfuncao,datadoexame,aso) VALUES(" +
                     Idfuncionario + ",'" + Apto + "','" + ModalidadeExame + "','" + TipoExame + "'," + IdFuncao +
-                    ",NOW())", Com);
+                    ",NOW(),@Data)", Com);
+            InserirHistorico.Parameters.AddWithValue("@Data", bytes).DbType = DbType.Binary;
             InserirHistorico.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro do histórico do funcionário de ID:" + Idfuncionario + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
+
+            long UltimaId = InserirHistorico.LastInsertedId;
+            var SelecionaHistorico = new MySqlCommand("select aso from historicos where id=" + UltimaId + "", Com);
+            var LeitorHistorico = new MySqlDataAdapter(SelecionaHistorico);
+            var TabelaHistorico = new DataTable();
+            LeitorHistorico.Fill(TabelaHistorico);
+
+            byte[] AsoHistorico = (byte[])TabelaHistorico.Rows[0][0];
             Com.Close();
+            return AsoHistorico;
+           
         }
+
+        public byte[] AtualizaHistorico(string IdHistorico)
+        {
+            Com.Open();
+
+            FileStream fs = new FileStream(@"C:\Aso\Teste.pdf", FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+
+            var InserirHistorico =
+                new MySqlCommand(
+                    "UPDATE historicos set aso=@Data WHERE id="+IdHistorico+"", Com);
+            InserirHistorico.Parameters.AddWithValue("@Data", bytes).DbType = DbType.Binary;
+            InserirHistorico.ExecuteNonQuery();
+            
+
+
+            var SelecionaHistorico = new MySqlCommand("select aso from historicos where id=" + IdHistorico + "", Com);
+            var LeitorHistorico = new MySqlDataAdapter(SelecionaHistorico);
+            var TabelaHistorico = new DataTable();
+            LeitorHistorico.Fill(TabelaHistorico);
+
+            byte[] AsoHistorico = (byte[])TabelaHistorico.Rows[0][0];
+            Com.Close();
+            return AsoHistorico;
+
+        }
+
+
 
         public DataTable SelecionaHistoricoFuncionario(string IdFuncionario)
         {
             Com.Open();
             var SelecionaHistorico =
                 new MySqlCommand(
-                    "select c.id,a.nome,b.descricao,c.datadoexame,c.apto from funcionarios a,examesmedicos b, historicos c where a.id=c.idfuncionario AND b.id=c.tipoexame AND c.idfuncionario=" +
+                    "select c.id,a.nome,c.tipoexame as Exame,c.datadoexame,c.observacao,c.apto from funcionarios a, historicos c where a.id=c.idfuncionario  AND a.id=" +
                     IdFuncionario + ";", Com);
             var LeitorHistorico = new MySqlDataAdapter(SelecionaHistorico);
             var TabelaHistorico = new DataTable();
@@ -612,12 +710,42 @@ namespace SystemCare
             return TabelaHistorico;
         }
 
+        public string SelecionaModalidadeHistorico(string IdHistorico)
+        {
+            Com.Open();
+            var SelecionaHistorico =
+                new MySqlCommand(
+                    "select modalidadeexame from historicos where id="+
+                    IdHistorico + ";", Com);
+            var LeitorHistorico = new MySqlDataAdapter(SelecionaHistorico);
+            var TabelaHistorico = new DataTable();
+            LeitorHistorico.Fill(TabelaHistorico);
+            Com.Close();
+            return TabelaHistorico.Rows[0][0].ToString();
+        }
+
+        public string SelecionaFuncaoHistorico(string IdHistorico)
+        {
+            Com.Open();
+            var SelecionaHistorico =
+                new MySqlCommand(
+                    "select idfuncao from historicos where id=" +
+                    IdHistorico + ";", Com);
+            var LeitorHistorico = new MySqlDataAdapter(SelecionaHistorico);
+            var TabelaHistorico = new DataTable();
+            LeitorHistorico.Fill(TabelaHistorico);
+            Com.Close();
+            return TabelaHistorico.Rows[0][0].ToString();
+        }
+
         public void AtualizaHistoricoFuncionario(string IdHistorico, string Apto)
         {
             Com.Open();
             var AtualizaHistorico =
                 new MySqlCommand("UPDATE historicos SET apto='" + Apto + "' WHERE id=" + IdHistorico + ";", Com);
             AtualizaHistorico.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Atualizado histórico do funcionário " + IdHistorico + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -678,6 +806,8 @@ namespace SystemCare
                     "INSERT INTO atestados (idfuncionario,dataatestado,cid,motivo,diaafastado) VALUES(" + Idfuncionario +
                     ",'" + DataAtestado + "','" + Cid + "','" + Motivo + "'," + DiasAfastafdo + ")", Com);
             CadastrarAtestado.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro do atestado para o funcionário de ID: " + Idfuncionario + "',now)", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -690,6 +820,8 @@ namespace SystemCare
                     "INSERT INTO vacinas(idfuncionario,nome,dataaplicacao,reforco,dose) VALUES(" + IdFuncionario + ",'" +
                     NomeVacina + "','" + DataAplicacao + "','" + Reforco + "'," + Dose + ")", Com);
             CadastrarVacina.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro da vacina do funcionário de ID: " + IdFuncionario + "',now())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
@@ -877,10 +1009,10 @@ namespace SystemCare
             return TabelaRiscos.Rows[0][0].ToString();
         }
 
-        public void CadastraQuestionario(string idfuncionario, string queixa ,string cirurgiaanterior, DateTime datacirurgia, string nomecirurgia, string fratura, DateTime datatomografia, string internacao ,string motivointernacao ,DateTime datainternacao, string alergia,string descricaoalergia, string doencarespiratoria, string doencagastrointestinal, string doencacardiaca,string doencaendocrina,string  doencaosteomusculares, string historiaocupacional, string acidentedetrabalho, DateTime dataacidente, string afastamentoacidente, string afastamentoinss, string periodoafastamento)
+        public void CadastraQuestionario(string idfuncionario, string queixa, string cirurgiaanterior, DateTime datacirurgia, string nomecirurgia, string fratura, DateTime datatomografia, string internacao, string motivointernacao, DateTime datainternacao, string alergia, string descricaoalergia, string doencarespiratoria, string doencagastrointestinal, string doencacardiaca, string doencaendocrina, string doencaosteomusculares, string historiaocupacional, string acidentedetrabalho, DateTime dataacidente, string afastamentoacidente, string afastamentoinss, string periodoafastamento)
         {
             Com.Open();
-            MySqlCommand InserirQuesrtionario = new MySqlCommand("INSERT INTO atendimentosmedicos (idfuncionario,queixa ,cirurgiaanterior,datacirurgia,nomecirurgia,fratura,datatomografia,internacao ,motivointernacao ,datainternacao,alergia,descricaoalergia,doencarespiratoria,doencagastrointestinal,doencacardiaca,doencaendocrina,doencaosteomusculares,historiaocupacional,acidentedetrabalho,dataacidente,afastamentoacidente,afastamentoinss,periodoafastamento) VALUES ("+idfuncionario+",'"+queixa+"','"+cirurgiaanterior+"','"+datacirurgia.Date.ToString("yyyy/MM/dd")+"','"+nomecirurgia+"','"+fratura+"','"+datatomografia.Date.ToString("yyyy/MM/dd") + "','"+internacao +"','"+motivointernacao+"','"+datainternacao.Date.ToString("yyyy/MM/dd") + "','"+alergia+"','"+descricaoalergia+"','"+doencarespiratoria+"','"+doencagastrointestinal+"','"+doencacardiaca+"','"+doencaendocrina+"','"+doencaosteomusculares+"','"+historiaocupacional+"','"+acidentedetrabalho+"','"+dataacidente.Date.ToString("yyyy/MM/dd") + "','"+afastamentoacidente+"','"+afastamentoinss+"','"+periodoafastamento+"')", Com);
+            MySqlCommand InserirQuesrtionario = new MySqlCommand("INSERT INTO atendimentosmedicos (idfuncionario,queixa ,cirurgiaanterior,datacirurgia,nomecirurgia,fratura,datatomografia,internacao ,motivointernacao ,datainternacao,alergia,descricaoalergia,doencarespiratoria,doencagastrointestinal,doencacardiaca,doencaendocrina,doencaosteomusculares,historiaocupacional,acidentedetrabalho,dataacidente,afastamentoacidente,afastamentoinss,periodoafastamento) VALUES (" + idfuncionario + ",'" + queixa + "','" + cirurgiaanterior + "','" + datacirurgia.Date.ToString("yyyy/MM/dd") + "','" + nomecirurgia + "','" + fratura + "','" + datatomografia.Date.ToString("yyyy/MM/dd") + "','" + internacao + "','" + motivointernacao + "','" + datainternacao.Date.ToString("yyyy/MM/dd") + "','" + alergia + "','" + descricaoalergia + "','" + doencarespiratoria + "','" + doencagastrointestinal + "','" + doencacardiaca + "','" + doencaendocrina + "','" + doencaosteomusculares + "','" + historiaocupacional + "','" + acidentedetrabalho + "','" + dataacidente.Date.ToString("yyyy/MM/dd") + "','" + afastamentoacidente + "','" + afastamentoinss + "','" + periodoafastamento + "')", Com);
             InserirQuesrtionario.ExecuteNonQuery();
             Com.Close();
         }
@@ -888,28 +1020,28 @@ namespace SystemCare
         public void CadastrarCbo(string Descricao)
         {
             Com.Open();
-            MySqlCommand InserirCbo = new MySqlCommand("INSERT INTO cbo (codigo) VALUES('"+Descricao+"')",Com);
+            MySqlCommand InserirCbo = new MySqlCommand("INSERT INTO cbo (codigo) VALUES('" + Descricao + "')", Com);
             InserirCbo.ExecuteNonQuery();
             Com.Close();
         }
-        public void AtualizaCbo(string Descricao,string IdCbo)
+        public void AtualizaCbo(string Descricao, string IdCbo)
         {
             Com.Open();
-            MySqlCommand InserirCbo = new MySqlCommand("UPDATE cbo SET codigo='" + Descricao + "' where id="+IdCbo+";", Com);
+            MySqlCommand InserirCbo = new MySqlCommand("UPDATE cbo SET codigo='" + Descricao + "' where id=" + IdCbo + ";", Com);
             InserirCbo.ExecuteNonQuery();
             Com.Close();
         }
-        public void CadastrarCnae(string Descricao,string Codigo)
+        public void CadastrarCnae(string Descricao, string Codigo)
         {
             Com.Open();
-            MySqlCommand InserirCnae = new MySqlCommand("INSERT INTO cnae (cnae,descricao) VALUES('"+Codigo+"','" + Descricao + "')", Com);
+            MySqlCommand InserirCnae = new MySqlCommand("INSERT INTO cnae (cnae,descricao) VALUES('" + Codigo + "','" + Descricao + "')", Com);
             InserirCnae.ExecuteNonQuery();
             Com.Close();
         }
-        public void AtualizaCnae(string Descricao,string Codigo, string IdCnae)
+        public void AtualizaCnae(string Descricao, string Codigo, string IdCnae)
         {
             Com.Open();
-            MySqlCommand InserirCnae = new MySqlCommand("UPDATE cnae SET cnae='"+Codigo+"',descricao='" + Descricao + "' where id=" + IdCnae + ";", Com);
+            MySqlCommand InserirCnae = new MySqlCommand("UPDATE cnae SET cnae='" + Codigo + "',descricao='" + Descricao + "' where id=" + IdCnae + ";", Com);
             InserirCnae.ExecuteNonQuery();
             Com.Close();
         }
@@ -922,14 +1054,16 @@ namespace SystemCare
             SelecionaCbo.Fill(TabelaCbo);
             Com.Close();
             return TabelaCbo;
-           
+
         }
 
         public void CadastrarExame(string Descricao)
         {
             Com.Open();
-            MySqlCommand InserirExame = new MySqlCommand("INSERT INTO examesmedicos (descricao) VALUES('"+Descricao+"')",Com);
+            MySqlCommand InserirExame = new MySqlCommand("INSERT INTO examesmedicos (descricao) VALUES('" + Descricao + "')", Com);
             InserirExame.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro do exame medico " + Descricao + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
 
         }
@@ -938,22 +1072,28 @@ namespace SystemCare
             Com.Open();
             MySqlCommand InserirExame = new MySqlCommand("INSERT INTO modalidadeexames (descricao) VALUES('" + Descricao + "')", Com);
             InserirExame.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro da modalidade de exame " + Descricao + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
 
         }
-        public void EditarExame(string Descricao,string Id)
+        public void EditarExame(string Descricao, string Id)
         {
             Com.Open();
             MySqlCommand InserirExame = new MySqlCommand("UPDATE examesmedicos SET descricao='" + Descricao + "' WHERE id=" + Id + ";", Com);
             InserirExame.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Alterado dados de exames de descrição " + Descricao + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
 
         }
-        public void EditarModalidadeExame(string Descricao,string Id)
+        public void EditarModalidadeExame(string Descricao, string Id)
         {
             Com.Open();
             MySqlCommand InserirExame = new MySqlCommand("UPDATE modalidadeexames SET descricao='" + Descricao + "' WHERE id=" + Id + ";", Com);
             InserirExame.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Alterado dados de modalidade de exame de ID: " + Id + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
 
         }
@@ -962,14 +1102,18 @@ namespace SystemCare
             Com.Open();
             MySqlCommand InserirExame = new MySqlCommand("UPDATE examesmedicos SET excluido='S' WHERE id=" + Id + ";", Com);
             InserirExame.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Excluido exame de ID " + Id + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
 
         }
         public void ExcluirModalidadeExame(string Id)
         {
             Com.Open();
-            MySqlCommand InserirExame = new MySqlCommand("UPDATE modalidadeexames SET excluido='S' WHERE id="+Id+";", Com);
+            MySqlCommand InserirExame = new MySqlCommand("UPDATE modalidadeexames SET excluido='S' WHERE id=" + Id + ";", Com);
             InserirExame.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Excluido modalidade de exame de ID " + Id + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
 
         }
@@ -999,23 +1143,27 @@ namespace SystemCare
         public void CadastrarServicos(string Descricao)
         {
             Com.Open();
-            MySqlCommand InserirServico = new MySqlCommand("INSERT INTO servicosprestados (descricao) VALUES('"+Descricao+"');", Com);
+            MySqlCommand InserirServico = new MySqlCommand("INSERT INTO servicosprestados (descricao) VALUES('" + Descricao + "');", Com);
             InserirServico.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro de serviço " + Descricao + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
         public void EditarServicos(string Descricao, string IdServico)
         {
             Com.Open();
-            MySqlCommand AtualizarServico = new MySqlCommand("UPDATE servicosprestados SET descricao ='"+Descricao+"' WHERE id=" + IdServico + ";", Com);
+            MySqlCommand AtualizarServico = new MySqlCommand("UPDATE servicosprestados SET descricao ='" + Descricao + "' WHERE id=" + IdServico + ";", Com);
             AtualizarServico.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Alterado dados do serviço de descrição " + Descricao + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
         public DataTable BuscarServico(string Busca)
         {
             Com.Open();
-            MySqlCommand BuscaServico = new MySqlCommand("select id as ID,descricao as DESCRIÇÃO from servicosprestados WHERE descricao like'%" + Busca+ "%' AND excluido='S';", Com);
+            MySqlCommand BuscaServico = new MySqlCommand("select id as ID,descricao as DESCRIÇÃO from servicosprestados WHERE descricao like'%" + Busca + "%' AND excluido='S';", Com);
             MySqlDataAdapter LeitorServico = new MySqlDataAdapter(BuscaServico);
             DataTable TabelaServico = new DataTable();
             LeitorServico.Fill(TabelaServico);
@@ -1026,16 +1174,18 @@ namespace SystemCare
         public void ExcluirServico(string IdServico)
         {
             Com.Open();
-            MySqlCommand ExcluirServico= new MySqlCommand("UPDATE servicosprestados SET excluido ='S' WHERE id="+IdServico+";",Com);
+            MySqlCommand ExcluirServico = new MySqlCommand("UPDATE servicosprestados SET excluido ='S' WHERE id=" + IdServico + ";", Com);
             ExcluirServico.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Excluido serviço de ID: " + IdServico + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
 
         public DataTable BuscarExameModalidade(string Busca)
         {
             Com.Open();
-            MySqlCommand SelecionaExame = new MySqlCommand("SELECT id,descricao FROM examesmedicos where descricao like'%"+Busca+"%'",Com);
-            MySqlCommand SelecionaExame2 = new MySqlCommand("SELECT id, descricao FROM modalidadeexames where descricao like'%"+Busca+"%'", Com);
+            MySqlCommand SelecionaExame = new MySqlCommand("SELECT id,descricao FROM examesmedicos where descricao like'%" + Busca + "%'", Com);
+            MySqlCommand SelecionaExame2 = new MySqlCommand("SELECT id, descricao FROM modalidadeexames where descricao like'%" + Busca + "%'", Com);
             MySqlDataAdapter LeitorExame = new MySqlDataAdapter(SelecionaExame);
             MySqlDataAdapter LeitorExame2 = new MySqlDataAdapter(SelecionaExame2);
             DataTable TabelaExame = new DataTable();
@@ -1043,9 +1193,9 @@ namespace SystemCare
             LeitorExame2.Fill(TabelaExame);
             Com.Close();
             return TabelaExame;
-            
+
         }
-        public string   RecuperaDadosPreco(string IdExame)
+        public string RecuperaDadosPreco(string IdExame)
         {
             Com.Open();
             MySqlCommand SelecionaExame = new MySqlCommand("SELECT valor FROM precosexames where idexame=" + IdExame + "", Com);
@@ -1067,17 +1217,33 @@ namespace SystemCare
         public void CadastrarPreco(string Valor, string IdExame)
         {
             Com.Open();
-            MySqlCommand InserirPreco = new MySqlCommand("INSERT INTO precosexames (idexame,valor) VALUES("+IdExame+",'"+Valor.Replace(",",".")+"')",Com);
+            MySqlCommand InserirPreco = new MySqlCommand("INSERT INTO precosexames (idexame,valor) VALUES(" + IdExame + ",'" + Valor.Replace(",", ".") + "')", Com);
             InserirPreco.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro do preço do exame de ID:" + IdExame + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
         public void AtualizaPreco(string IdExame, string Valor)
         {
             Com.Open();
-            MySqlCommand InserirPreco = new MySqlCommand("UPDATE precosexames  SET valor='" + Valor.Replace(",", ".") + "' WHERE idexame="+IdExame+"", Com);
+            MySqlCommand InserirPreco = new MySqlCommand("UPDATE precosexames  SET valor='" + Valor.Replace(",", ".") + "' WHERE idexame=" + IdExame + "", Com);
             InserirPreco.ExecuteNonQuery();
+            var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Alterado preço do exame de ID:" + IdExame + "',NOW())", Com);
+            InserirLog.ExecuteNonQuery();
             Com.Close();
         }
+        public string RemoveAccents(string text)
+        {
+            StringBuilder sbReturn = new StringBuilder();
+            var arrayText = text.Normalize(NormalizationForm.FormD).ToCharArray();
+            foreach (char letter in arrayText)
+            {
+                if (System.Globalization.CharUnicodeInfo.GetUnicodeCategory(letter) != System.Globalization.UnicodeCategory.NonSpacingMark)
+                    sbReturn.Append(letter);
+            }
+            return sbReturn.ToString();
+        }
+
 
     }
 }
