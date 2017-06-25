@@ -89,19 +89,33 @@ namespace SystemCare
                             "Preencha a data de nascimento do funcionário", "Atenção",
                             MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     }
+                    else if (TextEscolaridade.Text.Length == 0)
+                    {
+                        MetroMessageBox.Show(this,
+                         "Preencha a escolaridade do funcionário", "Atenção",
+                         MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+                    else if (TextEstadoCivil.Text.Length == 0)
+                    {
+                        MetroMessageBox.Show(this,
+                         "Preencha o estado civil do funcionário", "Atenção",
+                         MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
                     else
                     {
                         Cadastro.CadastraFuncionario(TextNomeFuncionario.Text, TextIdade.Text, Sexo,
                             TextAltura.Text.Replace(',', '.'),
                             TextPeso.Text.Replace(',', '.'),
                             TextImc.Text, TextCpf.Text, TextIdentidade.Text, TextTelefoneFuncionario.Text,
-                            Convert.ToDateTime(TextDataNascimento.Text), TextNaturalidade.Text, IdFuncao);
+                            Convert.ToDateTime(TextDataNascimento.Text), TextNaturalidade.Text, IdFuncao,TextEstadoCivil.Text,TextEscolaridade.Text);
                         TextNomeFuncionario.Text = "";
                         TextIdade.Text = "";
                         TextAltura.Text = "";
                         TextPeso.Text = "";
                         TextImc.Text = "";
                         TextCpf.Text = "";
+                        TextEscolaridade.Text = "";
+                        TextEstadoCivil.Text = "";
                         TextIdentidade.Text = "";
                         TextTelefoneFuncionario.Text = "";
                         TextDataNascimento.Text = "";
@@ -166,7 +180,9 @@ namespace SystemCare
                     TextTelefoneEditar.Text = TabelaDadosFuncionario.Rows[0]["telefone"].ToString();
                     TextDataNascimentoEditar.Text = TabelaDadosFuncionario.Rows[0]["datanascimento"].ToString();
                     TextNaturalidadeEditar.Text = TabelaDadosFuncionario.Rows[0]["naturalidade"].ToString();
-                    BtnEditar.Text = "Salvar";
+                    TextEscolaridadeEditar.Text = TabelaDadosFuncionario.Rows[0]["escolaridade"].ToString();
+                    TextEstadoCivilEditar.Text = TabelaDadosFuncionario.Rows[0]["estadocivil"].ToString();
+                        BtnEditar.Text = "Salvar";
                     if (TabelaDadosFuncionario.Rows[0]["sexo"].ToString().Equals("M"))
                         RadioMasculinoEditar.Checked = true;
                     else
@@ -225,7 +241,7 @@ namespace SystemCare
                 Cadastro.AtualizaFuncionario(IdFuncionario, TextNomeFuncionarioEditar.Text, TextIdadeEditar.Text, Sexo,
                     Convert.ToDecimal(TextAlturaEditar.Text), Convert.ToDecimal(TextPesoEditar.Text),
                     TextImcEditar.Text, TextCpfEditar.Text, TextIdentidadeEditar.Text, TextTelefoneEditar.Text,
-                    Convert.ToDateTime(TextDataNascimentoEditar.Text), TextNaturalidadeEditar.Text, IdFuncao);
+                    Convert.ToDateTime(TextDataNascimentoEditar.Text), TextNaturalidadeEditar.Text, IdFuncao,TextEstadoCivilEditar.Text,TextEscolaridade.Text);
                 TextFuncionarioBusca.Text = "";
                 GridFuncionarioEditar.DataSource = null;
                 TextNomeFuncionarioEditar.Text = "";
@@ -240,6 +256,9 @@ namespace SystemCare
                 TextNaturalidadeEditar.Text = "";
                 TextBuscaFuncaoEditar.Text = "";
                 GridFuncaoFuncionarioEditar.DataSource = "";
+                TextEscolaridadeEditar.Text = "";
+                TextEstadoCivilEditar.Text = "";
+                BtnEditar.Text = "Editar";
                 MetroMessageBox.Show(this,
                     "Dados atualizados com sucesso!", "Sucesso !",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -322,6 +341,16 @@ namespace SystemCare
                 var peso = Convert.ToDouble(TextPeso.Text.Replace(',', '.'));
                 TextImc.Text = (peso / Math.Pow(altura, 2) * 100).ToString("##.##");
             }
+        }
+
+        private void TextDataNascimento_Leave(object sender, EventArgs e)
+        {
+            var today = DateTime.Today;
+
+            var age = today.Year - Convert.ToDateTime(TextDataNascimento.Text).Date.Year;
+
+            if (Convert.ToDateTime(TextDataNascimento.Text).Date > today.AddYears(-age)) age--;
+            TextIdade.Text = age.ToString();
         }
     }
 }

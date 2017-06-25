@@ -15,9 +15,21 @@ namespace SystemCare
         private static string IdFuncionario = "";
         private static string IdFuncionarioNova = "";
         private static string IdUsuario = "";
+        private static string IdConsulta = "";
+
         //192.168.1.200
         private readonly MySqlConnection Com =
             new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+
+        
+        public void SetIdConsulta(string Idconsulta)
+        {
+            IdConsulta = Idconsulta;
+        }
+        public string GetIdConsulta()
+        {
+            return IdConsulta;
+        }
 
         public bool Login(string Usuario, string Senha)
         {
@@ -66,14 +78,14 @@ namespace SystemCare
         }
 
         public void CadastraEmpresa(string Nome, string Endereco, string Cnpj, int QuantidadeFuncionario,
-            string Telefone, string Email, string IdCnae, string Servicos)
+            string Telefone, string Email, string IdCnae, string Servicos,string Medico,string Crm)
         {
             Com.Open();
             var InserirEmpresa =
                 new MySqlCommand(
-                    "INSERT INTO empresas (nome,endereco,cnpj,quantidadefuncionario,telefone,email,idcnae,servicoprestado) VALUES('" +
+                    "INSERT INTO empresas (nome,endereco,cnpj,quantidadefuncionario,telefone,email,idcnae,servicoprestado,medicoexaminador,crmmedico) VALUES('" +
                     Nome + "','" + Endereco + "','" + Cnpj + "'," + QuantidadeFuncionario + ",'" + Telefone + "','" +
-                    Email + "','" + IdCnae + "','" + Servicos + "')", Com);
+                    Email + "','" + IdCnae + "','" + Servicos + "','"+Medico+"','"+Crm+"')", Com);
             InserirEmpresa.ExecuteNonQuery();
             var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro da empresa " + Nome + "',now())", Com);
             InserirLog.ExecuteNonQuery();
@@ -178,7 +190,7 @@ namespace SystemCare
             Com.Open();
             var SelecionaEmpresa =
                 new MySqlCommand(
-                    "SELECT nome,endereco, cnpj,quantidadefuncionario,telefone,email,idcnae,risco, servicoprestado FROM empresas WHERE id=" +
+                    "SELECT nome,endereco, cnpj,quantidadefuncionario,telefone,email,idcnae,risco, servicoprestado,medicoexaminador,crmmedico FROM empresas WHERE id=" +
                     IdEmpresaEditar + ";", Com);
             var LeitorEmpresa = new MySqlDataAdapter(SelecionaEmpresa);
             var TabelaEmpresa = new DataTable();
@@ -229,14 +241,14 @@ namespace SystemCare
         }
 
         public void EditarEmpresa(string Nome, string Endereco, string Cnpj, int QuantidadeFuncionario, string Telefone,
-            string Email, string IdCnae, string Servicos)
+            string Email, string IdCnae, string Servicos,string Medico,string Crm)
         {
             Com.Open();
             var EditarEmpresa =
                 new MySqlCommand(
                     "UPDATE empresas SET nome ='" + Nome + "' ,endereco='" + Endereco + "',cnpj='" + Cnpj +
                     "',quantidadefuncionario=" + QuantidadeFuncionario + ",telefone='" + Telefone + "',email='" + Email +
-                    "',idcnae='" + IdCnae + "', servicoprestado='" + Servicos + "' WHERE id=" +
+                    "',idcnae='" + IdCnae + "', servicoprestado='" + Servicos + "',medicoexaminador='"+Medico+"', crmmedico='"+Crm+"' WHERE id=" +
                     IdEmpresaEditar + ";", Com);
             EditarEmpresa.ExecuteNonQuery();
             SetEmpresa("");
@@ -394,6 +406,45 @@ namespace SystemCare
             return TabelaEmpresas;
         }
 
+        public DataTable RetornaConsulta()
+        {
+            Com.Open();
+            var SelecionaEmpresas = new MySqlCommand("select a.id, b.nome as FUNCIONÁRIO,a.dataconsulta as DATA from consultas a, funcionarios b where a.idfuncionario=b.id AND ativa='S'", Com);
+            var LeitorEmpresas = new MySqlDataAdapter(SelecionaEmpresas);
+            var TabelaEmpresas = new DataTable();
+            LeitorEmpresas.Fill(TabelaEmpresas);
+            Com.Close();
+            return TabelaEmpresas;
+        }
+        public DataTable RetornaDadosConsulta(string Idconsulta)
+        {
+            Com.Open();
+            var SelecionaEmpresas = new MySqlCommand("select * from consultas where id="+Idconsulta+";", Com);
+            var LeitorEmpresas = new MySqlDataAdapter(SelecionaEmpresas);
+            var TabelaEmpresas = new DataTable();
+            LeitorEmpresas.Fill(TabelaEmpresas);
+            Com.Close();
+            return TabelaEmpresas;
+        }
+        public void CadastrarConsulta(string IdFuncionario,string TipoExame,string ModalidadeExame,string DataExame)
+        {
+            Com.Open();
+            var CadastrarFuncao =
+                new MySqlCommand(
+                    "INSERT INTO consultas (idfuncionario,tipoexame,modalidadeexame,dataexame,dataconsulta) VALUE(" +IdFuncionario + ",'" + TipoExame + "','" +
+                    ModalidadeExame + "','" + DataExame + "',now())", Com);
+            CadastrarFuncao.ExecuteNonQuery();
+            Com.Close();
+        }
+        public void EncerrarConsulta(string IdConsulta)
+        {
+            Com.Open();
+            var CadastrarFuncao =
+                new MySqlCommand(
+                    "UPDATE consultas SET ativa='N' WHERE id="+IdConsulta+";", Com);
+            CadastrarFuncao.ExecuteNonQuery();
+            Com.Close();
+        }
         public void CadastrarFuncao(string NomeFuncao, string IdCbo, string IdRiscos, string IdSetor)
         {
             Com.Open();
@@ -586,16 +637,16 @@ namespace SystemCare
 
         public void CadastraFuncionario(string Nome, string Idade, string Sexo, string Altura, string Peso, string Imc,
             string Cpf, string Identidade, string Telefone, DateTime DataNascimento, string Naturalidade,
-            string IdFuncao)
+            string IdFuncao,string EstadoCivil,string Escolaridade)
         {
             Com.Open();
             var InserirFuncionario =
                 new MySqlCommand(
-                    "insert into funcionarios (nome,idade,sexo,altura,peso,imc,cpf,identidade,telefone,datanascimento,naturalidade,idfuncao) VALUES ('" +
+                    "insert into funcionarios (nome,idade,sexo,altura,peso,imc,cpf,identidade,telefone,datanascimento,naturalidade,idfuncao,escolaridade,estadocivil) VALUES ('" +
                     Nome + "'," + Idade + ",'" + Sexo + "','" + Altura + "','" + Peso + "','" + Imc.Replace(',', '.') + "','" +
                     Cpf.Replace(',', '.') + "','" +
                     Identidade + "','" + Telefone + "','" + DataNascimento.Date.ToString("yyyy-MM-dd") + "','" +
-                    Naturalidade + "'," + IdFuncao + ")", Com);
+                    Naturalidade + "'," + IdFuncao + ",'"+Escolaridade+"','"+EstadoCivil+"')", Com);
             InserirFuncionario.ExecuteNonQuery();
             var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Cadastro do funcionário " + Nome + "',now())", Com);
             InserirLog.ExecuteNonQuery();
@@ -604,7 +655,7 @@ namespace SystemCare
 
         public void AtualizaFuncionario(string IdFuncionario, string Nome, string Idade, string Sexo, decimal Altura,
             decimal Peso, string Imc, string Cpf, string Identidade, string Telefone, DateTime DataNascimento,
-            string Naturalidade, string IdFuncao)
+            string Naturalidade, string IdFuncao,string EstadoCivil,string Escolaridade)
         {
             Com.Open();
             var InserirFuncionario =
@@ -615,7 +666,7 @@ namespace SystemCare
                     Imc + ",cpf='" + Cpf.Replace(',', '.') + "',identidade='" +
                     Identidade + "',telefone='" + Telefone + "',datanascimento='" +
                     DataNascimento.Date.ToString("yyyy-MM-dd") + "',naturalidade='" +
-                    Naturalidade + "',idfuncao=" + IdFuncao + " WHERE id=" + IdFuncionario + ";", Com);
+                    Naturalidade + "',idfuncao=" + IdFuncao + ",escolaridade='"+Escolaridade+"',estadocivil='"+EstadoCivil+"' WHERE id=" + IdFuncionario + ";", Com);
             InserirFuncionario.ExecuteNonQuery();
             var InserirLog = new MySqlCommand("INSERT INTO logs (idusuario,acao,data) VALUES(" + IdUsuario + ",'Atualizado dados do funcionário " + Nome + "',now())", Com);
             InserirLog.ExecuteNonQuery();
@@ -1009,10 +1060,10 @@ namespace SystemCare
             return TabelaRiscos.Rows[0][0].ToString();
         }
 
-        public void CadastraQuestionario(string idfuncionario, string queixa, string cirurgiaanterior, DateTime datacirurgia, string nomecirurgia, string fratura, DateTime datatomografia, string internacao, string motivointernacao, DateTime datainternacao, string alergia, string descricaoalergia, string doencarespiratoria, string doencagastrointestinal, string doencacardiaca, string doencaendocrina, string doencaosteomusculares, string historiaocupacional, string acidentedetrabalho, DateTime dataacidente, string afastamentoacidente, string afastamentoinss, string periodoafastamento)
+        public void CadastraQuestionario(string idfuncionario, string queixa, string cirurgiaanterior, DateTime datacirurgia, string nomecirurgia, string fratura, DateTime datatomografia, string internacao, string motivointernacao, DateTime datainternacao, string alergia, string descricaoalergia, string doencarespiratoria, string doencagastrointestinal, string doencacardiaca, string doencaendocrina, string doencaosteomusculares, string historiaocupacional, string acidentedetrabalho, DateTime dataacidente, string afastamentoacidente, string afastamentoinss, string periodoafastamento,string periodoafastamentoinss,string Neuro,string Renal,string Habitos,string Atividade,string Frequencia)
         {
             Com.Open();
-            MySqlCommand InserirQuesrtionario = new MySqlCommand("INSERT INTO atendimentosmedicos (idfuncionario,queixa ,cirurgiaanterior,datacirurgia,nomecirurgia,fratura,datatomografia,internacao ,motivointernacao ,datainternacao,alergia,descricaoalergia,doencarespiratoria,doencagastrointestinal,doencacardiaca,doencaendocrina,doencaosteomusculares,historiaocupacional,acidentedetrabalho,dataacidente,afastamentoacidente,afastamentoinss,periodoafastamento) VALUES (" + idfuncionario + ",'" + queixa + "','" + cirurgiaanterior + "','" + datacirurgia.Date.ToString("yyyy/MM/dd") + "','" + nomecirurgia + "','" + fratura + "','" + datatomografia.Date.ToString("yyyy/MM/dd") + "','" + internacao + "','" + motivointernacao + "','" + datainternacao.Date.ToString("yyyy/MM/dd") + "','" + alergia + "','" + descricaoalergia + "','" + doencarespiratoria + "','" + doencagastrointestinal + "','" + doencacardiaca + "','" + doencaendocrina + "','" + doencaosteomusculares + "','" + historiaocupacional + "','" + acidentedetrabalho + "','" + dataacidente.Date.ToString("yyyy/MM/dd") + "','" + afastamentoacidente + "','" + afastamentoinss + "','" + periodoafastamento + "')", Com);
+            MySqlCommand InserirQuesrtionario = new MySqlCommand("INSERT INTO atendimentosmedicos (idfuncionario,queixa ,cirurgiaanterior,datacirurgia,nomecirurgia,fratura,datatomografia,internacao ,motivointernacao ,datainternacao,alergia,descricaoalergia,doencarespiratoria,doencagastrointestinal,doencacardiaca,doencaendocrina,doencaosteomusculares,historiaocupacional,acidentedetrabalho,dataacidente,afastamentoacidente,afastamentoinss,periodoafastamento,periodoafastamentoinss,doencaneurologica,doencarenal,habitodevida,atividadefisica,frequenciaatividade) VALUES (" + idfuncionario + ",'" + queixa + "','" + cirurgiaanterior + "','" + datacirurgia.Date.ToString("yyyy/MM/dd") + "','" + nomecirurgia + "','" + fratura + "','" + datatomografia.Date.ToString("yyyy/MM/dd") + "','" + internacao + "','" + motivointernacao + "','" + datainternacao.Date.ToString("yyyy/MM/dd") + "','" + alergia + "','" + descricaoalergia + "','" + doencarespiratoria + "','" + doencagastrointestinal + "','" + doencacardiaca + "','" + doencaendocrina + "','" + doencaosteomusculares + "','" + historiaocupacional + "','" + acidentedetrabalho + "','" + dataacidente.Date.ToString("yyyy/MM/dd") + "','" + afastamentoacidente + "','" + afastamentoinss + "','" + periodoafastamento + "','"+periodoafastamentoinss+"','"+Neuro+"','"+Renal+"','"+Habitos+"','"+Atividade+"','"+Frequencia+"')", Com);
             InserirQuesrtionario.ExecuteNonQuery();
             Com.Close();
         }

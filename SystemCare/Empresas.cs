@@ -75,7 +75,7 @@ namespace SystemCare
                 var Cnae = LabelCnae.Text.Split('|');
                 Cadastro.CadastraEmpresa(TextNome.Text, TextEndereco.Text, TextCnpj.Text,
                     Convert.ToInt32(TextQuantidadeFuncionario.Text), TextTelefone.Text, TextEmail.Text,
-                    Cnae[1] + " | " + Cnae[2], Servicos);
+                    Cnae[1] + " | " + Cnae[2], Servicos,TextMedicoExaminador.Text,TextCrmMedico.Text);
                 MetroMessageBox.Show(this, "Empresa cadastrada com sucesso!", "Sucesso !", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 TextNome.Text = "";
@@ -84,6 +84,8 @@ namespace SystemCare
                 TextEndereco.Text = "";
                 TextTelefone.Text = "";
                 TextEmail.Text = "";
+                TextMedicoExaminador.Text = "";
+                TextCrmMedico.Text = "";
                 LabelCnae.Text = "CNAE:";
                 GridServicosPrestados.DataSource = null;
                 var TabelaServicos = Cadastro.RetornaServicosPrestados();
@@ -139,6 +141,8 @@ namespace SystemCare
                     TextQuantidadeFuncionarioEditar.Text = TabelaEditarEmpresa.Rows[0][3].ToString();
                     TextTelefoneEditar.Text = TabelaEditarEmpresa.Rows[0][4].ToString();
                     TextEmailEditar.Text = TabelaEditarEmpresa.Rows[0][5].ToString();
+                    TextMedicoExaminadoEditar.Text = TabelaEditarEmpresa.Rows[0]["medicoexaminador"].ToString();
+                    TextCrmMedicoEditar.Text = TabelaEditarEmpresa.Rows[0]["crmmedico"].ToString();
                     LabelCnaeEditar.Text = "CNAE |" + TabelaEditarEmpresa.Rows[0][6];
                    var Servicos = TabelaEditarEmpresa.Rows[0]["servicoprestado"].ToString().Split(';');
                     for (var j = 1; j < Servicos.Length; j++)
@@ -160,7 +164,7 @@ namespace SystemCare
                 Cadastro.EditarEmpresa(TextNomeEditar.Text, TextEnderecoEditar.Text, TextCnpjEditar.Text,
                     Convert.ToInt32(TextQuantidadeFuncionarioEditar.Text), TextTelefoneEditar.Text, TextEmailEditar.Text,
                     Cnae[1] + " " +
-                    "| " + Cnae[2],Servicos);
+                    "| " + Cnae[2],Servicos,TextMedicoExaminadoEditar.Text,TextCrmMedicoEditar.Text);
                 MetroMessageBox.Show(this, "Dados da empresa atualizados com sucesso!", "Sucesso !",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -169,9 +173,12 @@ namespace SystemCare
                 TextNomeEditar.Text = "";
                 TextEnderecoEditar.Text = "";
                 TextCnpjEditar.Text = "";
+                TextMedicoExaminadoEditar.Text = "";
+                TextCrmMedicoEditar.Text = "";
                 TextQuantidadeFuncionarioEditar.Text = "";
                 TextTelefoneEditar.Text = "";
                 TextEmailEditar.Text = "";
+                LabelEmpresaEditar.Text = "Selecione uma Empresa";
                 LabelCnaeEditar.Text = "CNAE:";
                 
             }

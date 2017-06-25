@@ -152,6 +152,12 @@
     <Compile Include="Cnae.Designer.cs">
       <DependentUpon>Cnae.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas.Designer.cs">
+      <DependentUpon>Consultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="DadosAso.cs">
       <DependentUpon>DadosAso.xsd</DependentUpon>
     </Compile>
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cnae.resx">
       <DependentUpon>Cnae.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas.resx">
+      <DependentUpon>Consultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmpresaRelatorio.resx">
       <DependentUpon>EmpresaRelatorio.cs</DependentUpon>

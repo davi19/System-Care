@@ -31,13 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Funcionarios));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Funcionarios));
             this.Editar = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.GridFuncaoEditar = new MetroFramework.Controls.MetroGrid();
@@ -105,6 +105,14 @@
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.TextNomeFuncionarioEditar = new MetroFramework.Controls.MetroTextBox();
+            this.TextEstadoCivil = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
+            this.TextEscolaridade = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
+            this.TextEscolaridadeEditar = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
+            this.TextEstadoCivilEditar = new MetroFramework.Controls.MetroTextBox();
             this.Editar.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridFuncaoEditar)).BeginInit();
@@ -119,7 +127,7 @@
             this.Editar.Controls.Add(this.metroTabPage2);
             this.Editar.Location = new System.Drawing.Point(2, 72);
             this.Editar.Name = "Editar";
-            this.Editar.SelectedIndex = 0;
+            this.Editar.SelectedIndex = 1;
             this.Editar.Size = new System.Drawing.Size(975, 462);
             this.Editar.Style = MetroFramework.MetroColorStyle.Green;
             this.Editar.TabIndex = 0;
@@ -127,6 +135,12 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.metroLabel27);
+            this.metroTabPage1.Controls.Add(this.TextEscolaridade);
+            this.metroTabPage1.Controls.Add(this.metroLabel26);
+            this.metroTabPage1.Controls.Add(this.TextEstadoCivil);
+            this.metroTabPage1.Controls.Add(this.metroLabel19);
+            this.metroTabPage1.Controls.Add(this.TextDataNascimento);
             this.metroTabPage1.Controls.Add(this.GridFuncaoEditar);
             this.metroTabPage1.Controls.Add(this.BtnBuscaFuncao);
             this.metroTabPage1.Controls.Add(this.metroLabel5);
@@ -135,12 +149,10 @@
             this.metroTabPage1.Controls.Add(this.TextIdentidade);
             this.metroTabPage1.Controls.Add(this.TextCpf);
             this.metroTabPage1.Controls.Add(this.TextTelefoneFuncionario);
-            this.metroTabPage1.Controls.Add(this.TextDataNascimento);
             this.metroTabPage1.Controls.Add(this.metroLabel21);
             this.metroTabPage1.Controls.Add(this.TextNaturalidade);
             this.metroTabPage1.Controls.Add(this.metroLabel1);
             this.metroTabPage1.Controls.Add(this.TextImc);
-            this.metroTabPage1.Controls.Add(this.metroLabel19);
             this.metroTabPage1.Controls.Add(this.metroLabel18);
             this.metroTabPage1.Controls.Add(this.metroLabel17);
             this.metroTabPage1.Controls.Add(this.metroLabel16);
@@ -200,7 +212,7 @@
             this.GridFuncaoEditar.EnableHeadersVisualStyles = false;
             this.GridFuncaoEditar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridFuncaoEditar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridFuncaoEditar.Location = new System.Drawing.Point(3, 165);
+            this.GridFuncaoEditar.Location = new System.Drawing.Point(3, 238);
             this.GridFuncaoEditar.Name = "GridFuncaoEditar";
             this.GridFuncaoEditar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -213,7 +225,7 @@
             this.GridFuncaoEditar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.GridFuncaoEditar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridFuncaoEditar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridFuncaoEditar.Size = new System.Drawing.Size(954, 115);
+            this.GridFuncaoEditar.Size = new System.Drawing.Size(954, 145);
             this.GridFuncaoEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.GridFuncaoEditar.TabIndex = 66;
             // 
@@ -231,7 +243,7 @@
             this.BtnBuscaFuncao.BackgroundImage = global::SystemCare.Properties.Resources.magnifier;
             this.BtnBuscaFuncao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnBuscaFuncao.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnBuscaFuncao.Location = new System.Drawing.Point(933, 135);
+            this.BtnBuscaFuncao.Location = new System.Drawing.Point(933, 208);
             this.BtnBuscaFuncao.Name = "BtnBuscaFuncao";
             this.BtnBuscaFuncao.Size = new System.Drawing.Size(24, 24);
             this.BtnBuscaFuncao.Style = MetroFramework.MetroColorStyle.Blue;
@@ -244,7 +256,7 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(3, 113);
+            this.metroLabel5.Location = new System.Drawing.Point(3, 186);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(97, 19);
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.Green;
@@ -269,7 +281,7 @@
             this.TextBuscaFuncao.CustomButton.Visible = false;
             this.TextBuscaFuncao.Icon = ((System.Drawing.Image)(resources.GetObject("TextBuscaFuncao.Icon")));
             this.TextBuscaFuncao.Lines = new string[0];
-            this.TextBuscaFuncao.Location = new System.Drawing.Point(3, 135);
+            this.TextBuscaFuncao.Location = new System.Drawing.Point(3, 208);
             this.TextBuscaFuncao.MaxLength = 32767;
             this.TextBuscaFuncao.Name = "TextBuscaFuncao";
             this.TextBuscaFuncao.PasswordChar = '\0';
@@ -289,7 +301,7 @@
             // 
             // BtnCadastrar
             // 
-            this.BtnCadastrar.Location = new System.Drawing.Point(878, 299);
+            this.BtnCadastrar.Location = new System.Drawing.Point(882, 389);
             this.BtnCadastrar.Name = "BtnCadastrar";
             this.BtnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.BtnCadastrar.Style = MetroFramework.MetroColorStyle.Green;
@@ -326,18 +338,19 @@
             // 
             // TextDataNascimento
             // 
-            this.TextDataNascimento.Location = new System.Drawing.Point(644, 80);
+            this.TextDataNascimento.Location = new System.Drawing.Point(401, 35);
             this.TextDataNascimento.Mask = "00/00/0000";
             this.TextDataNascimento.Name = "TextDataNascimento";
             this.TextDataNascimento.Size = new System.Drawing.Size(154, 20);
             this.TextDataNascimento.TabIndex = 43;
             this.TextDataNascimento.ValidatingType = typeof(System.DateTime);
+            this.TextDataNascimento.Leave += new System.EventHandler(this.TextDataNascimento_Leave);
             // 
             // metroLabel21
             // 
             this.metroLabel21.AutoSize = true;
             this.metroLabel21.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel21.Location = new System.Drawing.Point(804, 58);
+            this.metroLabel21.Location = new System.Drawing.Point(842, 58);
             this.metroLabel21.Name = "metroLabel21";
             this.metroLabel21.Size = new System.Drawing.Size(90, 19);
             this.metroLabel21.Style = MetroFramework.MetroColorStyle.Green;
@@ -352,7 +365,7 @@
             // 
             // 
             this.TextNaturalidade.CustomButton.Image = null;
-            this.TextNaturalidade.CustomButton.Location = new System.Drawing.Point(135, 2);
+            this.TextNaturalidade.CustomButton.Location = new System.Drawing.Point(97, 2);
             this.TextNaturalidade.CustomButton.Name = "";
             this.TextNaturalidade.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.TextNaturalidade.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -362,7 +375,7 @@
             this.TextNaturalidade.CustomButton.Visible = false;
             this.TextNaturalidade.Icon = ((System.Drawing.Image)(resources.GetObject("TextNaturalidade.Icon")));
             this.TextNaturalidade.Lines = new string[0];
-            this.TextNaturalidade.Location = new System.Drawing.Point(804, 80);
+            this.TextNaturalidade.Location = new System.Drawing.Point(842, 80);
             this.TextNaturalidade.MaxLength = 32767;
             this.TextNaturalidade.Name = "TextNaturalidade";
             this.TextNaturalidade.PasswordChar = '\0';
@@ -371,7 +384,7 @@
             this.TextNaturalidade.SelectionLength = 0;
             this.TextNaturalidade.SelectionStart = 0;
             this.TextNaturalidade.ShortcutsEnabled = true;
-            this.TextNaturalidade.Size = new System.Drawing.Size(153, 20);
+            this.TextNaturalidade.Size = new System.Drawing.Size(115, 20);
             this.TextNaturalidade.Style = MetroFramework.MetroColorStyle.Green;
             this.TextNaturalidade.TabIndex = 44;
             this.TextNaturalidade.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -383,7 +396,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(872, 13);
+            this.metroLabel1.Location = new System.Drawing.Point(858, 13);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(38, 19);
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
@@ -398,7 +411,7 @@
             // 
             // 
             this.TextImc.CustomButton.Image = null;
-            this.TextImc.CustomButton.Location = new System.Drawing.Point(67, 2);
+            this.TextImc.CustomButton.Location = new System.Drawing.Point(44, 2);
             this.TextImc.CustomButton.Name = "";
             this.TextImc.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.TextImc.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -408,7 +421,7 @@
             this.TextImc.CustomButton.Visible = false;
             this.TextImc.Icon = ((System.Drawing.Image)(resources.GetObject("TextImc.Icon")));
             this.TextImc.Lines = new string[0];
-            this.TextImc.Location = new System.Drawing.Point(872, 35);
+            this.TextImc.Location = new System.Drawing.Point(858, 35);
             this.TextImc.MaxLength = 32767;
             this.TextImc.Name = "TextImc";
             this.TextImc.PasswordChar = '\0';
@@ -417,7 +430,7 @@
             this.TextImc.SelectionLength = 0;
             this.TextImc.SelectionStart = 0;
             this.TextImc.ShortcutsEnabled = true;
-            this.TextImc.Size = new System.Drawing.Size(85, 20);
+            this.TextImc.Size = new System.Drawing.Size(62, 20);
             this.TextImc.Style = MetroFramework.MetroColorStyle.Green;
             this.TextImc.TabIndex = 39;
             this.TextImc.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -430,7 +443,7 @@
             // 
             this.metroLabel19.AutoSize = true;
             this.metroLabel19.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel19.Location = new System.Drawing.Point(644, 58);
+            this.metroLabel19.Location = new System.Drawing.Point(401, 13);
             this.metroLabel19.Name = "metroLabel19";
             this.metroLabel19.Size = new System.Drawing.Size(136, 19);
             this.metroLabel19.Style = MetroFramework.MetroColorStyle.Green;
@@ -478,7 +491,7 @@
             // 
             this.metroLabel15.AutoSize = true;
             this.metroLabel15.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel15.Location = new System.Drawing.Point(758, 13);
+            this.metroLabel15.Location = new System.Drawing.Point(790, 13);
             this.metroLabel15.Name = "metroLabel15";
             this.metroLabel15.Size = new System.Drawing.Size(40, 19);
             this.metroLabel15.Style = MetroFramework.MetroColorStyle.Green;
@@ -493,7 +506,7 @@
             // 
             // 
             this.TextPeso.CustomButton.Image = null;
-            this.TextPeso.CustomButton.Location = new System.Drawing.Point(90, 2);
+            this.TextPeso.CustomButton.Location = new System.Drawing.Point(44, 2);
             this.TextPeso.CustomButton.Name = "";
             this.TextPeso.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.TextPeso.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -503,7 +516,7 @@
             this.TextPeso.CustomButton.Visible = false;
             this.TextPeso.Icon = ((System.Drawing.Image)(resources.GetObject("TextPeso.Icon")));
             this.TextPeso.Lines = new string[0];
-            this.TextPeso.Location = new System.Drawing.Point(758, 35);
+            this.TextPeso.Location = new System.Drawing.Point(790, 35);
             this.TextPeso.MaxLength = 32767;
             this.TextPeso.Name = "TextPeso";
             this.TextPeso.PasswordChar = '\0';
@@ -512,7 +525,7 @@
             this.TextPeso.SelectionLength = 0;
             this.TextPeso.SelectionStart = 0;
             this.TextPeso.ShortcutsEnabled = true;
-            this.TextPeso.Size = new System.Drawing.Size(108, 20);
+            this.TextPeso.Size = new System.Drawing.Size(62, 20);
             this.TextPeso.Style = MetroFramework.MetroColorStyle.Green;
             this.TextPeso.TabIndex = 38;
             this.TextPeso.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -524,7 +537,7 @@
             // 
             this.metroLabel14.AutoSize = true;
             this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel14.Location = new System.Drawing.Point(644, 13);
+            this.metroLabel14.Location = new System.Drawing.Point(722, 13);
             this.metroLabel14.Name = "metroLabel14";
             this.metroLabel14.Size = new System.Drawing.Size(49, 19);
             this.metroLabel14.Style = MetroFramework.MetroColorStyle.Green;
@@ -539,7 +552,7 @@
             // 
             // 
             this.TextAltura.CustomButton.Image = null;
-            this.TextAltura.CustomButton.Location = new System.Drawing.Point(90, 2);
+            this.TextAltura.CustomButton.Location = new System.Drawing.Point(44, 2);
             this.TextAltura.CustomButton.Name = "";
             this.TextAltura.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.TextAltura.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -549,7 +562,7 @@
             this.TextAltura.CustomButton.Visible = false;
             this.TextAltura.Icon = ((System.Drawing.Image)(resources.GetObject("TextAltura.Icon")));
             this.TextAltura.Lines = new string[0];
-            this.TextAltura.Location = new System.Drawing.Point(644, 35);
+            this.TextAltura.Location = new System.Drawing.Point(722, 35);
             this.TextAltura.MaxLength = 32767;
             this.TextAltura.Name = "TextAltura";
             this.TextAltura.PasswordChar = '\0';
@@ -558,7 +571,7 @@
             this.TextAltura.SelectionLength = 0;
             this.TextAltura.SelectionStart = 0;
             this.TextAltura.ShortcutsEnabled = true;
-            this.TextAltura.Size = new System.Drawing.Size(108, 20);
+            this.TextAltura.Size = new System.Drawing.Size(62, 20);
             this.TextAltura.Style = MetroFramework.MetroColorStyle.Green;
             this.TextAltura.TabIndex = 37;
             this.TextAltura.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -570,7 +583,7 @@
             // 
             this.metroLabel13.AutoSize = true;
             this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel13.Location = new System.Drawing.Point(481, 13);
+            this.metroLabel13.Location = new System.Drawing.Point(559, 13);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(40, 19);
             this.metroLabel13.Style = MetroFramework.MetroColorStyle.Green;
@@ -581,7 +594,7 @@
             // RadioFeminino
             // 
             this.RadioFeminino.AutoSize = true;
-            this.RadioFeminino.Location = new System.Drawing.Point(565, 40);
+            this.RadioFeminino.Location = new System.Drawing.Point(643, 37);
             this.RadioFeminino.Name = "RadioFeminino";
             this.RadioFeminino.Size = new System.Drawing.Size(73, 15);
             this.RadioFeminino.Style = MetroFramework.MetroColorStyle.Green;
@@ -592,7 +605,7 @@
             // RadioMasculino
             // 
             this.RadioMasculino.AutoSize = true;
-            this.RadioMasculino.Location = new System.Drawing.Point(481, 40);
+            this.RadioMasculino.Location = new System.Drawing.Point(559, 37);
             this.RadioMasculino.Name = "RadioMasculino";
             this.RadioMasculino.Size = new System.Drawing.Size(78, 15);
             this.RadioMasculino.Style = MetroFramework.MetroColorStyle.Green;
@@ -604,7 +617,7 @@
             // 
             this.metroLabel12.AutoSize = true;
             this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel12.Location = new System.Drawing.Point(401, 13);
+            this.metroLabel12.Location = new System.Drawing.Point(647, 58);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(46, 19);
             this.metroLabel12.Style = MetroFramework.MetroColorStyle.Green;
@@ -629,7 +642,7 @@
             this.TextIdade.CustomButton.Visible = false;
             this.TextIdade.Icon = ((System.Drawing.Image)(resources.GetObject("TextIdade.Icon")));
             this.TextIdade.Lines = new string[0];
-            this.TextIdade.Location = new System.Drawing.Point(401, 35);
+            this.TextIdade.Location = new System.Drawing.Point(644, 80);
             this.TextIdade.MaxLength = 32767;
             this.TextIdade.Name = "TextIdade";
             this.TextIdade.PasswordChar = '\0';
@@ -694,6 +707,10 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.metroLabel28);
+            this.metroTabPage2.Controls.Add(this.TextEscolaridadeEditar);
+            this.metroTabPage2.Controls.Add(this.metroLabel29);
+            this.metroTabPage2.Controls.Add(this.TextEstadoCivilEditar);
             this.metroTabPage2.Controls.Add(this.GridFuncionarioEditar);
             this.metroTabPage2.Controls.Add(this.BtnBuscarFuncionario);
             this.metroTabPage2.Controls.Add(this.metroLabel25);
@@ -863,7 +880,7 @@
             // 
             this.metroLabel23.AutoSize = true;
             this.metroLabel23.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel23.Location = new System.Drawing.Point(810, 184);
+            this.metroLabel23.Location = new System.Drawing.Point(823, 184);
             this.metroLabel23.Name = "metroLabel23";
             this.metroLabel23.Size = new System.Drawing.Size(90, 19);
             this.metroLabel23.Style = MetroFramework.MetroColorStyle.Green;
@@ -875,7 +892,7 @@
             // 
             this.metroLabel24.AutoSize = true;
             this.metroLabel24.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel24.Location = new System.Drawing.Point(650, 184);
+            this.metroLabel24.Location = new System.Drawing.Point(407, 139);
             this.metroLabel24.Name = "metroLabel24";
             this.metroLabel24.Size = new System.Drawing.Size(136, 19);
             this.metroLabel24.Style = MetroFramework.MetroColorStyle.Green;
@@ -887,7 +904,7 @@
             // 
             this.metroLabel20.AutoSize = true;
             this.metroLabel20.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel20.Location = new System.Drawing.Point(764, 139);
+            this.metroLabel20.Location = new System.Drawing.Point(810, 139);
             this.metroLabel20.Name = "metroLabel20";
             this.metroLabel20.Size = new System.Drawing.Size(40, 19);
             this.metroLabel20.Style = MetroFramework.MetroColorStyle.Green;
@@ -899,7 +916,7 @@
             // 
             this.metroLabel22.AutoSize = true;
             this.metroLabel22.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel22.Location = new System.Drawing.Point(650, 139);
+            this.metroLabel22.Location = new System.Drawing.Point(742, 139);
             this.metroLabel22.Name = "metroLabel22";
             this.metroLabel22.Size = new System.Drawing.Size(49, 19);
             this.metroLabel22.Style = MetroFramework.MetroColorStyle.Green;
@@ -914,7 +931,7 @@
             // 
             // 
             this.TextIdadeEditar.CustomButton.Image = null;
-            this.TextIdadeEditar.CustomButton.Location = new System.Drawing.Point(56, 2);
+            this.TextIdadeEditar.CustomButton.Location = new System.Drawing.Point(31, 2);
             this.TextIdadeEditar.CustomButton.Name = "";
             this.TextIdadeEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.TextIdadeEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -924,7 +941,7 @@
             this.TextIdadeEditar.CustomButton.Visible = false;
             this.TextIdadeEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextIdadeEditar.Icon")));
             this.TextIdadeEditar.Lines = new string[0];
-            this.TextIdadeEditar.Location = new System.Drawing.Point(407, 161);
+            this.TextIdadeEditar.Location = new System.Drawing.Point(650, 206);
             this.TextIdadeEditar.MaxLength = 32767;
             this.TextIdadeEditar.Name = "TextIdadeEditar";
             this.TextIdadeEditar.PasswordChar = '\0';
@@ -933,7 +950,7 @@
             this.TextIdadeEditar.SelectionLength = 0;
             this.TextIdadeEditar.SelectionStart = 0;
             this.TextIdadeEditar.ShortcutsEnabled = true;
-            this.TextIdadeEditar.Size = new System.Drawing.Size(74, 20);
+            this.TextIdadeEditar.Size = new System.Drawing.Size(49, 20);
             this.TextIdadeEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.TextIdadeEditar.TabIndex = 91;
             this.TextIdadeEditar.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -986,7 +1003,7 @@
             this.GridFuncaoFuncionarioEditar.EnableHeadersVisualStyles = false;
             this.GridFuncaoFuncionarioEditar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridFuncaoFuncionarioEditar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GridFuncaoFuncionarioEditar.Location = new System.Drawing.Point(9, 291);
+            this.GridFuncaoFuncionarioEditar.Location = new System.Drawing.Point(9, 326);
             this.GridFuncaoFuncionarioEditar.Name = "GridFuncaoFuncionarioEditar";
             this.GridFuncaoFuncionarioEditar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -999,7 +1016,7 @@
             this.GridFuncaoFuncionarioEditar.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.GridFuncaoFuncionarioEditar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridFuncaoFuncionarioEditar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridFuncaoFuncionarioEditar.Size = new System.Drawing.Size(954, 77);
+            this.GridFuncaoFuncionarioEditar.Size = new System.Drawing.Size(954, 57);
             this.GridFuncaoFuncionarioEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.GridFuncaoFuncionarioEditar.TabIndex = 89;
             // 
@@ -1030,7 +1047,7 @@
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(9, 239);
+            this.metroLabel2.Location = new System.Drawing.Point(9, 274);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(97, 19);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Green;
@@ -1055,7 +1072,7 @@
             this.TextBuscaFuncaoEditar.CustomButton.Visible = false;
             this.TextBuscaFuncaoEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextBuscaFuncaoEditar.Icon")));
             this.TextBuscaFuncaoEditar.Lines = new string[0];
-            this.TextBuscaFuncaoEditar.Location = new System.Drawing.Point(9, 261);
+            this.TextBuscaFuncaoEditar.Location = new System.Drawing.Point(9, 296);
             this.TextBuscaFuncaoEditar.MaxLength = 32767;
             this.TextBuscaFuncaoEditar.Name = "TextBuscaFuncaoEditar";
             this.TextBuscaFuncaoEditar.PasswordChar = '\0';
@@ -1111,10 +1128,10 @@
             // 
             // TextDataNascimentoEditar
             // 
-            this.TextDataNascimentoEditar.Location = new System.Drawing.Point(650, 206);
+            this.TextDataNascimentoEditar.Location = new System.Drawing.Point(407, 161);
             this.TextDataNascimentoEditar.Mask = "00/00/0000";
             this.TextDataNascimentoEditar.Name = "TextDataNascimentoEditar";
-            this.TextDataNascimentoEditar.Size = new System.Drawing.Size(154, 20);
+            this.TextDataNascimentoEditar.Size = new System.Drawing.Size(166, 20);
             this.TextDataNascimentoEditar.TabIndex = 75;
             this.TextDataNascimentoEditar.ValidatingType = typeof(System.DateTime);
             // 
@@ -1125,7 +1142,7 @@
             // 
             // 
             this.TextNaturalidadeEditar.CustomButton.Image = null;
-            this.TextNaturalidadeEditar.CustomButton.Location = new System.Drawing.Point(135, 2);
+            this.TextNaturalidadeEditar.CustomButton.Location = new System.Drawing.Point(122, 2);
             this.TextNaturalidadeEditar.CustomButton.Name = "";
             this.TextNaturalidadeEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.TextNaturalidadeEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1135,7 +1152,7 @@
             this.TextNaturalidadeEditar.CustomButton.Visible = false;
             this.TextNaturalidadeEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextNaturalidadeEditar.Icon")));
             this.TextNaturalidadeEditar.Lines = new string[0];
-            this.TextNaturalidadeEditar.Location = new System.Drawing.Point(810, 206);
+            this.TextNaturalidadeEditar.Location = new System.Drawing.Point(823, 206);
             this.TextNaturalidadeEditar.MaxLength = 32767;
             this.TextNaturalidadeEditar.Name = "TextNaturalidadeEditar";
             this.TextNaturalidadeEditar.PasswordChar = '\0';
@@ -1144,7 +1161,7 @@
             this.TextNaturalidadeEditar.SelectionLength = 0;
             this.TextNaturalidadeEditar.SelectionStart = 0;
             this.TextNaturalidadeEditar.ShortcutsEnabled = true;
-            this.TextNaturalidadeEditar.Size = new System.Drawing.Size(153, 20);
+            this.TextNaturalidadeEditar.Size = new System.Drawing.Size(140, 20);
             this.TextNaturalidadeEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.TextNaturalidadeEditar.TabIndex = 76;
             this.TextNaturalidadeEditar.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1171,7 +1188,7 @@
             // 
             // 
             this.TextImcEditar.CustomButton.Image = null;
-            this.TextImcEditar.CustomButton.Location = new System.Drawing.Point(67, 2);
+            this.TextImcEditar.CustomButton.Location = new System.Drawing.Point(44, 2);
             this.TextImcEditar.CustomButton.Name = "";
             this.TextImcEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.TextImcEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1190,7 +1207,7 @@
             this.TextImcEditar.SelectionLength = 0;
             this.TextImcEditar.SelectionStart = 0;
             this.TextImcEditar.ShortcutsEnabled = true;
-            this.TextImcEditar.Size = new System.Drawing.Size(85, 20);
+            this.TextImcEditar.Size = new System.Drawing.Size(62, 20);
             this.TextImcEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.TextImcEditar.TabIndex = 71;
             this.TextImcEditar.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1241,7 +1258,7 @@
             // 
             // 
             this.TextPesoEditar.CustomButton.Image = null;
-            this.TextPesoEditar.CustomButton.Location = new System.Drawing.Point(90, 2);
+            this.TextPesoEditar.CustomButton.Location = new System.Drawing.Point(44, 2);
             this.TextPesoEditar.CustomButton.Name = "";
             this.TextPesoEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.TextPesoEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1251,7 +1268,7 @@
             this.TextPesoEditar.CustomButton.Visible = false;
             this.TextPesoEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextPesoEditar.Icon")));
             this.TextPesoEditar.Lines = new string[0];
-            this.TextPesoEditar.Location = new System.Drawing.Point(764, 161);
+            this.TextPesoEditar.Location = new System.Drawing.Point(810, 161);
             this.TextPesoEditar.MaxLength = 32767;
             this.TextPesoEditar.Name = "TextPesoEditar";
             this.TextPesoEditar.PasswordChar = '\0';
@@ -1260,7 +1277,7 @@
             this.TextPesoEditar.SelectionLength = 0;
             this.TextPesoEditar.SelectionStart = 0;
             this.TextPesoEditar.ShortcutsEnabled = true;
-            this.TextPesoEditar.Size = new System.Drawing.Size(108, 20);
+            this.TextPesoEditar.Size = new System.Drawing.Size(62, 20);
             this.TextPesoEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.TextPesoEditar.TabIndex = 70;
             this.TextPesoEditar.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1275,7 +1292,7 @@
             // 
             // 
             this.TextAlturaEditar.CustomButton.Image = null;
-            this.TextAlturaEditar.CustomButton.Location = new System.Drawing.Point(90, 2);
+            this.TextAlturaEditar.CustomButton.Location = new System.Drawing.Point(44, 2);
             this.TextAlturaEditar.CustomButton.Name = "";
             this.TextAlturaEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.TextAlturaEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1285,7 +1302,7 @@
             this.TextAlturaEditar.CustomButton.Visible = false;
             this.TextAlturaEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextAlturaEditar.Icon")));
             this.TextAlturaEditar.Lines = new string[0];
-            this.TextAlturaEditar.Location = new System.Drawing.Point(650, 161);
+            this.TextAlturaEditar.Location = new System.Drawing.Point(742, 161);
             this.TextAlturaEditar.MaxLength = 32767;
             this.TextAlturaEditar.Name = "TextAlturaEditar";
             this.TextAlturaEditar.PasswordChar = '\0';
@@ -1294,7 +1311,7 @@
             this.TextAlturaEditar.SelectionLength = 0;
             this.TextAlturaEditar.SelectionStart = 0;
             this.TextAlturaEditar.ShortcutsEnabled = true;
-            this.TextAlturaEditar.Size = new System.Drawing.Size(108, 20);
+            this.TextAlturaEditar.Size = new System.Drawing.Size(62, 20);
             this.TextAlturaEditar.Style = MetroFramework.MetroColorStyle.Green;
             this.TextAlturaEditar.TabIndex = 69;
             this.TextAlturaEditar.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1306,7 +1323,7 @@
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.Location = new System.Drawing.Point(487, 139);
+            this.metroLabel8.Location = new System.Drawing.Point(579, 139);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(40, 19);
             this.metroLabel8.Style = MetroFramework.MetroColorStyle.Green;
@@ -1317,7 +1334,7 @@
             // RadioFemininoEditar
             // 
             this.RadioFemininoEditar.AutoSize = true;
-            this.RadioFemininoEditar.Location = new System.Drawing.Point(571, 166);
+            this.RadioFemininoEditar.Location = new System.Drawing.Point(663, 166);
             this.RadioFemininoEditar.Name = "RadioFemininoEditar";
             this.RadioFemininoEditar.Size = new System.Drawing.Size(73, 15);
             this.RadioFemininoEditar.Style = MetroFramework.MetroColorStyle.Green;
@@ -1328,7 +1345,7 @@
             // RadioMasculinoEditar
             // 
             this.RadioMasculinoEditar.AutoSize = true;
-            this.RadioMasculinoEditar.Location = new System.Drawing.Point(487, 166);
+            this.RadioMasculinoEditar.Location = new System.Drawing.Point(579, 166);
             this.RadioMasculinoEditar.Name = "RadioMasculinoEditar";
             this.RadioMasculinoEditar.Size = new System.Drawing.Size(78, 15);
             this.RadioMasculinoEditar.Style = MetroFramework.MetroColorStyle.Green;
@@ -1340,7 +1357,7 @@
             // 
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel10.Location = new System.Drawing.Point(407, 139);
+            this.metroLabel10.Location = new System.Drawing.Point(650, 184);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(46, 19);
             this.metroLabel10.Style = MetroFramework.MetroColorStyle.Green;
@@ -1393,6 +1410,190 @@
             this.TextNomeFuncionarioEditar.UseSelectable = true;
             this.TextNomeFuncionarioEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNomeFuncionarioEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // TextEstadoCivil
+            // 
+            this.TextEstadoCivil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextEstadoCivil.CustomButton.Image = null;
+            this.TextEstadoCivil.CustomButton.Location = new System.Drawing.Point(94, 2);
+            this.TextEstadoCivil.CustomButton.Name = "";
+            this.TextEstadoCivil.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextEstadoCivil.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextEstadoCivil.CustomButton.TabIndex = 1;
+            this.TextEstadoCivil.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEstadoCivil.CustomButton.UseSelectable = true;
+            this.TextEstadoCivil.CustomButton.Visible = false;
+            this.TextEstadoCivil.Icon = ((System.Drawing.Image)(resources.GetObject("TextEstadoCivil.Icon")));
+            this.TextEstadoCivil.Lines = new string[0];
+            this.TextEstadoCivil.Location = new System.Drawing.Point(724, 80);
+            this.TextEstadoCivil.MaxLength = 32767;
+            this.TextEstadoCivil.Name = "TextEstadoCivil";
+            this.TextEstadoCivil.PasswordChar = '\0';
+            this.TextEstadoCivil.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextEstadoCivil.SelectedText = "";
+            this.TextEstadoCivil.SelectionLength = 0;
+            this.TextEstadoCivil.SelectionStart = 0;
+            this.TextEstadoCivil.ShortcutsEnabled = true;
+            this.TextEstadoCivil.Size = new System.Drawing.Size(112, 20);
+            this.TextEstadoCivil.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextEstadoCivil.TabIndex = 67;
+            this.TextEstadoCivil.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEstadoCivil.UseSelectable = true;
+            this.TextEstadoCivil.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextEstadoCivil.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel26
+            // 
+            this.metroLabel26.AutoSize = true;
+            this.metroLabel26.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel26.Location = new System.Drawing.Point(724, 58);
+            this.metroLabel26.Name = "metroLabel26";
+            this.metroLabel26.Size = new System.Drawing.Size(82, 19);
+            this.metroLabel26.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel26.TabIndex = 68;
+            this.metroLabel26.Text = "Estado Civil:";
+            this.metroLabel26.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // metroLabel27
+            // 
+            this.metroLabel27.AutoSize = true;
+            this.metroLabel27.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel27.Location = new System.Drawing.Point(3, 103);
+            this.metroLabel27.Name = "metroLabel27";
+            this.metroLabel27.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel27.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel27.TabIndex = 70;
+            this.metroLabel27.Text = "Escolaridade:";
+            this.metroLabel27.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextEscolaridade
+            // 
+            this.TextEscolaridade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextEscolaridade.CustomButton.Image = null;
+            this.TextEscolaridade.CustomButton.Location = new System.Drawing.Point(176, 2);
+            this.TextEscolaridade.CustomButton.Name = "";
+            this.TextEscolaridade.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextEscolaridade.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextEscolaridade.CustomButton.TabIndex = 1;
+            this.TextEscolaridade.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEscolaridade.CustomButton.UseSelectable = true;
+            this.TextEscolaridade.CustomButton.Visible = false;
+            this.TextEscolaridade.Icon = ((System.Drawing.Image)(resources.GetObject("TextEscolaridade.Icon")));
+            this.TextEscolaridade.Lines = new string[0];
+            this.TextEscolaridade.Location = new System.Drawing.Point(3, 125);
+            this.TextEscolaridade.MaxLength = 32767;
+            this.TextEscolaridade.Name = "TextEscolaridade";
+            this.TextEscolaridade.PasswordChar = '\0';
+            this.TextEscolaridade.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextEscolaridade.SelectedText = "";
+            this.TextEscolaridade.SelectionLength = 0;
+            this.TextEscolaridade.SelectionStart = 0;
+            this.TextEscolaridade.ShortcutsEnabled = true;
+            this.TextEscolaridade.Size = new System.Drawing.Size(194, 20);
+            this.TextEscolaridade.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextEscolaridade.TabIndex = 69;
+            this.TextEscolaridade.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEscolaridade.UseSelectable = true;
+            this.TextEscolaridade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextEscolaridade.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel28
+            // 
+            this.metroLabel28.AutoSize = true;
+            this.metroLabel28.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel28.Location = new System.Drawing.Point(10, 229);
+            this.metroLabel28.Name = "metroLabel28";
+            this.metroLabel28.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel28.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel28.TabIndex = 103;
+            this.metroLabel28.Text = "Escolaridade:";
+            this.metroLabel28.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextEscolaridadeEditar
+            // 
+            this.TextEscolaridadeEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextEscolaridadeEditar.CustomButton.Image = null;
+            this.TextEscolaridadeEditar.CustomButton.Location = new System.Drawing.Point(176, 2);
+            this.TextEscolaridadeEditar.CustomButton.Name = "";
+            this.TextEscolaridadeEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextEscolaridadeEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextEscolaridadeEditar.CustomButton.TabIndex = 1;
+            this.TextEscolaridadeEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEscolaridadeEditar.CustomButton.UseSelectable = true;
+            this.TextEscolaridadeEditar.CustomButton.Visible = false;
+            this.TextEscolaridadeEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextEscolaridadeEditar.Icon")));
+            this.TextEscolaridadeEditar.Lines = new string[0];
+            this.TextEscolaridadeEditar.Location = new System.Drawing.Point(9, 251);
+            this.TextEscolaridadeEditar.MaxLength = 32767;
+            this.TextEscolaridadeEditar.Name = "TextEscolaridadeEditar";
+            this.TextEscolaridadeEditar.PasswordChar = '\0';
+            this.TextEscolaridadeEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextEscolaridadeEditar.SelectedText = "";
+            this.TextEscolaridadeEditar.SelectionLength = 0;
+            this.TextEscolaridadeEditar.SelectionStart = 0;
+            this.TextEscolaridadeEditar.ShortcutsEnabled = true;
+            this.TextEscolaridadeEditar.Size = new System.Drawing.Size(194, 20);
+            this.TextEscolaridadeEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextEscolaridadeEditar.TabIndex = 102;
+            this.TextEscolaridadeEditar.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEscolaridadeEditar.UseSelectable = true;
+            this.TextEscolaridadeEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextEscolaridadeEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel29
+            // 
+            this.metroLabel29.AutoSize = true;
+            this.metroLabel29.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel29.Location = new System.Drawing.Point(705, 184);
+            this.metroLabel29.Name = "metroLabel29";
+            this.metroLabel29.Size = new System.Drawing.Size(82, 19);
+            this.metroLabel29.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel29.TabIndex = 101;
+            this.metroLabel29.Text = "Estado Civil:";
+            this.metroLabel29.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextEstadoCivilEditar
+            // 
+            this.TextEstadoCivilEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextEstadoCivilEditar.CustomButton.Image = null;
+            this.TextEstadoCivilEditar.CustomButton.Location = new System.Drawing.Point(94, 2);
+            this.TextEstadoCivilEditar.CustomButton.Name = "";
+            this.TextEstadoCivilEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextEstadoCivilEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextEstadoCivilEditar.CustomButton.TabIndex = 1;
+            this.TextEstadoCivilEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEstadoCivilEditar.CustomButton.UseSelectable = true;
+            this.TextEstadoCivilEditar.CustomButton.Visible = false;
+            this.TextEstadoCivilEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextEstadoCivilEditar.Icon")));
+            this.TextEstadoCivilEditar.Lines = new string[0];
+            this.TextEstadoCivilEditar.Location = new System.Drawing.Point(705, 206);
+            this.TextEstadoCivilEditar.MaxLength = 32767;
+            this.TextEstadoCivilEditar.Name = "TextEstadoCivilEditar";
+            this.TextEstadoCivilEditar.PasswordChar = '\0';
+            this.TextEstadoCivilEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextEstadoCivilEditar.SelectedText = "";
+            this.TextEstadoCivilEditar.SelectionLength = 0;
+            this.TextEstadoCivilEditar.SelectionStart = 0;
+            this.TextEstadoCivilEditar.ShortcutsEnabled = true;
+            this.TextEstadoCivilEditar.Size = new System.Drawing.Size(112, 20);
+            this.TextEstadoCivilEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextEstadoCivilEditar.TabIndex = 100;
+            this.TextEstadoCivilEditar.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEstadoCivilEditar.UseSelectable = true;
+            this.TextEstadoCivilEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextEstadoCivilEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // Funcionarios
             // 
@@ -1487,5 +1688,13 @@
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroTextBox TextPeso;
         private MetroFramework.Controls.MetroTextBox TextAltura;
+        private MetroFramework.Controls.MetroLabel metroLabel26;
+        private MetroFramework.Controls.MetroTextBox TextEstadoCivil;
+        private MetroFramework.Controls.MetroLabel metroLabel27;
+        private MetroFramework.Controls.MetroTextBox TextEscolaridade;
+        private MetroFramework.Controls.MetroLabel metroLabel28;
+        private MetroFramework.Controls.MetroTextBox TextEscolaridadeEditar;
+        private MetroFramework.Controls.MetroLabel metroLabel29;
+        private MetroFramework.Controls.MetroTextBox TextEstadoCivilEditar;
     }
 }

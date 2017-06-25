@@ -151,7 +151,6 @@ C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.EmpresaRelato
 C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.Exames.resources
 C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.ModalidadeExame.resources
 C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.PesquisaEmpresas.resources
-C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.QuestionarioMedico.resources
 C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.RiscosOperacionais.resources
 C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.ServicoPrestado.resources
 C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.TabelaPreco.resources
@@ -188,3 +187,5 @@ C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\Interop.AcroPDFLib.dll
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\AxInterop.AcroPDFLib.dll
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\itextsharp.dll
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\itextsharp.xml
+C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.CheckCalculo.resources
+C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.Consultas.resources

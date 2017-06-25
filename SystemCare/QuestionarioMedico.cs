@@ -12,17 +12,19 @@ using MetroFramework.Forms;
 
 namespace SystemCare
 {
-    public partial class QuestionarioMedico : MetroForm
+    public partial class CheckCalculo : MetroForm
     {
         QuerryMysql CadastraQuestionario = new QuerryMysql();
         static string IdFuncionarioQuestiona;
-        public QuestionarioMedico(string IdFuncionario)
+        public CheckCalculo(string IdFuncionario, string TipoExame)
         {
 
             InitializeComponent();
             IdFuncionarioQuestiona = IdFuncionario;
             DataTable DadosFuncionarios = CadastraQuestionario.RecuperaDadosFuncionario(IdFuncionario);
             LabelFuncionario.Text = DadosFuncionarios.Rows[0]["nome"].ToString();
+            LabelData.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
+            LabelExame.Text = TipoExame.ToUpper();
         }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
@@ -39,147 +41,330 @@ namespace SystemCare
             string Cardiaca = "";
             string Endocrino = "";
             string Osseo = "";
-
+            DateTime Datacirurgia= DateTime.Now;
+            DateTime Datainternacao=DateTime.Now;
+            DateTime Datafratura= DateTime.Now;
+            DateTime Dataacidente= DateTime.Now;
+            bool erro = false;
+            //Cirurgia
             if (RadioSimCirurgia.Checked)
             {
                 Cirurgia = "S";
+                try
+                {
+                    Datacirurgia = Convert.ToDateTime(DataCirurgia.Text);
+                }
+                catch
+                {
+                    erro = true;
+                    MetroMessageBox.Show(this, "Favor preencher a data de cirurgia!", "Atenção !", MessageBoxButtons.OK,
+               MessageBoxIcon.Hand);
+                }
+
             }
             else
             {
                 Cirurgia = "N";
+                Datacirurgia = DateTime.Now;
             }
+            //Internação
             if (RadioSimInternacao.Checked)
             {
                 Internacao = "S";
+                try
+                {
+                    Datainternacao = Convert.ToDateTime(DataInternacao.Text);
+                }
+                catch
+                {
+                    erro = true;
+                    MetroMessageBox.Show(this, "Favor preencher a data de internação!", "Atenção !", MessageBoxButtons.OK,
+                    MessageBoxIcon.Hand);
+                }
             }
             else
             {
                 Internacao = "N";
+                Datainternacao = DateTime.Now;
             }
+            //Fratura
             if (RadioFraturaSim.Checked)
             {
                 Fraturas = "S";
+                try
+                {
+                    Datafratura = Convert.ToDateTime(DataFratura.Text);
+                    
+                }
+                catch
+                {
+                    erro = true;
+                    MetroMessageBox.Show(this, "Favor preencher a data da fratura!", "Atenção !", MessageBoxButtons.OK,
+               MessageBoxIcon.Hand);
+                }
             }
             else
             {
                 Fraturas = "N";
+                Datafratura = DateTime.Now;
             }
+
+            //Alergia
             if (RadioAlergiaSim.Checked)
             {
                 Alergias = "S";
+                if (TextAlergia.Text.Length == 0)
+                {
+                    erro = true;
+                    MetroMessageBox.Show(this, "Favor preencher a alergia!", "Atenção !", MessageBoxButtons.OK,
+               MessageBoxIcon.Hand);
+                }
             }
             else
             {
                 Alergias = "N";
             }
+            //Acidente
             if (RadioSimAcidente.Checked)
             {
                 AcidenteTrabalho = "S";
+                try
+                {
+                    Dataacidente = Convert.ToDateTime(DataAcidente.Text);
+
+                }
+                catch {
+                    erro = true;
+                    MetroMessageBox.Show(this, "Favor preencher a data do acidente!", "Atenção !", MessageBoxButtons.OK,
+               MessageBoxIcon.Hand);
+                }
             }
             else
             {
                 AcidenteTrabalho = "N";
+                Dataacidente = DateTime.Now;
             }
+
+            //afastamento
             if (RadioSimAfastamento.Checked)
             {
                 AfastamentoAcidente = "S";
+                if (TextAfastamentoAcidente.Text.Length == 0)
+                {
+                    erro = true;
+                    MetroMessageBox.Show(this, "Favor preencher a quantidade de dias afastado!", "Atenção !", MessageBoxButtons.OK,
+               MessageBoxIcon.Hand);
+                }
             }
             else
             {
                 AfastamentoAcidente = "N";
             }
+            //previdencia
             if (RadioPrevidenciaSim.Checked)
             {
                 AfastamentoPrevidencia = "S";
+                if (TextAfastamentoPrevidencia.Text.Length == 0)
+                {
+                    erro = true;
+                    MetroMessageBox.Show(this, "Favor preencher a quantidade de dias de afastamento pela previdencia!", "Atenção !", MessageBoxButtons.OK,
+               MessageBoxIcon.Hand);
+                }
             }
             else
             {
                 AfastamentoPrevidencia = "N";
             }
+
+            //Respiratoria
             if (Bronquite.Checked)
             {
-                Respiratoria = Bronquite.Text;
+                Respiratoria = Respiratoria + Bronquite.Text + ";";
             }
             if (Asma.Checked)
             {
-                Respiratoria = Respiratoria + ";" + Asma.Text;
+                Respiratoria = Respiratoria + Asma.Text + ";";
             }
             if (Rinite.Checked)
             {
-                Respiratoria = Respiratoria + ";" + Rinite.Text;
+                Respiratoria = Respiratoria + Rinite.Text + ";";
             }
             if (Sinusite.Checked)
             {
-                Respiratoria = Respiratoria + ";" + Sinusite.Text;
+                Respiratoria = Respiratoria + Sinusite.Text + ";";
             }
-            Respiratoria = Respiratoria + ";" + TextRespiratoria.Text;
+            if (TextRespiratoria.Text.Length > 0)
+            {
+                Respiratoria = Respiratoria + TextRespiratoria.Text + ";";
+            }
+
+            //Gastro
             if (Gastrite.Checked)
             {
-                Gastro = Gastrite.Text;
+                Gastro = Gastro + Gastrite.Text + ";";
             }
             if (Ulcera.Checked)
             {
-                Gastro = Gastro + ";" + Ulcera.Text;
+                Gastro = Gastro + Ulcera.Text + ";";
             }
             if (Diarreia.Checked)
             {
-                Gastro = Gastro + ";" + Diarreia.Text;
+                Gastro = Gastro + Diarreia.Text + ";";
             }
             if (Constipacao.Checked)
             {
-                Gastro = Gastro + ";" + Constipacao.Text;
+                Gastro = Gastro + Constipacao.Text + ";";
             }
-            Gastro = Gastro + ";" + TextGastro.Text;
+            if (TextGastro.Text.Length > 0)
+            {
+                Gastro = Gastro + TextGastro.Text + ";";
+            }
+
+
+            //cardiaca
             if (Arritimia.Checked)
             {
-                Cardiaca = Arritimia.Text;
+                Cardiaca = Cardiaca + Arritimia.Text + ";";
             }
             if (Hipertensao.Checked)
             {
-                Cardiaca = Cardiaca + ";" + Hipertensao.Text;
+                Cardiaca = Cardiaca + Hipertensao.Text + ";";
             }
             if (Insuficiencia.Checked)
             {
-                Cardiaca = Cardiaca + ";" + Insuficiencia.Text;
+                Cardiaca = Cardiaca + Insuficiencia.Text + ";";
             }
-            Cardiaca = Cardiaca + ";" + TextCardio.Text;
+            if (TextCardio.Text.Length > 0)
+            {
+                Cardiaca = Cardiaca + TextCardio.Text + ";";
+            }
+
+
+            //Endocrino
             if (Diabetes.Checked)
             {
-                Endocrino = Diabetes.Text;
+                Endocrino = Endocrino + Diabetes.Text + ";";
             }
             if (Hipotireodismo.Checked)
             {
-                Endocrino = Endocrino + ";" + Hipotireodismo.Text;
+                Endocrino = Endocrino + Hipotireodismo.Text + ";";
             }
             if (Hipertireodismo.Checked)
             {
-                Endocrino = Endocrino + ";" + Hipertireodismo.Text;
+                Endocrino = Endocrino + Hipertireodismo.Text + ";";
             }
-            Endocrino = Endocrino + ";" + TextEndocrino.Text;
+            if (TextEndocrino.Text.Length > 0)
+            {
+                Endocrino = Endocrino + TextEndocrino.Text + ";";
+            }
+
+
+            //Osso
             if (Coluna.Checked)
             {
-                Osseo = Coluna.Text;
+                Osseo = Osseo + Coluna.Text + ";";
             }
             if (Ombro.Checked)
             {
-                Osseo = Osseo + ";" + Ombro.Text;
+                Osseo = Osseo + Ombro.Text + ";";
             }
             if (Bracos.Checked)
             {
-                Osseo = Osseo + ";" + Bracos.Text;
+                Osseo = Osseo + Bracos.Text + ";";
             }
             if (Joelhos.Checked)
             {
-                Osseo = Osseo + ";" + Joelhos.Text;
+                Osseo = Osseo + Joelhos.Text + ";";
             }
             if (Mao.Checked)
             {
-                Osseo = Osseo + ";" + Mao.Text;
+                Osseo = Osseo + Mao.Text + ";";
             }
-            Osseo = Osseo + ";" + TextOsteo.Text;
-            CadastraQuestionario.CadastraQuestionario(IdFuncionarioQuestiona, TextQueixa.Text, Cirurgia, DataCirurgia.Value, TextCirurgia.Text, Fraturas, DataFratura.Value, Internacao, TextInternacao.Text, DataInternacao.Value, Alergias, TextAlergia.Text, Respiratoria, Gastro, Cardiaca, Endocrino, Osseo, TextHistorico.Text, AcidenteTrabalho, DataAcidente.Value, AfastamentoAcidente, AfastamentoPrevidencia, TextAfastamentoPrevidencia.Text);
-            MetroMessageBox.Show(this, "Questionário cadastrado com sucesso", "Sucesso !", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Hide();
+            if (TextOsteo.Text.Length > 0)
+            {
+                Osseo = Osseo + TextOsteo.Text + ";";
+            }
+
+            //Neuro
+            var Neuro = "";
+            if (Eplepsia.Checked)
+            {
+                Neuro = Neuro + Eplepsia.Text + ";";
+            }
+            if (Convulsao.Checked)
+            {
+                Neuro = Neuro + Convulsao.Text + ";";
+            }
+            if (Enxaqueca.Checked)
+            {
+                Neuro = Neuro + Enxaqueca.Text + ";";
+            }
+            if (Traumas.Checked)
+            {
+                Neuro = Neuro + Traumas.Text + ";";
+            }
+            if (Avc.Checked)
+            {
+                Neuro = Neuro + Avc.Text + ";";
+            }
+            if (TextOutraNeuro.Text.Length > 0)
+            {
+                Neuro = Neuro + TextOutraNeuro.Text + ";";
+            }
+
+
+            //Renal
+            var Renal = "";
+            if (Colica.Checked)
+            {
+                Renal = Renal + Colica.Text + ";";
+            }
+            if (Calculo.Checked)
+            {
+                Renal = Renal + Calculo.Text + ";";
+            }
+            if (Infeccao.Checked)
+            {
+                Renal = Renal + Infeccao.Text + ";";
+            }
+            if (TextOutraRenal.Text.Length > 0)
+            {
+                Renal = Renal + TextOutraRenal.Text + ";";
+            }
+
+
+            //Habitos de Vida
+            var Habitos = "";
+            if (Tabagismo.Checked)
+            {
+                Habitos = Habitos + Tabagismo.Text + ";";
+            }
+            if (Alcool.Checked)
+            {
+                Habitos = Habitos + Alcool + ";";
+            }
+            if (TextOutrasDrogas.Text.Length > 0)
+            {
+                Habitos = Habitos + TextOutrasDrogas.Text + ";";
+            }
+
+
+            //Atividade Fisica
+            var Atividade = "";
+            if (RadioAtividade.Checked)
+            {
+                Atividade = "S";
+            }
+            else
+            {
+                Atividade = "N";
+            }
+            if (!erro)
+            {
+                CadastraQuestionario.CadastraQuestionario(IdFuncionarioQuestiona, TextQueixa.Text, Cirurgia, Datacirurgia, TextCirurgia.Text, Fraturas, Datafratura, Internacao, TextInternacao.Text, Datainternacao, Alergias, TextAlergia.Text, Respiratoria, Gastro, Cardiaca, Endocrino, Osseo, TextHistorico.Text, AcidenteTrabalho, Dataacidente, AfastamentoAcidente, AfastamentoPrevidencia, TextAfastamentoAcidente.Text ,TextAfastamentoPrevidencia.Text, Neuro, Renal, Habitos, Atividade, FrequenciaAtividade.Value.ToString());
+                MetroMessageBox.Show(this, "Questionário cadastrado com sucesso", "Sucesso !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+            }
         }
 
         private void metroRadioButton2_CheckedChanged(object sender, EventArgs e)
@@ -274,13 +459,13 @@ namespace SystemCare
         {
             if (!RadioOsteo.Checked)
             {
-                Coluna.Visible=true;
-                Ombro.Visible=true;
-                Bracos.Visible=true;
-                Joelhos.Visible=true;
+                Coluna.Visible = true;
+                Ombro.Visible = true;
+                Bracos.Visible = true;
+                Joelhos.Visible = true;
                 Mao.Visible = true;
                 LabelOsteo.Visible = true;
-                TextOsteo.Visible=true;
+                TextOsteo.Visible = true;
             }
             else
             {
@@ -288,9 +473,53 @@ namespace SystemCare
                 Ombro.Visible = false;
                 Bracos.Visible = false;
                 Joelhos.Visible = false;
-                Mao.Visible =false;
+                Mao.Visible = false;
                 LabelOsteo.Visible = false;
                 TextOsteo.Visible = false;
+            }
+        }
+
+        private void RadioNaoNeuro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!RadioNaoNeuro.Checked)
+            {
+                Eplepsia.Visible = true;
+                Convulsao.Visible = true;
+                Enxaqueca.Visible = true;
+                Traumas.Visible = true;
+                Avc.Visible = true;
+                LabelOutraNeuro.Visible = true;
+                TextOutraNeuro.Visible = true;
+            }
+            else
+            {
+                Eplepsia.Visible = false;
+                Convulsao.Visible = false;
+                Enxaqueca.Visible = false;
+                Traumas.Visible = false;
+                Avc.Visible = false;
+                LabelOutraNeuro.Visible = false;
+                TextOutraNeuro.Visible = false;
+            }
+        }
+
+        private void RadioNaoRenal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!RadioNaoRenal.Checked)
+            {
+                Colica.Visible = true;
+                Calculo.Visible = true;
+                Infeccao.Visible = true;
+                LabelOutraRenal.Visible = true;
+                TextOutraRenal.Visible = true;
+            }
+            else
+            {
+                Colica.Visible = false;
+                Calculo.Visible = false;
+                Infeccao.Visible = false;
+                LabelOutraRenal.Visible = false;
+                TextOutraRenal.Visible = false;
             }
         }
     }

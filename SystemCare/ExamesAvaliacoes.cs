@@ -61,7 +61,7 @@ namespace SystemCare
             var Apto = "";
             var Resultado = "";
             var IdFuncionario = Cadastro.GetFuncionarioNova();
-            if (IdFuncionario.Length==0)
+            if (IdFuncionario.Length == 0)
             {
                 MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
                MessageBoxIcon.Hand);
@@ -229,81 +229,207 @@ namespace SystemCare
             }
         }
 
-    private void BtnHistorico_Click(object sender, EventArgs e)
-    {
-        var IdFuncionario = Cadastro.GetFuncionarioNova();
-        if (!IdFuncionario.Equals(""))
+        private void BtnHistorico_Click(object sender, EventArgs e)
         {
-            var MostraHistorico = new Historico(IdFuncionario);
-            MostraHistorico.ShowDialog();
+            var IdFuncionario = Cadastro.GetFuncionarioNova();
+            if (!IdFuncionario.Equals(""))
+            {
+                var MostraHistorico = new Historico(IdFuncionario);
+                MostraHistorico.ShowDialog();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                    MessageBoxIcon.Hand);
+            }
         }
-        else
+
+        private void BtnCadastrarAtestado_Click(object sender, EventArgs e)
         {
-            MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
-                MessageBoxIcon.Hand);
+            var IdFuncionario = Cadastro.GetFuncionarioNova();
+            if (!IdFuncionario.Equals(""))
+            {
+                var CadastrarAtestado = new Atestados(IdFuncionario);
+                CadastrarAtestado.ShowDialog();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                    MessageBoxIcon.Hand);
+            }
+        }
+
+        private void BtnCadastrarVacina_Click(object sender, EventArgs e)
+        {
+            var IdFuncionario = Cadastro.GetFuncionarioNova();
+            if (!IdFuncionario.Equals(""))
+            {
+                var CadastrarVacinas = new Vacinas(IdFuncionario);
+                CadastrarVacinas.ShowDialog();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                    MessageBoxIcon.Hand);
+            }
+        }
+
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            string TipoExame = "";
+            for (var i = 0; i < GridTipoExame.Rows.Count; i++)
+                try
+                {
+                    if (Convert.ToBoolean(GridTipoExame.Rows[i].Cells[0].Value.ToString()))
+                        TipoExame = GridTipoExame.Rows[i].Cells[2].Value.ToString();
+                    i = GridTipoExame.Rows.Count;
+                }
+                catch
+                {
+                }
+            if (TipoExame.Length == 0)
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um tipo de exame!", "Atenção !", MessageBoxButtons.OK,
+           MessageBoxIcon.Hand);
+            }
+            else if (IdfuncionarioQuestionario.Equals(""))
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                   MessageBoxIcon.Hand);
+            }
+
+            else
+            {
+                CheckCalculo Questionario = new CheckCalculo(IdfuncionarioQuestionario, TipoExame);
+                Questionario.ShowDialog();
+                IdfuncionarioQuestionario = "";
+            }
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            if (IdfuncionarioQuestionario.Equals(""))
+            {
+                MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
+                   MessageBoxIcon.Hand);
+            }
+            else
+            {
+
+
+                string TipoExame = "";
+                for (var i = 0; i < GridTipoExame.Rows.Count; i++)
+                    try
+                    {
+                        if (Convert.ToBoolean(GridTipoExame.Rows[i].Cells[0].Value.ToString()))
+                            TipoExame = GridTipoExame.Rows[i].Cells[1].Value.ToString();
+                        i = GridTipoExame.Rows.Count;
+                    }
+                    catch
+                    {
+                    }
+
+
+                var ModalidadeExame = "";
+                var DataExame = "";
+
+                for (var i = 0; i < GridExame.Rows.Count; i++)
+                {
+                    try
+                    {
+                        if (Convert.ToBoolean(GridExame.Rows[i].Cells[0].Value.ToString()))
+                        {
+                            ModalidadeExame = ModalidadeExame + GridExame.Rows[i].Cells[2].Value.ToString() + ";";
+                            DataExame = DataExame + GridExame.Rows[i].Cells[1].Value.ToString() + ";";
+
+
+                        }
+
+                    }
+                    catch { }
+                }
+                if (TipoExame.Length == 0)
+                {
+                    MetroMessageBox.Show(this, "Favor selecionar qual o tipo de exame que será ralizado!", "Atenção !", MessageBoxButtons.OK,
+                  MessageBoxIcon.Hand);
+                }
+                else
+                {
+                    Cadastro.CadastrarConsulta(IdfuncionarioQuestionario, TipoExame, ModalidadeExame, DataExame);
+                    MetroMessageBox.Show(this, "Consulta iniciada com sucesso!", "Sucesso !", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
+                    LabelFuncionarioNova.Text = "Selecione um Funcionário";
+                    GridExame.DataSource = null;
+                    GridTipoExame = null;
+                    DataTable ModalidadesExame = Cadastro.SelecionaModalidadeExame();
+                    DataTable TiposExame = Cadastro.SelecionaExameMedico();
+
+                    GridTipoExame.DataSource = TiposExame;
+                    GridExame.DataSource = ModalidadesExame;
+
+                }
+            }
+        }
+
+        private void BtnConsultasAbertas_Click(object sender, EventArgs e)
+        {
+            Consultas consulta = new Consultas();
+            consulta.ShowDialog();
+            string IdConsulta = Cadastro.GetIdConsulta();
+            DataTable DadosConsulta = Cadastro.RetornaDadosConsulta(IdConsulta);
+            var Modalidades = DadosConsulta.Rows[0]["modalidadeexame"].ToString().Split(';');
+            var Datas = DadosConsulta.Rows[0]["dataexame"].ToString().Split(';');
+           var teste = GridTipoExame.Rows.Count;
+            if (Modalidades.Length > 0)
+            {
+
+                for (var j = 0; j < Modalidades.Length; j++)
+                {
+                    for (var i = 0; i < GridExame.Rows.Count; i++)
+                    {
+                        try
+                        {
+                            if (GridExame.Rows[i].Cells[2].Value.ToString().Equals(Modalidades[j].ToString()))
+                            {
+                                GridExame.Rows[i].Cells[0].Value = true;
+                                GridExame.Rows[i].Cells[1].Value = Datas[j];
+
+
+                            }
+
+                        }
+                        catch { }
+                    }
+                }
+            }
+            var TipoExame = DadosConsulta.Rows[0]["tipoexame"].ToString();
+            
+            for (var i = 0; i < GridTipoExame.Rows.Count; i++)
+            {
+              
+                if (GridTipoExame.Rows[i].Cells[1].Value.ToString().Equals(TipoExame))
+                    GridTipoExame.Rows[i].Cells[0].Value = true;
+            }
+               
+            IdfuncionarioQuestionario = DadosConsulta.Rows[0]["IdFuncionario"].ToString();
+            var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(DadosConsulta.Rows[0]["IdFuncionario"].ToString());
+            var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
+            var Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
+            LabelRiscoFuncionario.Text = "";
+            LabelRiscoFuncionario.Visible = true;
+            var TabelaDadosRiscos = new DataTable();
+            for (var i = 1; i < Riscos.Length; i++)
+            {
+                TabelaDadosRiscos = Cadastro.SelecionaRiscosFuncao(Riscos[i]);
+                LabelRiscoFuncionario.Text = LabelRiscoFuncionario.Text + TabelaDadosRiscos.Rows[0][0] + ": " +
+                                             TabelaDadosRiscos.Rows[0][1] + "\n";
+            }
+            LabelFuncionarioNova.Text = "NOME: " + TabelaDadosFuncionario.Rows[0]["nome"] + "     CPF: " +
+                                        TabelaDadosFuncionario.Rows[0]["cpf"] + "     FUNÇÃO: " +
+                                        TabelaFuncao.Rows[0]["nome"];
+
+
         }
     }
-
-    private void BtnCadastrarAtestado_Click(object sender, EventArgs e)
-    {
-        var IdFuncionario = Cadastro.GetFuncionarioNova();
-        if (!IdFuncionario.Equals(""))
-        {
-            var CadastrarAtestado = new Atestados(IdFuncionario);
-            CadastrarAtestado.ShowDialog();
-        }
-        else
-        {
-            MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
-                MessageBoxIcon.Hand);
-        }
-    }
-
-    private void BtnCadastrarVacina_Click(object sender, EventArgs e)
-    {
-        var IdFuncionario = Cadastro.GetFuncionarioNova();
-        if (!IdFuncionario.Equals(""))
-        {
-            var CadastrarVacinas = new Vacinas(IdFuncionario);
-            CadastrarVacinas.ShowDialog();
-        }
-        else
-        {
-            MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
-                MessageBoxIcon.Hand);
-        }
-    }
-
-    private void BtnQuestionario_Click(object sender, EventArgs e)
-    {
-        if (IdfuncionarioQuestionario.Equals(""))
-        {
-            MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
-               MessageBoxIcon.Hand);
-        }
-        else
-        {
-            QuestionarioMedico Questionario = new QuestionarioMedico(IdfuncionarioQuestionario);
-            Questionario.ShowDialog();
-            IdfuncionarioQuestionario = "";
-        }
-
-    }
-
-    private void metroButton1_Click(object sender, EventArgs e)
-    {
-        if (IdfuncionarioQuestionario.Equals(""))
-        {
-            MetroMessageBox.Show(this, "Favor selecionar um funcionário!", "Atenção !", MessageBoxButtons.OK,
-               MessageBoxIcon.Hand);
-        }
-        else
-        {
-            QuestionarioMedico Questionario = new QuestionarioMedico(IdfuncionarioQuestionario);
-            Questionario.ShowDialog();
-            IdfuncionarioQuestionario = "";
-        }
-    }
-
-}
 }
