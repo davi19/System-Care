@@ -19,7 +19,7 @@ namespace SystemCare
 
         //192.168.1.200
         private readonly MySqlConnection Com =
-            new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+            new MySqlConnection("Server =192.168.1.200; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
         
         public void SetIdConsulta(string Idconsulta)
@@ -57,6 +57,31 @@ namespace SystemCare
                 new MySqlCommand(
                     "SELECT cnae as CNAE,descricao as DESCRIÇÃO FROM cnae WHERE cnae LIKE '%" + ValorDigitado +
                     "%' OR descricao LIKE'%" + ValorDigitado + "%';", Com);
+            var LeitorCnae = new MySqlDataAdapter(SelecionaCnae);
+            var TabelaCnae = new DataTable();
+            LeitorCnae.Fill(TabelaCnae);
+            Com.Close();
+            return TabelaCnae;
+        }
+        public DataTable RetornaQuestionarioFuncionario(string IdFuncionario)
+        {
+            Com.Open();
+            var SelecionaCnae =
+                new MySqlCommand(
+                    "SELECT a.id,b.nome,a.dataquestionario FROM atendimentosmedicos a,funcionarios b WHERE a.idfuncionario=b.id AND a.idfuncionario=" + IdFuncionario +
+                    ";", Com);
+            var LeitorCnae = new MySqlDataAdapter(SelecionaCnae);
+            var TabelaCnae = new DataTable();
+            LeitorCnae.Fill(TabelaCnae);
+            Com.Close();
+            return TabelaCnae;
+        }
+        public DataTable RetornaDadosQuestionarioFuncionario(string IdQuestionario)
+        {
+            Com.Open();
+            var SelecionaCnae =
+                new MySqlCommand(
+                    "SELECT a.*, b.nome,c.descricao FROM atendimentosmedicos a,funcionarios b, examesmedicos c WHERE c.id=a.tipoexame and a.idfuncionario=b.id AND a.id=" + IdQuestionario + ";", Com);
             var LeitorCnae = new MySqlDataAdapter(SelecionaCnae);
             var TabelaCnae = new DataTable();
             LeitorCnae.Fill(TabelaCnae);
@@ -198,7 +223,32 @@ namespace SystemCare
             Com.Close();
             return TabelaEmpresa;
         }
-
+        public DataTable RecuperaDadosEmpresaAso(string Idempresa)
+        {
+            Com.Open();
+            var SelecionaEmpresa =
+                new MySqlCommand(
+                    "SELECT nome,endereco, cnpj,quantidadefuncionario,telefone,email,idcnae,risco, servicoprestado,medicoexaminador,crmmedico FROM empresas WHERE id=" +
+                    Idempresa + ";", Com);
+            var LeitorEmpresa = new MySqlDataAdapter(SelecionaEmpresa);
+            var TabelaEmpresa = new DataTable();
+            LeitorEmpresa.Fill(TabelaEmpresa);
+            Com.Close();
+            return TabelaEmpresa;
+        }
+        public DataTable RecuperaPermissaoUsuario()
+        {
+            Com.Open();
+            var SelecionaEmpresa =
+                new MySqlCommand(
+                    "SELECT permissao FROM usuarios WHERE id=" +
+                    IdUsuario + ";", Com);
+            var LeitorEmpresa = new MySqlDataAdapter(SelecionaEmpresa);
+            var TabelaEmpresa = new DataTable();
+            LeitorEmpresa.Fill(TabelaEmpresa);
+            Com.Close();
+            return TabelaEmpresa;
+        }
         public DataTable RecuperaDadosFuncionario(string IdFuncionario)
         {
             Com.Open();

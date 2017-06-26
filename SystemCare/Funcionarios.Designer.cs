@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Funcionarios));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,9 +38,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Funcionarios));
             this.Editar = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
+            this.TextEscolaridade = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
+            this.TextEstadoCivil = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
+            this.TextDataNascimento = new System.Windows.Forms.MaskedTextBox();
             this.GridFuncaoEditar = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BtnBuscaFuncao = new MetroFramework.Controls.MetroButton();
@@ -49,12 +55,10 @@
             this.TextIdentidade = new System.Windows.Forms.MaskedTextBox();
             this.TextCpf = new System.Windows.Forms.MaskedTextBox();
             this.TextTelefoneFuncionario = new System.Windows.Forms.MaskedTextBox();
-            this.TextDataNascimento = new System.Windows.Forms.MaskedTextBox();
             this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
             this.TextNaturalidade = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.TextImc = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
@@ -70,6 +74,10 @@
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.TextNomeFuncionario = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
+            this.TextEscolaridadeEditar = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
+            this.TextEstadoCivilEditar = new MetroFramework.Controls.MetroTextBox();
             this.GridFuncionarioEditar = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BtnBuscarFuncionario = new MetroFramework.Controls.MetroButton();
@@ -105,14 +113,6 @@
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.TextNomeFuncionarioEditar = new MetroFramework.Controls.MetroTextBox();
-            this.TextEstadoCivil = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
-            this.TextEscolaridade = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
-            this.TextEscolaridadeEditar = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
-            this.TextEstadoCivilEditar = new MetroFramework.Controls.MetroTextBox();
             this.Editar.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridFuncaoEditar)).BeginInit();
@@ -127,7 +127,7 @@
             this.Editar.Controls.Add(this.metroTabPage2);
             this.Editar.Location = new System.Drawing.Point(2, 72);
             this.Editar.Name = "Editar";
-            this.Editar.SelectedIndex = 1;
+            this.Editar.SelectedIndex = 0;
             this.Editar.Size = new System.Drawing.Size(975, 462);
             this.Editar.Style = MetroFramework.MetroColorStyle.Green;
             this.Editar.TabIndex = 0;
@@ -178,6 +178,120 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel27
+            // 
+            this.metroLabel27.AutoSize = true;
+            this.metroLabel27.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel27.Location = new System.Drawing.Point(3, 103);
+            this.metroLabel27.Name = "metroLabel27";
+            this.metroLabel27.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel27.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel27.TabIndex = 70;
+            this.metroLabel27.Text = "Escolaridade:";
+            this.metroLabel27.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextEscolaridade
+            // 
+            this.TextEscolaridade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextEscolaridade.CustomButton.Image = null;
+            this.TextEscolaridade.CustomButton.Location = new System.Drawing.Point(176, 2);
+            this.TextEscolaridade.CustomButton.Name = "";
+            this.TextEscolaridade.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextEscolaridade.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextEscolaridade.CustomButton.TabIndex = 1;
+            this.TextEscolaridade.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEscolaridade.CustomButton.UseSelectable = true;
+            this.TextEscolaridade.CustomButton.Visible = false;
+            this.TextEscolaridade.Icon = ((System.Drawing.Image)(resources.GetObject("TextEscolaridade.Icon")));
+            this.TextEscolaridade.Lines = new string[0];
+            this.TextEscolaridade.Location = new System.Drawing.Point(3, 125);
+            this.TextEscolaridade.MaxLength = 32767;
+            this.TextEscolaridade.Name = "TextEscolaridade";
+            this.TextEscolaridade.PasswordChar = '\0';
+            this.TextEscolaridade.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextEscolaridade.SelectedText = "";
+            this.TextEscolaridade.SelectionLength = 0;
+            this.TextEscolaridade.SelectionStart = 0;
+            this.TextEscolaridade.ShortcutsEnabled = true;
+            this.TextEscolaridade.Size = new System.Drawing.Size(194, 20);
+            this.TextEscolaridade.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextEscolaridade.TabIndex = 69;
+            this.TextEscolaridade.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEscolaridade.UseSelectable = true;
+            this.TextEscolaridade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextEscolaridade.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel26
+            // 
+            this.metroLabel26.AutoSize = true;
+            this.metroLabel26.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel26.Location = new System.Drawing.Point(724, 58);
+            this.metroLabel26.Name = "metroLabel26";
+            this.metroLabel26.Size = new System.Drawing.Size(82, 19);
+            this.metroLabel26.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel26.TabIndex = 68;
+            this.metroLabel26.Text = "Estado Civil:";
+            this.metroLabel26.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextEstadoCivil
+            // 
+            this.TextEstadoCivil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextEstadoCivil.CustomButton.Image = null;
+            this.TextEstadoCivil.CustomButton.Location = new System.Drawing.Point(94, 2);
+            this.TextEstadoCivil.CustomButton.Name = "";
+            this.TextEstadoCivil.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextEstadoCivil.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextEstadoCivil.CustomButton.TabIndex = 1;
+            this.TextEstadoCivil.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEstadoCivil.CustomButton.UseSelectable = true;
+            this.TextEstadoCivil.CustomButton.Visible = false;
+            this.TextEstadoCivil.Icon = ((System.Drawing.Image)(resources.GetObject("TextEstadoCivil.Icon")));
+            this.TextEstadoCivil.Lines = new string[0];
+            this.TextEstadoCivil.Location = new System.Drawing.Point(724, 80);
+            this.TextEstadoCivil.MaxLength = 32767;
+            this.TextEstadoCivil.Name = "TextEstadoCivil";
+            this.TextEstadoCivil.PasswordChar = '\0';
+            this.TextEstadoCivil.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextEstadoCivil.SelectedText = "";
+            this.TextEstadoCivil.SelectionLength = 0;
+            this.TextEstadoCivil.SelectionStart = 0;
+            this.TextEstadoCivil.ShortcutsEnabled = true;
+            this.TextEstadoCivil.Size = new System.Drawing.Size(112, 20);
+            this.TextEstadoCivil.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextEstadoCivil.TabIndex = 67;
+            this.TextEstadoCivil.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEstadoCivil.UseSelectable = true;
+            this.TextEstadoCivil.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextEstadoCivil.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel19
+            // 
+            this.metroLabel19.AutoSize = true;
+            this.metroLabel19.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel19.Location = new System.Drawing.Point(401, 13);
+            this.metroLabel19.Name = "metroLabel19";
+            this.metroLabel19.Size = new System.Drawing.Size(136, 19);
+            this.metroLabel19.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel19.TabIndex = 54;
+            this.metroLabel19.Text = "Data de Nascimento:";
+            this.metroLabel19.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextDataNascimento
+            // 
+            this.TextDataNascimento.Location = new System.Drawing.Point(401, 35);
+            this.TextDataNascimento.Mask = "00/00/0000";
+            this.TextDataNascimento.Name = "TextDataNascimento";
+            this.TextDataNascimento.Size = new System.Drawing.Size(154, 20);
+            this.TextDataNascimento.TabIndex = 43;
+            this.TextDataNascimento.ValidatingType = typeof(System.DateTime);
+            this.TextDataNascimento.Leave += new System.EventHandler(this.TextDataNascimento_Leave);
             // 
             // GridFuncaoEditar
             // 
@@ -336,16 +450,6 @@
             this.TextTelefoneFuncionario.Size = new System.Drawing.Size(237, 20);
             this.TextTelefoneFuncionario.TabIndex = 42;
             // 
-            // TextDataNascimento
-            // 
-            this.TextDataNascimento.Location = new System.Drawing.Point(401, 35);
-            this.TextDataNascimento.Mask = "00/00/0000";
-            this.TextDataNascimento.Name = "TextDataNascimento";
-            this.TextDataNascimento.Size = new System.Drawing.Size(154, 20);
-            this.TextDataNascimento.TabIndex = 43;
-            this.TextDataNascimento.ValidatingType = typeof(System.DateTime);
-            this.TextDataNascimento.Leave += new System.EventHandler(this.TextDataNascimento_Leave);
-            // 
             // metroLabel21
             // 
             this.metroLabel21.AutoSize = true;
@@ -438,18 +542,6 @@
             this.TextImc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextImc.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.TextImc.Enter += new System.EventHandler(this.TextImc_Enter);
-            // 
-            // metroLabel19
-            // 
-            this.metroLabel19.AutoSize = true;
-            this.metroLabel19.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel19.Location = new System.Drawing.Point(401, 13);
-            this.metroLabel19.Name = "metroLabel19";
-            this.metroLabel19.Size = new System.Drawing.Size(136, 19);
-            this.metroLabel19.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel19.TabIndex = 54;
-            this.metroLabel19.Text = "Data de Nascimento:";
-            this.metroLabel19.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // metroLabel18
             // 
@@ -755,6 +847,98 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel28
+            // 
+            this.metroLabel28.AutoSize = true;
+            this.metroLabel28.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel28.Location = new System.Drawing.Point(10, 229);
+            this.metroLabel28.Name = "metroLabel28";
+            this.metroLabel28.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel28.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel28.TabIndex = 103;
+            this.metroLabel28.Text = "Escolaridade:";
+            this.metroLabel28.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextEscolaridadeEditar
+            // 
+            this.TextEscolaridadeEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextEscolaridadeEditar.CustomButton.Image = null;
+            this.TextEscolaridadeEditar.CustomButton.Location = new System.Drawing.Point(176, 2);
+            this.TextEscolaridadeEditar.CustomButton.Name = "";
+            this.TextEscolaridadeEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextEscolaridadeEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextEscolaridadeEditar.CustomButton.TabIndex = 1;
+            this.TextEscolaridadeEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEscolaridadeEditar.CustomButton.UseSelectable = true;
+            this.TextEscolaridadeEditar.CustomButton.Visible = false;
+            this.TextEscolaridadeEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextEscolaridadeEditar.Icon")));
+            this.TextEscolaridadeEditar.Lines = new string[0];
+            this.TextEscolaridadeEditar.Location = new System.Drawing.Point(9, 251);
+            this.TextEscolaridadeEditar.MaxLength = 32767;
+            this.TextEscolaridadeEditar.Name = "TextEscolaridadeEditar";
+            this.TextEscolaridadeEditar.PasswordChar = '\0';
+            this.TextEscolaridadeEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextEscolaridadeEditar.SelectedText = "";
+            this.TextEscolaridadeEditar.SelectionLength = 0;
+            this.TextEscolaridadeEditar.SelectionStart = 0;
+            this.TextEscolaridadeEditar.ShortcutsEnabled = true;
+            this.TextEscolaridadeEditar.Size = new System.Drawing.Size(194, 20);
+            this.TextEscolaridadeEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextEscolaridadeEditar.TabIndex = 102;
+            this.TextEscolaridadeEditar.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEscolaridadeEditar.UseSelectable = true;
+            this.TextEscolaridadeEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextEscolaridadeEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel29
+            // 
+            this.metroLabel29.AutoSize = true;
+            this.metroLabel29.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel29.Location = new System.Drawing.Point(705, 184);
+            this.metroLabel29.Name = "metroLabel29";
+            this.metroLabel29.Size = new System.Drawing.Size(82, 19);
+            this.metroLabel29.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel29.TabIndex = 101;
+            this.metroLabel29.Text = "Estado Civil:";
+            this.metroLabel29.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextEstadoCivilEditar
+            // 
+            this.TextEstadoCivilEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextEstadoCivilEditar.CustomButton.Image = null;
+            this.TextEstadoCivilEditar.CustomButton.Location = new System.Drawing.Point(94, 2);
+            this.TextEstadoCivilEditar.CustomButton.Name = "";
+            this.TextEstadoCivilEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextEstadoCivilEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextEstadoCivilEditar.CustomButton.TabIndex = 1;
+            this.TextEstadoCivilEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEstadoCivilEditar.CustomButton.UseSelectable = true;
+            this.TextEstadoCivilEditar.CustomButton.Visible = false;
+            this.TextEstadoCivilEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextEstadoCivilEditar.Icon")));
+            this.TextEstadoCivilEditar.Lines = new string[0];
+            this.TextEstadoCivilEditar.Location = new System.Drawing.Point(705, 206);
+            this.TextEstadoCivilEditar.MaxLength = 32767;
+            this.TextEstadoCivilEditar.Name = "TextEstadoCivilEditar";
+            this.TextEstadoCivilEditar.PasswordChar = '\0';
+            this.TextEstadoCivilEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextEstadoCivilEditar.SelectedText = "";
+            this.TextEstadoCivilEditar.SelectionLength = 0;
+            this.TextEstadoCivilEditar.SelectionStart = 0;
+            this.TextEstadoCivilEditar.ShortcutsEnabled = true;
+            this.TextEstadoCivilEditar.Size = new System.Drawing.Size(112, 20);
+            this.TextEstadoCivilEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextEstadoCivilEditar.TabIndex = 100;
+            this.TextEstadoCivilEditar.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextEstadoCivilEditar.UseSelectable = true;
+            this.TextEstadoCivilEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextEstadoCivilEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // GridFuncionarioEditar
             // 
@@ -1410,190 +1594,6 @@
             this.TextNomeFuncionarioEditar.UseSelectable = true;
             this.TextNomeFuncionarioEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextNomeFuncionarioEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // TextEstadoCivil
-            // 
-            this.TextEstadoCivil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextEstadoCivil.CustomButton.Image = null;
-            this.TextEstadoCivil.CustomButton.Location = new System.Drawing.Point(94, 2);
-            this.TextEstadoCivil.CustomButton.Name = "";
-            this.TextEstadoCivil.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextEstadoCivil.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextEstadoCivil.CustomButton.TabIndex = 1;
-            this.TextEstadoCivil.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextEstadoCivil.CustomButton.UseSelectable = true;
-            this.TextEstadoCivil.CustomButton.Visible = false;
-            this.TextEstadoCivil.Icon = ((System.Drawing.Image)(resources.GetObject("TextEstadoCivil.Icon")));
-            this.TextEstadoCivil.Lines = new string[0];
-            this.TextEstadoCivil.Location = new System.Drawing.Point(724, 80);
-            this.TextEstadoCivil.MaxLength = 32767;
-            this.TextEstadoCivil.Name = "TextEstadoCivil";
-            this.TextEstadoCivil.PasswordChar = '\0';
-            this.TextEstadoCivil.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextEstadoCivil.SelectedText = "";
-            this.TextEstadoCivil.SelectionLength = 0;
-            this.TextEstadoCivil.SelectionStart = 0;
-            this.TextEstadoCivil.ShortcutsEnabled = true;
-            this.TextEstadoCivil.Size = new System.Drawing.Size(112, 20);
-            this.TextEstadoCivil.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextEstadoCivil.TabIndex = 67;
-            this.TextEstadoCivil.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextEstadoCivil.UseSelectable = true;
-            this.TextEstadoCivil.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextEstadoCivil.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel26
-            // 
-            this.metroLabel26.AutoSize = true;
-            this.metroLabel26.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel26.Location = new System.Drawing.Point(724, 58);
-            this.metroLabel26.Name = "metroLabel26";
-            this.metroLabel26.Size = new System.Drawing.Size(82, 19);
-            this.metroLabel26.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel26.TabIndex = 68;
-            this.metroLabel26.Text = "Estado Civil:";
-            this.metroLabel26.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // metroLabel27
-            // 
-            this.metroLabel27.AutoSize = true;
-            this.metroLabel27.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel27.Location = new System.Drawing.Point(3, 103);
-            this.metroLabel27.Name = "metroLabel27";
-            this.metroLabel27.Size = new System.Drawing.Size(87, 19);
-            this.metroLabel27.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel27.TabIndex = 70;
-            this.metroLabel27.Text = "Escolaridade:";
-            this.metroLabel27.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // TextEscolaridade
-            // 
-            this.TextEscolaridade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextEscolaridade.CustomButton.Image = null;
-            this.TextEscolaridade.CustomButton.Location = new System.Drawing.Point(176, 2);
-            this.TextEscolaridade.CustomButton.Name = "";
-            this.TextEscolaridade.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextEscolaridade.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextEscolaridade.CustomButton.TabIndex = 1;
-            this.TextEscolaridade.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextEscolaridade.CustomButton.UseSelectable = true;
-            this.TextEscolaridade.CustomButton.Visible = false;
-            this.TextEscolaridade.Icon = ((System.Drawing.Image)(resources.GetObject("TextEscolaridade.Icon")));
-            this.TextEscolaridade.Lines = new string[0];
-            this.TextEscolaridade.Location = new System.Drawing.Point(3, 125);
-            this.TextEscolaridade.MaxLength = 32767;
-            this.TextEscolaridade.Name = "TextEscolaridade";
-            this.TextEscolaridade.PasswordChar = '\0';
-            this.TextEscolaridade.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextEscolaridade.SelectedText = "";
-            this.TextEscolaridade.SelectionLength = 0;
-            this.TextEscolaridade.SelectionStart = 0;
-            this.TextEscolaridade.ShortcutsEnabled = true;
-            this.TextEscolaridade.Size = new System.Drawing.Size(194, 20);
-            this.TextEscolaridade.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextEscolaridade.TabIndex = 69;
-            this.TextEscolaridade.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextEscolaridade.UseSelectable = true;
-            this.TextEscolaridade.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextEscolaridade.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel28
-            // 
-            this.metroLabel28.AutoSize = true;
-            this.metroLabel28.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel28.Location = new System.Drawing.Point(10, 229);
-            this.metroLabel28.Name = "metroLabel28";
-            this.metroLabel28.Size = new System.Drawing.Size(87, 19);
-            this.metroLabel28.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel28.TabIndex = 103;
-            this.metroLabel28.Text = "Escolaridade:";
-            this.metroLabel28.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // TextEscolaridadeEditar
-            // 
-            this.TextEscolaridadeEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextEscolaridadeEditar.CustomButton.Image = null;
-            this.TextEscolaridadeEditar.CustomButton.Location = new System.Drawing.Point(176, 2);
-            this.TextEscolaridadeEditar.CustomButton.Name = "";
-            this.TextEscolaridadeEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextEscolaridadeEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextEscolaridadeEditar.CustomButton.TabIndex = 1;
-            this.TextEscolaridadeEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextEscolaridadeEditar.CustomButton.UseSelectable = true;
-            this.TextEscolaridadeEditar.CustomButton.Visible = false;
-            this.TextEscolaridadeEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextEscolaridadeEditar.Icon")));
-            this.TextEscolaridadeEditar.Lines = new string[0];
-            this.TextEscolaridadeEditar.Location = new System.Drawing.Point(9, 251);
-            this.TextEscolaridadeEditar.MaxLength = 32767;
-            this.TextEscolaridadeEditar.Name = "TextEscolaridadeEditar";
-            this.TextEscolaridadeEditar.PasswordChar = '\0';
-            this.TextEscolaridadeEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextEscolaridadeEditar.SelectedText = "";
-            this.TextEscolaridadeEditar.SelectionLength = 0;
-            this.TextEscolaridadeEditar.SelectionStart = 0;
-            this.TextEscolaridadeEditar.ShortcutsEnabled = true;
-            this.TextEscolaridadeEditar.Size = new System.Drawing.Size(194, 20);
-            this.TextEscolaridadeEditar.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextEscolaridadeEditar.TabIndex = 102;
-            this.TextEscolaridadeEditar.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextEscolaridadeEditar.UseSelectable = true;
-            this.TextEscolaridadeEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextEscolaridadeEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel29
-            // 
-            this.metroLabel29.AutoSize = true;
-            this.metroLabel29.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel29.Location = new System.Drawing.Point(705, 184);
-            this.metroLabel29.Name = "metroLabel29";
-            this.metroLabel29.Size = new System.Drawing.Size(82, 19);
-            this.metroLabel29.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel29.TabIndex = 101;
-            this.metroLabel29.Text = "Estado Civil:";
-            this.metroLabel29.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // TextEstadoCivilEditar
-            // 
-            this.TextEstadoCivilEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextEstadoCivilEditar.CustomButton.Image = null;
-            this.TextEstadoCivilEditar.CustomButton.Location = new System.Drawing.Point(94, 2);
-            this.TextEstadoCivilEditar.CustomButton.Name = "";
-            this.TextEstadoCivilEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextEstadoCivilEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextEstadoCivilEditar.CustomButton.TabIndex = 1;
-            this.TextEstadoCivilEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextEstadoCivilEditar.CustomButton.UseSelectable = true;
-            this.TextEstadoCivilEditar.CustomButton.Visible = false;
-            this.TextEstadoCivilEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextEstadoCivilEditar.Icon")));
-            this.TextEstadoCivilEditar.Lines = new string[0];
-            this.TextEstadoCivilEditar.Location = new System.Drawing.Point(705, 206);
-            this.TextEstadoCivilEditar.MaxLength = 32767;
-            this.TextEstadoCivilEditar.Name = "TextEstadoCivilEditar";
-            this.TextEstadoCivilEditar.PasswordChar = '\0';
-            this.TextEstadoCivilEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextEstadoCivilEditar.SelectedText = "";
-            this.TextEstadoCivilEditar.SelectionLength = 0;
-            this.TextEstadoCivilEditar.SelectionStart = 0;
-            this.TextEstadoCivilEditar.ShortcutsEnabled = true;
-            this.TextEstadoCivilEditar.Size = new System.Drawing.Size(112, 20);
-            this.TextEstadoCivilEditar.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextEstadoCivilEditar.TabIndex = 100;
-            this.TextEstadoCivilEditar.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextEstadoCivilEditar.UseSelectable = true;
-            this.TextEstadoCivilEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextEstadoCivilEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // Funcionarios
             // 

@@ -77,7 +77,7 @@ namespace SystemCare
                             "Preencha o CPF do funcionário", "Atenção",
                             MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     }
-                    else if (!TextIdentidade.MaskCompleted)
+                    else if (TextIdentidade.Text.Length==0)
                     {
                         MetroMessageBox.Show(this,
                             "Preencha a identidade do funcionário", "Atenção",
@@ -100,6 +100,25 @@ namespace SystemCare
                         MetroMessageBox.Show(this,
                          "Preencha o estado civil do funcionário", "Atenção",
                          MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+                    else if (TextPeso.Text.Length == 0)
+                    {
+                        MetroMessageBox.Show(this,
+                         "Preencha o peso do funcionário", "Atenção",
+                         MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+                    else if (TextAltura.Text.Length == 0)
+                    {
+                        MetroMessageBox.Show(this,
+                         "Preencha a altura do funcionário", "Atenção",
+                         MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+                    else if (TextImc.Text.Length == 0)
+                    {
+                        MetroMessageBox.Show(this,
+                         "Preencha o IMC do funcionário", "Atenção",
+                         MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    
                     }
                     else
                     {
@@ -352,5 +371,7 @@ namespace SystemCare
             if (Convert.ToDateTime(TextDataNascimento.Text).Date > today.AddYears(-age)) age--;
             TextIdade.Text = age.ToString();
         }
+
+       
     }
 }

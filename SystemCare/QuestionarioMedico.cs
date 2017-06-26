@@ -12,19 +12,252 @@ using MetroFramework.Forms;
 
 namespace SystemCare
 {
-    public partial class CheckCalculo : MetroForm
+    public partial class QuestionarioMedico : MetroForm
     {
         QuerryMysql CadastraQuestionario = new QuerryMysql();
         static string IdFuncionarioQuestiona;
-        public CheckCalculo(string IdFuncionario, string TipoExame)
+
+        public QuestionarioMedico(string IdFuncionario, string TipoExame,string Recupera)
         {
 
             InitializeComponent();
-            IdFuncionarioQuestiona = IdFuncionario;
-            DataTable DadosFuncionarios = CadastraQuestionario.RecuperaDadosFuncionario(IdFuncionario);
-            LabelFuncionario.Text = DadosFuncionarios.Rows[0]["nome"].ToString();
-            LabelData.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
-            LabelExame.Text = TipoExame.ToUpper();
+            if (Recupera.Equals("0"))
+            {
+                IdFuncionarioQuestiona = IdFuncionario;
+                DataTable DadosFuncionarios = CadastraQuestionario.RecuperaDadosFuncionario(IdFuncionario);
+                LabelFuncionario.Text = DadosFuncionarios.Rows[0]["nome"].ToString();
+                LabelData.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
+                LabelExame.Text = TipoExame.ToUpper();
+            }
+            else
+            {
+                BtnCadastrar.Visible = false;
+                DataTable DadosQuestionario = CadastraQuestionario.RetornaDadosQuestionarioFuncionario(Recupera);
+                TextQueixa.Text = DadosQuestionario.Rows[0]["queixa"].ToString();
+                LabelFuncionario.Text = DadosQuestionario.Rows[0]["nome"].ToString();
+                if (DadosQuestionario.Rows[0]["cirurgiaanterior"].ToString() == "S")
+                {
+                    RadioSimCirurgia.Checked = true;
+                    TextCirurgia.Text = DadosQuestionario.Rows[0]["nomecirurgia"].ToString();
+                    DataCirurgia.Text = DadosQuestionario.Rows[0]["datacirurgia"].ToString();
+
+                }
+                if (DadosQuestionario.Rows[0]["internacao"].ToString() == "S")
+                {
+                    RadioSimInternacao.Checked = true;
+                    TextInternacao.Text = DadosQuestionario.Rows[0]["motivointernacao"].ToString();
+                    DataInternacao.Text = DadosQuestionario.Rows[0]["datainternacao"].ToString();
+
+                }
+                if (DadosQuestionario.Rows[0]["fratura"].ToString() == "S")
+                {
+                    RadioFraturaSim.Checked = true;
+                    DataFratura.Text = DadosQuestionario.Rows[0]["datatomografia"].ToString();
+                }
+                if (DadosQuestionario.Rows[0]["alergia"].ToString() == "S")
+                {
+                    RadioAlergiaSim.Checked = true;
+                    TextAlergia.Text = DadosQuestionario.Rows[0]["descricaoalergia"].ToString();
+                }
+
+                TextHistorico.Text = DadosQuestionario.Rows[0]["historiaocupacional"].ToString();
+
+                if (DadosQuestionario.Rows[0]["acidentedetrabalho"].ToString()=="S")
+                {
+                    RadioSimAcidente.Checked = true;
+                    DataAcidente.Text = DadosQuestionario.Rows[0]["dataacidente"].ToString();
+
+                }
+                if (DadosQuestionario.Rows[0]["afastamentoinss"].ToString() == "S")
+                {
+                    RadioPrevidenciaSim.Checked = true;
+                    TextAfastamentoPrevidencia.Text = DadosQuestionario.Rows[0]["periodoafastamentoinss"].ToString();
+                }
+                if (DadosQuestionario.Rows[0]["afastamentoacidente"].ToString() == "S")
+                {
+                    RadioSimAfastamento.Checked = true;
+                    TextAfastamentoAcidente.Text = DadosQuestionario.Rows[0]["periodoafastamento"].ToString();
+                }
+
+                
+
+
+                var Respiratoria = DadosQuestionario.Rows[0]["doencarespiratoria"].ToString().Split(';');
+                var Gastro = DadosQuestionario.Rows[0]["doencagastrointestinal"].ToString().Split(';');
+                var Cardio = DadosQuestionario.Rows[0]["doencacardiaca"].ToString().Split(';');
+                var Endocrino = DadosQuestionario.Rows[0]["doencaendocrina"].ToString().Split(';');
+                var Oesteo = DadosQuestionario.Rows[0]["doencaosteomusculares"].ToString().Split(';');
+                var Neuro = DadosQuestionario.Rows[0]["doencaneurologica"].ToString().Split(';');
+                var Renal = DadosQuestionario.Rows[0]["doencarenal"].ToString().Split(';');
+                var Habitos = DadosQuestionario.Rows[0]["habitodevida"].ToString().Split(';');
+
+
+                if (DadosQuestionario.Rows[0]["atividadefisica"].ToString() == "S")
+                {
+                    RadioAtividade.Checked = true;
+                    FrequenciaAtividade.Value = Convert.ToInt32(DadosQuestionario.Rows[0]["frequenciaatividade"].ToString());
+                }
+                LabelData.Text = Convert.ToDateTime(DadosQuestionario.Rows[0]["dataquestionario"].ToString()).Date.ToString("dd/MM/yyyy");
+                LabelExame.Text = DadosQuestionario.Rows[0]["descricao"].ToString();
+                if (Respiratoria.Length > 0)
+                {
+                    RadioSimRespiratoria.Checked = true;
+                }
+                for (int i = 0; i < Respiratoria.Length; i++)
+                {
+                    if (Respiratoria[i].Length > 0)
+                    {
+                        foreach (var pb in this.Controls.OfType<CheckBox>())
+                        {
+                            if (pb.Name.Contains(Respiratoria[i]))
+                            {
+                                pb.Checked = true;
+                            }
+                        }
+                    }
+                }
+
+
+
+                if (Gastro.Length > 0)
+                {
+                    RadioSimGastro.Checked = true;
+                }
+                for (int i = 0; i < Gastro.Length; i++)
+                {
+                    if (Gastro[i].Length > 0)
+                    {
+                        foreach (var pb in this.Controls.OfType<CheckBox>())
+                        {
+                            if (pb.Name.Contains(Gastro[i]))
+                            {
+                                pb.Checked = true;
+                            }
+                        }
+                    }
+                }
+
+
+
+
+
+                if (Cardio.Length > 0)
+                {
+                    RadioSimCardio.Checked = true;
+                }
+                for (int i = 0; i < Cardio.Length; i++)
+                {
+                    if (Cardio[i].Length > 0)
+                    {
+                        foreach (var pb in this.Controls.OfType<CheckBox>())
+                        {
+                            if (pb.Name.Contains(Cardio[i]))
+                            {
+                                pb.Checked = true;
+                            }
+                        }
+                    }
+                }
+
+
+
+
+                if (Endocrino.Length > 0)
+                {
+                    RadioSimEndocrino.Checked = true;
+                }
+                for (int i = 0; i < Endocrino.Length; i++)
+                {
+                    if (Endocrino[i].Length > 0)
+                    {
+                        foreach (var pb in this.Controls.OfType<CheckBox>())
+                        {
+                            if (pb.Name.Contains(Endocrino[i]))
+                            {
+                                pb.Checked = true;
+                            }
+                        }
+                    }
+                }
+
+
+
+                if (Oesteo.Length > 0)
+                {
+                    RadioSimOsteo.Checked = true;
+                }
+                for (int i = 0; i < Oesteo.Length; i++)
+                {
+                    if (Oesteo[i].Length > 0)
+                    {
+                        foreach (var pb in this.Controls.OfType<CheckBox>())
+                        {
+                            if (pb.Name.Contains(Oesteo[i]))
+                            {
+                                pb.Checked = true;
+                            }
+                        }
+                    }
+                }
+
+
+
+                if (Neuro.Length > 0)
+                {
+                    RadioSimNeuro.Checked = true;
+                }
+                for (int i = 0; i < Neuro.Length; i++)
+                {
+                    if (Neuro[i].Length > 0)
+                    {
+                        foreach (var pb in this.Controls.OfType<CheckBox>())
+                        {
+                            if (pb.Name.Contains(Neuro[i]))
+                            {
+                                pb.Checked = true;
+                            }
+                        }
+                    }
+                }
+
+
+                if (Renal.Length > 0)
+                {
+                    RadioSimRenal.Checked = true;
+                }
+                for (int i = 0; i < Renal.Length; i++)
+                {
+                    if (Renal[i].Length > 0)
+                    {
+                        foreach (var pb in this.Controls.OfType<CheckBox>())
+                        {
+                            if (pb.Name.Contains(Renal[i]))
+                            {
+                                pb.Checked = true;
+                            }
+                        }
+                    }
+                }
+
+                
+                for (int i = 0; i < Habitos.Length; i++)
+                {
+                    if (Habitos[i].Length > 0)
+                    {
+                        foreach (var pb in this.Controls.OfType<CheckBox>())
+                        {
+                            if (pb.Name.Contains(Habitos[i]))
+                            {
+                                pb.Checked = true;
+                            }
+                        }
+                    }
+                }
+
+
+
+
+            }
         }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)

@@ -18,6 +18,8 @@ namespace SystemCare
             InitializeComponent();
             var TabelaHiostorico = Cadastro.SelecionaHistoricoFuncionario(IdFuncionario);
             GridHistorico.DataSource = TabelaHiostorico;
+            var TabelaQuestionario = Cadastro.RetornaQuestionarioFuncionario(IdFuncionario);
+            GridQuestionario.DataSource = TabelaQuestionario;
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
@@ -168,6 +170,15 @@ namespace SystemCare
                Relatorios Aso = new Relatorios(arquivo);
                Aso.ShowDialog();
 
+            }
+        }
+
+        private void GridQuestionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                QuestionarioMedico questionario = new QuestionarioMedico("", "", GridQuestionario.Rows[e.RowIndex].Cells[1].Value.ToString());
+                questionario.ShowDialog();
             }
         }
     }

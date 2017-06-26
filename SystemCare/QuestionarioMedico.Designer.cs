@@ -1,6 +1,6 @@
 ﻿namespace SystemCare
 {
-    partial class CheckCalculo
+    partial class QuestionarioMedico
     {
         /// <summary>
         /// Required designer variable.
@@ -108,24 +108,24 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
+            this.RadioSimRespiratoria = new MetroFramework.Controls.MetroRadioButton();
             this.RadioRespiratoria = new MetroFramework.Controls.MetroRadioButton();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.metroRadioButton2 = new MetroFramework.Controls.MetroRadioButton();
+            this.RadioSimGastro = new MetroFramework.Controls.MetroRadioButton();
             this.RadioGastro = new MetroFramework.Controls.MetroRadioButton();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.metroRadioButton4 = new MetroFramework.Controls.MetroRadioButton();
+            this.RadioSimCardio = new MetroFramework.Controls.MetroRadioButton();
             this.RadioCardio = new MetroFramework.Controls.MetroRadioButton();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.metroRadioButton6 = new MetroFramework.Controls.MetroRadioButton();
+            this.RadioSimEndocrino = new MetroFramework.Controls.MetroRadioButton();
             this.RadioEndocrino = new MetroFramework.Controls.MetroRadioButton();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.metroRadioButton8 = new MetroFramework.Controls.MetroRadioButton();
+            this.RadioSimOsteo = new MetroFramework.Controls.MetroRadioButton();
             this.RadioOsteo = new MetroFramework.Controls.MetroRadioButton();
             this.LabelData = new MetroFramework.Controls.MetroLabel();
             this.LabelExame = new MetroFramework.Controls.MetroLabel();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.metroRadioButton3 = new MetroFramework.Controls.MetroRadioButton();
+            this.RadioSimRenal = new MetroFramework.Controls.MetroRadioButton();
             this.RadioNaoRenal = new MetroFramework.Controls.MetroRadioButton();
             this.LabelOutraRenal = new MetroFramework.Controls.MetroLabel();
             this.Infeccao = new MetroFramework.Controls.MetroCheckBox();
@@ -134,7 +134,7 @@
             this.Calculo = new MetroFramework.Controls.MetroCheckBox();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.metroRadioButton7 = new MetroFramework.Controls.MetroRadioButton();
+            this.RadioSimNeuro = new MetroFramework.Controls.MetroRadioButton();
             this.RadioNaoNeuro = new MetroFramework.Controls.MetroRadioButton();
             this.LabelOutraNeuro = new MetroFramework.Controls.MetroLabel();
             this.Avc = new MetroFramework.Controls.MetroCheckBox();
@@ -1286,7 +1286,7 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.metroRadioButton1);
+            this.groupBox8.Controls.Add(this.RadioSimRespiratoria);
             this.groupBox8.Controls.Add(this.RadioRespiratoria);
             this.groupBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox8.Location = new System.Drawing.Point(183, 318);
@@ -1296,16 +1296,16 @@
             this.groupBox8.TabIndex = 86;
             this.groupBox8.TabStop = false;
             // 
-            // metroRadioButton1
+            // RadioSimRespiratoria
             // 
-            this.metroRadioButton1.AutoSize = true;
-            this.metroRadioButton1.Location = new System.Drawing.Point(6, 7);
-            this.metroRadioButton1.Name = "metroRadioButton1";
-            this.metroRadioButton1.Size = new System.Drawing.Size(43, 15);
-            this.metroRadioButton1.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroRadioButton1.TabIndex = 8;
-            this.metroRadioButton1.Text = "Sim";
-            this.metroRadioButton1.UseSelectable = true;
+            this.RadioSimRespiratoria.AutoSize = true;
+            this.RadioSimRespiratoria.Location = new System.Drawing.Point(6, 7);
+            this.RadioSimRespiratoria.Name = "RadioSimRespiratoria";
+            this.RadioSimRespiratoria.Size = new System.Drawing.Size(43, 15);
+            this.RadioSimRespiratoria.Style = MetroFramework.MetroColorStyle.Green;
+            this.RadioSimRespiratoria.TabIndex = 8;
+            this.RadioSimRespiratoria.Text = "Sim";
+            this.RadioSimRespiratoria.UseSelectable = true;
             // 
             // RadioRespiratoria
             // 
@@ -1323,7 +1323,7 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.metroRadioButton2);
+            this.groupBox9.Controls.Add(this.RadioSimGastro);
             this.groupBox9.Controls.Add(this.RadioGastro);
             this.groupBox9.Location = new System.Drawing.Point(207, 367);
             this.groupBox9.Name = "groupBox9";
@@ -1331,16 +1331,16 @@
             this.groupBox9.TabIndex = 92;
             this.groupBox9.TabStop = false;
             // 
-            // metroRadioButton2
+            // RadioSimGastro
             // 
-            this.metroRadioButton2.AutoSize = true;
-            this.metroRadioButton2.Location = new System.Drawing.Point(6, 7);
-            this.metroRadioButton2.Name = "metroRadioButton2";
-            this.metroRadioButton2.Size = new System.Drawing.Size(43, 15);
-            this.metroRadioButton2.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroRadioButton2.TabIndex = 8;
-            this.metroRadioButton2.Text = "Sim";
-            this.metroRadioButton2.UseSelectable = true;
+            this.RadioSimGastro.AutoSize = true;
+            this.RadioSimGastro.Location = new System.Drawing.Point(6, 7);
+            this.RadioSimGastro.Name = "RadioSimGastro";
+            this.RadioSimGastro.Size = new System.Drawing.Size(43, 15);
+            this.RadioSimGastro.Style = MetroFramework.MetroColorStyle.Green;
+            this.RadioSimGastro.TabIndex = 8;
+            this.RadioSimGastro.Text = "Sim";
+            this.RadioSimGastro.UseSelectable = true;
             // 
             // RadioGastro
             // 
@@ -1358,7 +1358,7 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.metroRadioButton4);
+            this.groupBox10.Controls.Add(this.RadioSimCardio);
             this.groupBox10.Controls.Add(this.RadioCardio);
             this.groupBox10.Location = new System.Drawing.Point(183, 406);
             this.groupBox10.Name = "groupBox10";
@@ -1366,16 +1366,16 @@
             this.groupBox10.TabIndex = 93;
             this.groupBox10.TabStop = false;
             // 
-            // metroRadioButton4
+            // RadioSimCardio
             // 
-            this.metroRadioButton4.AutoSize = true;
-            this.metroRadioButton4.Location = new System.Drawing.Point(6, 7);
-            this.metroRadioButton4.Name = "metroRadioButton4";
-            this.metroRadioButton4.Size = new System.Drawing.Size(43, 15);
-            this.metroRadioButton4.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroRadioButton4.TabIndex = 8;
-            this.metroRadioButton4.Text = "Sim";
-            this.metroRadioButton4.UseSelectable = true;
+            this.RadioSimCardio.AutoSize = true;
+            this.RadioSimCardio.Location = new System.Drawing.Point(6, 7);
+            this.RadioSimCardio.Name = "RadioSimCardio";
+            this.RadioSimCardio.Size = new System.Drawing.Size(43, 15);
+            this.RadioSimCardio.Style = MetroFramework.MetroColorStyle.Green;
+            this.RadioSimCardio.TabIndex = 8;
+            this.RadioSimCardio.Text = "Sim";
+            this.RadioSimCardio.UseSelectable = true;
             // 
             // RadioCardio
             // 
@@ -1393,7 +1393,7 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.metroRadioButton6);
+            this.groupBox11.Controls.Add(this.RadioSimEndocrino);
             this.groupBox11.Controls.Add(this.RadioEndocrino);
             this.groupBox11.Location = new System.Drawing.Point(166, 447);
             this.groupBox11.Name = "groupBox11";
@@ -1401,16 +1401,16 @@
             this.groupBox11.TabIndex = 94;
             this.groupBox11.TabStop = false;
             // 
-            // metroRadioButton6
+            // RadioSimEndocrino
             // 
-            this.metroRadioButton6.AutoSize = true;
-            this.metroRadioButton6.Location = new System.Drawing.Point(6, 7);
-            this.metroRadioButton6.Name = "metroRadioButton6";
-            this.metroRadioButton6.Size = new System.Drawing.Size(43, 15);
-            this.metroRadioButton6.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroRadioButton6.TabIndex = 8;
-            this.metroRadioButton6.Text = "Sim";
-            this.metroRadioButton6.UseSelectable = true;
+            this.RadioSimEndocrino.AutoSize = true;
+            this.RadioSimEndocrino.Location = new System.Drawing.Point(6, 7);
+            this.RadioSimEndocrino.Name = "RadioSimEndocrino";
+            this.RadioSimEndocrino.Size = new System.Drawing.Size(43, 15);
+            this.RadioSimEndocrino.Style = MetroFramework.MetroColorStyle.Green;
+            this.RadioSimEndocrino.TabIndex = 8;
+            this.RadioSimEndocrino.Text = "Sim";
+            this.RadioSimEndocrino.UseSelectable = true;
             // 
             // RadioEndocrino
             // 
@@ -1428,7 +1428,7 @@
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.metroRadioButton8);
+            this.groupBox12.Controls.Add(this.RadioSimOsteo);
             this.groupBox12.Controls.Add(this.RadioOsteo);
             this.groupBox12.Location = new System.Drawing.Point(207, 483);
             this.groupBox12.Name = "groupBox12";
@@ -1436,16 +1436,16 @@
             this.groupBox12.TabIndex = 95;
             this.groupBox12.TabStop = false;
             // 
-            // metroRadioButton8
+            // RadioSimOsteo
             // 
-            this.metroRadioButton8.AutoSize = true;
-            this.metroRadioButton8.Location = new System.Drawing.Point(6, 7);
-            this.metroRadioButton8.Name = "metroRadioButton8";
-            this.metroRadioButton8.Size = new System.Drawing.Size(43, 15);
-            this.metroRadioButton8.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroRadioButton8.TabIndex = 8;
-            this.metroRadioButton8.Text = "Sim";
-            this.metroRadioButton8.UseSelectable = true;
+            this.RadioSimOsteo.AutoSize = true;
+            this.RadioSimOsteo.Location = new System.Drawing.Point(6, 7);
+            this.RadioSimOsteo.Name = "RadioSimOsteo";
+            this.RadioSimOsteo.Size = new System.Drawing.Size(43, 15);
+            this.RadioSimOsteo.Style = MetroFramework.MetroColorStyle.Green;
+            this.RadioSimOsteo.TabIndex = 8;
+            this.RadioSimOsteo.Text = "Sim";
+            this.RadioSimOsteo.UseSelectable = true;
             // 
             // RadioOsteo
             // 
@@ -1488,7 +1488,7 @@
             // 
             // groupBox13
             // 
-            this.groupBox13.Controls.Add(this.metroRadioButton3);
+            this.groupBox13.Controls.Add(this.RadioSimRenal);
             this.groupBox13.Controls.Add(this.RadioNaoRenal);
             this.groupBox13.Location = new System.Drawing.Point(141, 541);
             this.groupBox13.Name = "groupBox13";
@@ -1496,16 +1496,16 @@
             this.groupBox13.TabIndex = 106;
             this.groupBox13.TabStop = false;
             // 
-            // metroRadioButton3
+            // RadioSimRenal
             // 
-            this.metroRadioButton3.AutoSize = true;
-            this.metroRadioButton3.Location = new System.Drawing.Point(6, 7);
-            this.metroRadioButton3.Name = "metroRadioButton3";
-            this.metroRadioButton3.Size = new System.Drawing.Size(43, 15);
-            this.metroRadioButton3.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroRadioButton3.TabIndex = 8;
-            this.metroRadioButton3.Text = "Sim";
-            this.metroRadioButton3.UseSelectable = true;
+            this.RadioSimRenal.AutoSize = true;
+            this.RadioSimRenal.Location = new System.Drawing.Point(6, 7);
+            this.RadioSimRenal.Name = "RadioSimRenal";
+            this.RadioSimRenal.Size = new System.Drawing.Size(43, 15);
+            this.RadioSimRenal.Style = MetroFramework.MetroColorStyle.Green;
+            this.RadioSimRenal.TabIndex = 8;
+            this.RadioSimRenal.Text = "Sim";
+            this.RadioSimRenal.UseSelectable = true;
             // 
             // RadioNaoRenal
             // 
@@ -1612,7 +1612,7 @@
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.metroRadioButton7);
+            this.groupBox14.Controls.Add(this.RadioSimNeuro);
             this.groupBox14.Controls.Add(this.RadioNaoNeuro);
             this.groupBox14.Location = new System.Drawing.Point(187, 584);
             this.groupBox14.Name = "groupBox14";
@@ -1620,16 +1620,16 @@
             this.groupBox14.TabIndex = 115;
             this.groupBox14.TabStop = false;
             // 
-            // metroRadioButton7
+            // RadioSimNeuro
             // 
-            this.metroRadioButton7.AutoSize = true;
-            this.metroRadioButton7.Location = new System.Drawing.Point(6, 7);
-            this.metroRadioButton7.Name = "metroRadioButton7";
-            this.metroRadioButton7.Size = new System.Drawing.Size(43, 15);
-            this.metroRadioButton7.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroRadioButton7.TabIndex = 8;
-            this.metroRadioButton7.Text = "Sim";
-            this.metroRadioButton7.UseSelectable = true;
+            this.RadioSimNeuro.AutoSize = true;
+            this.RadioSimNeuro.Location = new System.Drawing.Point(6, 7);
+            this.RadioSimNeuro.Name = "RadioSimNeuro";
+            this.RadioSimNeuro.Size = new System.Drawing.Size(43, 15);
+            this.RadioSimNeuro.Style = MetroFramework.MetroColorStyle.Green;
+            this.RadioSimNeuro.TabIndex = 8;
+            this.RadioSimNeuro.Text = "Sim";
+            this.RadioSimNeuro.UseSelectable = true;
             // 
             // RadioNaoNeuro
             // 
@@ -1938,7 +1938,7 @@
             this.metroLabel28.TabIndex = 128;
             this.metroLabel28.Text = "Frequência:";
             // 
-            // CheckCalculo
+            // QuestionarioMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2047,7 +2047,7 @@
             this.Controls.Add(this.TextQueixa);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "CheckCalculo";
+            this.Name = "QuestionarioMedico";
             this.Resizable = false;
             this.ShowIcon = false;
             this.Style = MetroFramework.MetroColorStyle.Green;
@@ -2171,24 +2171,24 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox8;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
+        private MetroFramework.Controls.MetroRadioButton RadioSimRespiratoria;
         private MetroFramework.Controls.MetroRadioButton RadioRespiratoria;
         private System.Windows.Forms.GroupBox groupBox9;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton2;
+        private MetroFramework.Controls.MetroRadioButton RadioSimGastro;
         private MetroFramework.Controls.MetroRadioButton RadioGastro;
         private System.Windows.Forms.GroupBox groupBox10;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton4;
+        private MetroFramework.Controls.MetroRadioButton RadioSimCardio;
         private MetroFramework.Controls.MetroRadioButton RadioCardio;
         private System.Windows.Forms.GroupBox groupBox11;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton6;
+        private MetroFramework.Controls.MetroRadioButton RadioSimEndocrino;
         private MetroFramework.Controls.MetroRadioButton RadioEndocrino;
         private System.Windows.Forms.GroupBox groupBox12;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton8;
+        private MetroFramework.Controls.MetroRadioButton RadioSimOsteo;
         private MetroFramework.Controls.MetroRadioButton RadioOsteo;
         private MetroFramework.Controls.MetroLabel LabelData;
         private MetroFramework.Controls.MetroLabel LabelExame;
         private System.Windows.Forms.GroupBox groupBox13;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton3;
+        private MetroFramework.Controls.MetroRadioButton RadioSimRenal;
         private MetroFramework.Controls.MetroRadioButton RadioNaoRenal;
         private MetroFramework.Controls.MetroLabel LabelOutraRenal;
         private MetroFramework.Controls.MetroCheckBox Infeccao;
@@ -2197,7 +2197,7 @@
         private MetroFramework.Controls.MetroCheckBox Calculo;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private System.Windows.Forms.GroupBox groupBox14;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton7;
+        private MetroFramework.Controls.MetroRadioButton RadioSimNeuro;
         private MetroFramework.Controls.MetroRadioButton RadioNaoNeuro;
         private MetroFramework.Controls.MetroLabel LabelOutraNeuro;
         private MetroFramework.Controls.MetroCheckBox Avc;

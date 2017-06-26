@@ -187,5 +187,5 @@ C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\Interop.AcroPDFLib.dll
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\AxInterop.AcroPDFLib.dll
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\itextsharp.dll
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\itextsharp.xml
-C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.CheckCalculo.resources
 C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.Consultas.resources
+C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.QuestionarioMedico.resources

@@ -37,13 +37,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamesAvaliacoes));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.BtnConsultasAbertas = new MetroFramework.Controls.MetroButton();
+            this.BtnInicarConsulta = new MetroFramework.Controls.MetroButton();
             this.TextObservacao = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.GridExame = new MetroFramework.Controls.MetroGrid();
             this.SelecionaExame = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataexame = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GridTipoExame = new MetroFramework.Controls.MetroGrid();
             this.Seleciona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.BtnQuestionario = new MetroFramework.Controls.MetroButton();
             this.BtnCadastrarVacina = new MetroFramework.Controls.MetroButton();
             this.BtnCadastrarAtestado = new MetroFramework.Controls.MetroButton();
             this.BtnHistorico = new MetroFramework.Controls.MetroButton();
@@ -52,9 +55,6 @@
             this.LabelRiscoFuncionario = new MetroFramework.Controls.MetroLabel();
             this.BtnSelecionaFuncionarioNova = new MetroFramework.Controls.MetroButton();
             this.LabelFuncionarioNova = new MetroFramework.Controls.MetroLabel();
-            this.BtnInicarConsulta = new MetroFramework.Controls.MetroButton();
-            this.dataexame = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnConsultasAbertas = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridExame)).BeginInit();
@@ -80,7 +80,7 @@
             this.metroTabPage2.Controls.Add(this.metroLabel1);
             this.metroTabPage2.Controls.Add(this.GridExame);
             this.metroTabPage2.Controls.Add(this.GridTipoExame);
-            this.metroTabPage2.Controls.Add(this.metroButton1);
+            this.metroTabPage2.Controls.Add(this.BtnQuestionario);
             this.metroTabPage2.Controls.Add(this.BtnCadastrarVacina);
             this.metroTabPage2.Controls.Add(this.BtnCadastrarAtestado);
             this.metroTabPage2.Controls.Add(this.BtnHistorico);
@@ -100,6 +100,30 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // BtnConsultasAbertas
+            // 
+            this.BtnConsultasAbertas.Location = new System.Drawing.Point(673, 36);
+            this.BtnConsultasAbertas.Name = "BtnConsultasAbertas";
+            this.BtnConsultasAbertas.Size = new System.Drawing.Size(136, 23);
+            this.BtnConsultasAbertas.Style = MetroFramework.MetroColorStyle.Green;
+            this.BtnConsultasAbertas.TabIndex = 132;
+            this.BtnConsultasAbertas.Text = "Ver Consultas";
+            this.BtnConsultasAbertas.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnConsultasAbertas.UseSelectable = true;
+            this.BtnConsultasAbertas.Click += new System.EventHandler(this.BtnConsultasAbertas_Click);
+            // 
+            // BtnInicarConsulta
+            // 
+            this.BtnInicarConsulta.Location = new System.Drawing.Point(673, 6);
+            this.BtnInicarConsulta.Name = "BtnInicarConsulta";
+            this.BtnInicarConsulta.Size = new System.Drawing.Size(136, 23);
+            this.BtnInicarConsulta.Style = MetroFramework.MetroColorStyle.Green;
+            this.BtnInicarConsulta.TabIndex = 131;
+            this.BtnInicarConsulta.Text = "Iniciar Consulta";
+            this.BtnInicarConsulta.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnInicarConsulta.UseSelectable = true;
+            this.BtnInicarConsulta.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // TextObservacao
             // 
@@ -197,6 +221,12 @@
             this.SelecionaExame.Name = "SelecionaExame";
             this.SelecionaExame.Width = 60;
             // 
+            // dataexame
+            // 
+            this.dataexame.HeaderText = "Data Exame";
+            this.dataexame.Name = "dataexame";
+            this.dataexame.Width = 89;
+            // 
             // GridTipoExame
             // 
             this.GridTipoExame.AllowUserToAddRows = false;
@@ -253,17 +283,18 @@
             this.Seleciona.Name = "Seleciona";
             this.Seleciona.Width = 60;
             // 
-            // metroButton1
+            // BtnQuestionario
             // 
-            this.metroButton1.Location = new System.Drawing.Point(815, 122);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(136, 23);
-            this.metroButton1.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroButton1.TabIndex = 126;
-            this.metroButton1.Text = "Realizar Questionario";
-            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.BtnQuestionario.Location = new System.Drawing.Point(815, 122);
+            this.BtnQuestionario.Name = "BtnQuestionario";
+            this.BtnQuestionario.Size = new System.Drawing.Size(136, 23);
+            this.BtnQuestionario.Style = MetroFramework.MetroColorStyle.Green;
+            this.BtnQuestionario.TabIndex = 126;
+            this.BtnQuestionario.Text = "Realizar Questionario";
+            this.BtnQuestionario.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.BtnQuestionario.UseSelectable = true;
+            this.BtnQuestionario.Visible = false;
+            this.BtnQuestionario.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // BtnCadastrarVacina
             // 
@@ -299,6 +330,7 @@
             this.BtnHistorico.Text = "Histórico";
             this.BtnHistorico.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnHistorico.UseSelectable = true;
+            this.BtnHistorico.Visible = false;
             this.BtnHistorico.Click += new System.EventHandler(this.BtnHistorico_Click);
             // 
             // CheckAptoNova
@@ -322,6 +354,7 @@
             this.BtnGerarAsoNova.Text = "Gerar ASO";
             this.BtnGerarAsoNova.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnGerarAsoNova.UseSelectable = true;
+            this.BtnGerarAsoNova.Visible = false;
             this.BtnGerarAsoNova.Click += new System.EventHandler(this.BtnGerarAsoNova_Click);
             // 
             // LabelRiscoFuncionario
@@ -359,36 +392,6 @@
             this.LabelFuncionarioNova.TabIndex = 114;
             this.LabelFuncionarioNova.Text = "Selecione um Funcionário";
             // 
-            // BtnInicarConsulta
-            // 
-            this.BtnInicarConsulta.Location = new System.Drawing.Point(673, 6);
-            this.BtnInicarConsulta.Name = "BtnInicarConsulta";
-            this.BtnInicarConsulta.Size = new System.Drawing.Size(136, 23);
-            this.BtnInicarConsulta.Style = MetroFramework.MetroColorStyle.Green;
-            this.BtnInicarConsulta.TabIndex = 131;
-            this.BtnInicarConsulta.Text = "Iniciar Consulta";
-            this.BtnInicarConsulta.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.BtnInicarConsulta.UseSelectable = true;
-            this.BtnInicarConsulta.Click += new System.EventHandler(this.metroButton2_Click);
-            // 
-            // dataexame
-            // 
-            this.dataexame.HeaderText = "Data Exame";
-            this.dataexame.Name = "dataexame";
-            this.dataexame.Width = 89;
-            // 
-            // BtnConsultasAbertas
-            // 
-            this.BtnConsultasAbertas.Location = new System.Drawing.Point(673, 36);
-            this.BtnConsultasAbertas.Name = "BtnConsultasAbertas";
-            this.BtnConsultasAbertas.Size = new System.Drawing.Size(136, 23);
-            this.BtnConsultasAbertas.Style = MetroFramework.MetroColorStyle.Green;
-            this.BtnConsultasAbertas.TabIndex = 132;
-            this.BtnConsultasAbertas.Text = "Ver Consultas";
-            this.BtnConsultasAbertas.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.BtnConsultasAbertas.UseSelectable = true;
-            this.BtnConsultasAbertas.Click += new System.EventHandler(this.BtnConsultasAbertas_Click);
-            // 
             // ExamesAvaliacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,7 +425,7 @@
         private MetroFramework.Controls.MetroCheckBox CheckAptoNova;
         private MetroFramework.Controls.MetroButton BtnCadastrarVacina;
         private MetroFramework.Controls.MetroButton BtnCadastrarAtestado;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton BtnQuestionario;
         private MetroFramework.Controls.MetroGrid GridExame;
         private System.Windows.Forms.DataGridViewCheckBoxColumn SelecionaExame;
         private MetroFramework.Controls.MetroGrid GridTipoExame;

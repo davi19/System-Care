@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empresas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,9 +41,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empresas));
             this.CadastrarEmpresa = new MetroFramework.Controls.MetroTabControl();
             this.CadastroEmpresa = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
+            this.TextCrmMedico = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.TextMedicoExaminador = new MetroFramework.Controls.MetroTextBox();
             this.TextCnpj = new System.Windows.Forms.MaskedTextBox();
             this.GridServicosPrestados = new MetroFramework.Controls.MetroGrid();
             this.Selecionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -64,6 +68,10 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.TextNome = new MetroFramework.Controls.MetroTextBox();
             this.Editar = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.TextCrmMedicoEditar = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.TextMedicoExaminadoEditar = new MetroFramework.Controls.MetroTextBox();
             this.LabelEmpresaEditar = new MetroFramework.Controls.MetroLabel();
             this.BtnBuscarEmpresa = new MetroFramework.Controls.MetroButton();
             this.TextCnpjEditar = new System.Windows.Forms.MaskedTextBox();
@@ -86,14 +94,6 @@
             this.TextNomeEditar = new MetroFramework.Controls.MetroTextBox();
             this.BtnEditar = new MetroFramework.Controls.MetroButton();
             this.BtnExcluir = new MetroFramework.Controls.MetroButton();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.TextMedicoExaminador = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.TextMedicoExaminadoEditar = new MetroFramework.Controls.MetroTextBox();
-            this.TextCrmMedicoEditar = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
-            this.TextCrmMedico = new MetroFramework.Controls.MetroTextBox();
             this.CadastrarEmpresa.SuspendLayout();
             this.CadastroEmpresa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridServicosPrestados)).BeginInit();
@@ -109,7 +109,7 @@
             this.CadastrarEmpresa.Controls.Add(this.Editar);
             this.CadastrarEmpresa.Location = new System.Drawing.Point(23, 63);
             this.CadastrarEmpresa.Name = "CadastrarEmpresa";
-            this.CadastrarEmpresa.SelectedIndex = 1;
+            this.CadastrarEmpresa.SelectedIndex = 0;
             this.CadastrarEmpresa.Size = new System.Drawing.Size(843, 447);
             this.CadastrarEmpresa.Style = MetroFramework.MetroColorStyle.Green;
             this.CadastrarEmpresa.TabIndex = 0;
@@ -151,6 +151,98 @@
             this.CadastroEmpresa.VerticalScrollbarBarColor = true;
             this.CadastroEmpresa.VerticalScrollbarHighlightOnWheel = false;
             this.CadastroEmpresa.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel16
+            // 
+            this.metroLabel16.AutoSize = true;
+            this.metroLabel16.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel16.Location = new System.Drawing.Point(666, 55);
+            this.metroLabel16.Name = "metroLabel16";
+            this.metroLabel16.Size = new System.Drawing.Size(163, 19);
+            this.metroLabel16.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel16.TabIndex = 73;
+            this.metroLabel16.Text = "CRM Médico Examinador";
+            this.metroLabel16.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextCrmMedico
+            // 
+            this.TextCrmMedico.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextCrmMedico.CustomButton.Image = null;
+            this.TextCrmMedico.CustomButton.Location = new System.Drawing.Point(145, 2);
+            this.TextCrmMedico.CustomButton.Name = "";
+            this.TextCrmMedico.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextCrmMedico.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextCrmMedico.CustomButton.TabIndex = 1;
+            this.TextCrmMedico.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextCrmMedico.CustomButton.UseSelectable = true;
+            this.TextCrmMedico.CustomButton.Visible = false;
+            this.TextCrmMedico.Icon = ((System.Drawing.Image)(resources.GetObject("TextCrmMedico.Icon")));
+            this.TextCrmMedico.Lines = new string[0];
+            this.TextCrmMedico.Location = new System.Drawing.Point(666, 77);
+            this.TextCrmMedico.MaxLength = 32767;
+            this.TextCrmMedico.Name = "TextCrmMedico";
+            this.TextCrmMedico.PasswordChar = '\0';
+            this.TextCrmMedico.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextCrmMedico.SelectedText = "";
+            this.TextCrmMedico.SelectionLength = 0;
+            this.TextCrmMedico.SelectionStart = 0;
+            this.TextCrmMedico.ShortcutsEnabled = true;
+            this.TextCrmMedico.Size = new System.Drawing.Size(163, 20);
+            this.TextCrmMedico.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextCrmMedico.TabIndex = 72;
+            this.TextCrmMedico.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextCrmMedico.UseSelectable = true;
+            this.TextCrmMedico.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextCrmMedico.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel7.Location = new System.Drawing.Point(453, 55);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(129, 19);
+            this.metroLabel7.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel7.TabIndex = 51;
+            this.metroLabel7.Text = "Médico Examinador";
+            this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextMedicoExaminador
+            // 
+            this.TextMedicoExaminador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextMedicoExaminador.CustomButton.Image = null;
+            this.TextMedicoExaminador.CustomButton.Location = new System.Drawing.Point(189, 2);
+            this.TextMedicoExaminador.CustomButton.Name = "";
+            this.TextMedicoExaminador.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextMedicoExaminador.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextMedicoExaminador.CustomButton.TabIndex = 1;
+            this.TextMedicoExaminador.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextMedicoExaminador.CustomButton.UseSelectable = true;
+            this.TextMedicoExaminador.CustomButton.Visible = false;
+            this.TextMedicoExaminador.Icon = ((System.Drawing.Image)(resources.GetObject("TextMedicoExaminador.Icon")));
+            this.TextMedicoExaminador.Lines = new string[0];
+            this.TextMedicoExaminador.Location = new System.Drawing.Point(453, 77);
+            this.TextMedicoExaminador.MaxLength = 32767;
+            this.TextMedicoExaminador.Name = "TextMedicoExaminador";
+            this.TextMedicoExaminador.PasswordChar = '\0';
+            this.TextMedicoExaminador.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextMedicoExaminador.SelectedText = "";
+            this.TextMedicoExaminador.SelectionLength = 0;
+            this.TextMedicoExaminador.SelectionStart = 0;
+            this.TextMedicoExaminador.ShortcutsEnabled = true;
+            this.TextMedicoExaminador.Size = new System.Drawing.Size(207, 20);
+            this.TextMedicoExaminador.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextMedicoExaminador.TabIndex = 50;
+            this.TextMedicoExaminador.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextMedicoExaminador.UseSelectable = true;
+            this.TextMedicoExaminador.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextMedicoExaminador.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // TextCnpj
             // 
@@ -610,6 +702,98 @@
             this.Editar.VerticalScrollbarHighlightOnWheel = false;
             this.Editar.VerticalScrollbarSize = 10;
             // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel10.Location = new System.Drawing.Point(670, 75);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(163, 19);
+            this.metroLabel10.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel10.TabIndex = 71;
+            this.metroLabel10.Text = "CRM Médico Examinador";
+            this.metroLabel10.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextCrmMedicoEditar
+            // 
+            this.TextCrmMedicoEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextCrmMedicoEditar.CustomButton.Image = null;
+            this.TextCrmMedicoEditar.CustomButton.Location = new System.Drawing.Point(140, 2);
+            this.TextCrmMedicoEditar.CustomButton.Name = "";
+            this.TextCrmMedicoEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextCrmMedicoEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextCrmMedicoEditar.CustomButton.TabIndex = 1;
+            this.TextCrmMedicoEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextCrmMedicoEditar.CustomButton.UseSelectable = true;
+            this.TextCrmMedicoEditar.CustomButton.Visible = false;
+            this.TextCrmMedicoEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextCrmMedicoEditar.Icon")));
+            this.TextCrmMedicoEditar.Lines = new string[0];
+            this.TextCrmMedicoEditar.Location = new System.Drawing.Point(670, 97);
+            this.TextCrmMedicoEditar.MaxLength = 32767;
+            this.TextCrmMedicoEditar.Name = "TextCrmMedicoEditar";
+            this.TextCrmMedicoEditar.PasswordChar = '\0';
+            this.TextCrmMedicoEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextCrmMedicoEditar.SelectedText = "";
+            this.TextCrmMedicoEditar.SelectionLength = 0;
+            this.TextCrmMedicoEditar.SelectionStart = 0;
+            this.TextCrmMedicoEditar.ShortcutsEnabled = true;
+            this.TextCrmMedicoEditar.Size = new System.Drawing.Size(158, 20);
+            this.TextCrmMedicoEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextCrmMedicoEditar.TabIndex = 70;
+            this.TextCrmMedicoEditar.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextCrmMedicoEditar.UseSelectable = true;
+            this.TextCrmMedicoEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextCrmMedicoEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel8.Location = new System.Drawing.Point(450, 75);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(129, 19);
+            this.metroLabel8.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel8.TabIndex = 69;
+            this.metroLabel8.Text = "Médico Examinador";
+            this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // TextMedicoExaminadoEditar
+            // 
+            this.TextMedicoExaminadoEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.TextMedicoExaminadoEditar.CustomButton.Image = null;
+            this.TextMedicoExaminadoEditar.CustomButton.Location = new System.Drawing.Point(196, 2);
+            this.TextMedicoExaminadoEditar.CustomButton.Name = "";
+            this.TextMedicoExaminadoEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
+            this.TextMedicoExaminadoEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextMedicoExaminadoEditar.CustomButton.TabIndex = 1;
+            this.TextMedicoExaminadoEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextMedicoExaminadoEditar.CustomButton.UseSelectable = true;
+            this.TextMedicoExaminadoEditar.CustomButton.Visible = false;
+            this.TextMedicoExaminadoEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextMedicoExaminadoEditar.Icon")));
+            this.TextMedicoExaminadoEditar.Lines = new string[0];
+            this.TextMedicoExaminadoEditar.Location = new System.Drawing.Point(450, 97);
+            this.TextMedicoExaminadoEditar.MaxLength = 32767;
+            this.TextMedicoExaminadoEditar.Name = "TextMedicoExaminadoEditar";
+            this.TextMedicoExaminadoEditar.PasswordChar = '\0';
+            this.TextMedicoExaminadoEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TextMedicoExaminadoEditar.SelectedText = "";
+            this.TextMedicoExaminadoEditar.SelectionLength = 0;
+            this.TextMedicoExaminadoEditar.SelectionStart = 0;
+            this.TextMedicoExaminadoEditar.ShortcutsEnabled = true;
+            this.TextMedicoExaminadoEditar.Size = new System.Drawing.Size(214, 20);
+            this.TextMedicoExaminadoEditar.Style = MetroFramework.MetroColorStyle.Green;
+            this.TextMedicoExaminadoEditar.TabIndex = 68;
+            this.TextMedicoExaminadoEditar.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TextMedicoExaminadoEditar.UseSelectable = true;
+            this.TextMedicoExaminadoEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TextMedicoExaminadoEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // LabelEmpresaEditar
             // 
             this.LabelEmpresaEditar.AutoSize = true;
@@ -1048,190 +1232,6 @@
             this.BtnExcluir.Theme = MetroFramework.MetroThemeStyle.Light;
             this.BtnExcluir.UseSelectable = true;
             this.BtnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(453, 55);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(129, 19);
-            this.metroLabel7.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel7.TabIndex = 51;
-            this.metroLabel7.Text = "Médico Examinador";
-            this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // TextMedicoExaminador
-            // 
-            this.TextMedicoExaminador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextMedicoExaminador.CustomButton.Image = null;
-            this.TextMedicoExaminador.CustomButton.Location = new System.Drawing.Point(189, 2);
-            this.TextMedicoExaminador.CustomButton.Name = "";
-            this.TextMedicoExaminador.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextMedicoExaminador.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextMedicoExaminador.CustomButton.TabIndex = 1;
-            this.TextMedicoExaminador.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextMedicoExaminador.CustomButton.UseSelectable = true;
-            this.TextMedicoExaminador.CustomButton.Visible = false;
-            this.TextMedicoExaminador.Icon = ((System.Drawing.Image)(resources.GetObject("TextMedicoExaminador.Icon")));
-            this.TextMedicoExaminador.Lines = new string[0];
-            this.TextMedicoExaminador.Location = new System.Drawing.Point(453, 77);
-            this.TextMedicoExaminador.MaxLength = 32767;
-            this.TextMedicoExaminador.Name = "TextMedicoExaminador";
-            this.TextMedicoExaminador.PasswordChar = '\0';
-            this.TextMedicoExaminador.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextMedicoExaminador.SelectedText = "";
-            this.TextMedicoExaminador.SelectionLength = 0;
-            this.TextMedicoExaminador.SelectionStart = 0;
-            this.TextMedicoExaminador.ShortcutsEnabled = true;
-            this.TextMedicoExaminador.Size = new System.Drawing.Size(207, 20);
-            this.TextMedicoExaminador.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextMedicoExaminador.TabIndex = 50;
-            this.TextMedicoExaminador.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextMedicoExaminador.UseSelectable = true;
-            this.TextMedicoExaminador.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextMedicoExaminador.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.Location = new System.Drawing.Point(450, 75);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(129, 19);
-            this.metroLabel8.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel8.TabIndex = 69;
-            this.metroLabel8.Text = "Médico Examinador";
-            this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // TextMedicoExaminadoEditar
-            // 
-            this.TextMedicoExaminadoEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextMedicoExaminadoEditar.CustomButton.Image = null;
-            this.TextMedicoExaminadoEditar.CustomButton.Location = new System.Drawing.Point(196, 2);
-            this.TextMedicoExaminadoEditar.CustomButton.Name = "";
-            this.TextMedicoExaminadoEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextMedicoExaminadoEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextMedicoExaminadoEditar.CustomButton.TabIndex = 1;
-            this.TextMedicoExaminadoEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextMedicoExaminadoEditar.CustomButton.UseSelectable = true;
-            this.TextMedicoExaminadoEditar.CustomButton.Visible = false;
-            this.TextMedicoExaminadoEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextMedicoExaminadoEditar.Icon")));
-            this.TextMedicoExaminadoEditar.Lines = new string[0];
-            this.TextMedicoExaminadoEditar.Location = new System.Drawing.Point(450, 97);
-            this.TextMedicoExaminadoEditar.MaxLength = 32767;
-            this.TextMedicoExaminadoEditar.Name = "TextMedicoExaminadoEditar";
-            this.TextMedicoExaminadoEditar.PasswordChar = '\0';
-            this.TextMedicoExaminadoEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextMedicoExaminadoEditar.SelectedText = "";
-            this.TextMedicoExaminadoEditar.SelectionLength = 0;
-            this.TextMedicoExaminadoEditar.SelectionStart = 0;
-            this.TextMedicoExaminadoEditar.ShortcutsEnabled = true;
-            this.TextMedicoExaminadoEditar.Size = new System.Drawing.Size(214, 20);
-            this.TextMedicoExaminadoEditar.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextMedicoExaminadoEditar.TabIndex = 68;
-            this.TextMedicoExaminadoEditar.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextMedicoExaminadoEditar.UseSelectable = true;
-            this.TextMedicoExaminadoEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextMedicoExaminadoEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // TextCrmMedicoEditar
-            // 
-            this.TextCrmMedicoEditar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextCrmMedicoEditar.CustomButton.Image = null;
-            this.TextCrmMedicoEditar.CustomButton.Location = new System.Drawing.Point(140, 2);
-            this.TextCrmMedicoEditar.CustomButton.Name = "";
-            this.TextCrmMedicoEditar.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextCrmMedicoEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextCrmMedicoEditar.CustomButton.TabIndex = 1;
-            this.TextCrmMedicoEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextCrmMedicoEditar.CustomButton.UseSelectable = true;
-            this.TextCrmMedicoEditar.CustomButton.Visible = false;
-            this.TextCrmMedicoEditar.Icon = ((System.Drawing.Image)(resources.GetObject("TextCrmMedicoEditar.Icon")));
-            this.TextCrmMedicoEditar.Lines = new string[0];
-            this.TextCrmMedicoEditar.Location = new System.Drawing.Point(670, 97);
-            this.TextCrmMedicoEditar.MaxLength = 32767;
-            this.TextCrmMedicoEditar.Name = "TextCrmMedicoEditar";
-            this.TextCrmMedicoEditar.PasswordChar = '\0';
-            this.TextCrmMedicoEditar.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextCrmMedicoEditar.SelectedText = "";
-            this.TextCrmMedicoEditar.SelectionLength = 0;
-            this.TextCrmMedicoEditar.SelectionStart = 0;
-            this.TextCrmMedicoEditar.ShortcutsEnabled = true;
-            this.TextCrmMedicoEditar.Size = new System.Drawing.Size(158, 20);
-            this.TextCrmMedicoEditar.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextCrmMedicoEditar.TabIndex = 70;
-            this.TextCrmMedicoEditar.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextCrmMedicoEditar.UseSelectable = true;
-            this.TextCrmMedicoEditar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextCrmMedicoEditar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel10
-            // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel10.Location = new System.Drawing.Point(670, 75);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(163, 19);
-            this.metroLabel10.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel10.TabIndex = 71;
-            this.metroLabel10.Text = "CRM Médico Examinador";
-            this.metroLabel10.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // metroLabel16
-            // 
-            this.metroLabel16.AutoSize = true;
-            this.metroLabel16.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel16.Location = new System.Drawing.Point(666, 55);
-            this.metroLabel16.Name = "metroLabel16";
-            this.metroLabel16.Size = new System.Drawing.Size(163, 19);
-            this.metroLabel16.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel16.TabIndex = 73;
-            this.metroLabel16.Text = "CRM Médico Examinador";
-            this.metroLabel16.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // TextCrmMedico
-            // 
-            this.TextCrmMedico.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            // 
-            // 
-            // 
-            this.TextCrmMedico.CustomButton.Image = null;
-            this.TextCrmMedico.CustomButton.Location = new System.Drawing.Point(145, 2);
-            this.TextCrmMedico.CustomButton.Name = "";
-            this.TextCrmMedico.CustomButton.Size = new System.Drawing.Size(15, 15);
-            this.TextCrmMedico.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TextCrmMedico.CustomButton.TabIndex = 1;
-            this.TextCrmMedico.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextCrmMedico.CustomButton.UseSelectable = true;
-            this.TextCrmMedico.CustomButton.Visible = false;
-            this.TextCrmMedico.Icon = ((System.Drawing.Image)(resources.GetObject("TextCrmMedico.Icon")));
-            this.TextCrmMedico.Lines = new string[0];
-            this.TextCrmMedico.Location = new System.Drawing.Point(666, 77);
-            this.TextCrmMedico.MaxLength = 32767;
-            this.TextCrmMedico.Name = "TextCrmMedico";
-            this.TextCrmMedico.PasswordChar = '\0';
-            this.TextCrmMedico.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TextCrmMedico.SelectedText = "";
-            this.TextCrmMedico.SelectionLength = 0;
-            this.TextCrmMedico.SelectionStart = 0;
-            this.TextCrmMedico.ShortcutsEnabled = true;
-            this.TextCrmMedico.Size = new System.Drawing.Size(163, 20);
-            this.TextCrmMedico.Style = MetroFramework.MetroColorStyle.Green;
-            this.TextCrmMedico.TabIndex = 72;
-            this.TextCrmMedico.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TextCrmMedico.UseSelectable = true;
-            this.TextCrmMedico.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TextCrmMedico.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // Empresas
             // 
