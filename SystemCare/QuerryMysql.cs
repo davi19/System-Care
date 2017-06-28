@@ -19,7 +19,7 @@ namespace SystemCare
 
         //192.168.1.200
         private readonly MySqlConnection Com =
-            new MySqlConnection("Server =192.168.1.200; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+            new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
         
         public void SetIdConsulta(string Idconsulta)

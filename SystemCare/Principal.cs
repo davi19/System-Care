@@ -106,5 +106,10 @@ namespace SystemCare
             Tabela.ShowDialog();
 
         }
+
+        private void atestadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

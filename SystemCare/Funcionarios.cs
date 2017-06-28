@@ -19,6 +19,7 @@ namespace SystemCare
             GridFuncaoEditar.DataSource = null;
             var TabelaFuncao = Cadastro.BuscaFuncao(TextBuscaFuncao.Text);
             GridFuncaoEditar.DataSource = TabelaFuncao;
+          
         }
 
         private void TextBuscaFuncao_KeyPress(object sender, KeyPressEventArgs e)

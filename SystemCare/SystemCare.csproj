@@ -158,14 +158,6 @@
     <Compile Include="Consultas.Designer.cs">
       <DependentUpon>Consultas.cs</DependentUpon>
     </Compile>
-    <Compile Include="DadosAso.cs">
-      <DependentUpon>DadosAso.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DadosAso.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DadosAso.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Exames.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,9 +322,6 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ASO.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <EmbeddedResource Include="Cbo.resx">
       <DependentUpon>Cbo.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,17 +381,6 @@
     </None>
     <None Include="atestados.xss">
       <DependentUpon>atestados.xsd</DependentUpon>
-    </None>
-    <None Include="DadosAso.xsc">
-      <DependentUpon>DadosAso.xsd</DependentUpon>
-    </None>
-    <None Include="DadosAso.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DadosAso.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DadosAso.xss">
-      <DependentUpon>DadosAso.xsd</DependentUpon>
     </None>
     <None Include="Logs.xsc">
       <DependentUpon>Logs.xsd</DependentUpon>

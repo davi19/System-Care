@@ -132,7 +132,6 @@ C:\Users\davi1\systemcare\SystemCare\obj\Debug\SystemCare.pdb
 C:\Users\davi1\systemcare\SystemCare\bin\Debug\ASO.rdlc
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\Atestados.rdlc
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\Vacinas.rdlc
-C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\ASO.rdlc
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\PrestacaodeServico.rdlc
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\SystemCare.exe.config
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\SystemCare.exe.manifest
