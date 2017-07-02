@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RelacaoExame" targetNamespace="http://tempuri.org/RelacaoExame.xsd" xmlns:mstns="http://tempuri.org/RelacaoExame.xsd" xmlns="http://tempuri.org/RelacaoExame.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RelacaoExame" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RelacaoExame" msprop:Generator_UserDSName="RelacaoExame">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="InfoPrincipal" msprop:Generator_TableClassName="InfoPrincipalDataTable" msprop:Generator_TableVarName="tableInfoPrincipal" msprop:Generator_RowChangedName="InfoPrincipalRowChanged" msprop:Generator_TablePropName="InfoPrincipal" msprop:Generator_RowDeletingName="InfoPrincipalRowDeleting" msprop:Generator_RowChangingName="InfoPrincipalRowChanging" msprop:Generator_RowEvHandlerName="InfoPrincipalRowChangeEventHandler" msprop:Generator_RowDeletedName="InfoPrincipalRowDeleted" msprop:Generator_RowClassName="InfoPrincipalRow" msprop:Generator_UserTableName="InfoPrincipal" msprop:Generator_RowEvArgName="InfoPrincipalRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Empresa" msprop:Generator_ColumnVarNameInTable="columnEmpresa" msprop:Generator_ColumnPropNameInRow="Empresa" msprop:Generator_ColumnPropNameInTable="EmpresaColumn" msprop:Generator_UserColumnName="Empresa" type="xs:string" minOccurs="0" />
+              <xs:element name="Funcao" msprop:Generator_ColumnVarNameInTable="columnFuncao" msprop:Generator_ColumnPropNameInRow="Funcao" msprop:Generator_ColumnPropNameInTable="FuncaoColumn" msprop:Generator_UserColumnName="Funcao" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Exames" msprop:Generator_TableClassName="ExamesDataTable" msprop:Generator_TableVarName="tableExames" msprop:Generator_RowChangedName="ExamesRowChanged" msprop:Generator_TablePropName="Exames" msprop:Generator_RowDeletingName="ExamesRowDeleting" msprop:Generator_RowChangingName="ExamesRowChanging" msprop:Generator_RowEvHandlerName="ExamesRowChangeEventHandler" msprop:Generator_RowDeletedName="ExamesRowDeleted" msprop:Generator_RowClassName="ExamesRow" msprop:Generator_UserTableName="Exames" msprop:Generator_RowEvArgName="ExamesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NomeExame" msprop:Generator_ColumnVarNameInTable="columnNomeExame" msprop:Generator_ColumnPropNameInRow="NomeExame" msprop:Generator_ColumnPropNameInTable="NomeExameColumn" msprop:Generator_UserColumnName="NomeExame" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

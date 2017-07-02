@@ -28,7 +28,7 @@ namespace SystemCare
             }
             else
             {
-                
+
                 if (LabelCbo.Text.Equals("CBO"))
                 {
                     MetroMessageBox.Show(this, "Favor selecionar uma CBO!", "Atenção !", MessageBoxButtons.OK,
@@ -68,61 +68,55 @@ namespace SystemCare
                             catch
                             {
                             }
-                        if (IdRiscos.Equals(""))
+
+                        if (CheckMaisExames.Checked)
                         {
-                            MetroMessageBox.Show(this, "Favor selecionar um risco!", "Atenção !", MessageBoxButtons.OK,
-                                MessageBoxIcon.Hand);
+                            var Exames = "";
+                            for (var j = 0; j < GridExames.RowCount; j++)
+                            {
+                                try
+                                {
+                                    if (Convert.ToBoolean(GridExames.Rows[j].Cells[0].Value.ToString()))
+                                        Exames = Exames + ";" + GridExames.Rows[j].Cells[1].Value;
+                                }
+                                catch
+                                {
+                                }
+                            }
+
+                            Cadastro.CadastrarFuncaoExame(TextNomeFuncao.Text, IdCbo[1], IdRiscos, IdSetor, Exames);
+                            MetroMessageBox.Show(this, "Função cadastrada com sucesso!", "Sucesso !",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                            TextNomeFuncao.Text = "";
+                            GridSetores.DataSource = null;
+                            GridCbo.DataSource = null;
+                            TextNomeSetor.Text = "";
+                            TextCbo.Text = "";
+                            LabelCbo.Text = "CBO";
+                            DataGridRiscos.DataSource = null;
+                            var TabelaRiscos = Cadastro.SelecionaRisco();
+                            DataGridRiscos.DataSource = TabelaRiscos;
+                            GridExames.Visible = false;
+                            GridExames.DataSource = null;
                         }
                         else
                         {
-                            if (CheckMaisExames.Checked)
-                            {
-                                var Exames = "";
-                                for (var j = 0; j < GridExames.RowCount; j++)
-                                {
-                                    try
-                                    {
-                                        if (Convert.ToBoolean(GridExames.Rows[j].Cells[0].Value.ToString()))
-                                            Exames = Exames + ";" + GridExames.Rows[j].Cells[1].Value;
-                                    }
-                                    catch
-                                    {
-                                    }
-                                }
+                            Cadastro.CadastrarFuncao(TextNomeFuncao.Text, IdCbo[1], IdRiscos, IdSetor);
+                            MetroMessageBox.Show(this, "Função cadastrada com sucesso!", "Sucesso !",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                            TextNomeFuncao.Text = "";
+                            GridSetores.DataSource = null;
+                            GridCbo.DataSource = null;
+                            TextNomeSetor.Text = "";
+                            TextCbo.Text = "";
+                            LabelCbo.Text = "CBO";
+                            DataGridRiscos.DataSource = null;
+                            var TabelaRiscos = Cadastro.SelecionaRisco();
+                            DataGridRiscos.DataSource = TabelaRiscos;
+                            CheckMaisExames.Checked = false;
 
-                                Cadastro.CadastrarFuncaoExame(TextNomeFuncao.Text, IdCbo[1], IdRiscos, IdSetor, Exames);
-                                MetroMessageBox.Show(this, "Função cadastrada com sucesso!", "Sucesso !",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                                TextNomeFuncao.Text = "";
-                                GridSetores.DataSource = null;
-                                GridCbo.DataSource = null;
-                                TextNomeSetor.Text = "";
-                                TextCbo.Text = "";
-                                LabelCbo.Text = "CBO";
-                                DataGridRiscos.DataSource = null;
-                                var TabelaRiscos = Cadastro.SelecionaRisco();
-                                DataGridRiscos.DataSource = TabelaRiscos;
-                                GridExames.Visible = false;
-                                GridExames.DataSource = null;
-                            }
-                            else
-                            {
-                                Cadastro.CadastrarFuncao(TextNomeFuncao.Text, IdCbo[1], IdRiscos, IdSetor);
-                                MetroMessageBox.Show(this, "Função cadastrada com sucesso!", "Sucesso !",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                                TextNomeFuncao.Text = "";
-                                GridSetores.DataSource = null;
-                                GridCbo.DataSource = null;
-                                TextNomeSetor.Text = "";
-                                TextCbo.Text = "";
-                                LabelCbo.Text = "CBO";
-                                DataGridRiscos.DataSource = null;
-                                var TabelaRiscos = Cadastro.SelecionaRisco();
-                                DataGridRiscos.DataSource = TabelaRiscos;
-                                CheckMaisExames.Checked = false;
-                            }
                         }
                     }
                 }
@@ -225,7 +219,7 @@ namespace SystemCare
                 TextCboEditar.Visible = true;
                 BtnBuscaSetorEditar.Visible = true;
                 BtnBuscarCboEditar.Visible = true;
-               
+
 
                 for (var i = 0; i < GridFuncaoEditar.Rows.Count; i++)
                     try
@@ -246,15 +240,15 @@ namespace SystemCare
 
                 if (DadosFuncao.Rows[0][6].ToString().Length > 0)
                 {
-                   
-                    string [] Exames = DadosFuncao.Rows[0][6].ToString().Split(';');
+
+                    string[] Exames = DadosFuncao.Rows[0][6].ToString().Split(';');
                     for (var j = 0; j < GridExamesEditar.RowCount; j++)
                         for (var k = 0; k < Exames.Length; k++)
-                        if (GridExamesEditar.Rows[j].Cells[1].Value.ToString().Equals(Exames[k]))
-                        {
-                            GridExamesEditar.Rows[j].Cells[0].Value = true;
-                            k = Exames.Length;
-                        }
+                            if (GridExamesEditar.Rows[j].Cells[1].Value.ToString().Equals(Exames[k]))
+                            {
+                                GridExamesEditar.Rows[j].Cells[0].Value = true;
+                                k = Exames.Length;
+                            }
                 }
                 LabelCboEditar.Text = " CBO | " + Cadastro.RetornaCbo(DadosFuncao.Rows[0]["idcbo"].ToString());
                 var NomeSetor = Cadastro.RetornaSetor(DadosFuncao.Rows[0]["idsetor"].ToString());
@@ -341,11 +335,11 @@ namespace SystemCare
                     {
                     }
 
-                if (RelacaoExames.Length>1)
+                if (RelacaoExames.Length > 1)
                 {
 
                     var IdCbo = LabelCboEditar.Text.Split('|');
-                    Cadastro.EditarFuncaoExames(TextNomeFuncaoEditar.Text, IdSetor, IdFuncao, IdRiscos, IdCbo[1],RelacaoExames);
+                    Cadastro.EditarFuncaoExames(TextNomeFuncaoEditar.Text, IdSetor, IdFuncao, IdRiscos, IdCbo[1], RelacaoExames);
                     MetroMessageBox.Show(this,
                         "Dados salvos com sucesso !", "Sucesso !",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -367,6 +361,7 @@ namespace SystemCare
                     GridRiscosEditar.DataSource = TabelaRiscosEditar;
                     GridExamesEditar.DataSource = null;
                     GridExamesEditar.Visible = false;
+                    BtnEditar.Text = "Editar";
 
                 }
                 else
@@ -394,6 +389,7 @@ namespace SystemCare
                     GridRiscosEditar.DataSource = TabelaRiscosEditar;
                     GridExamesEditar.DataSource = null;
                     GridExamesEditar.Visible = false;
+                    BtnEditar.Text = "Editar";
                 }
             }
         }

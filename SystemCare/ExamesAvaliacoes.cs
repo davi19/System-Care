@@ -26,6 +26,7 @@ namespace SystemCare
                 BtnGerarAsoNova.Visible = true;
                 BtnHistorico.Visible = true;
                 BtnQuestionario.Visible = true;
+                CheckAptoNova.Visible = true;
             }
             DataTable ModalidadeExame = Cadastro.SelecionaModalidadeExame();
             DataTable TipoExame = Cadastro.SelecionaExameMedico();
@@ -47,6 +48,7 @@ namespace SystemCare
             {
                 var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(IdFuncionario);
                 var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
+                var TabelaExames = Cadastro.RetornaRelacaoExames(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
                 var Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
                 LabelRiscoFuncionario.Text = "";
                 LabelRiscoFuncionario.Visible = true;
@@ -60,6 +62,19 @@ namespace SystemCare
                 LabelFuncionarioNova.Text = "NOME: " + TabelaDadosFuncionario.Rows[0]["nome"] + "     CPF: " +
                                             TabelaDadosFuncionario.Rows[0]["cpf"] + "     FUNÇÃO: " +
                                             TabelaFuncao.Rows[0]["nome"];
+
+
+
+                for(int i = 0; i < GridExame.RowCount; i++)
+                {
+                    for(int j = 0; j < TabelaExames.Rows.Count; j++)
+                    {
+                        if(TabelaExames.Rows[j][0].ToString()== GridExame.Rows[i].Cells[3].Value.ToString())
+                        {
+                            GridExame.Rows[i].Cells[0].Value = true;
+                        }
+                    }
+                }
             }
         }
 
@@ -136,15 +151,10 @@ namespace SystemCare
                         Sexo = "MASCULINO";
                     else
                         Sexo = "FEMININO";
-
-
-
-
-
-
+                    
 
                     PdfReader reader = new PdfReader("ASO.pdf");
-                    reader.SelectPages("1-2"); //Work with only page# 1 & 2
+                    reader.SelectPages("1-2"); 
                     using (PdfStamper stamper = new PdfStamper(reader, new FileStream(@"C:\Aso\Teste.pdf", FileMode.Create)))
                     {
                         AcroFields form = stamper.AcroFields;
@@ -172,7 +182,7 @@ namespace SystemCare
                         form.SetField("Idade", TabelaDadosFuncionario.Rows[0]["idade"].ToString());
                         foreach (string fieldKey in fieldKeys)
                         {
-                            //Replace Address Form field with my custom data
+                            
                             if (fieldKey.ToLower().Contains(TipoExame.ToLower()))
                             {
                                 form.SetField(fieldKey, "Sim");
@@ -183,7 +193,7 @@ namespace SystemCare
                             string Auxiliar = Cadastro.RemoveAccents(ModalidadeExameAos[i].ToString());
                             foreach (string fieldKey in fieldKeys)
                             {
-                                //Replace Address Form field with my custom data
+                                
                                 if (fieldKey.ToLower().Contains(Auxiliar.ToLower()))
                                 {
                                     form.SetField(fieldKey, "Sim");
@@ -195,7 +205,7 @@ namespace SystemCare
                             string Auxiliar = Cadastro.RemoveAccents(RiscosAso[i].ToString());
                             foreach (string fieldKey in fieldKeys)
                             {
-                                //Replace Address Form field with my custom data
+                                
                                 if (fieldKey.ToLower().Contains(Auxiliar.ToLower()))
                                 {
                                     form.SetField(fieldKey, "Sim");
@@ -251,7 +261,16 @@ namespace SystemCare
 
                         stamper.FormFlattening = true;
                     }
+               
                     byte[] arquivo = Cadastro.CadastraHistorico(TabelaDadosFuncionario.Rows[0]["id"].ToString(), Apto, Modalidades, TipoExame, TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
+                    GridExame.DataSource = null;
+                    GridTipoExame.DataSource = null;
+                    DataTable ModalidadesExame = Cadastro.SelecionaModalidadeExame();
+                    DataTable TiposExame = Cadastro.SelecionaExameMedico();
+                    GridTipoExame.DataSource = TiposExame;
+                    GridExame.DataSource = ModalidadesExame;
+                    LabelRiscoFuncionario.Visible = false;
+                    LabelFuncionarioNova.Text = "Selecione um funcionário";
                     Relatorios Aso = new Relatorios(arquivo);
                     Aso.ShowDialog();
                 }
@@ -392,11 +411,13 @@ namespace SystemCare
                           MessageBoxIcon.Information);
                         LabelFuncionarioNova.Text = "Selecione um Funcionário";
                         GridExame.DataSource = null;
-                        GridTipoExame = null;
+                        GridTipoExame.DataSource = null;
                         DataTable ModalidadesExame = Cadastro.SelecionaModalidadeExame();
                         DataTable TiposExame = Cadastro.SelecionaExameMedico();
                         GridTipoExame.DataSource = TiposExame;
                         GridExame.DataSource = ModalidadesExame;
+                        LabelRiscoFuncionario.Visible = false;
+                        LabelFuncionarioNova.Text = "Selecione um funcionário";
 
                     }
                 }

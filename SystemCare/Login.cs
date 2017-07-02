@@ -39,11 +39,16 @@ namespace SystemCare
             {
                 var Logar = new QuerryMysql();
                 var PermissaoLogar = Logar.Login(TextUsuario.Text, TextSenha.Text);
-                if (PermissaoLogar)
+                if (PermissaoLogar=="true")
                 {
                     var principal = new Principal();
                     principal.Show();
                     Hide();
+                }
+                else if (PermissaoLogar == "Banco")
+                {
+                    MetroMessageBox.Show(this, "Banco de dados não encontrado !", "Atenção", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                 }
                 else
                 {

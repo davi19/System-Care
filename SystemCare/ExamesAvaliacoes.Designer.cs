@@ -343,6 +343,7 @@
             this.CheckAptoNova.TabIndex = 122;
             this.CheckAptoNova.Text = "APTO";
             this.CheckAptoNova.UseSelectable = true;
+            this.CheckAptoNova.Visible = false;
             // 
             // BtnGerarAsoNova
             // 

@@ -4,6 +4,10 @@ using System.Data.Common;
 using MySql.Data.MySqlClient;
 using System.Text;
 using System.IO;
+using MetroFramework;
+using MetroFramework.Forms;
+using System.Windows.Forms;
+using System.Collections;
 
 namespace SystemCare
 {
@@ -16,10 +20,12 @@ namespace SystemCare
         private static string IdFuncionarioNova = "";
         private static string IdUsuario = "";
         private static string IdConsulta = "";
+        private static string IdFuncaoRelatorio = "";
+        private static string ExameRelatorio = ""; 
 
         //192.168.1.200
         private readonly MySqlConnection Com =
-            new MySqlConnection("Server =localhost; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
+            new MySqlConnection("Server =192.168.1.200; Database=medseg;Uid=root;Pwd=chinchila@acida12244819");
 
         
         public void SetIdConsulta(string Idconsulta)
@@ -31,9 +37,16 @@ namespace SystemCare
             return IdConsulta;
         }
 
-        public bool Login(string Usuario, string Senha)
+        public string Login(string Usuario, string Senha)
         {
-            Com.Open();
+            try
+            {
+                Com.Open();
+            }
+            catch
+            {
+                return "Banco";
+            }
             var SelecionaUsuario =
                 new MySqlCommand("SELECT * FROM usuarios WHERE login='" + Usuario + "' AND senha=MD5('" + Senha + "')",
                     Com);
@@ -44,10 +57,10 @@ namespace SystemCare
             {
                 Com.Close();
                 IdUsuario = TabelaUsuario.Rows[0]["id"].ToString();
-                return true;
+                return "true";
             }
             Com.Close();
-            return false;
+            return "false";
         }
 
         public DataTable BuscaCnae(string ValorDigitado)
@@ -209,6 +222,23 @@ namespace SystemCare
         {
             return IdFuncionarioNova;
         }
+        public void SetFuncaoRelatorio(string IdFuncao)
+        {
+            IdFuncaoRelatorio = IdFuncao;
+        }
+        public string GetFuncaoRelatorio()
+        {
+            return IdFuncaoRelatorio;
+        }
+
+        public void SetExameRelatorio(string Exame)
+        {
+            ExameRelatorio = Exame;
+        }
+        public string GetExameRelatorio()
+        {
+            return ExameRelatorio;
+        }
 
         public DataTable RecuperaDadosEmpresa()
         {
@@ -306,6 +336,90 @@ namespace SystemCare
             InserirLog.ExecuteNonQuery();
             Com.Close();
         }
+        public DataTable RetornaDadosRelacaoExame(string IdEmpresa,string IdFuncao)
+        {
+            Com.Open();
+            MySqlCommand SelecionaDados = new MySqlCommand("select a.nome as Empresa, b.nome as Funcao from empresas a , funcoes b,setores c  WHERE a.id="+IdEmpresa+" AND b.id="+IdFuncao+" and c.idempresa=a.id AND c.id=b.idsetor",Com);
+            MySqlDataAdapter LeitorDados = new MySqlDataAdapter(SelecionaDados);
+            DataTable TabelaDados = new DataTable();
+            LeitorDados.Fill(TabelaDados);
+            Com.Close();
+            return TabelaDados;
+        }
+        public DataTable RetornaRelacaoFuncaoEmpresa(string IdEmpresa)
+        {
+            Com.Open();
+            MySqlCommand SelecionaFuncoes = new MySqlCommand("SELECT a.id as ID,a.nome as Função from funcoes a, empresas b, setores c where a.idsetor = c.id and c.idempresa=b.id and b.id="+IdEmpresa+";",Com);
+            MySqlDataAdapter LeitorFuncoes = new MySqlDataAdapter(SelecionaFuncoes);
+            DataTable TabelaFuncoes = new DataTable();
+            LeitorFuncoes.Fill(TabelaFuncoes);
+            Com.Close();
+            return TabelaFuncoes;
+        }
+
+        public DataTable RetornaRelacaoExames(string IdFuncao)
+        {
+            Com.Open();
+            MySqlCommand SelecionaFuncoes = new MySqlCommand("SELECT idrisco,modalidadeexame FROM funcoes WHERE id=" + IdFuncao + ";", Com);
+            MySqlDataAdapter LeitorFuncoes = new MySqlDataAdapter(SelecionaFuncoes);
+            DataTable TabelaFuncoes = new DataTable();
+            LeitorFuncoes.Fill(TabelaFuncoes);
+
+
+            var ExamesFuncao = TabelaFuncoes.Rows[0][1].ToString().Split(';');
+            var Riscos = TabelaFuncoes.Rows[0][0].ToString().Split(';');
+
+
+            DataTable TabelaExame = new DataTable();
+            TabelaExame.Columns.Add("NomeExame",typeof(string));
+            if (Riscos.Length >= 1)
+            {
+                for (int i = 1; i < Riscos.Length; i++)
+                {
+                    MySqlCommand SelecionaRisco = new MySqlCommand("SELECT relacaoexames FROM riscos WHERE id=" + Riscos[i] + ";", Com);
+                    MySqlDataAdapter LeitorRisco = new MySqlDataAdapter(SelecionaRisco);
+                    DataTable TabelaRisco = new DataTable();
+                    LeitorRisco.Fill(TabelaRisco);
+
+                    var ExameRisco = TabelaRisco.Rows[0][0].ToString().Split(';');
+
+                    for(int j =1; j < ExameRisco.Length; j++)
+                    {
+                        try
+                        {
+                            MySqlCommand SelecionaExame = new MySqlCommand("SELECT descricao FROM modalidadeexames WHERE id=" + ExameRisco[j] + ";", Com);
+                            MySqlDataAdapter LeitorExame = new MySqlDataAdapter(SelecionaExame);
+                            DataTable TabelaExameBanco = new DataTable();
+                            LeitorExame.Fill(TabelaExameBanco);
+                            TabelaExame.Rows.Add(TabelaExameBanco.Rows[0][0].ToString());
+                        }
+                        catch
+                        { }
+                    }
+                }
+            }
+            if (ExamesFuncao.Length > 0)
+            {
+                for (int j = 1; j < ExamesFuncao.Length; j++)
+                {
+                    try
+                    {
+                        MySqlCommand SelecionaExame2 = new MySqlCommand("SELECT descricao FROM modalidadeexames WHERE id=" + ExamesFuncao[j] + ";", Com);
+                        MySqlDataAdapter LeitorExame2 = new MySqlDataAdapter(SelecionaExame2);
+                        DataTable TabelaExameBanco2 = new DataTable();
+                        LeitorExame2.Fill(TabelaExameBanco2);
+                        TabelaExame.Rows.Add(TabelaExameBanco2.Rows[0][0].ToString());
+
+                    }
+                    catch
+                    { }
+                }
+            }
+            
+            Com.Close();
+            return TabelaExame;
+
+                    }
 
         public void ExcluirEmpresa(string IdEmpresa)
         {
@@ -926,13 +1040,13 @@ namespace SystemCare
             Com.Close();
         }
 
-        public DataTable RetornaAtestados(string IdEmpresa, string MesReferencia)
+        public DataTable RetornaAtestados(string IdEmpresa, string MesReferencia,string AnoReferencia)
         {
             Com.Open();
             var SelecionaAtestados =
                 new MySqlCommand(
                     "select a.nome as nome,b.nome as setor,c.nome as funcao,Date_format(d.dataatestado, '%d-%m-%Y') as dataatestado,d.cid,d.motivo,d.diaafastado from funcionarios a, setores b, funcoes c, atestados d WHERE d.idfuncionario=a.id AND a.idfuncao=c.id AND c.idsetor=b.id and b.idempresa=" +
-                    IdEmpresa + " AND MONTH(d.dataatestado)=" + MesReferencia + ";", Com);
+                    IdEmpresa + " AND MONTH(d.dataatestado)=" + MesReferencia + " AND YEAR(d.dataatestado)="+AnoReferencia+";", Com);
             var LeitorAtestado = new MySqlDataAdapter(SelecionaAtestados);
             var TabelaAtestados = new DataTable();
             LeitorAtestado.Fill(TabelaAtestados);

@@ -21,12 +21,17 @@ namespace SystemCare
             var IdEmpresa = Relatorio.GetEmpresaRelatorio();
             if (!IdEmpresa.Equals(""))
             {
+                string[] MesAno = DatePickerMesReferencia.Text.Split('/');
+                DateTime Data = new DateTime(Convert.ToInt32(MesAno[1]), Convert.ToInt32(MesAno[0]), 1);
                 var TabelaAtestado = Relatorio.RetornaAtestados(IdEmpresa,
-                    DatePickerMesReferencia.Value.Month.ToString());
+                    MesAno[0],MesAno[1]);
+
+                
+
                 var rds = new ReportDataSource("DataSet1", TabelaAtestado);
 
                 var rp1 = new ReportParameter("Empresa", LabelFuncionarioNova.Text);
-                var rp2 = new ReportParameter("MesReferencia", DatePickerMesReferencia.Value.ToString("MMMM").ToUpper());
+                var rp2 = new ReportParameter("MesReferencia", Data.Date.ToString("MMMM/yyyy").ToUpper());
 
 
                 reportViewer1.LocalReport.DataSources.Clear();
@@ -178,11 +183,13 @@ namespace SystemCare
                         }
                 }
 
+                string[] MesAno = DatePickerMesReferencia.Text.Split('/');
+                DateTime Data = new DateTime(Convert.ToInt32(MesAno[1]), Convert.ToInt32(MesAno[0]), 1);
 
                 var rds2 = new ReportDataSource("DataSet1", TabelaVacinaFinal);
 
                 var rp1 = new ReportParameter("Empresa", LabelFuncionarioNova.Text);
-                var rp2 = new ReportParameter("MesReferencia", DatePickerMesReferencia.Value.ToString("MMMM").ToUpper());
+                var rp2 = new ReportParameter("MesReferencia", Data.Date.ToString("MMMM/yyyy").ToUpper());
 
 
                 reportViewer1.LocalReport.DataSources.Clear();
@@ -210,6 +217,46 @@ namespace SystemCare
         private void EmpresaRelatorio_Load(object sender, EventArgs e)
         {
             reportViewer1.RefreshReport();
+        }
+
+        private void relaçãoDeExamesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var IdEmpresa = Relatorio.GetEmpresaRelatorio();
+            if (!IdEmpresa.Equals(""))
+            {
+                SelecionarExames seleciona = new SelecionarExames(IdEmpresa);
+                seleciona.ShowDialog();
+
+                var IdFuncao =Relatorio.GetFuncaoRelatorio();
+
+                var Exame = Relatorio.GetExameRelatorio();
+
+                var TabelaDados = Relatorio.RetornaDadosRelacaoExame(IdEmpresa,IdFuncao);
+
+                var TabelaExame = Relatorio.RetornaRelacaoExames(IdFuncao);
+
+                var rds2 = new ReportDataSource("Dados", TabelaDados);
+                var rds3 = new ReportDataSource("DadosExtras", TabelaExame);
+                var rp1 = new ReportParameter("Exame",Exame);
+
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.ReportPath = "RelacaoExame.rdlc";
+                reportViewer1.LocalReport.SetParameters(rp1);
+                reportViewer1.LocalReport.DataSources.Add(rds2);
+                reportViewer1.LocalReport.DataSources.Add(rds3);
+                reportViewer1.LocalReport.Refresh();
+                reportViewer1.RefreshReport();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Favor selecionar uma Empresa!", "Atenção !", MessageBoxButtons.OK,
+                    MessageBoxIcon.Hand);
+            }
+
+
+
+
+
         }
     }
 }
