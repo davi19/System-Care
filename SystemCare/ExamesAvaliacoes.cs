@@ -81,6 +81,9 @@ namespace SystemCare
         private void BtnGerarAsoNova_Click(object sender, EventArgs e)
         {
             var Apto = "";
+            var Consulta = Cadastro.GetIdConsulta();
+            Cadastro.EncerrarConsulta(Consulta);
+            Cadastro.SetIdConsulta("");        
             var Resultado = "";
             var IdFuncionario = Cadastro.GetFuncionarioNova();
             if (IdFuncionario.Length == 0)
@@ -437,60 +440,63 @@ namespace SystemCare
             BtnQuestionario.Visible = true;
             BtnGerarAsoNova.Visible = true;
             string IdConsulta = Cadastro.GetIdConsulta();
-            DataTable DadosConsulta = Cadastro.RetornaDadosConsulta(IdConsulta);
-            var Modalidades = DadosConsulta.Rows[0]["modalidadeexame"].ToString().Split(';');
-            var Datas = DadosConsulta.Rows[0]["dataexame"].ToString().Split(';');
-            var teste = GridTipoExame.Rows.Count;
-            if (Modalidades.Length > 0)
+            if (IdConsulta.Length > 0)
             {
-
-                for (var j = 0; j < Modalidades.Length; j++)
+                DataTable DadosConsulta = Cadastro.RetornaDadosConsulta(IdConsulta);
+                var Modalidades = DadosConsulta.Rows[0]["modalidadeexame"].ToString().Split(';');
+                var Datas = DadosConsulta.Rows[0]["dataexame"].ToString().Split(';');
+                var teste = GridTipoExame.Rows.Count;
+                if (Modalidades.Length > 0)
                 {
-                    for (var i = 0; i < GridExame.Rows.Count; i++)
-                    {
-                        try
-                        {
-                            if (GridExame.Rows[i].Cells[2].Value.ToString().Equals(Modalidades[j].ToString()))
-                            {
-                                GridExame.Rows[i].Cells[0].Value = true;
-                                GridExame.Rows[i].Cells[1].Value = Datas[j];
 
+                    for (var j = 0; j < Modalidades.Length; j++)
+                    {
+                        for (var i = 0; i < GridExame.Rows.Count; i++)
+                        {
+                            try
+                            {
+                                if (GridExame.Rows[i].Cells[2].Value.ToString().Equals(Modalidades[j].ToString()))
+                                {
+                                    GridExame.Rows[i].Cells[0].Value = true;
+                                    GridExame.Rows[i].Cells[1].Value = Datas[j];
+
+
+                                }
 
                             }
-
+                            catch { }
                         }
-                        catch { }
                     }
                 }
+                var TipoExame = DadosConsulta.Rows[0]["tipoexame"].ToString();
+
+                for (var i = 0; i < GridTipoExame.Rows.Count; i++)
+                {
+
+                    if (GridTipoExame.Rows[i].Cells[1].Value.ToString().Equals(TipoExame))
+                        GridTipoExame.Rows[i].Cells[0].Value = true;
+                }
+
+                IdfuncionarioQuestionario = DadosConsulta.Rows[0]["IdFuncionario"].ToString();
+                Cadastro.SetFuncionarioNova(DadosConsulta.Rows[0]["IdFuncionario"].ToString());
+                var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(DadosConsulta.Rows[0]["IdFuncionario"].ToString());
+                var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
+                var Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
+                LabelRiscoFuncionario.Text = "";
+                LabelRiscoFuncionario.Visible = true;
+                var TabelaDadosRiscos = new DataTable();
+                for (var i = 1; i < Riscos.Length; i++)
+                {
+                    TabelaDadosRiscos = Cadastro.SelecionaRiscosFuncao(Riscos[i]);
+                    LabelRiscoFuncionario.Text = LabelRiscoFuncionario.Text + TabelaDadosRiscos.Rows[0][0] + ": " +
+                                                 TabelaDadosRiscos.Rows[0][1] + "\n";
+                }
+                LabelFuncionarioNova.Text = "NOME: " + TabelaDadosFuncionario.Rows[0]["nome"] + "     CPF: " +
+                                            TabelaDadosFuncionario.Rows[0]["cpf"] + "     FUNÇÃO: " +
+                                            TabelaFuncao.Rows[0]["nome"];
+
+
             }
-            var TipoExame = DadosConsulta.Rows[0]["tipoexame"].ToString();
-
-            for (var i = 0; i < GridTipoExame.Rows.Count; i++)
-            {
-
-                if (GridTipoExame.Rows[i].Cells[1].Value.ToString().Equals(TipoExame))
-                    GridTipoExame.Rows[i].Cells[0].Value = true;
-            }
-
-            IdfuncionarioQuestionario = DadosConsulta.Rows[0]["IdFuncionario"].ToString();
-            Cadastro.SetFuncionarioNova(DadosConsulta.Rows[0]["IdFuncionario"].ToString());
-            var TabelaDadosFuncionario = Cadastro.RecuperaDadosFuncionario(DadosConsulta.Rows[0]["IdFuncionario"].ToString());
-            var TabelaFuncao = Cadastro.RetornaDadosFuncao(TabelaDadosFuncionario.Rows[0]["idfuncao"].ToString());
-            var Riscos = TabelaFuncao.Rows[0]["idrisco"].ToString().Split(';');
-            LabelRiscoFuncionario.Text = "";
-            LabelRiscoFuncionario.Visible = true;
-            var TabelaDadosRiscos = new DataTable();
-            for (var i = 1; i < Riscos.Length; i++)
-            {
-                TabelaDadosRiscos = Cadastro.SelecionaRiscosFuncao(Riscos[i]);
-                LabelRiscoFuncionario.Text = LabelRiscoFuncionario.Text + TabelaDadosRiscos.Rows[0][0] + ": " +
-                                             TabelaDadosRiscos.Rows[0][1] + "\n";
-            }
-            LabelFuncionarioNova.Text = "NOME: " + TabelaDadosFuncionario.Rows[0]["nome"] + "     CPF: " +
-                                        TabelaDadosFuncionario.Rows[0]["cpf"] + "     FUNÇÃO: " +
-                                        TabelaFuncao.Rows[0]["nome"];
-
-
         }
     }
 }

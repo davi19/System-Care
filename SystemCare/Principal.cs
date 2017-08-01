@@ -111,5 +111,11 @@ namespace SystemCare
         {
 
         }
+
+        private void despesaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastrarDespesa Despesa = new CadastrarDespesa();
+            Despesa.ShowDialog();
+        }
     }
 }

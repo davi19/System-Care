@@ -48,10 +48,11 @@
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.atestadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.despesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.despesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -127,7 +128,8 @@
             this.cBOToolStripMenuItem,
             this.serviçosPrestadosToolStripMenuItem,
             this.tabelaDePreçoToolStripMenuItem,
-            this.usuáriosToolStripMenuItem1});
+            this.usuáriosToolStripMenuItem1,
+            this.despesaToolStripMenuItem});
             this.parametrosDoSistemaToolStripMenuItem.Name = "parametrosDoSistemaToolStripMenuItem";
             this.parametrosDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.parametrosDoSistemaToolStripMenuItem.Text = " Parametros do Sistema";
@@ -202,16 +204,28 @@
             // empresasToolStripMenuItem1
             // 
             this.empresasToolStripMenuItem1.Name = "empresasToolStripMenuItem1";
-            this.empresasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.empresasToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.empresasToolStripMenuItem1.Text = "Empresas";
             this.empresasToolStripMenuItem1.Click += new System.EventHandler(this.empresasToolStripMenuItem1_Click);
             // 
             // atestadoToolStripMenuItem
             // 
             this.atestadoToolStripMenuItem.Name = "atestadoToolStripMenuItem";
-            this.atestadoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.atestadoToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.atestadoToolStripMenuItem.Text = "Logs";
             this.atestadoToolStripMenuItem.Click += new System.EventHandler(this.atestadoToolStripMenuItem_Click);
+            // 
+            // rendaToolStripMenuItem
+            // 
+            this.rendaToolStripMenuItem.Name = "rendaToolStripMenuItem";
+            this.rendaToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.rendaToolStripMenuItem.Text = "Renda";
+            // 
+            // despesasToolStripMenuItem
+            // 
+            this.despesasToolStripMenuItem.Name = "despesasToolStripMenuItem";
+            this.despesasToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.despesasToolStripMenuItem.Text = "Despesas";
             // 
             // ajudaToolStripMenuItem
             // 
@@ -233,17 +247,12 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // rendaToolStripMenuItem
+            // despesaToolStripMenuItem
             // 
-            this.rendaToolStripMenuItem.Name = "rendaToolStripMenuItem";
-            this.rendaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.rendaToolStripMenuItem.Text = "Renda";
-            // 
-            // despesasToolStripMenuItem
-            // 
-            this.despesasToolStripMenuItem.Name = "despesasToolStripMenuItem";
-            this.despesasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.despesasToolStripMenuItem.Text = "Despesas";
+            this.despesaToolStripMenuItem.Name = "despesaToolStripMenuItem";
+            this.despesaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.despesaToolStripMenuItem.Text = "Despesa";
+            this.despesaToolStripMenuItem.Click += new System.EventHandler(this.despesaToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -293,5 +302,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem rendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem despesasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem despesaToolStripMenuItem;
     }
 }

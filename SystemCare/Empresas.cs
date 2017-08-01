@@ -258,8 +258,12 @@ namespace SystemCare
         {
             PesquisaEmpresas BuscarEmpresaEditar = new PesquisaEmpresas();
             BuscarEmpresaEditar.ShowDialog();
+            
             IdEmpresa = Cadastro.GetEmpresaRelatorio();
-            LabelEmpresaEditar.Text = Cadastro.RetornaEmpresa(IdEmpresa);
+            if (IdEmpresa.Length > 0)
+            {
+                LabelEmpresaEditar.Text = Cadastro.RetornaEmpresa(IdEmpresa);
+            }
         }
     }
 }

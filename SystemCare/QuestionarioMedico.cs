@@ -17,7 +17,8 @@ namespace SystemCare
         QuerryMysql CadastraQuestionario = new QuerryMysql();
         static string IdFuncionarioQuestiona;
 
-        public QuestionarioMedico(string IdFuncionario, string TipoExame,string Recupera)
+        public QuestionarioMedico(string IdFuncionario, string TipoExame,string Recupera
+            )
         {
 
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace SystemCare
                 LabelFuncionario.Text = DadosFuncionarios.Rows[0]["nome"].ToString();
                 LabelData.Text = DateTime.Now.Date.ToString("dd/MM/yyyy");
                 LabelExame.Text = TipoExame.ToUpper();
+                LabelIMC.Text = "Altura:"+DadosFuncionarios.Rows[0]["altura"].ToString()+ " Peso:"+ DadosFuncionarios.Rows[0]["peso"].ToString() +" IMC:"+ DadosFuncionarios.Rows[0]["imc"].ToString();
             }
             else
             {
@@ -35,6 +37,7 @@ namespace SystemCare
                 DataTable DadosQuestionario = CadastraQuestionario.RetornaDadosQuestionarioFuncionario(Recupera);
                 TextQueixa.Text = DadosQuestionario.Rows[0]["queixa"].ToString();
                 LabelFuncionario.Text = DadosQuestionario.Rows[0]["nome"].ToString();
+                LabelIMC.Text = "Altura:" + DadosQuestionario.Rows[0]["altura"].ToString() + " Peso:" + DadosQuestionario.Rows[0]["peso"].ToString() + " IMC:" + DadosQuestionario.Rows[0]["imc"].ToString();
                 if (DadosQuestionario.Rows[0]["cirurgiaanterior"].ToString() == "S")
                 {
                     RadioSimCirurgia.Checked = true;
@@ -91,10 +94,17 @@ namespace SystemCare
                 var Renal = DadosQuestionario.Rows[0]["doencarenal"].ToString().Split(';');
                 var Habitos = DadosQuestionario.Rows[0]["habitodevida"].ToString().Split(';');
 
+                if(DadosQuestionario.Rows[0]["deficiencia"].ToString() == "S")
+                {
+                    RadioDeficiencia.Checked = true;
+                    TextDeficiencia.Text = DadosQuestionario.Rows[0]["descricaodeficiencia"].ToString();
+                }
+                TextFisico.Text = DadosQuestionario.Rows[0]["examefisico"].ToString();
 
                 if (DadosQuestionario.Rows[0]["atividadefisica"].ToString() == "S")
                 {
                     RadioAtividade.Checked = true;
+                    TextAtividade.Text = DadosQuestionario.Rows[0]["descricaoatividade"].ToString();
                     FrequenciaAtividade.Value = Convert.ToInt32(DadosQuestionario.Rows[0]["frequenciaatividade"].ToString());
                 }
                 LabelData.Text = Convert.ToDateTime(DadosQuestionario.Rows[0]["dataquestionario"].ToString()).Date.ToString("dd/MM/yyyy");
@@ -274,6 +284,7 @@ namespace SystemCare
             string Cardiaca = "";
             string Endocrino = "";
             string Osseo = "";
+            string Deficiencia = "";
             DateTime Datacirurgia= DateTime.Now;
             DateTime Datainternacao=DateTime.Now;
             DateTime Datafratura= DateTime.Now;
@@ -574,13 +585,20 @@ namespace SystemCare
             }
             if (Alcool.Checked)
             {
-                Habitos = Habitos + Alcool + ";";
+                Habitos = Habitos + Alcool.Text + ";";
             }
             if (TextOutrasDrogas.Text.Length > 0)
             {
                 Habitos = Habitos + TextOutrasDrogas.Text + ";";
             }
-
+            if (RadioDeficiencia.Checked)
+            {
+                Deficiencia = "S";
+            }
+            else
+            {
+                Deficiencia = "N";
+            }
 
             //Atividade Fisica
             var Atividade = "";
@@ -594,7 +612,8 @@ namespace SystemCare
             }
             if (!erro)
             {
-                CadastraQuestionario.CadastraQuestionario(IdFuncionarioQuestiona, TextQueixa.Text, Cirurgia, Datacirurgia, TextCirurgia.Text, Fraturas, Datafratura, Internacao, TextInternacao.Text, Datainternacao, Alergias, TextAlergia.Text, Respiratoria, Gastro, Cardiaca, Endocrino, Osseo, TextHistorico.Text, AcidenteTrabalho, Dataacidente, AfastamentoAcidente, AfastamentoPrevidencia, TextAfastamentoAcidente.Text ,TextAfastamentoPrevidencia.Text, Neuro, Renal, Habitos, Atividade, FrequenciaAtividade.Value.ToString());
+                var IdExame = CadastraQuestionario.RetornaExameQuestionario(LabelExame.Text);
+                CadastraQuestionario.CadastraQuestionario(IdFuncionarioQuestiona, TextQueixa.Text, Cirurgia, Datacirurgia, TextCirurgia.Text, Fraturas, Datafratura, Internacao, TextInternacao.Text, Datainternacao, Alergias, TextAlergia.Text, Respiratoria, Gastro, Cardiaca, Endocrino, Osseo, TextHistorico.Text, AcidenteTrabalho, Dataacidente, AfastamentoAcidente, AfastamentoPrevidencia, TextAfastamentoAcidente.Text, TextAfastamentoPrevidencia.Text, Neuro, Renal, Habitos, Atividade, FrequenciaAtividade.Value.ToString(), Deficiencia, TextDeficiencia.Text, TextAtividade.Text, TextFisico.Text, DateTime.Now,IdExame);
                 MetroMessageBox.Show(this, "Questionário cadastrado com sucesso", "Sucesso !", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
             }

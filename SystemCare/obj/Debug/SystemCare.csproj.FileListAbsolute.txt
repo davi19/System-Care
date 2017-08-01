@@ -249,3 +249,4 @@ C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\zh-CHS\Microsoft.ReportV
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Davi\Documents\systemcare\SystemCare\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Davi\Documents\systemcare\SystemCare\obj\Debug\SystemCare.CadastrarDespesa.resources

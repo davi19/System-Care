@@ -28,7 +28,7 @@
     <TargetCulture>pt-BR</TargetCulture>
     <ProductName>System Care</ProductName>
     <PublisherName>Cactus Devs</PublisherName>
-    <ApplicationRevision>36</ApplicationRevision>
+    <ApplicationRevision>38</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -141,6 +141,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>atestados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CadastrarDespesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarDespesa.Designer.cs">
+      <DependentUpon>CadastrarDespesa.cs</DependentUpon>
     </Compile>
     <Compile Include="Cbo.cs">
       <SubType>Form</SubType>
@@ -338,6 +344,9 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="CadastrarDespesa.resx">
+      <DependentUpon>CadastrarDespesa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cbo.resx">
       <DependentUpon>Cbo.cs</DependentUpon>
     </EmbeddedResource>
